@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $fruit=peach $echo ${fruit:-plum} peach $fruit= $echo ${fruit:-plum} plum $echo $fruit $ 二、未" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $ fruit=peach $ echo ${fruit:-plum} peach $ fruit= $ echo ${fruit:-plum} plum $ echo" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="Bash变量扩展修改符" />
-<meta property="og:description" content="一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $fruit=peach $echo ${fruit:-plum} peach $fruit= $echo ${fruit:-plum} plum $echo $fruit $ 二、未" />
+<meta property="og:description" content="一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $ fruit=peach $ echo ${fruit:-plum} peach $ fruit= $ echo ${fruit:-plum} plum $ echo" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chenxiaopang.github.io/2015/06/21/bash%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95%E4%BF%AE%E6%94%B9%E7%AC%A6/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-06-21T16:18:26&#43;08:00" />
 <meta property="article:modified_time" content="2015-06-21T16:18:26&#43;08:00" />
 
 <meta itemprop="name" content="Bash变量扩展修改符">
-<meta itemprop="description" content="一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $fruit=peach $echo ${fruit:-plum} peach $fruit= $echo ${fruit:-plum} plum $echo $fruit $ 二、未"><meta itemprop="datePublished" content="2015-06-21T16:18:26&#43;08:00" />
+<meta itemprop="description" content="一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $ fruit=peach $ echo ${fruit:-plum} peach $ fruit= $ echo ${fruit:-plum} plum $ echo"><meta itemprop="datePublished" content="2015-06-21T16:18:26&#43;08:00" />
 <meta itemprop="dateModified" content="2015-06-21T16:18:26&#43;08:00" />
-<meta itemprop="wordCount" content="219">
+<meta itemprop="wordCount" content="237">
 <meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Bash变量扩展修改符"/>
-<meta name="twitter:description" content="一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $fruit=peach $echo ${fruit:-plum} peach $fruit= $echo ${fruit:-plum} plum $echo $fruit $ 二、未"/>
+<meta name="twitter:description" content="一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $ fruit=peach $ echo ${fruit:-plum} peach $ fruit= $ echo ${fruit:-plum} plum $ echo"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -137,7 +137,7 @@
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/bash/"> Bash </a>
             </div>
-          <span class="more-meta"> 约 219 字 </span>
+          <span class="more-meta"> 约 237 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -167,7 +167,7 @@
 </div>
     <div class="post-content">
       <h3 id="一未设置就临时替换-">一、未设置就临时替换（:-）</h3>
-<p>冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换</p>
+<p>冒号<code>：</code>用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -182,15 +182,15 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$fruit</span><span class="o">=</span>peach
-<span class="nv">$echo</span> <span class="si">${</span><span class="nv">fruit</span><span class="k">:-</span><span class="nv">plum</span><span class="si">}</span>
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nv">fruit</span><span class="o">=</span>peach
+$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">fruit</span><span class="k">:-</span><span class="nv">plum</span><span class="si">}</span>
 peach
 
-<span class="nv">$fruit</span><span class="o">=</span>
-<span class="nv">$echo</span> <span class="si">${</span><span class="nv">fruit</span><span class="k">:-</span><span class="nv">plum</span><span class="si">}</span>
+$ <span class="nv">fruit</span><span class="o">=</span>
+$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">fruit</span><span class="k">:-</span><span class="nv">plum</span><span class="si">}</span>
 plum
 
-<span class="nv">$echo</span> <span class="nv">$fruit</span>
+$ <span class="nb">echo</span> <span class="nv">$fruit</span>
 $
 </code></pre></td></tr></table>
 </div>
@@ -205,11 +205,11 @@ $
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$name</span><span class="o">=</span>
-<span class="nv">$echo</span> <span class="si">${</span><span class="nv">name</span><span class="p">:=Peter</span><span class="si">}</span>
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nv">name</span><span class="o">=</span>
+$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">name</span><span class="p">:=Peter</span><span class="si">}</span>
 Peter
 
-<span class="nv">$echo</span> <span class="nv">$name</span>
+$ <span class="nb">echo</span> <span class="nv">$name</span>
 Peter
 </code></pre></td></tr></table>
 </div>
@@ -223,10 +223,10 @@ Peter
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$foo</span><span class="o">=</span>grapes
-<span class="nv">$echo</span> <span class="si">${</span><span class="nv">foo</span><span class="p">:+pears</span><span class="si">}</span>
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nv">foo</span><span class="o">=</span>grapes
+$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">foo</span><span class="p">:+pears</span><span class="si">}</span>
 pears
-<span class="nv">$echo</span> <span class="nv">$foo</span>
+$ <span class="nb">echo</span> <span class="nv">$foo</span>
 grapes
 </code></pre></td></tr></table>
 </div>
@@ -243,13 +243,13 @@ grapes
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$echo</span> <span class="si">${</span><span class="nv">namex</span><span class="p">:?</span><span class="s2">&#34;namex is undefined&#34;</span><span class="si">}</span>
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">namex</span><span class="p">:?</span><span class="s2">&#34;namex is undefined&#34;</span><span class="si">}</span>
 namex: namex is undefined
 
-<span class="nv">$echo</span> <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">1</span><span class="p">:?</span><span class="s2">&#34;requires an argument&#34;</span><span class="si">}</span> //适用于脚本中检测位置参量
+$ <span class="nb">echo</span> <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">1</span><span class="p">:?</span><span class="s2">&#34;requires an argument&#34;</span><span class="si">}</span> //适用于脚本中检测位置参量
 1: requires an argument
 
-<span class="nb">echo</span> <span class="si">${</span><span class="nv">y</span><span class="p">?</span><span class="si">}</span>
+$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">y</span><span class="p">?</span><span class="si">}</span>
 y: parameter null or not <span class="nb">set</span> //打印默认消息
 </code></pre></td></tr></table>
 </div>
@@ -268,15 +268,15 @@ y: parameter null or not <span class="nb">set</span> //打印默认消息
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$var</span><span class="o">=</span>notebook
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nv">var</span><span class="o">=</span>notebook
 
-<span class="nv">$echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">:</span><span class="nv">0</span><span class="si">}</span>
+$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">:</span><span class="nv">0</span><span class="si">}</span>
 notebook
 
-<span class="nv">$echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">4</span><span class="si">}</span>
+$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">4</span><span class="si">}</span>
 note
 
-<span class="nv">$echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">:</span><span class="nv">4</span><span class="p">:</span><span class="nv">4</span><span class="si">}</span>
+$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">:</span><span class="nv">4</span><span class="p">:</span><span class="nv">4</span><span class="si">}</span>
 book 
 </code></pre></td></tr></table>
 </div>

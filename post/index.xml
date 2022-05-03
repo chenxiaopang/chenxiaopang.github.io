@@ -211,7 +211,7 @@
       <pubDate>Sun, 21 Jun 2015 16:18:26 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/2015/06/21/bash%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95%E4%BF%AE%E6%94%B9%E7%AC%A6/</guid>
-      <description>一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $fruit=peach $echo ${fruit:-plum} peach $fruit= $echo ${fruit:-plum} plum $echo $fruit $ 二、未</description>
+      <description>一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $ fruit=peach $ echo ${fruit:-plum} peach $ fruit= $ echo ${fruit:-plum} plum $ echo</description>
     </item>
     
     <item>
