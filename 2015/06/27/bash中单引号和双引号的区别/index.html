@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="一、单引号和双引号的区别 1. 单引号``` 必须成对使用，它可以保护所有的字符不被翻译。 如变量&#39;$1&#39;，和奇数个单引号的作用相同，偶数个单引号=1" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一、单引号和双引号的区别 1. 单引号&#39; 必须成对使用，它可以保护所有的字符不被翻译。 如变量&#39;$1&#39;，和奇数个单引号的作用相同，偶数个单引号=1个双" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="Bash中单引号和双引号的区别" />
-<meta property="og:description" content="一、单引号和双引号的区别 1. 单引号``` 必须成对使用，它可以保护所有的字符不被翻译。 如变量&#39;$1&#39;，和奇数个单引号的作用相同，偶数个单引号=1" />
+<meta property="og:description" content="一、单引号和双引号的区别 1. 单引号&#39; 必须成对使用，它可以保护所有的字符不被翻译。 如变量&#39;$1&#39;，和奇数个单引号的作用相同，偶数个单引号=1个双" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chenxiaopang.github.io/2015/06/27/bash%E4%B8%AD%E5%8D%95%E5%BC%95%E5%8F%B7%E5%92%8C%E5%8F%8C%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-06-27T16:48:26&#43;08:00" />
 <meta property="article:modified_time" content="2015-06-27T16:48:26&#43;08:00" />
 
 <meta itemprop="name" content="Bash中单引号和双引号的区别">
-<meta itemprop="description" content="一、单引号和双引号的区别 1. 单引号``` 必须成对使用，它可以保护所有的字符不被翻译。 如变量&#39;$1&#39;，和奇数个单引号的作用相同，偶数个单引号=1"><meta itemprop="datePublished" content="2015-06-27T16:48:26&#43;08:00" />
+<meta itemprop="description" content="一、单引号和双引号的区别 1. 单引号&#39; 必须成对使用，它可以保护所有的字符不被翻译。 如变量&#39;$1&#39;，和奇数个单引号的作用相同，偶数个单引号=1个双"><meta itemprop="datePublished" content="2015-06-27T16:48:26&#43;08:00" />
 <meta itemprop="dateModified" content="2015-06-27T16:48:26&#43;08:00" />
-<meta itemprop="wordCount" content="495">
+<meta itemprop="wordCount" content="494">
 <meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Bash中单引号和双引号的区别"/>
-<meta name="twitter:description" content="一、单引号和双引号的区别 1. 单引号``` 必须成对使用，它可以保护所有的字符不被翻译。 如变量&#39;$1&#39;，和奇数个单引号的作用相同，偶数个单引号=1"/>
+<meta name="twitter:description" content="一、单引号和双引号的区别 1. 单引号&#39; 必须成对使用，它可以保护所有的字符不被翻译。 如变量&#39;$1&#39;，和奇数个单引号的作用相同，偶数个单引号=1个双"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -137,7 +137,7 @@
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/bash/"> Bash </a>
             </div>
-          <span class="more-meta"> 约 495 字 </span>
+          <span class="more-meta"> 约 494 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -164,14 +164,14 @@
 </div>
     <div class="post-content">
       <h3 id="一单引号和双引号的区别">一、单引号和双引号的区别</h3>
-<h4 id="1-单引号">1. 单引号```</h4>
+<h4 id="1-单引号">1. 单引号<code>'</code></h4>
 <p>必须成对使用，它可以保护所有的字符不被翻译。</p>
 <p>如变量<code>'$1'</code>，和奇数个单引号的作用相同，偶数个单引号<code>=</code>1个双引号</p>
 <h4 id="2-双引号">2. 双引号<code>&quot;</code></h4>
 <p>必须成对出现，它可以保护一些元字符不被翻译，但允许<code>变量</code>和<code>命令</code>替换，和偶数个单引号的作用相同。</p>
 <p>另外，当引用时（使用一个变量的值）用双引号有助于防止由于空格导致单词分割开和由于识别和扩展了通配符而导致的不必要匹配。</p>
 <h4 id="3-反斜线">3. 反斜线<code>\</code></h4>
-<p><code>shell</code>也不解释转义符<code>\</code>后的字符，'$1&rsquo;和&quot;$1&quot;一样。</p>
+<p><code>shell</code>也不解释转义符<code>\</code>后的字符，'$1&rsquo;和&quot;<code>\</code>$1&quot;一样。</p>
 <h4 id="4-单引号和双引号可以互相保护">4. 单引号和双引号可以互相保护</h4>
 <p>一对单引号中的双引号原样显示。</p>
 <p>一对双引号中的单引号原样显示。</p>
