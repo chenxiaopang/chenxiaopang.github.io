@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ubuntu on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/categories/ubuntu/</link>
+    <description>Recent content in Ubuntu on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 07 Jun 2015 16:01:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/categories/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu下利用cue文件对ape和wav镜像文件自动分轨</title>
+      <link>https://chenxiaopang.github.io/2015/06/07/ubuntu%E4%B8%8B%E5%88%A9%E7%94%A8cue%E6%96%87%E4%BB%B6%E5%AF%B9ape%E5%92%8Cwav%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E5%88%86%E8%BD%A8/</link>
+      <pubDate>Sun, 07 Jun 2015 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/06/07/ubuntu%E4%B8%8B%E5%88%A9%E7%94%A8cue%E6%96%87%E4%BB%B6%E5%AF%B9ape%E5%92%8Cwav%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E5%88%86%E8%BD%A8/</guid>
+      <description>很多音乐CD的镜像文件都带cue格式的分轨文件，在Ubuntu下可以通过一些工具来实现自动分轨。 一、安装工具 Ubuntu下需要安装的工具有f</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu发行版升级</title>
+      <link>https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%8F%91%E8%A1%8C%E7%89%88%E5%8D%87%E7%BA%A7/</link>
+      <pubDate>Sat, 07 Feb 2015 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%8F%91%E8%A1%8C%E7%89%88%E5%8D%87%E7%BA%A7/</guid>
+      <description>从UK 13.10升级到UK 14.10 方法一 1 2 $ sudo apt-get update $ sudo update-manager -c -d 选择upgrade 方法二 首先将源/etc/apt/sources.list修改为指向</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu常用软件包管理命令</title>
+      <link>https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 07 Feb 2015 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</guid>
+      <description>1、查看软件包安装内容 1 2 3 4 # dpkg -L [packagename] //查看安装binutils包会安装哪些文件 # dpkg -L binutils 2、列出指定包的安装状态信息 # dpkg -l [packagename] 3、查找文件所</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>gawk的基本用法 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="GNU gawk工具的功能是将指定文件或标准输入中符合指定模式（pattern）的行按指定的动作（action）进行格式化处理。 一、语法 1 2 3 gawk [options]" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2014/11/29/gawk%E7%9A%84%E7%94%A8%E6%B3%95/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="gawk的基本用法" />
+<meta property="og:description" content="GNU gawk工具的功能是将指定文件或标准输入中符合指定模式（pattern）的行按指定的动作（action）进行格式化处理。 一、语法 1 2 3 gawk [options]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2014/11/29/gawk%E7%9A%84%E7%94%A8%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2014-11-29T16:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2014-11-29T16:18:26&#43;08:00" />
+
+<meta itemprop="name" content="gawk的基本用法">
+<meta itemprop="description" content="GNU gawk工具的功能是将指定文件或标准输入中符合指定模式（pattern）的行按指定的动作（action）进行格式化处理。 一、语法 1 2 3 gawk [options]"><meta itemprop="datePublished" content="2014-11-29T16:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2014-11-29T16:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="1215">
+<meta itemprop="keywords" content="Bash,Shell,gawk," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="gawk的基本用法"/>
+<meta name="twitter:description" content="GNU gawk工具的功能是将指定文件或标准输入中符合指定模式（pattern）的行按指定的动作（action）进行格式化处理。 一、语法 1 2 3 gawk [options]"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">gawk的基本用法</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-11-29 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/bash/"> Bash </a>
+            </div>
+          <span class="more-meta"> 约 1215 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#一语法">一、语法</a></li>
+            <li><a href="#二program语法">二、program语法</a></li>
+            <li><a href="#三列">三、列</a></li>
+            <li><a href="#四当前行">四、当前行</a></li>
+            <li><a href="#五包含操作符">五、包含操作符</a></li>
+            <li><a href="#六关系运算符">六、关系运算符</a></li>
+            <li><a href="#七范围运算符">七、范围运算符</a></li>
+            <li><a href="#八begin和end模式">八、BEGIN和END模式</a></li>
+            <li><a href="#九length函数">九、length函数</a></li>
+            <li><a href="#十nr变量">十、NR变量</a></li>
+            <li><a href="#十一ofs变量">十一、OFS变量</a></li>
+            <li><a href="#十二fs变量">十二、FS变量</a></li>
+            <li><a href="#十三printf函数">十三、printf函数</a></li>
+            <li><a href="#十四重定向输出">十四、重定向输出</a></li>
+            <li><a href="#十五ifelse控制结构">十五、if/else控制结构</a></li>
+            <li><a href="#十六getline">十六、getline</a></li>
+            <li><a href="#十七其它">十七、其它</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>GNU gawk工具的功能是将指定文件或标准输入中符合指定模式（pattern）的行按指定的动作（action）进行格式化处理。</p>
+<h3 id="一语法">一、语法</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">gawk <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>program<span class="o">]</span> <span class="o">[</span>file-list<span class="o">]</span>
+
+gawk <span class="o">[</span>options<span class="o">]</span> -f program-file <span class="o">[</span>file-list<span class="o">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="二program语法">二、program语法</h3>
+<p>gawk语法中的program语法如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="s1">&#39;pattern {action1} {action2}...{actionN}&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="三列">三、列</h3>
+<p><code>$n</code>: 表示文件中第n列（字段）</p>
+<p>$1，&hellip;，$n： 第1列，&hellip;，第n列</p>
+<h3 id="四当前行">四、当前行</h3>
+<p><code>$0</code>: 表示文件中当前记录（行）</p>
+<h3 id="五包含操作符">五、包含操作符</h3>
+<p>包含操作符为<code>~</code></p>
+<p>列出cars文件中第一列包含字母<code>h</code>的行</p>
+<p><code>$ gawk '$1 ~ /h/' cars</code></p>
+<h3 id="六关系运算符">六、关系运算符</h3>
+<p>关系运算符有<code>＝＝</code>、<code>&lt;＝</code>、<code>&gt;=</code>、<code>!=</code>、<code>&gt;</code>、<code>&lt;</code></p>
+<p>列出系统中未安装的包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ dpkg --get-selections <span class="p">|</span> gawk <span class="s1">&#39;$2 != &#34;install&#34; {print $0}&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>列出cars文件中第5列的值小于等于3000的行</p>
+<p><code>$ gawk '$5 &lt;= 3000' cars</code></p>
+<h3 id="七范围运算符">七、范围运算符</h3>
+<p>范围运算符为<code>,</code></p>
+<p>列出cars文件中包含volvo和bmw的行之间的行</p>
+<p><code>$ gawk '/volvo/ , /bmw/' cars</code></p>
+<h3 id="八begin和end模式">八、BEGIN和END模式</h3>
+<p><code>BEGIN</code>模式：文件内容处理之前执行的动作</p>
+<p><code>END</code>模式：文件内容处理结束之后执行的动作</p>
+<p>文件处理之前，打印列名，紧跟着一行分割线；文件处理完成后，打印正在销售的车辆数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ gawk <span class="s1">&#39;BEGIN {
+</span><span class="s1">
+</span><span class="s1">print &#34;Make     Model   Year    Miles   Price&#34;
+</span><span class="s1">
+</span><span class="s1">print &#34;----------------------------------------&#34;
+</span><span class="s1">
+</span><span class="s1">} 
+</span><span class="s1">
+</span><span class="s1">{print}
+</span><span class="s1">
+</span><span class="s1">END {
+</span><span class="s1">
+</span><span class="s1">print NR, &#34;cars for sale.&#34;
+</span><span class="s1">
+</span><span class="s1">}
+</span><span class="s1">
+</span><span class="s1">&#39;</span> cars
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="九length函数">九、length函数</h3>
+<p><code>length</code>函数获取当前行的长度</p>
+<p>打印cars文件各行的长度及行的内容，并按长度排序</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ gawk <span class="s1">&#39;{print length, $0}&#39;</span> cars <span class="p">|</span> sort -n
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="十nr变量">十、NR变量</h3>
+<p><code>NR（record number）</code>表示当前行的序号</p>
+<p>打印长度大于24的行的序号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ gawk <span class="s1">&#39;length &gt; 24 {print NR}&#39;</span> cars
+</code></pre></td></tr></table>
+</div>
+</div><p>打印第2到第4行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ gawk <span class="s1">&#39;NR == 2 , NR == 4&#39;</span> cars
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="十一ofs变量">十一、OFS变量</h3>
+<p>输出字段分隔符通过<code>OFS（onput field separator）</code>变量设置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">BEGIN   <span class="o">{</span><span class="nv">OFS</span> <span class="o">=</span> <span class="s2">&#34; &#34;</span><span class="o">}</span>
+<span class="o">{</span>
+<span class="k">if</span> <span class="o">(</span><span class="nv">$1</span> ~ /ply/<span class="o">)</span>  <span class="nv">$1</span> <span class="o">=</span> <span class="s2">&#34;plymouth&#34;</span>
+<span class="k">if</span> <span class="o">(</span><span class="nv">$1</span> ~ /chev/<span class="o">)</span> <span class="nv">$1</span> <span class="o">=</span> <span class="s2">&#34;chevrolet&#34;</span>
+print
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="十二fs变量">十二、FS变量</h3>
+<p>输入字段分隔符<code>FS（input field separator）</code></p>
+<p>根据<code>/etc/passwd</code>文件中的最大<code>UID</code>值，找出下一个可用的<code>UID</code>值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ cat find_uid
+ 
+BEGIN           <span class="o">{</span><span class="nv">FS</span> <span class="o">=</span> <span class="s2">&#34;:&#34;</span> <span class="nv">saveit</span> <span class="o">=</span> 0<span class="o">}</span>
+
+<span class="nv">$3</span> &gt; saveit     <span class="o">{</span><span class="nv">saveit</span> <span class="o">=</span> <span class="nv">$3</span><span class="o">}</span>
+
+END             <span class="o">{</span>print <span class="s2">&#34;Next available UID is &#34;</span> saveit + 1<span class="o">}</span>
+
+$ gawk -f find_uid /etc/passwd
+
+Next available UID is <span class="m">192</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>-F</code>选项用来在命令行上给FS重新赋值</p>
+<p><code>$ gawk -F: '{print $2}' file</code></p>
+<p>可以使用多个分隔符：空格、冒号和<code>TAB</code></p>
+<p><code>$ gawk -F[: ] '{print $2}' file </code></p>
+<h3 id="十三printf函数">十三、printf函数</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">BEGIN   <span class="o">{</span>
+
+<span class="nb">printf</span> <span class="s2">&#34;%-10s %-8s    %2d   %5d     </span>$<span class="s2"> %8.2f&#34;</span>,
+
+<span class="nv">$1</span>, <span class="nv">$2</span>, <span class="nv">$3</span>, <span class="nv">$4</span>, <span class="nv">$5</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="十四重定向输出">十四、重定向输出</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ cat redirect_out
+ 
+/chevy/    <span class="o">{</span>print &gt; <span class="s2">&#34;chevfile&#34;</span><span class="o">}</span>
+ 
+/ford/     <span class="o">{</span>print &gt; <span class="s2">&#34;fordfile&#34;</span><span class="o">}</span>
+ 
+END        <span class="o">{</span>print <span class="s2">&#34;done.&#34;</span><span class="o">}</span>
+
+$ gawk -f redirect_out cars
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="十五ifelse控制结构">十五、if/else控制结构</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ cat price_range
+ 
+<span class="o">{</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="nv">$5</span> &lt;<span class="o">=</span> 5000<span class="o">)</span> <span class="nv">$5</span> <span class="o">=</span> <span class="s2">&#34;inexpensive&#34;</span>
+
+<span class="k">else</span> <span class="k">if</span>  <span class="o">(</span><span class="m">5000</span> &lt; <span class="nv">$5</span> <span class="o">&amp;&amp;</span> <span class="nv">$5</span> &lt; 10000<span class="o">)</span>  <span class="nv">$5</span> <span class="o">=</span> <span class="s2">&#34;please ask&#34;</span>
+
+<span class="k">else</span> <span class="k">if</span>  <span class="o">(</span><span class="m">10000</span> &lt;<span class="o">=</span> <span class="nv">$5</span><span class="o">)</span>  <span class="nv">$5</span> <span class="o">=</span> <span class="s2">&#34;expensive&#34;</span>
+
+<span class="nb">printf</span> <span class="s2">&#34;%-10s %-8s    %2d    %5d    %-12s&#34;</span>,<span class="nv">$1</span>, <span class="nv">$2</span>, <span class="nv">$3</span>, <span class="nv">$4</span>, <span class="nv">$5</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="十六getline">十六、getline</h3>
+<p>读取一行，然后gawk的指针指向下一行（<code>NR</code>递增）。</p>
+<p>如果不带变量，行指针立即变化，<code>NR</code>递增，<code>$0</code>-<code>$n</code>变化。</p>
+<p>如果带变量，行指针在｛｝内不变化，NR递增，<code>$0</code>-<code>$n</code>不变化。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ cat g4
+
+<span class="o">{</span>
+
+print NR, <span class="s2">&#34;</span><span class="nv">$0</span><span class="s2">:&#34;</span>, <span class="nv">$0</span>
+
+getline aa
+
+print NR, <span class="s2">&#34;aa:&#34;</span>, aa
+
+<span class="o">}</span>
+ 
+$ gawk -f g4 &lt; alpha
+ 
+<span class="m">1</span> <span class="nv">$0</span>: aaaaaaaaa
+ 
+<span class="m">2</span> aa: bbbbbbbbb
+ 
+<span class="m">3</span> <span class="nv">$0</span>: ccccccccc
+ 
+<span class="m">4</span> aa: ddddddddd
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="十七其它">十七、其它</h3>
+<p>gawk 的<code>|&amp;</code>相当于bash的管道<code>｜</code></p>
+<p>gawk能够从网络上获取文件的信息</p>
+<p>gawk中的变量赋值后，引用变量不用<code>$</code>,直接引用，不同于bash。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2014-11-29
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/bash/">Bash</a>
+          <a href="/tags/shell/">Shell</a>
+          <a href="/tags/gawk/">gawk</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2014/11/29/find%E7%9A%84%E7%94%A8%E6%B3%95/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">find的基本用法</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2014/11/29/sed%E7%9A%84%E7%94%A8%E6%B3%95/">
+            <span class="next-text nav-default">sed的基本用法</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

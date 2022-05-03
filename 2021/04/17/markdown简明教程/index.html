@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Markdown简明教程 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="一、 Markdown标题 快捷键: C-c C-s [标题级别] 一级标题# 二级标题 三级标题 四级标题 五级标题 六级标题 我展示的是一级标题 我展示的是二级标题 二、 M" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2021/04/17/markdown%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Markdown简明教程" />
+<meta property="og:description" content="一、 Markdown标题 快捷键: C-c C-s [标题级别] 一级标题# 二级标题 三级标题 四级标题 五级标题 六级标题 我展示的是一级标题 我展示的是二级标题 二、 M" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2021/04/17/markdown%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-17T15:33:54&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-17T15:33:54&#43;08:00" />
+
+<meta itemprop="name" content="Markdown简明教程">
+<meta itemprop="description" content="一、 Markdown标题 快捷键: C-c C-s [标题级别] 一级标题# 二级标题 三级标题 四级标题 五级标题 六级标题 我展示的是一级标题 我展示的是二级标题 二、 M"><meta itemprop="datePublished" content="2021-04-17T15:33:54&#43;08:00" />
+<meta itemprop="dateModified" content="2021-04-17T15:33:54&#43;08:00" />
+<meta itemprop="wordCount" content="2651">
+<meta itemprop="keywords" content="Markdown," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Markdown简明教程"/>
+<meta name="twitter:description" content="一、 Markdown标题 快捷键: C-c C-s [标题级别] 一级标题# 二级标题 三级标题 四级标题 五级标题 六级标题 我展示的是一级标题 我展示的是二级标题 二、 M"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Markdown简明教程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-04-17 </span>
+        <div class="post-category">
+            <a href="/categories/programming/"> Programming </a>
+            </div>
+          <span class="more-meta"> 约 2651 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一-markdown标题">一、 Markdown标题</a></li>
+      </ul>
+    </li>
+    <li><a href="#一级标题">一级标题#</a>
+      <ul>
+        <li><a href="#二级标题">二级标题</a>
+          <ul>
+            <li><a href="#三级标题">三级标题</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#我展示的是一级标题">我展示的是一级标题</a>
+      <ul>
+        <li><a href="#我展示的是二级标题">我展示的是二级标题</a></li>
+        <li><a href="#二-markdown段落">二、 Markdown段落</a>
+          <ul>
+            <li><a href="#1段落">1、段落</a></li>
+            <li><a href="#2字体">2、字体</a></li>
+            <li><a href="#3分隔线">3、分隔线</a></li>
+            <li><a href="#4删除线">4、删除线</a></li>
+            <li><a href="#5下划线">5、下划线</a></li>
+            <li><a href="#6脚注">6、脚注</a></li>
+          </ul>
+        </li>
+        <li><a href="#三-markdown列表">三、 Markdown列表</a>
+          <ul>
+            <li><a href="#1无序列表">1、无序列表</a></li>
+            <li><a href="#2有序列表">2、有序列表</a></li>
+            <li><a href="#3列表嵌套">3、列表嵌套</a></li>
+          </ul>
+        </li>
+        <li><a href="#四-markdown区块">四、 Markdown区块</a></li>
+        <li><a href="#五-markdown代码">五、 Markdown代码</a></li>
+        <li><a href="#六-markdown链接">六、 Markdown链接</a></li>
+        <li><a href="#七-markdown图片">七、 Markdown图片</a></li>
+        <li><a href="#八-markdown表格">八、 Markdown表格</a></li>
+        <li><a href="#九-markdow高级技巧">九、 Markdow高级技巧</a>
+          <ul>
+            <li><a href="#1支持的html元素">1、支持的HTML元素</a></li>
+            <li><a href="#2转义">2、转义</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#井字号">井字号</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#3公式">3、公式</a></li>
+            <li><a href="#4流程图时序图甘特图">4、流程图、时序图、甘特图</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="一-markdown标题">一、 Markdown标题</h2>
+<p>快捷键: <code>C-c C-s [标题级别]</code></p>
+<h1 id="一级标题">一级标题#</h1>
+<h2 id="二级标题">二级标题</h2>
+<h3 id="三级标题">三级标题</h3>
+<h4 id="四级标题">四级标题</h4>
+<h5 id="五级标题">五级标题</h5>
+<h6 id="六级标题">六级标题</h6>
+<h1 id="我展示的是一级标题">我展示的是一级标题</h1>
+<h2 id="我展示的是二级标题">我展示的是二级标题</h2>
+<h2 id="二-markdown段落">二、 Markdown段落</h2>
+<h3 id="1段落">1、段落</h3>
+<p>Markdown 段落没有特殊的格式，直接编写文字就好，段落的换行是使用两个以上空格加上回车。</p>
+<p>当然也可以在段落后面使用一个空行来表示重新开始一个段落。</p>
+<h3 id="2字体">2、字体</h3>
+<p><em>斜体</em><br>
+<em>斜体</em><br>
+<strong>粗体</strong><br>
+<strong>粗体</strong><br>
+<em><strong>粗斜体</strong></em><br>
+<em><strong>粗斜体</strong></em></p>
+<h3 id="3分隔线">3、分隔线</h3>
+<p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
+<p>第一行</p>
+<hr>
+<p>第三行</p>
+<hr>
+<p>第五行</p>
+<hr>
+<p>第七行</p>
+<hr>
+<p>第九行</p>
+<hr>
+<p>第十一行</p>
+<h3 id="4删除线">4、删除线</h3>
+<p>删除线<br>
+<del>删除线</del></p>
+<h3 id="5下划线">5、下划线</h3>
+<p>下划线<br>
+<u>下划线</u></p>
+<h3 id="6脚注">6、脚注</h3>
+<p>脚注是对文本的补充说明。</p>
+<p>脚注1 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>脚注2 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
+<h2 id="三-markdown列表">三、 Markdown列表</h2>
+<p>Markdown 支持有序列表和无序列表。</p>
+<h3 id="1无序列表">1、无序列表</h3>
+<p>无序列表使用星号(*)、加号(+)或是减号(-)作为列表标记，这些标记后面要添加一个空格，然后再填写内容：</p>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<h3 id="2有序列表">2、有序列表</h3>
+<p>有序列表使用数字并加上 . 号来表示，如：</p>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<h3 id="3列表嵌套">3、列表嵌套</h3>
+<p>列表嵌套只需在子列表中的选项前面添加四个空格即可：</p>
+<ol>
+<li>第一项：
+<ul>
+<li>第一项嵌套的第一个元素
+<ul>
+<li>第一项嵌套的第一个元素</li>
+<li>第一项嵌套的第二个元素</li>
+</ul>
+</li>
+<li>第一项嵌套的第二个元素
+<ul>
+<li>第二项嵌套的第一个元素</li>
+<li>第二项嵌套的第二个元素</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>第二项：
+<ul>
+<li>第二项嵌套的第一个元素
+<ul>
+<li>第二项嵌套的第一个元素</li>
+<li>第二项嵌套的第二个元素</li>
+</ul>
+</li>
+<li>第二项嵌套的第二个元素
+<ul>
+<li>第二项嵌套的第一个元素</li>
+<li>第二项嵌套的第二个元素</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="四-markdown区块">四、 Markdown区块</h2>
+<p>Markdown 区块引用是在段落开头使用 &gt; 符号 ，然后后面紧跟一个空格符号：</p>
+<blockquote>
+<p>区块引用<br>
+菜鸟教程<br>
+学的不仅是技术更是梦想</p>
+</blockquote>
+<p>另外区块是可以嵌套的，一个 &gt; 符号是最外层，两个 &gt; 符号是第一层嵌套，以此类推：</p>
+<blockquote>
+<p>最外层</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>第一层嵌套</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>第二层嵌套</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>区块中使用列表</p>
+<blockquote>
+<p>区块中使用列表</p>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+</ol>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+</blockquote>
+<p>列表中使用区块
+如果要在列表项目内放进区块，那么就需要在 &gt; 前添加四个空格的缩进。</p>
+<ul>
+<li>
+<p>第一项</p>
+<blockquote>
+<p>菜鸟教程</p>
+</blockquote>
+<blockquote>
+<p>学的不仅是技术更是梦想</p>
+</blockquote>
+</li>
+<li>
+<p>第二项</p>
+</li>
+</ul>
+<p>注意： 区块换行需要加两个空格，列表不需要，bug？</p>
+<h2 id="五-markdown代码">五、 Markdown代码</h2>
+<p>如果是段落上的一个函数或片段的代码可以用反引号把它包起来（`），例如：</p>
+<p>快捷键: <code>C-c C-s c</code></p>
+<p><code>printf()</code> 函数</p>
+<p>代码区块使用 4 个空格或者一个制表符（Tab 键）。</p>
+<pre><code>#include &lt;stdio.h&gt;
+main()
+{
+	printf(&quot;hello,world\n&quot;);	
+	return 0;
+}
+</code></pre>
+<p>你也可以用 ``` 包裹一段代码，并指定一种语言（也可以不指定）：</p>
+<p>快捷键: <code>C-c C-s C</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;RUNOOB&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="六-markdown链接">六、 Markdown链接</h2>
+<p><code>快捷键: C-c C-l</code></p>
+<p><a href="%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80">链接名称</a>
+或者
+&lt;链接地址&gt;</p>
+<p>这是一个链接 <a href="https://www.runoob.com">菜鸟教程</a></p>
+<p><a href="http://www.runoob.com">http://www.runoob.com</a></p>
+<p>我们可以通过变量来设置一个链接，变量赋值在文档末尾进行：</p>
+<p>这个链接用 1 作为网址变量 <a href="http://www.google.com/">Google</a><br>
+这个链接用 2 作为网址变量 <a href="http://www.runoob.com/">Runoob</a></p>
+<h2 id="七-markdown图片">七、 Markdown图片</h2>
+<p><code>快捷键: C-c Tab</code></p>
+<p><img src="/pic/Programming/lele1.jpg" alt="一只荷兰兔" title="rabbit"></p>
+<p><img src="http://static.runoob.com/images/runoob-logo.png" alt="RUNOOB 图标"></p>
+<p>Markdown 还没有办法指定图片的高度与宽度，如果你需要的话，你可以使用普通的&lt;img&gt;标签。</p>
+<img src="http://static.runoob.com/images/runoob-logo.png" width="40%">
+<img src="/pic/Programming/lele1.jpg" width="30%">
+<h2 id="八-markdown表格">八、 Markdown表格</h2>
+<p>Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行。对选中的内容转换为表格，使用<code>markdown-table-convert-region</code>命令，或快捷键<code>C-c C-c |</code>。我们可以设置表格的对齐方式：</p>
+<ol>
+<li>-: 设置内容和标题栏居右对齐。</li>
+<li>:- 设置内容和标题栏居左对齐。</li>
+<li>:-: 设置内容和标题栏居中对齐。</li>
+</ol>
+<p>|  表头   | 表头  |</p>
+<p>|  &mdash;-  | &mdash;-  |</p>
+<p>| 单元格  | 单元格 |</p>
+<p>| 单元格  | 单元格 |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">左对齐</th>
+<th style="text-align:right">右对齐</th>
+<th style="text-align:center">居中对齐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">单元格</td>
+<td style="text-align:right">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+<tr>
+<td style="text-align:left">单元格</td>
+<td style="text-align:right">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+</tbody>
+</table>
+<h2 id="九-markdow高级技巧">九、 Markdow高级技巧</h2>
+<h3 id="1支持的html元素">1、支持的HTML元素</h3>
+<p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。</p>
+<p>目前支持的 HTML 元素有：&lt;kbd &gt; &lt;b&gt; &lt;i&gt; &lt;em&gt; &lt;sup&gt; &lt;sub&gt; &lt;br&gt;等 ，如：</p>
+<p>使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑</p>
+<h3 id="2转义">2、转义</h3>
+<p>Markdown 使用了很多特殊符号来表示特定的意义，如果需要显示特定的符号则需要使用转义字符，Markdown 使用反斜杠转义特殊字符：</p>
+<p><strong>文本加粗</strong></p>
+<p>** 正常显示星号 **</p>
+<p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
+<p>\   反斜线<br>
+`   反引号</p>
+<ul>
+<li>星号<br>
+_   下划线<br>
+{}  花括号<br>
+[]  方括号<br>
+()  小括号</li>
+</ul>
+<h1 id="井字号">井字号</h1>
+<ul>
+<li>加号</li>
+</ul>
+<ul>
+<li>减号<br>
+.   英文句点<br>
+!   感叹号</li>
+</ul>
+<h3 id="3公式">3、公式</h3>
+<p>当你需要在编辑器中插入数学公式时，可以使用两个美元符 $$ 包裹 TeX 或 LaTeX 格式的数学公式来实现。提交后，问答和文章页会根据需要加载 Mathjax 对数学公式进行渲染。如：</p>
+<p>$$
+\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}</p>
+<p>\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \<br>
+\frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \<br>
+\frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0 \<br>
+\end{vmatrix}</p>
+<p>${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}
+$$</p>
+<h3 id="4流程图时序图甘特图">4、流程图、时序图、甘特图</h3>
+<p>1.横向流程图源码格式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">graph LR
+A[方形] --&gt;B(圆角)
+    B --&gt; C{条件a}
+    C --&gt;|a=1| D[结果1]
+    C --&gt;|a=2| E[结果2]
+    F[横向流程图]
+</code></pre></td></tr></table>
+</div>
+</div><p>2.竖向流程图源码格式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">graph TD
+A[方形] --&gt; B(圆角)
+    B --&gt; C{条件a}
+    C --&gt; |a=1| D[结果1]
+    C --&gt; |a=2| E[结果2]
+    F[竖向流程图]
+</code></pre></td></tr></table>
+</div>
+</div><p>3.标准流程图源码格式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">st=&gt;start: 开始框
+op=&gt;operation: 处理框
+cond=&gt;condition: 判断框(是或否?)
+sub1=&gt;subroutine: 子流程
+io=&gt;inputoutput: 输入输出框
+e=&gt;end: 结束框
+st-&gt;op-&gt;cond
+cond(yes)-&gt;io-&gt;e
+cond(no)-&gt;sub1(right)-&gt;op
+</code></pre></td></tr></table>
+</div>
+</div><p>4.标准流程图源码格式（横向）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">st=&gt;start: 开始框
+op=&gt;operation: 处理框
+cond=&gt;condition: 判断框(是或否?)
+sub1=&gt;subroutine: 子流程
+io=&gt;inputoutput: 输入输出框
+e=&gt;end: 结束框
+st(right)-&gt;op(right)-&gt;cond
+cond(yes)-&gt;io(bottom)-&gt;e
+cond(no)-&gt;sub1(right)-&gt;op
+</code></pre></td></tr></table>
+</div>
+</div><p>5.UML时序图源码样例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">对象A-&gt;对象B: 对象B你好吗?（请求）
+Note right of 对象B: 对象B的描述
+Note left of 对象A: 对象A的描述(提示)
+对象B--&gt;对象A: 我很好(响应)
+对象A-&gt;对象B: 你真的好吗？
+</code></pre></td></tr></table>
+</div>
+</div><p>6.UML时序图源码复杂样例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Title: 标题：复杂使用
+对象A-&gt;对象B: 对象B你好吗?（请求）
+Note right of 对象B: 对象B的描述
+Note left of 对象A: 对象A的描述(提示)
+对象B--&gt;对象A: 我很好(响应)
+对象B-&gt;小三: 你好吗
+小三--&gt;&gt;对象A: 对象B找我了
+对象A-&gt;对象B: 你真的好吗？
+Note over 小三,对象B: 我们是朋友
+participant C
+Note right of C: 没人陪我玩
+</code></pre></td></tr></table>
+</div>
+</div><p>7.UML标准时序图样例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">%% 时序图例子,-&gt; 直线，--&gt;虚线，-&gt;&gt;实线箭头
+  sequenceDiagram
+    participant 张三
+    participant 李四
+    张三-&gt;王五: 王五你好吗？
+    loop 健康检查
+        王五-&gt;王五: 与疾病战斗
+    end
+    Note right of 王五: 合理 食物 &lt;br/&gt;看医生...
+    李四--&gt;&gt;张三: 很好!
+    王五-&gt;李四: 你怎么样?
+    李四--&gt;王五: 很好!
+</code></pre></td></tr></table>
+</div>
+</div><p>8.甘特图样例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">%% 语法示例
+        gantt
+        dateFormat  YYYY-MM-DD
+        title 软件开发甘特图
+        section 设计
+        需求                      :done,    des1, 2014-01-06,2014-01-08
+        原型                      :active,  des2, 2014-01-09, 3d
+        UI设计                     :         des3, after des2, 5d
+    未来任务                     :         des4, after des3, 5d
+        section 开发
+        学习准备理解需求                      :crit, done, 2014-01-06,24h
+        设计框架                             :crit, done, after des2, 2d
+        开发                                 :crit, active, 3d
+        未来任务                              :crit, 5d
+        耍                                   :2d
+        section 测试
+        功能测试                              :active, a1, after des3, 3d
+        压力测试                               :after a1  , 20h
+        测试报告                               : 48h
+</code></pre></td></tr></table>
+</div>
+</div><p>​</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>脚注1文本&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>脚注2文本！！！&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-04-17
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/markdown/">Markdown</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2021/04/18/%E5%88%A9%E7%94%A8hugo%E5%92%8Cgithub-pages%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">利用Hugo和github pages创建博客</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2021/02/17/ffmpeg%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/">
+            <span class="next-text nav-default">ffmpeg常用用法</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

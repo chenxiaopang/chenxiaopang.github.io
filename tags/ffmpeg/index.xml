@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ffmpeg on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/ffmpeg/</link>
+    <description>Recent content in ffmpeg on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 17 Feb 2021 17:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ffmpeg常用用法</title>
+      <link>https://chenxiaopang.github.io/2021/02/17/ffmpeg%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Wed, 17 Feb 2021 17:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2021/02/17/ffmpeg%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</guid>
+      <description>本文收集记录了笔者使用过的FFmpeg命令，亲测可用，并不是简单的copy别人的FFmpeg大全，下面的命令大部分都是本人测试成功过的，大家</description>
+    </item>
+    
+  </channel>
+</rss>

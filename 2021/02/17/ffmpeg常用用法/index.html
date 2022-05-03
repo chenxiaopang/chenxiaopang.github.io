@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ffmpeg常用用法 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="本文收集记录了笔者使用过的FFmpeg命令，亲测可用，并不是简单的copy别人的FFmpeg大全，下面的命令大部分都是本人测试成功过的，大家" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2021/02/17/ffmpeg%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="ffmpeg常用用法" />
+<meta property="og:description" content="本文收集记录了笔者使用过的FFmpeg命令，亲测可用，并不是简单的copy别人的FFmpeg大全，下面的命令大部分都是本人测试成功过的，大家" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2021/02/17/ffmpeg%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-02-17T17:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2021-02-17T17:18:26&#43;08:00" />
+
+<meta itemprop="name" content="ffmpeg常用用法">
+<meta itemprop="description" content="本文收集记录了笔者使用过的FFmpeg命令，亲测可用，并不是简单的copy别人的FFmpeg大全，下面的命令大部分都是本人测试成功过的，大家"><meta itemprop="datePublished" content="2021-02-17T17:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2021-02-17T17:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="2762">
+<meta itemprop="keywords" content="ffmpeg,video,audio," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ffmpeg常用用法"/>
+<meta name="twitter:description" content="本文收集记录了笔者使用过的FFmpeg命令，亲测可用，并不是简单的copy别人的FFmpeg大全，下面的命令大部分都是本人测试成功过的，大家"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ffmpeg常用用法</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-02-17 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/tools/"> Tools </a>
+            </div>
+          <span class="more-meta"> 约 2762 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一获取视频信息">一、获取视频信息</a></li>
+        <li><a href="#二分离视频音频流">二、分离视频音频流</a></li>
+        <li><a href="#三视频转码相关">三、视频转码相关</a></li>
+        <li><a href="#四图像处理相关">四、图像处理相关</a></li>
+        <li><a href="#五视频方向处理相关">五、视频方向处理相关</a></li>
+        <li><a href="#六视频剪切相关">六、视频剪切相关</a></li>
+        <li><a href="#七倒放音视频加速视频减速视频">七、倒放音视频&amp;加速视频&amp;减速视频</a></li>
+        <li><a href="#八视频拼接">八、视频拼接</a>
+          <ul>
+            <li><a href="#1将-mp4-先转码为-mpeg文件mpeg是支持简单拼接的然后再转回-mp4">1、将 mp4 先转码为 mpeg文件，mpeg是支持简单拼接的，然后再转回 mp4。</a></li>
+            <li><a href="#2使用ts拼接">2、使用ts拼接</a></li>
+          </ul>
+        </li>
+        <li><a href="#九视频的合并">九、视频的合并</a>
+          <ul>
+            <li><a href="#1两个视频的合并注意参数hstack代表是横向合并也就是左右合并横向合并的形象类比为川如果是竖向合并也就是上下合并用参数vstack竖向或者纵向合并的形象类比为三">1、两个视频的合并（注意参数hstack代表是横向合并，也就是左右合并，横向合并的形象类比为“川”；如果是竖向合并，也就是上下合并，用参数vstack，竖向或者纵向合并的形象类比为“三”)</a></li>
+            <li><a href="#2提取视频中的音频并合并音频">2、提取视频中的音频并合并音频</a></li>
+            <li><a href="#3把audio3mp3文件合并到outputmp4中去">3、把audio3.mp3文件合并到output.mp4中去</a></li>
+          </ul>
+        </li>
+        <li><a href="#十常用参数说明">十、常用参数说明：</a>
+          <ul>
+            <li><a href="#1命令格式">1、命令格式</a></li>
+            <li><a href="#2主要参数">2、主要参数</a></li>
+            <li><a href="#3-视频参数">3、 视频参数</a></li>
+            <li><a href="#4音频参数">4、音频参数</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>本文收集记录了笔者使用过的FFmpeg命令，亲测可用，并不是简单的copy别人的FFmpeg大全，下面的命令大部分都是本人测试成功过的，大家可以放心使用。
+音视频技术是程序员日常生活中经常用到的，比如转码需求，同事下载的avi视频，电脑上没有播放器可以播放此格式的视频文件，那你就可以帮他把avi转成mp4格式，你两个就可以愉快的观看了；截取视频需求，录制视频后，可能不需要前面3秒和后面5秒，那就需要剪切或者拼接视频；想提取视频中的某一帧画面出来；不想看到视频画面，只想听到里面的声音，那就提取视频中的音频转为mp3；出于某种特殊的需求，你想倒着播放一段视频等等，太多太多了，再比如视频中加GIF，视频中加文字，抖音合拍功能，视频加速播放。上面的这些需求或者是想法，都可以用命令行轻松搞定，FFmpeg的强大，只有你想不到，没有他做不到。下面就列举了一些常用的简单命令，让我们一起看一下吧，另外看完后，最好是动手去实践一番。</p>
+<h2 id="一获取视频信息">一、获取视频信息</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg -i video.avi　  //查看本地的视频信息
+     
+ffmpeg -i http://static.tripbe.com/videofiles/20121214/9533522808.f4v.mp4     //查看远程http视频信息
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="二分离视频音频流">二、分离视频音频流</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg -i input_file -vcodec copy -an output_file_video　　//分离视频流
+
+ffmpeg -i input_file -acodec copy -vn output_file_audio　　//分离音频流
+
+ffmpeg -i input.mp4 -an output.mp4                  //去掉视频中的音频
+
+ffmpeg -i test.avi -vcodec copy -an output.avi //去掉视频中的音频
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="三视频转码相关">三、视频转码相关</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg -i test.ts -acodec copy -vcodec copy -f mp4 output.mp4//ts视频流转mp4
+
+ffmpeg -i test.h264 -vcodec copy -f mpegts output.ts//h264视频转ts视频流
+
+ffmpeg -i test.h264 -vcodec copy -f mp4 output.mp4//h264视频转mp4
+
+ffmpeg -i test.mp4 -b:v 640k output.flv //mp4转flv
+
+ffmpeg -i test.mp4 -acodec copy -vcodec copy -f flv output.flv //mp4转flv
+
+ffmpeg -i test.flv -b:v 640k output.mp4 //flv转mp4
+
+ffmpeg -i test.mp4 -s 176x144 -vcodec h263 -r 25 -b 12200 -ab 12200 -ac 1 -ar 8000 output.3gp //mp4转3gp
+
+ffmpeg -i test.avi -s aqif -vcodec -acodec mp3 -ac 1 -ar 8000 -r 25 -ab 32 -y output.3gp //avi转3gp
+
+ffmpeg -i test.3gp -f avi -vcodec xvid -acodec mp3 -ar 22050 output.avi //3gp转flv
+
+ffmpeg -i test.flv -s 176x144 -vcodec h263 -r 25 -b 200 -ab 64 -acodec mp3 -ac 1 -ar 8000 output.3gp //flv转3gp
+
+ffmpeg -i test.mp4 output.avi //mp4转avi
+
+ffmpeg -i test.flv -vcodec h264 -r 25 -b 200 -ab 128 -acodec mp3 -ac 2 -ar 44100 output.mp4 //flv转mp4
+
+ffmpeg -i test.mp4 -c:v libx264 -ar 22050 -crf 28 output.flv //mp4转flv
+
+ffmpeg -i test.avi -c copy -map 0 output.mp4 //avi转mp4
+
+ffmpeg -i  http://vfile1.grtn.cn/2018/1542/0254/3368/154202543368.ssm/154202543368.m3u8 -c copy -bsf:a aac_adtstoasc -movflags +faststart test.mp4 //m3u8转mp4
+
+ffmpeg -i test.mkv -y -vcodec copy -acodec copy output.mp4 //mkv转mp4
+
+ffmpeg -i test.mkv -vcodec copy -acodec copy output.avi  //mkv转avi
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="四图像处理相关">四、图像处理相关</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg –i test.mp4 -y -f image2 -ss 8 -t 0.001 -s 350x240 testImage.jpg //截取指定时间的缩略图，-ss后跟的时间单位是秒
+
+ffmpeg -i input.mp4 -vf &#34;movie=logo.png [logo]; [in][logo] overlay=10:10:1 [out]&#34; output.mp4//添加图片水印
+
+ffmpeg -i input.mp4 -i logo.png -filter_complex overlay test1.mp4//添加图片水印
+
+ffmpeg –i input.mp4 -acodec copy-vcodec copy -vf &#34;movie=test.png[watermark];[in][watermark]overlay=10:10:1[out]&#34; output.mp4//添加图片水印
+
+ffmpeg -y -i test2.mp4 -ignore_loop 0 -i test.gif -filter_complex overlay=0:H-h test_out2.mp4//添加GIF
+
+ffmpeg -i input.flv -vf &#34;drawtext=fontfile=simhei.ttf: text=&#39;抖音&#39;:x=100:y=10:fontsize=24:fontcolor=yellow:shadowy=2&#34; drawtext.mp4//添加文字水印
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="五视频方向处理相关">五、视频方向处理相关</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg -i test.mp4 -metadata:s:v rotate=&#34;90&#34; -codec copy out.mp4//旋转90°
+
+ffmpeg -i test.mp4 -vf &#34;transpose=1&#34; out.mp4//顺时针旋转90°
+
+ffmpeg -i test.mp4 -vf &#34;transpose=2&#34; out.mp4//逆时针旋转90°
+
+ffmpeg -i test.mp4 -vf &#34;transpose=3&#34; out.mp4//顺时针旋转90°后再水平翻转
+
+ffmpeg -i test.mp4 -vf &#34;transpose=0&#34; out.mp4//逆时针旋转90°后再水平翻转
+
+ffmpeg -i test.mp4 -vf hflip out.mp4//水平翻转视频画面
+
+ffmpeg -i test.mp4 -vf vflip out.mp4//垂直翻转视频画面
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="六视频剪切相关">六、视频剪切相关</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg –i test.avi –r 1 –f image2 image-%3d.jpeg//提取图片
+
+ffmpeg -ss 0:1:30 -t 0:0:20 -i input.avi -vcodec copy -acodec copy output.avi    //-r 提取图像的频率，-ss 开始时间，-t 持续时间
+
+//从10s处开始剪切，持续15秒（此方法有时候会遇到视频第一帧黑屏，就是未播放时候的封面是黑色的，原因是未定位到关键帧I帧）
+
+ffmpeg -i test.mp4 -ss 10 -t 15 -codec copy cut.mp4
+
+//从10s处开始剪切，持续15秒（此方法为优化后的方法，此剪切视频的方法可以解决第一帧黑屏问题，但是可能切割的时间落点稍稍的有一丢丢的不准确，但是应该可以落在误差范围之内）
+
+ffmpeg -ss 10 -t 15 -i test.mp4 -codec copy cut.mp4
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="七倒放音视频加速视频减速视频">七、倒放音视频&amp;加速视频&amp;减速视频</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg.exe -i inputfile.mp4 -filter_complex [0:v]reverse[v] -map [v] -preset superfast reversed.mp4 //视频倒放，无音频
+
+ffmpeg.exe -i inputfile.mp4 -vf reverse reversed.mp4//视频倒放，音频不变
+
+
+ffmpeg.exe -i inputfile.mp4 -map 0 -c:v copy -af &#34;areverse&#34; reversed_audio.mp4//音频倒放，视频不变
+
+
+ffmpeg.exe -i inputfile.mp4 -vf reverse -af areverse -preset superfast reversed.mp4//音视频同时倒放
+
+
+ffmpeg -i inputfile.mp4 -vf setpts=PTS/2 -af atempo=2 output.mp4//视频加速，帧速率变为2倍，调整倍速范围【0.25，4】
+
+ffmpeg -i input.mkv -an -filter:v &#34;setpts=0.5*PTS&#34; output.mkv//视频减速播放
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="八视频拼接">八、视频拼接</h2>
+<p>这里全部以mp4文件为例子，介绍两种方法，如果不是mp4文件，可以尝试先转码为mp4后再拼接起来</p>
+<h3 id="1将-mp4-先转码为-mpeg文件mpeg是支持简单拼接的然后再转回-mp4">1、将 mp4 先转码为 mpeg文件，mpeg是支持简单拼接的，然后再转回 mp4。</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg -i 1.mp4 -qscale 4 1.mpg　
+
+ffmpeg -i 2.mp4 -qscale 4 2.mpg　
+
+cat 1.mpg 2.mpg | ffmpeg -f mpeg -i - -qscale 6 -vcodec mpeg4 output.mp4
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2使用ts拼接">2、使用ts拼接</h3>
+<p>先将 mp4 转化为同样编码形式的 ts 流，因为 ts流是可以 concate 的，先把 mp4 封装成 ts ，然后 concate ts 流， 最后再把 ts 流转化为 mp4。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg -i 1.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb 1.ts　　
+
+ffmpeg -i 2.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb 2.ts
+
+ffmpeg -i &#34;concat:1.ts|2.ts&#34; -acodec copy -vcodec copy -absf aac_adtstoasc output.mp4
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="九视频的合并">九、视频的合并</h2>
+<p>下面通过动手实现抖音合拍功能来演示命令行的使用，首先准备好两个文件input1和input2，都是用手机拍摄的，高度相同；</p>
+<h3 id="1两个视频的合并注意参数hstack代表是横向合并也就是左右合并横向合并的形象类比为川如果是竖向合并也就是上下合并用参数vstack竖向或者纵向合并的形象类比为三">1、两个视频的合并（注意参数hstack代表是横向合并，也就是左右合并，横向合并的形象类比为“川”；如果是竖向合并，也就是上下合并，用参数vstack，竖向或者纵向合并的形象类比为“三”)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg -i input1.mp4 -i input2.mp4 -lavfi hstack output.mp4
+</code></pre></td></tr></table>
+</div>
+</div><p>注意：经过此命令处理后的视频output.mp4只会保留input1的音频</p>
+<h3 id="2提取视频中的音频并合并音频">2、提取视频中的音频并合并音频</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg -i input1.mp4 -vn -y -acodec copy audio1.m4a
+
+ffmpeg -i input2.mp4 -vn -y -acodec copy audio2.m4a
+
+ffmpeg -i audio1.m4a -i audio2.m4a -filter_complex amerge -ac 2 -c:a libmp3lame -q:a 4 audio3.mp3
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3把audio3mp3文件合并到outputmp4中去">3、把audio3.mp3文件合并到output.mp4中去</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg -i output.mp4 -i audio3.mp3 -c:v copy -c:a aac -strict experimental success.mp4
+</code></pre></td></tr></table>
+</div>
+</div><p>最后我们得到的success.mp4就是合拍视频，包含了两个视频的音频。</p>
+<p>三个视频合并（input=3表示希望合并的视频的个数）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg -i input1.mp4 -i input2.mp4 -i input3.mp4 -lavfi hstack=inputs=3 output.mp4
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="十常用参数说明">十、常用参数说明：</h2>
+<h3 id="1命令格式">1、命令格式</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ffmpeg -i [输入文件名] [参数选项] -f [格式] [输出文件]
+ffmpeg [global_options] {[input_file_options] -i input_url} ...  {[output_file_options] output_url} ...
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>h264: 表示输出的是h264的视频裸流</li>
+<li>mp4: 表示输出的是mp4的视频</li>
+<li>mpegts: 表示ts视频流</li>
+</ul>
+<h3 id="2主要参数">2、主要参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-i</td>
+<td>设定输入流</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>设定输出格式</td>
+</tr>
+<tr>
+<td>-ss</td>
+<td>开始时间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-视频参数">3、 视频参数</h3>
+<p>-b 设定视频流量，默认为200Kbit/s
+-r 设定帧速率，默认为25
+-s 设定画面的宽与高
+-aspect 设定画面的比例
+-vn 不处理视频
+-vcodec 设定视频编解码器，未设定时则使用与输入流相同的编解码器，一般后面加copy表示拷贝</p>
+<h3 id="4音频参数">4、音频参数</h3>
+<p>-ar 设定采样率
+-ac 设定声音的Channel数
+-acodec 设定声音编解码器，未设定时则使用与输入流相同的编解码器，一般后面加copy表示拷贝</p>
+<p>-an 不处理音频</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-02-17
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ffmpeg/">ffmpeg</a>
+          <a href="/tags/video/">video</a>
+          <a href="/tags/audio/">audio</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2021/04/17/markdown%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Markdown简明教程</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2021/02/16/2021%E5%B9%B4%E6%98%A5%E8%8A%82%E6%B8%B8%E9%A2%90%E5%92%8C%E5%9B%AD/">
+            <span class="next-text nav-default">只羡鸳鸯不羡仙</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

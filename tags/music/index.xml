@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>music on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/music/</link>
+    <description>Recent content in music on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 12 May 2021 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/music/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>再翻个箱底</title>
+      <link>https://chenxiaopang.github.io/2021/05/12/%E5%86%8D%E7%BF%BB%E7%AE%B1%E5%BA%95/</link>
+      <pubDate>Wed, 12 May 2021 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2021/05/12/%E5%86%8D%E7%BF%BB%E7%AE%B1%E5%BA%95/</guid>
+      <description>Boom Boom Boom, 来自荷兰的Vengaboys四人组。</description>
+    </item>
+    
+    <item>
+      <title>翻个箱底</title>
+      <link>https://chenxiaopang.github.io/2021/05/01/%E7%BF%BB%E4%B8%AA%E7%AE%B1%E5%BA%95/</link>
+      <pubDate>Sat, 01 May 2021 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2021/05/01/%E7%BF%BB%E4%B8%AA%E7%AE%B1%E5%BA%95/</guid>
+      <description>请一定带上耳机！</description>
+    </item>
+    
+  </channel>
+</rss>

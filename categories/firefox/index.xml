@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>firefox on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/categories/firefox/</link>
+    <description>Recent content in firefox on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 07 Feb 2015 23:06:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/categories/firefox/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在firefox的flashgot中配置各种下载器</title>
+      <link>https://chenxiaopang.github.io/2015/02/07/%E5%9C%A8firefox%E7%9A%84flashgot%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%90%84%E7%A7%8D%E4%B8%8B%E8%BD%BD%E5%99%A8/</link>
+      <pubDate>Sat, 07 Feb 2015 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/02/07/%E5%9C%A8firefox%E7%9A%84flashgot%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%90%84%E7%A7%8D%E4%B8%8B%E8%BD%BD%E5%99%A8/</guid>
+      <description>一、在firefox中安装flashgot扩展 flashgot是firefox的一个扩展，在联网的情况下，可以在firefox中的附加组件中</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Applications on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/categories/applications/</link>
+    <description>Recent content in Applications on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 18 Apr 2021 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/categories/applications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>利用Hugo和github pages创建博客</title>
+      <link>https://chenxiaopang.github.io/2021/04/18/%E5%88%A9%E7%94%A8hugo%E5%92%8Cgithub-pages%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sun, 18 Apr 2021 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2021/04/18/%E5%88%A9%E7%94%A8hugo%E5%92%8Cgithub-pages%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>Hugo是由Go语言实现的静态网站生成器，简单、易用、高效、易扩展、快速部署，能够将Markdown等文本转换为网站静态页面。github p</description>
+    </item>
+    
+    <item>
+      <title>Linux下的视频字幕编辑</title>
+      <link>https://chenxiaopang.github.io/2015/02/21/linux%E4%B8%8B%E7%9A%84%E8%A7%86%E9%A2%91%E5%AD%97%E5%B9%95%E7%BC%96%E8%BE%91/</link>
+      <pubDate>Sat, 21 Feb 2015 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/02/21/linux%E4%B8%8B%E7%9A%84%E8%A7%86%E9%A2%91%E5%AD%97%E5%B9%95%E7%BC%96%E8%BE%91/</guid>
+      <description>一、Linux下的字幕编辑软件 常用的有subtitleeditor, gnome-subtitles, gaupol gnome-subtitles：不支持多字幕文件批量处理 gaupol</description>
+    </item>
+    
+    <item>
+      <title>在firefox的flashgot中配置各种下载器</title>
+      <link>https://chenxiaopang.github.io/2015/02/07/%E5%9C%A8firefox%E7%9A%84flashgot%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%90%84%E7%A7%8D%E4%B8%8B%E8%BD%BD%E5%99%A8/</link>
+      <pubDate>Sat, 07 Feb 2015 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/02/07/%E5%9C%A8firefox%E7%9A%84flashgot%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%90%84%E7%A7%8D%E4%B8%8B%E8%BD%BD%E5%99%A8/</guid>
+      <description>一、在firefox中安装flashgot扩展 flashgot是firefox的一个扩展，在联网的情况下，可以在firefox中的附加组件中</description>
+    </item>
+    
+    <item>
+      <title>XWindow启动流程</title>
+      <link>https://chenxiaopang.github.io/2014/10/31/x-windows%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Fri, 31 Oct 2014 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/10/31/x-windows%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</guid>
+      <description>一、X Window系统架构 二、基本概念 1、X Client：X客户端，运行在远端主机上 X Client最重要的工作就是处理来自 X Server 的动作，将该动</description>
+    </item>
+    
+    <item>
+      <title>在Windows上运行Linux程序</title>
+      <link>https://chenxiaopang.github.io/2014/10/29/%E5%9C%A8windows%E4%B8%8A%E8%BF%90%E8%A1%8Clinux%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Wed, 29 Oct 2014 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/10/29/%E5%9C%A8windows%E4%B8%8A%E8%BF%90%E8%A1%8Clinux%E7%A8%8B%E5%BA%8F/</guid>
+      <description>对于Windows用户来说，有时也需要运行Linux程序，一般通过下面的步骤来实现： 1、Windows主机：安装X Server 在Windows主机上安</description>
+    </item>
+    
+    <item>
+      <title>ssh无密码登录远程主机</title>
+      <link>https://chenxiaopang.github.io/2014/10/28/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/</link>
+      <pubDate>Tue, 28 Oct 2014 23:16:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/10/28/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/</guid>
+      <description>方法：在客户端生成公/私钥对，将私钥文件保存在客户端，再将公钥文件上传到服务器端（远程主机） 1、在客户端生成公/私钥对 1 2 3 4 cb@cb251$ ssh-keygen ... cb@cb251$ ls .ssh/ id_rsa</description>
+    </item>
+    
+    <item>
+      <title>KVM之Live Migration</title>
+      <link>https://chenxiaopang.github.io/2014/10/28/kvm%E4%B9%8Blive-migration/</link>
+      <pubDate>Tue, 28 Oct 2014 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/10/28/kvm%E4%B9%8Blive-migration/</guid>
+      <description>1、安装KVM必要的软件包 $ sudo apt-get install qemu-kvm bridge-utilus 2、制作虚拟机映像ubuntu-12.04.qcow2 $ qemu-img create -f qcow2 ubuntu-12.04.qcow2 10G 3、安装ubuntu-12.04 LTS</description>
+    </item>
+    
+    <item>
+      <title>用Emacs收发邮件</title>
+      <link>https://chenxiaopang.github.io/2014/10/23/%E7%94%A8emacs%E6%94%B6%E5%8F%91%E9%82%AE%E4%BB%B6/</link>
+      <pubDate>Thu, 23 Oct 2014 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/10/23/%E7%94%A8emacs%E6%94%B6%E5%8F%91%E9%82%AE%E4%BB%B6/</guid>
+      <description>使用Emacs来收发邮件，将尽可能多的工作放到Emacs中来完成，这样可以提高工作效率。 1、安装必要的LISP插件和程序 1 2 3 4 5 $sudo apt-get install stunnel4 $sudo</description>
+    </item>
+    
+    <item>
+      <title>Emacs常用用法</title>
+      <link>https://chenxiaopang.github.io/2012/02/10/emacs%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Fri, 10 Feb 2012 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2012/02/10/emacs%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</guid>
+      <description>一、Emacs常用热键和命令 序号 快捷键 命令 功能 备注 1 M-x 进入输入命令状态,万能状态 2 C-x C-c save-buffers-kill-emacs 退出Emacs 3 C-k kill-line 删除从光标到行尾 4 C-u 0 C-k 删除从光</description>
+    </item>
+    
+  </channel>
+</rss>

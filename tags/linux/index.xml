@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/linux/</link>
+    <description>Recent content in Linux on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 21 Apr 2021 16:01:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>markdown-mode for Emacs</title>
+      <link>https://chenxiaopang.github.io/2021/04/21/markdown-mode-for-emacs/</link>
+      <pubDate>Wed, 21 Apr 2021 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2021/04/21/markdown-mode-for-emacs/</guid>
+      <description>一、安装 1、从MELPA Stable仓库中安装 (1) 配置.emacs 1 2 3 4 (require &amp;#39;package) (add-to-list &amp;#39;package-archives &amp;#39;(&amp;#34;melpa-stable&amp;#34; . &amp;#34;https://stable.melpa.org/packages/&amp;#34;)) (package-initialize) (2) 安装markdown-mode包 M-x package-install RET markdown-mode RET 或者 M-x package-list-packages</description>
+    </item>
+    
+    <item>
+      <title>git常用用法</title>
+      <link>https://chenxiaopang.github.io/2019/05/02/git%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Thu, 02 May 2019 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2019/05/02/git%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</guid>
+      <description>一、基本概念 三个基本概念： 工作区(Working Directory)：就是你在电脑里能看到的存放代码或文档的目录。 版本库(Repositor</description>
+    </item>
+    
+    <item>
+      <title>Linux下的录屏软件Kazam</title>
+      <link>https://chenxiaopang.github.io/2019/05/02/linux%E4%B8%8B%E7%9A%84%E5%BD%95%E5%B1%8F%E8%BD%AF%E4%BB%B6kazam/</link>
+      <pubDate>Thu, 02 May 2019 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2019/05/02/linux%E4%B8%8B%E7%9A%84%E5%BD%95%E5%B1%8F%E8%BD%AF%E4%BB%B6kazam/</guid>
+      <description>发现Ubuntu下一个很好用的录屏软件kazam，Ubuntu官方源中就有。 一、安装 $ sudo apt-get install kazam 二、使用 使用很简单，除了截图，还可以录制屏幕视</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu下利用cue文件对ape和wav镜像文件自动分轨</title>
+      <link>https://chenxiaopang.github.io/2015/06/07/ubuntu%E4%B8%8B%E5%88%A9%E7%94%A8cue%E6%96%87%E4%BB%B6%E5%AF%B9ape%E5%92%8Cwav%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E5%88%86%E8%BD%A8/</link>
+      <pubDate>Sun, 07 Jun 2015 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/06/07/ubuntu%E4%B8%8B%E5%88%A9%E7%94%A8cue%E6%96%87%E4%BB%B6%E5%AF%B9ape%E5%92%8Cwav%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E5%88%86%E8%BD%A8/</guid>
+      <description>很多音乐CD的镜像文件都带cue格式的分轨文件，在Ubuntu下可以通过一些工具来实现自动分轨。 一、安装工具 Ubuntu下需要安装的工具有f</description>
+    </item>
+    
+    <item>
+      <title>Linux下的视频字幕编辑</title>
+      <link>https://chenxiaopang.github.io/2015/02/21/linux%E4%B8%8B%E7%9A%84%E8%A7%86%E9%A2%91%E5%AD%97%E5%B9%95%E7%BC%96%E8%BE%91/</link>
+      <pubDate>Sat, 21 Feb 2015 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/02/21/linux%E4%B8%8B%E7%9A%84%E8%A7%86%E9%A2%91%E5%AD%97%E5%B9%95%E7%BC%96%E8%BE%91/</guid>
+      <description>一、Linux下的字幕编辑软件 常用的有subtitleeditor, gnome-subtitles, gaupol gnome-subtitles：不支持多字幕文件批量处理 gaupol</description>
+    </item>
+    
+    <item>
+      <title>在firefox的flashgot中配置各种下载器</title>
+      <link>https://chenxiaopang.github.io/2015/02/07/%E5%9C%A8firefox%E7%9A%84flashgot%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%90%84%E7%A7%8D%E4%B8%8B%E8%BD%BD%E5%99%A8/</link>
+      <pubDate>Sat, 07 Feb 2015 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/02/07/%E5%9C%A8firefox%E7%9A%84flashgot%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%90%84%E7%A7%8D%E4%B8%8B%E8%BD%BD%E5%99%A8/</guid>
+      <description>一、在firefox中安装flashgot扩展 flashgot是firefox的一个扩展，在联网的情况下，可以在firefox中的附加组件中</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu发行版升级</title>
+      <link>https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%8F%91%E8%A1%8C%E7%89%88%E5%8D%87%E7%BA%A7/</link>
+      <pubDate>Sat, 07 Feb 2015 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%8F%91%E8%A1%8C%E7%89%88%E5%8D%87%E7%BA%A7/</guid>
+      <description>从UK 13.10升级到UK 14.10 方法一 1 2 $ sudo apt-get update $ sudo update-manager -c -d 选择upgrade 方法二 首先将源/etc/apt/sources.list修改为指向</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu常用软件包管理命令</title>
+      <link>https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 07 Feb 2015 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</guid>
+      <description>1、查看软件包安装内容 1 2 3 4 # dpkg -L [packagename] //查看安装binutils包会安装哪些文件 # dpkg -L binutils 2、列出指定包的安装状态信息 # dpkg -l [packagename] 3、查找文件所</description>
+    </item>
+    
+    <item>
+      <title>解决Ubuntu开机动画不正常问题</title>
+      <link>https://chenxiaopang.github.io/2014/11/10/%E8%A7%A3%E5%86%B3ubuntu%E5%BC%80%E6%9C%BA%E5%8A%A8%E7%94%BB%E4%B8%8D%E6%AD%A3%E5%B8%B8%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 10 Nov 2014 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/11/10/%E8%A7%A3%E5%86%B3ubuntu%E5%BC%80%E6%9C%BA%E5%8A%A8%E7%94%BB%E4%B8%8D%E6%AD%A3%E5%B8%B8%E9%97%AE%E9%A2%98/</guid>
+      <description>联想的笔记本，显卡NVIDIA GT218M，默认使用开源的驱动，但挂起后，再唤醒就黑屏回不到桌面。经过摸索，解决办法为安装NVIDIA专有驱</description>
+    </item>
+    
+    <item>
+      <title>XWindow启动流程</title>
+      <link>https://chenxiaopang.github.io/2014/10/31/x-windows%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Fri, 31 Oct 2014 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/10/31/x-windows%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</guid>
+      <description>一、X Window系统架构 二、基本概念 1、X Client：X客户端，运行在远端主机上 X Client最重要的工作就是处理来自 X Server 的动作，将该动</description>
+    </item>
+    
+    <item>
+      <title>在Windows上运行Linux程序</title>
+      <link>https://chenxiaopang.github.io/2014/10/29/%E5%9C%A8windows%E4%B8%8A%E8%BF%90%E8%A1%8Clinux%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Wed, 29 Oct 2014 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/10/29/%E5%9C%A8windows%E4%B8%8A%E8%BF%90%E8%A1%8Clinux%E7%A8%8B%E5%BA%8F/</guid>
+      <description>对于Windows用户来说，有时也需要运行Linux程序，一般通过下面的步骤来实现： 1、Windows主机：安装X Server 在Windows主机上安</description>
+    </item>
+    
+    <item>
+      <title>ssh无密码登录远程主机</title>
+      <link>https://chenxiaopang.github.io/2014/10/28/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/</link>
+      <pubDate>Tue, 28 Oct 2014 23:16:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/10/28/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/</guid>
+      <description>方法：在客户端生成公/私钥对，将私钥文件保存在客户端，再将公钥文件上传到服务器端（远程主机） 1、在客户端生成公/私钥对 1 2 3 4 cb@cb251$ ssh-keygen ... cb@cb251$ ls .ssh/ id_rsa</description>
+    </item>
+    
+    <item>
+      <title>KVM之Live Migration</title>
+      <link>https://chenxiaopang.github.io/2014/10/28/kvm%E4%B9%8Blive-migration/</link>
+      <pubDate>Tue, 28 Oct 2014 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/10/28/kvm%E4%B9%8Blive-migration/</guid>
+      <description>1、安装KVM必要的软件包 $ sudo apt-get install qemu-kvm bridge-utilus 2、制作虚拟机映像ubuntu-12.04.qcow2 $ qemu-img create -f qcow2 ubuntu-12.04.qcow2 10G 3、安装ubuntu-12.04 LTS</description>
+    </item>
+    
+    <item>
+      <title>用Emacs收发邮件</title>
+      <link>https://chenxiaopang.github.io/2014/10/23/%E7%94%A8emacs%E6%94%B6%E5%8F%91%E9%82%AE%E4%BB%B6/</link>
+      <pubDate>Thu, 23 Oct 2014 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/10/23/%E7%94%A8emacs%E6%94%B6%E5%8F%91%E9%82%AE%E4%BB%B6/</guid>
+      <description>使用Emacs来收发邮件，将尽可能多的工作放到Emacs中来完成，这样可以提高工作效率。 1、安装必要的LISP插件和程序 1 2 3 4 5 $sudo apt-get install stunnel4 $sudo</description>
+    </item>
+    
+    <item>
+      <title>Emacs常用用法</title>
+      <link>https://chenxiaopang.github.io/2012/02/10/emacs%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Fri, 10 Feb 2012 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2012/02/10/emacs%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</guid>
+      <description>一、Emacs常用热键和命令 序号 快捷键 命令 功能 备注 1 M-x 进入输入命令状态,万能状态 2 C-x C-c save-buffers-kill-emacs 退出Emacs 3 C-k kill-line 删除从光标到行尾 4 C-u 0 C-k 删除从光</description>
+    </item>
+    
+  </channel>
+</rss>

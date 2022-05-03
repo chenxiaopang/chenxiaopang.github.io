@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Emacs常用用法 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="一、Emacs常用热键和命令 序号 快捷键 命令 功能 备注 1 M-x 进入输入命令状态,万能状态 2 C-x C-c save-buffers-kill-emacs 退出Emacs 3 C-k kill-line 删除从光标到行尾 4 C-u 0 C-k 删除从光" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2012/02/10/emacs%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Emacs常用用法" />
+<meta property="og:description" content="一、Emacs常用热键和命令 序号 快捷键 命令 功能 备注 1 M-x 进入输入命令状态,万能状态 2 C-x C-c save-buffers-kill-emacs 退出Emacs 3 C-k kill-line 删除从光标到行尾 4 C-u 0 C-k 删除从光" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2012/02/10/emacs%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2012-02-10T23:06:18&#43;08:00" />
+<meta property="article:modified_time" content="2012-02-10T23:06:18&#43;08:00" />
+
+<meta itemprop="name" content="Emacs常用用法">
+<meta itemprop="description" content="一、Emacs常用热键和命令 序号 快捷键 命令 功能 备注 1 M-x 进入输入命令状态,万能状态 2 C-x C-c save-buffers-kill-emacs 退出Emacs 3 C-k kill-line 删除从光标到行尾 4 C-u 0 C-k 删除从光"><meta itemprop="datePublished" content="2012-02-10T23:06:18&#43;08:00" />
+<meta itemprop="dateModified" content="2012-02-10T23:06:18&#43;08:00" />
+<meta itemprop="wordCount" content="2530">
+<meta itemprop="keywords" content="Linux,emacs," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Emacs常用用法"/>
+<meta name="twitter:description" content="一、Emacs常用热键和命令 序号 快捷键 命令 功能 备注 1 M-x 进入输入命令状态,万能状态 2 C-x C-c save-buffers-kill-emacs 退出Emacs 3 C-k kill-line 删除从光标到行尾 4 C-u 0 C-k 删除从光"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Emacs常用用法</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2012-02-10 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/applications/"> Applications </a>
+            <a href="/categories/emacs/"> Emacs </a>
+            </div>
+          <span class="more-meta"> 约 2530 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一emacs常用热键和命令">一、Emacs常用热键和命令</a></li>
+        <li><a href="#二todo-mode">二、todo-mode</a></li>
+        <li><a href="#三calendar">三、Calendar</a></li>
+        <li><a href="#四bookmark">四、Bookmark</a></li>
+        <li><a href="#五outline">五、outline</a></li>
+        <li><a href="#六appointment">六、Appointment</a></li>
+        <li><a href="#七hex-mode16进制模式">七、hex-mode:16进制模式</a></li>
+        <li><a href="#八替换">八、替换</a></li>
+        <li><a href="#九计算器">九、计算器</a></li>
+        <li><a href="#十文件管理">十、文件管理</a>
+          <ul>
+            <li><a href="#1文件的定位">1、文件的定位</a></li>
+            <li><a href="#2文件的查看">2、文件的查看</a></li>
+            <li><a href="#3文件的标记">3、文件的标记</a></li>
+          </ul>
+        </li>
+        <li><a href="#十一提升权限编辑其它用户文件">十一、提升权限编辑其它用户文件</a></li>
+        <li><a href="#十二自定义功能">十二、自定义功能</a>
+          <ul>
+            <li><a href="#1设置shell模式下的调用历史命令快捷键为上下方向键">1、设置shell模式下的调用历史命令快捷键为上/下方向键</a></li>
+            <li><a href="#2定义插入当前时间函数和调用快捷键">2.定义插入当前时间函数和调用快捷键</a></li>
+            <li><a href="#3-启动emacs时窗口最大化">3. 启动emacs时窗口最大化</a></li>
+            <li><a href="#4-加载自定义配置">4. 加载自定义配置</a></li>
+          </ul>
+        </li>
+        <li><a href="#十三安装c语言源码阅读扩展xcscope">十三、安装C语言源码阅读扩展xcscope</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="一emacs常用热键和命令">一、Emacs常用热键和命令</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">M-x</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">进入输入命令状态,万能状态</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">C-x C-c</td>
+<td style="text-align:left">save-buffers-kill-emacs</td>
+<td style="text-align:left">退出Emacs</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">C-k</td>
+<td style="text-align:left">kill-line</td>
+<td style="text-align:left">删除从光标到行尾</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">C-u 0 C-k</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">删除从光标到行首</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">C-_</td>
+<td style="text-align:left">undo</td>
+<td style="text-align:left">回退</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">M-&lt;</td>
+<td style="text-align:left">beginning-of-buffer</td>
+<td style="text-align:left">定位到buffer的开头</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">M-&gt;</td>
+<td style="text-align:left">end-of-buffer</td>
+<td style="text-align:left">定位到buffer的末尾</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left">M-=</td>
+<td style="text-align:left">count-lines-region</td>
+<td style="text-align:left">统计选中的行数和字数</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">C-M-\</td>
+<td style="text-align:left">indent-region</td>
+<td style="text-align:left">自动缩进选定的区域</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:left">M-g g</td>
+<td style="text-align:left">goto-line</td>
+<td style="text-align:left">跳转到指定的行</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">11</td>
+<td style="text-align:left">C-x i</td>
+<td style="text-align:left">insert-file</td>
+<td style="text-align:left">在当前缓冲区中插入文件</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">12</td>
+<td style="text-align:left">C-x 2</td>
+<td style="text-align:left">split-window-vertically</td>
+<td style="text-align:left">垂直方向上将窗口一分为二。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">13</td>
+<td style="text-align:left">C-x 3</td>
+<td style="text-align:left">split-window-horizontally</td>
+<td style="text-align:left">水平方向上将窗口一份为二。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">14</td>
+<td style="text-align:left">M-S-up/down</td>
+<td style="text-align:left">enalarge-window/shrink-window</td>
+<td style="text-align:left">纵向调整buffer窗口大小</td>
+<td style="text-align:left">.emacs自定义</td>
+</tr>
+<tr>
+<td style="text-align:left">15</td>
+<td style="text-align:left">C-x-{/}</td>
+<td style="text-align:left">shrink-window-horizontally</td>
+<td style="text-align:left">横向调整buffer窗口大小</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">16</td>
+<td style="text-align:left">C-v</td>
+<td style="text-align:left">scroll-up-command</td>
+<td style="text-align:left">向后翻页</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">17</td>
+<td style="text-align:left">M-v</td>
+<td style="text-align:left">scroll-down-command</td>
+<td style="text-align:left">向前翻页</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">18</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">eval-buffer</td>
+<td style="text-align:left">修改了.emacs，不退出使其生效</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">19</td>
+<td style="text-align:left">M-F5</td>
+<td style="text-align:left">revert-buffer</td>
+<td style="text-align:left">放弃对buffer中文件的修改，从磁盘重新读取文件</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">20</td>
+<td style="text-align:left">C-u C-@</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">不小心按错了键，跑到文件头或者文件尾了，快速回到刚才光标所在的位置</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">21</td>
+<td style="text-align:left">C-S Home</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">选中从当前光标到当前buffer开头的内容</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">22</td>
+<td style="text-align:left">C-S End</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">选中从当前光标到当前buffer结尾的内容</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">23</td>
+<td style="text-align:left">C-c ;</td>
+<td style="text-align:left">comment-line</td>
+<td style="text-align:left">注释和去掉注释</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">24</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">comment-region/uncomment-region</td>
+<td style="text-align:left">对选中的区域加注释/去注释</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">25</td>
+<td style="text-align:left">C-x d</td>
+<td style="text-align:left">dired</td>
+<td style="text-align:left">进入Dired文件管理模式</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">26</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">shell</td>
+<td style="text-align:left">打开一个shell</td>
+<td style="text-align:left">M-s</td>
+</tr>
+<tr>
+<td style="text-align:left">27</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">previous-buffer</td>
+<td style="text-align:left">上一个缓冲区</td>
+<td style="text-align:left">C-S-left</td>
+</tr>
+<tr>
+<td style="text-align:left">28</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">netx-buffer</td>
+<td style="text-align:left">下一个缓冲区</td>
+<td style="text-align:left">C-S-right</td>
+</tr>
+<tr>
+<td style="text-align:left">29</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">rename-buffer</td>
+<td style="text-align:left">给当前的buffer改名称</td>
+<td style="text-align:left">M-n</td>
+</tr>
+<tr>
+<td style="text-align:left">30</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">man-follow</td>
+<td style="text-align:left">以光标处的词为关键词打开man手册页</td>
+<td style="text-align:left">F10</td>
+</tr>
+<tr>
+<td style="text-align:left">31</td>
+<td style="text-align:left">C-c C-v</td>
+<td style="text-align:left">browse-url-of-buffer</td>
+<td style="text-align:left">在默认浏览器中预览当前buffer中的html文件，如果修改了文件，按C-c\C-s保存时会自动打开浏览器预览</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="二todo-mode">二、todo-mode</h2>
+<p>个人任务计划表，但具体什么时间做尚不能确定</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">快捷键</th>
+<th>命令</th>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">M-x</td>
+<td>todo-mode</td>
+<td style="text-align:left">进入todo模式</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">i</td>
+<td>todo-insert-item</td>
+<td style="text-align:left">插入新的todo-entry</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">d</td>
+<td>todo-delete-item</td>
+<td style="text-align:left">删除光标所在的todo-entry，同时移入done文件</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">e</td>
+<td>todo-edit-item</td>
+<td style="text-align:left">修改todo-entry</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">a</td>
+<td>todo-add-catetory</td>
+<td style="text-align:left">增加新的类别</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">j</td>
+<td>todo-jump-category</td>
+<td style="text-align:left">跳转并显示其它类别的todo-entry</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="三calendar">三、Calendar</h2>
+<p>和diary结合用，用于日程安排，时间明确。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">M-x</td>
+<td style="text-align:left">calendar</td>
+<td style="text-align:left">进入calendar模式，将显示一个calendar</td>
+<td style="text-align:left">F2</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">i d</td>
+<td style="text-align:left">insert-dirary-entry</td>
+<td style="text-align:left">在光标所指日期处插入日记条目</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">i w</td>
+<td style="text-align:left">insert-weekly-diary-entry</td>
+<td style="text-align:left">在光标所指日期处插入每周都会进行的日记条目</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">I m</td>
+<td style="text-align:left">insert-monthly-diary-entry</td>
+<td style="text-align:left">在光标所指日期处插入每月都会进行的日记条目</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">i a</td>
+<td style="text-align:left">insert-anniversary-diary-entry</td>
+<td style="text-align:left">在光标所指日期处插入每年都会进行的日记条目</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">d</td>
+<td style="text-align:left">diary-view-entries</td>
+<td style="text-align:left">显示光标所指日期的日记条目</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">.</td>
+<td style="text-align:left">calendar-goto-today</td>
+<td style="text-align:left">日历跳转到今天</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left">g d</td>
+<td style="text-align:left">calendar-goto-date</td>
+<td style="text-align:left">日历跳转到指定日期</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">calendar-goto-*</td>
+<td style="text-align:left">其它跳转命令</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="四bookmark">四、Bookmark</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">快捷键</th>
+<th>命令</th>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">M-x</td>
+<td>list-bookmark</td>
+<td style="text-align:left">列出所有的bookmark</td>
+<td style="text-align:left">F2</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">C-x r m</td>
+<td>bookmark-set</td>
+<td style="text-align:left">设置bookmark</td>
+<td style="text-align:left">M-F12</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">C-x r b</td>
+<td>bookmark-jump</td>
+<td style="text-align:left">转到指定的bookmark</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="五outline">五、outline</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">M-x</td>
+<td style="text-align:left">outline-mode</td>
+<td style="text-align:left">进入大纲模式，通过*的个数来标记和区分文章的层次结构</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">C-c C-c</td>
+<td style="text-align:left">hide-entry</td>
+<td style="text-align:left">隐藏光标所在的小节，不包括子小节</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">C-c C-e</td>
+<td style="text-align:left">show-entry</td>
+<td style="text-align:left">显示光标所在的小节，不包括子小节</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">C-c C-a</td>
+<td style="text-align:left">show-all</td>
+<td style="text-align:left">显示所有隐藏的小节</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">C-c C-d</td>
+<td style="text-align:left">hide-subtree</td>
+<td style="text-align:left">隐藏光标所在的小节，包括它的所有子小节</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">C-c C-s</td>
+<td style="text-align:left">show-subtree</td>
+<td style="text-align:left">显示光标所在的小节，包括它的所有子小节</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">C-c C-t</td>
+<td style="text-align:left">hide-body</td>
+<td style="text-align:left">隐藏所有小节的内容，只显示标题（以＊开头）</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left">C-c C-q</td>
+<td style="text-align:left">hide-sublevel</td>
+<td style="text-align:left">若光标处于小节内容，只显示顶级标题（以一个*开头）,其它全部隐藏；如光标处于小节标题，只显示不低于该小节级别的小节标题，其它全部隐藏</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">C-c Tab</td>
+<td style="text-align:left">show-children</td>
+<td style="text-align:left">展开小节下的子小节，但之显示子小节的标题</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="六appointment">六、Appointment</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">M-x</td>
+<td style="text-align:left">appt-add</td>
+<td style="text-align:left">添加约会提醒</td>
+<td style="text-align:left">M-F11</td>
+</tr>
+</tbody>
+</table>
+<h2 id="七hex-mode16进制模式">七、hex-mode:16进制模式</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">M-x</td>
+<td style="text-align:left">hexl-mode</td>
+<td style="text-align:left">将当前buffer中的内容以16进制的模式显示</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">M-x</td>
+<td style="text-align:left">hexl-*</td>
+<td style="text-align:left">其它命令</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="八替换">八、替换</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">快捷键</th>
+<th>命令</th>
+<th style="text-align:left">功能</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">M-%</td>
+<td>query-replace</td>
+<td style="text-align:left">交互式替换，空格键替换后继续，Backspace键不替换继续，回车键退出。</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"></td>
+<td>replace-string</td>
+<td style="text-align:left">非交互式替换,一次全搞定，不询问</td>
+<td>M-F10</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"></td>
+<td>replace-regexp</td>
+<td style="text-align:left">非交互式正则表达式替换</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="九计算器">九、计算器</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">快捷键</th>
+<th>命令</th>
+<th style="text-align:left">功能</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left"></td>
+<td>calculator</td>
+<td style="text-align:left">启动计算器</td>
+<td>F11</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">S-d</td>
+<td></td>
+<td style="text-align:left">十进制模式（默认）</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">S-h</td>
+<td></td>
+<td style="text-align:left">十六进制模式</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">S-o</td>
+<td></td>
+<td style="text-align:left">八进制模式</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">C-g</td>
+<td></td>
+<td style="text-align:left">退出计算器</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="十文件管理">十、文件管理</h2>
+<p>Emacs提供了一个文件管理的功能，使我们对文件及目录的使用更加方便。首先，<kbd>C-x d</kbd>进入Dired文件列表模式，相当与shell下面的<code>ls -al</code>。在这个模式下，可以直接使用RET或者C-x C-f打开文件。</p>
+<h3 id="1文件的定位">1、文件的定位</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">n</td>
+<td style="text-align:left">向下查看文件。</td>
+</tr>
+<tr>
+<td style="text-align:left">p</td>
+<td style="text-align:left">向上查看文件。</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">向下查看目录。</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;</td>
+<td style="text-align:left">向上查看目录。</td>
+</tr>
+<tr>
+<td style="text-align:left">^</td>
+<td style="text-align:left">返回上一级。</td>
+</tr>
+<tr>
+<td style="text-align:left">M-{</td>
+<td style="text-align:left">向下查看已标记。</td>
+</tr>
+<tr>
+<td style="text-align:left">M-}</td>
+<td style="text-align:left">向上查看已标记。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2文件的查看">2、文件的查看</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">g</td>
+<td style="text-align:left">刷新</td>
+</tr>
+<tr>
+<td style="text-align:left">s</td>
+<td style="text-align:left">切换名称/日期排序方式</td>
+</tr>
+<tr>
+<td style="text-align:left">i</td>
+<td style="text-align:left">当前窗口插入一个子目录</td>
+</tr>
+<tr>
+<td style="text-align:left">v</td>
+<td style="text-align:left">查看当前文件（当前窗口）</td>
+</tr>
+<tr>
+<td style="text-align:left">o</td>
+<td style="text-align:left">在另外一个窗口查看文件</td>
+</tr>
+<tr>
+<td style="text-align:left">y</td>
+<td style="text-align:left">查看当前文件类型</td>
+</tr>
+<tr>
+<td style="text-align:left">=</td>
+<td style="text-align:left">比较文件，相当与shell下diff</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3文件的标记">3、文件的标记</h3>
+<h4 id="普通标记">普通标记</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">m</td>
+<td style="text-align:left">标记(mark)</td>
+</tr>
+<tr>
+<td style="text-align:left">u</td>
+<td style="text-align:left">取消标记</td>
+</tr>
+<tr>
+<td style="text-align:left">U</td>
+<td style="text-align:left">取消所有标记</td>
+</tr>
+<tr>
+<td style="text-align:left">*-/</td>
+<td style="text-align:left">标记所有文件夹</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>-</em></td>
+<td style="text-align:left">标记所有可执行文件</td>
+</tr>
+<tr>
+<td style="text-align:left">*-@</td>
+<td style="text-align:left">标记所有符号链接</td>
+</tr>
+<tr>
+<td style="text-align:left">*-c</td>
+<td style="text-align:left">改变标记的符号</td>
+</tr>
+<tr>
+<td style="text-align:left">%-m</td>
+<td style="text-align:left">根据正则表达式改变标记文件</td>
+</tr>
+<tr>
+<td style="text-align:left">%-g</td>
+<td style="text-align:left">根据正则表达式改变标记文件的内容</td>
+</tr>
+</tbody>
+</table>
+<h4 id="删除标记">删除标记</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">d:</td>
+<td style="text-align:left">标记为删除</td>
+</tr>
+<tr>
+<td style="text-align:left">~:</td>
+<td style="text-align:left">将所有备份文件标记为删除</td>
+</tr>
+<tr>
+<td style="text-align:left">#:</td>
+<td style="text-align:left">将存盘文件标记为删除</td>
+</tr>
+<tr>
+<td style="text-align:left">&amp;-d:</td>
+<td style="text-align:left">根据正则表达式标记删除</td>
+</tr>
+<tr>
+<td style="text-align:left">x:</td>
+<td style="text-align:left">执行删除</td>
+</tr>
+</tbody>
+</table>
+<h4 id="新建操作">新建操作</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">C-x C-f:</td>
+<td style="text-align:left">新建文件</td>
+</tr>
+<tr>
+<td style="text-align:left">+:</td>
+<td style="text-align:left">新建目录</td>
+</tr>
+<tr>
+<td style="text-align:left">C-x C-q:</td>
+<td style="text-align:left">将文件列表设置为只读</td>
+</tr>
+</tbody>
+</table>
+<h4 id="结合标记使用的操作">结合标记使用的操作</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">D:</td>
+<td style="text-align:left">删除文件</td>
+</tr>
+<tr>
+<td style="text-align:left">C:</td>
+<td style="text-align:left">copy</td>
+</tr>
+<tr>
+<td style="text-align:left">R:</td>
+<td style="text-align:left">重命名或移动</td>
+</tr>
+<tr>
+<td style="text-align:left">O:</td>
+<td style="text-align:left">改变用户</td>
+</tr>
+<tr>
+<td style="text-align:left">G:</td>
+<td style="text-align:left">改变群组</td>
+</tr>
+<tr>
+<td style="text-align:left">M:</td>
+<td style="text-align:left">改变权限</td>
+</tr>
+<tr>
+<td style="text-align:left">S:</td>
+<td style="text-align:left">符号链接</td>
+</tr>
+<tr>
+<td style="text-align:left">H:</td>
+<td style="text-align:left">硬链接</td>
+</tr>
+<tr>
+<td style="text-align:left">Z:</td>
+<td style="text-align:left">压缩</td>
+</tr>
+<tr>
+<td style="text-align:left">W:</td>
+<td style="text-align:left">复制文件名</td>
+</tr>
+<tr>
+<td style="text-align:left">K:</td>
+<td style="text-align:left">删除行，刷新后可恢复</td>
+</tr>
+</tbody>
+</table>
+<h4 id="常用操作和标记">常用操作和标记</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">C-x C-f</td>
+<td style="text-align:left">创建文件</td>
+</tr>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">创建目录</td>
+</tr>
+<tr>
+<td style="text-align:left">m</td>
+<td style="text-align:left">标记</td>
+</tr>
+<tr>
+<td style="text-align:left">x</td>
+<td style="text-align:left">删除</td>
+</tr>
+<tr>
+<td style="text-align:left">g</td>
+<td style="text-align:left">刷新</td>
+</tr>
+<tr>
+<td style="text-align:left">o</td>
+<td style="text-align:left">打开</td>
+</tr>
+</tbody>
+</table>
+<h2 id="十一提升权限编辑其它用户文件">十一、提升权限编辑其它用户文件</h2>
+<p>下面的命令以<code>root</code>用户身份打开并编辑<code>/etc/apt/sources.list</code>文件</p>
+<p><code>C-x C-f /sudo:root@localhost:/etc/apt/sources.list</code></p>
+<h2 id="十二自定义功能">十二、自定义功能</h2>
+<h3 id="1设置shell模式下的调用历史命令快捷键为上下方向键">1、设置shell模式下的调用历史命令快捷键为上/下方向键</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">defun</span> <span class="nv">my-comint-mode-hook</span> <span class="p">()</span>
+  <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">define-key</span> <span class="nv">comint-mode-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;&lt;up&gt;&#34;</span><span class="p">)</span>
+	<span class="ss">&#39;comint-previous-input</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">define-key</span> <span class="nv">comint-mode-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;&lt;down&gt;&#34;</span><span class="p">)</span>
+	<span class="ss">&#39;comint-next-input</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;comint-mode-hook</span> <span class="ss">&#39;my-comint-mode-hook</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2定义插入当前时间函数和调用快捷键">2.定义插入当前时间函数和调用快捷键</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">defun</span> <span class="nv">insert-current-time</span><span class="p">()</span>
+  <span class="s">&#34;Insert the current time&#34;</span>
+  <span class="p">(</span><span class="nb">interactive</span> <span class="s">&#34;*&#34;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">insert</span><span class="p">(</span><span class="nf">current-time-string</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="s">&#34;\C-xt&#34;</span> <span class="ss">&#39;insert-current-time</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3-启动emacs时窗口最大化">3. 启动emacs时窗口最大化</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">defun</span> <span class="nv">my-maximized</span> <span class="p">()</span>
+  <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">x-send-client-message</span>
+   <span class="no">nil</span> <span class="mi">0</span> <span class="no">nil</span> <span class="s">&#34;_NET_WM_STATE&#34;</span> <span class="mi">32</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="mi">2</span> <span class="s">&#34;_NET_WM_STATE_MAXIMIZED_HORZ&#34;</span> <span class="mi">0</span><span class="p">))</span>
+  <span class="p">(</span><span class="nf">x-send-client-message</span>
+   <span class="no">nil</span> <span class="mi">0</span> <span class="no">nil</span> <span class="s">&#34;_NET_WM_STATE&#34;</span> <span class="mi">32</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="mi">2</span> <span class="s">&#34;_NET_WM_STATE_MAXIMIZED_VERT&#34;</span> <span class="mi">0</span><span class="p">))</span>
+  <span class="p">)</span>
+
+<span class="p">(</span><span class="nv">my-maximized</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="4-加载自定义配置">4. 加载自定义配置</h3>
+<p>以mew邮件配置为例，编辑自己的mew邮件配置，保存到.emacs文件中，或者为了方便管理各种配置，保存到单独的配置文件~/.emacs.d/mew/my_mew_config.el中，然后在主配置文件.emacs中通过下面的代码加载：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;~/.emacs.d/mew&#34;</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;my_mew_config</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>~/.emacs.d/mew/my_new_config.el文件开头部分：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="c1">;; mew收发邮件配置</span>
+
+<span class="p">(</span><span class="nb">provide</span> <span class="ss">&#39;my_mew_config</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">[(</span><span class="nv">M</span> <span class="nv">e</span><span class="p">)]</span> <span class="ss">&#39;mew</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">autoload</span> <span class="ss">&#39;mew</span> <span class="s">&#34;mew&#34;</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span>
+<span class="err">（</span><span class="nv">其它配置略</span><span class="err">）</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="十三安装c语言源码阅读扩展xcscope">十三、安装C语言源码阅读扩展xcscope</h2>
+<p>需要xcscope.el，在cscope包中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install cscope
+$ dpkg -L cscope<span class="p">|</span>grep xcscope.el
+/usr/share/emacs/site-lisp/xcscope.el
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2012-02-10
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/emacs/">emacs</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2014/10/23/%E7%94%A8emacs%E6%94%B6%E5%8F%91%E9%82%AE%E4%BB%B6/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">用Emacs收发邮件</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2012/01/29/%E7%94%A8hdparm%E8%8E%B7%E5%8F%96%E7%A1%AC%E7%9B%98%E5%8F%82%E6%95%B0/">
+            <span class="next-text nav-default">用hdparm获取硬盘参数</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

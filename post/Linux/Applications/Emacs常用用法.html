@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Emacs常用用法.html</title>
+
+</head>
+
+<body>
+
+<h2 id="一todo-mode">一、todo-mode</h2>
+<p>实际上是个人的任务计划表，但具体什么时间做尚不能确定 | 序号 | 快捷键 | 说明 | |:-----|:----------------------|:-------------------------------------------| | 1 | M-x todo-mode | 命令进入该模式 | | 2 | i(todo-insert-item) | 插入新的todo-entry | | 3 | d(todo-delete-item) | 删除光标所在的todo-entry，同时移入done文件 | | 4 | e(todo-edit-item) | 修改todo-entry | | 5 | a(todo-add-catetory) | 增加新的类别 | | 6 | j(todo-jump-category) | 跳转并显示其它类别的todo-entry |</p>
+<h2 id="二calendar">二、Calendar</h2>
+<p>实际上和diary结合用，用于日程安排，时间明确；写日记据说不是很方便 | 序号 | 快捷键 | 说明 | |:-----|:------------------------------------|:-------------------------------------------| | 1 | M-x calendar | 进入calendar模式，将显示一个calendar | | 2 | i-d(insert-dirary-entry) | 在光标所指日期处插入日记条目 | | 3 | i-w(insert-weekly-diary-entry) | 在光标所指日期处插入每周都会进行的日记条目 | | 4 | I-m（insert-monthly-diary-entry） | 在光标所指日期处插入每月都会进行的日记条目 | | 5 | i-a(insert-anniversary-diary-entry) | 在光标所指日期处插入每年都会进行的日记条目 | | 6 | d(diary-view-entries) | 显示光标所指日期的日记条目 | | 7 | .(calendar-goto-today) | 日历跳转到今天 | | 8 | g-d（calendar-goto-date） | 日历跳转到指定日期 | | 9 | calendar-goto-* | 还有很多命令 |</p>
+<p>3、Bookmark a) M-x list-bookmark: 列出所有的bookmark b) C-x r m(bookmark-set):设置bookmark c) C-x r b(bookmark-jump): 转到指定的bookmark</p>
+<p>4、outline a) M-x outline-mode:进入大纲模式，通过＊的个数来标记和区分文章的层次结构 b) C-c C-c(hide-entry): 隐藏光标所在的小节，不包括子小节 c) C-c C-e(show-entry): 显示光标所在的小节，不包括子小节 d) C-c C-a(show-all):显示所有隐藏的小节 e) C-c C-d(hide-subtree): 隐藏光标所在的小节，包括它的所有子小节 f) C-c C-s(show-subtree): 显示光标所在的小节，包括它的所有子小节 g) C-c C-t(hide-body):隐藏所有小节的内容，只显示标题（以＊开头） h) C-c C-q(hide-sublevel):若光标处于小节内容，只显示顶级标题（以一个＊开头），其它全部隐藏；如光标处于小节标题，只显示不低于该小节级别的小节标题，其它全部隐藏 i) C-c Tab(show-children):展开小节下的子小节，但之显示子小节的标题</p>
+<p>5、Appointment a) M-x appt-add: 添加约会提醒</p>
+<p>6、hex-mode:16进制模式 a) M-x hexl-mode:将当前buffer中的内容以16进制的模式显示 b) M-x hexl-*: 其它命令</p>
+<p>7、Emacs常用热键： a) M-x: 进入输入命令状态,万能状态 b) C-x C-c: 退出Emacs c) 删除 i. C-k: 删除从光标到行尾 ii. Ctrl-u 0 Ctrl-k或M- C-k：删除从光标到行首 d) C-_(undo): 回退 e) M-&lt;(beginning-of-buffer): 定位到buffer的开头 f) M-&gt;(end-of-buffer): 定位到buffer的末尾 g) M-=(count-lines-region): 统计选中的行数和字数 h) C-M-(indent-region): 自动缩进选定的区域 i) M-G G(goto-line)：跳转到指定的行 j) C-x i：在当前缓冲区中插入文件 k) C-x 2(split-window-vertically): 垂直方向上将窗口一分为二。 l) C-x 3(split-window-horizontally):水平方向上将窗口一份为二。 m)M-S-up/down(shrink-window): 调整buffer窗口大小 n) C-v, M-v: 向后翻页，向前翻页</p>
+<p>8、修改了.emacs，不退出使其生效 a) M-x eval-buffer</p>
+<p>9、放弃对buffer中文件的修改，从磁盘重新读取文件 a) M-x revert-buffer</p>
+<p>10、果我不小心按错了键，跑到文件头或者文件尾了，快速回到刚才光标所在的位置: a) C-u C-@</p>
+<p>11、替换 a) 交互式替换：M-%(query-replace):空格键替换后继续，Backspace键不替换继续，回车键退出。 b) 非交互式替换：M-x:replace-string:一次全搞定，不询问 c) 非交互式正则表达式替换：M-x:replace-regexp</p>
+<p>12、安装C语言程序源码阅读扩展xcscope 需要xcscope.el，在cscope包中 #sudo apt-get install cscope #dpkg -L cscope|grep xcscope.el /usr/share/emacs/site-lisp/xcscope.el</p>
+<p>13、提升权限编辑其它用户文件 C-x C-f /sudo:root@localhost:/path/filename 例如： C-x C-f /sudo:root@localhost:/etc/apt/sources.list</p>
+<p>14、计算器 a) M-x calculator启动计算机，C-g退出 b) S-d: 十进制模式（默认），S-h：十六进制模式，S-o：八进制模式</p>
+<p>15、运行多个shell a) M-x rename-buffer: 给当前shell的buffer改个名字 b) M-x shell： 再运行shell命令打开一个新的shell</p>
+<p>16、设置shell模式下的命令上翻/下翻键 a) M-x global-set-key 按“上” comint-previous-input 向上一个命令 b) M-x global-set-key 按 “下” comint-next-input 向下一个命令 存在的问题：上下键在其它buffer无法用了，如何只在shell模式下用呢？ 采用下面的方法</p>
+<p>(defun my-comint-mode-hook () (interactive) (define-key comint-mode-map (kbd &quot;<up>&quot;) 'comint-previous-input) (define-key comint-mode-map (kbd &quot;<down>&quot;) 'comint-next-input) ) (add-hook 'comint-mode-hook 'my-comint-mode-hook)</p>
+<p>完美解决！</p>
+<p>17、浏览html网页 C-c C-v: 将当前buffer中的html文件在默认浏览器中进行显示，如果，修改了html文件，按C-c C-s保存时会自动打开浏览器预览</p>
+<p>18、全选 C-S End：首先把光标放在最开头，然后按C-S End全选当前buffer中的内容，类似有些文本处理软件中的Ctrl-A。</p>
+<p>19、注释 (global-set-key &quot;-c;&quot; 'comment-line) 默认的C-c C-;不知为什么不能用，重新定义了另外一个快捷键可以使。</p>
+<p>20、文件管理 Emacs提供了一个文件管理的功能，使我们对文件及目录的使用更加方便，下面我就简单介绍一个这个功能。 首先，进入Dired列表模式 C-x d 这样可以进入当前目录的文件列表，相当与shell下面的ls -al 在这个模式下，可以直接使用RET或者C-x C-f打开文件。</p>
+<p>文件的定位 n: 向下查看文件。 p: 向上查看文件。 &gt;: 向下查看目录。 &lt;: 向上查看目录。 ^: 返回上一级。 M-{: 向下查看已标记。 M-}: 向上查看已标记。</p>
+<p>文件的查看</p>
+<p>g: 刷新 s: 切换名称/日期排序方式 i: 当前窗口插入一个子目录 v: 查看当前文件（当前窗口） o: 在另外一个窗口查看文件 y: 查看当前文件类型 =: 比较文件，相当与shell下diff</p>
+<p>文件的标记</p>
+<p>普通标记： m: 标记(mark). u: 取消标记 U: 取消所有标记 * /: 标记所有文件夹 * <em>: 标记所有可执行文件 </em> @: 标记所有符号链接 * c: 改变标记的符号 % m: 根据正则表达式改变标记文件 % g: 根据正则表达式改变标记文件的内容</p>
+<p>删除标记： d: 标记为删除 ~: 将所有备份文件标记为删除 #: 将存盘文件标记为删除 &amp; d: 根据正则表达式标记删除 X: 执行删除 其他操作</p>
+<p>C-x C-f: 新建文件 +: 新建目录 C-x C-q: 将文件列表设置为只读(only read)</p>
+<p>结合标记使用的操作： D: 删除文件 C: copy R: 重命名或移动 O: 改变用户 G: 改变群组 M: 改变权限 S: 符号链接 H: 硬链接 Z: 压缩 W: 复制文件名 K: 删除行，刷新后可恢复 总结一下，最常用的还是C-x C-f创建文件，+创建目录，m标记，X删除，g刷新,o打开。</p>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据库 on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <description>Recent content in 数据库 on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 20 Jun 2015 15:50:08 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mysql主键约束和唯一性约束</title>
+      <link>https://chenxiaopang.github.io/2015/06/20/mysql%E4%B8%BB%E9%94%AE%E7%BA%A6%E6%9D%9F%E5%92%8C%E5%94%AF%E4%B8%80%E6%80%A7%E7%BA%A6%E6%9D%9F/</link>
+      <pubDate>Sat, 20 Jun 2015 15:50:08 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/06/20/mysql%E4%B8%BB%E9%94%AE%E7%BA%A6%E6%9D%9F%E5%92%8C%E5%94%AF%E4%B8%80%E6%80%A7%E7%BA%A6%E6%9D%9F/</guid>
+      <description>一、主键约束和唯一性约束的区别 主键约束和唯一性约束都是索引，它们的区别是： 主键字段可以确保唯一性，但主键字段不能为NULL 唯一性约束可以确保</description>
+    </item>
+    
+    <item>
+      <title>允许mysql用户远程登录</title>
+      <link>https://chenxiaopang.github.io/2015/01/31/%E5%85%81%E8%AE%B8mysql%E7%94%A8%E6%88%B7%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
+      <pubDate>Sat, 31 Jan 2015 16:50:08 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/01/31/%E5%85%81%E8%AE%B8mysql%E7%94%A8%E6%88%B7%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
+      <description>一、修改/etc/mysql/my.cnf 将bind的行注释掉 #bind=127.0.0.1 二、修改root用户权限 1 2 3 4 mysql&amp;gt;usemysql;mysql&amp;gt;updateuser&amp;gt;sethost=&amp;#39;%&amp;#39;&amp;gt;whereUser=&amp;#39;root&amp;#39;andhost=&amp;#39;localhost&amp;#39;; 三、重启mysql服务 $ sudo service mysql restart</description>
+    </item>
+    
+    <item>
+      <title>mysql关闭和启用外键约束</title>
+      <link>https://chenxiaopang.github.io/2015/01/31/mysql%E5%85%B3%E9%97%AD%E5%92%8C%E5%90%AF%E7%94%A8%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F/</link>
+      <pubDate>Sat, 31 Jan 2015 15:50:08 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/01/31/mysql%E5%85%B3%E9%97%AD%E5%92%8C%E5%90%AF%E7%94%A8%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F/</guid>
+      <description>有时为了导入数据方便，需要临时关闭外键约束，导入数据完成后再启用外键约束。 一、关闭外键约束 mysql&amp;gt;SET FOREIGN_KEY_CHECKS=0; 二、启用外键约束 mysql&amp;gt;SET FOREIGN_KEY_CHECKS=1; 三、查看FOREIGN_K</description>
+    </item>
+    
+    <item>
+      <title>mysql基本操作</title>
+      <link>https://chenxiaopang.github.io/2014/11/07/mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Fri, 07 Nov 2014 15:50:08 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/11/07/mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
+      <description>一、安装mysql服务器和客户端 $ sudo apt-get install mysql-server mysql-client 二、启动mysql服务 $ sudo /etc/init.d/mysql start 三、连接mysql服务器 1、root超级用户登录 # mysql -u root -p 2、普通</description>
+    </item>
+    
+    <item>
+      <title>mysql基本操作</title>
+      <link>https://chenxiaopang.github.io/2014/11/07/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Fri, 07 Nov 2014 15:50:08 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/11/07/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/</guid>
+      <description>一、安装mysql服务器和客户端 $ sudo apt-get install mysql-server mysql-client 二、启动mysql服务 $ sudo /etc/init.d/mysql start 三、连接mysql服务器 1、root超级用户登录 # mysql -u root -p 2、普通</description>
+    </item>
+    
+    <item>
+      <title>mysql数据导入方法</title>
+      <link>https://chenxiaopang.github.io/2014/11/07/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Fri, 07 Nov 2014 15:50:08 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/11/07/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/</guid>
+      <description>一、利用mysql-workbench 通过mysql-workbench的Data Import/Restore功能 有的命令不支持，比如LOA</description>
+    </item>
+    
+  </channel>
+</rss>

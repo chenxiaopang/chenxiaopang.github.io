@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Migration on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/migration/</link>
+    <description>Recent content in Migration on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 28 Oct 2014 23:06:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/migration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KVM之Live Migration</title>
+      <link>https://chenxiaopang.github.io/2014/10/28/kvm%E4%B9%8Blive-migration/</link>
+      <pubDate>Tue, 28 Oct 2014 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/10/28/kvm%E4%B9%8Blive-migration/</guid>
+      <description>1、安装KVM必要的软件包 $ sudo apt-get install qemu-kvm bridge-utilus 2、制作虚拟机映像ubuntu-12.04.qcow2 $ qemu-img create -f qcow2 ubuntu-12.04.qcow2 10G 3、安装ubuntu-12.04 LTS</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Ubuntu常用软件包管理命令 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="1、查看软件包安装内容 1 2 3 4 # dpkg -L [packagename] //查看安装binutils包会安装哪些文件 # dpkg -L binutils 2、列出指定包的安装状态信息 # dpkg -l [packagename] 3、查找文件所" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Ubuntu常用软件包管理命令" />
+<meta property="og:description" content="1、查看软件包安装内容 1 2 3 4 # dpkg -L [packagename] //查看安装binutils包会安装哪些文件 # dpkg -L binutils 2、列出指定包的安装状态信息 # dpkg -l [packagename] 3、查找文件所" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-02-07T16:01:26&#43;08:00" />
+<meta property="article:modified_time" content="2015-02-07T16:01:26&#43;08:00" />
+
+<meta itemprop="name" content="Ubuntu常用软件包管理命令">
+<meta itemprop="description" content="1、查看软件包安装内容 1 2 3 4 # dpkg -L [packagename] //查看安装binutils包会安装哪些文件 # dpkg -L binutils 2、列出指定包的安装状态信息 # dpkg -l [packagename] 3、查找文件所"><meta itemprop="datePublished" content="2015-02-07T16:01:26&#43;08:00" />
+<meta itemprop="dateModified" content="2015-02-07T16:01:26&#43;08:00" />
+<meta itemprop="wordCount" content="530">
+<meta itemprop="keywords" content="Linux,Ubuntu，Package," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ubuntu常用软件包管理命令"/>
+<meta name="twitter:description" content="1、查看软件包安装内容 1 2 3 4 # dpkg -L [packagename] //查看安装binutils包会安装哪些文件 # dpkg -L binutils 2、列出指定包的安装状态信息 # dpkg -l [packagename] 3、查找文件所"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Ubuntu常用软件包管理命令</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-02-07 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/ubuntu/"> Ubuntu </a>
+            </div>
+          <span class="more-meta"> 约 530 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1查看软件包安装内容">1、查看软件包安装内容</a></li>
+            <li><a href="#2列出指定包的安装状态信息">2、列出指定包的安装状态信息</a></li>
+            <li><a href="#3查找文件所属包">3、查找文件所属包</a></li>
+            <li><a href="#4查找软件">4、查找软件</a></li>
+            <li><a href="#5查询软件包依赖哪些包">5、查询软件包依赖哪些包</a></li>
+            <li><a href="#6查询软件包被哪些包依赖">6、查询软件包被哪些包依赖</a></li>
+            <li><a href="#7查询依赖和被依赖的包">7、查询依赖和被依赖的包</a></li>
+            <li><a href="#8增加一个光盘源">8、增加一个光盘源</a></li>
+            <li><a href="#9更新软件源索引">9、更新软件源索引</a></li>
+            <li><a href="#10安装软件包">10、安装软件包</a></li>
+            <li><a href="#11忽略依赖关系强制安装">11、忽略依赖关系强制安装</a></li>
+            <li><a href="#12安装已经下载的包忽略缺少的包">12、安装已经下载的包，忽略缺少的包</a></li>
+            <li><a href="#13将系统中所有软件升级到最新版本">13、将系统中所有软件升级到最新版本</a></li>
+            <li><a href="#14将操作系统连同所有软件升级到最新版本">14、将操作系统连同所有软件升级到最新版本</a></li>
+            <li><a href="#15下载指定软件包的源文件">15、下载指定软件包的源文件</a></li>
+            <li><a href="#16备份当前系统安装的所有包的列表">16、备份当前系统安装的所有包的列表</a></li>
+            <li><a href="#17从备份的安装包列表文件恢复选择并安装所有包">17、从备份的安装包列表文件恢复选择并安装所有包</a></li>
+            <li><a href="#18卸载软件包">18、卸载软件包</a></li>
+            <li><a href="#19清理旧版本的软件缓存">19、清理旧版本的软件缓存</a></li>
+            <li><a href="#20清理所有软件包缓存">20、清理所有软件包缓存</a></li>
+            <li><a href="#21删除系统不再使用的孤立软件包">21、删除系统不再使用的孤立软件包</a></li>
+            <li><a href="#22安装软件包到指定目录">22、安装软件包到指定目录</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="1查看软件包安装内容">1、查看软件包安装内容</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"> <span class="c1"># dpkg -L [packagename] </span>
+
+ //查看安装binutils包会安装哪些文件
+ <span class="c1"># dpkg -L binutils</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2列出指定包的安装状态信息">2、列出指定包的安装状态信息</h3>
+<p><code> # dpkg -l [packagename]</code></p>
+<h3 id="3查找文件所属包">3、查找文件所属包</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"> <span class="c1"># dpkg -S [filename]</span>
+ <span class="c1"># dpkg -S /usr/bin/objdump</span>
+ binutils: /usr/bin/objdump
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="4查找软件">4、查找软件</h3>
+<p><code> # apt-cache search [正则表达式]</code></p>
+<h3 id="5查询软件包依赖哪些包">5、查询软件包依赖哪些包</h3>
+<p><code> # apt-cache depends [packagename]</code></p>
+<h3 id="6查询软件包被哪些包依赖">6、查询软件包被哪些包依赖</h3>
+<p><code> # apt-cache rdepends [packagename]</code></p>
+<h3 id="7查询依赖和被依赖的包">7、查询依赖和被依赖的包</h3>
+<p>显示依赖的包（forward dependency）和被依赖的包（reverse dependency）</p>
+<p><code> # apt-cache showpkg [packagename]</code></p>
+<h3 id="8增加一个光盘源">8、增加一个光盘源</h3>
+<p><code> # apt-cdrom add</code></p>
+<h3 id="9更新软件源索引">9、更新软件源索引</h3>
+<p><code> # apt-get update</code></p>
+<h3 id="10安装软件包">10、安装软件包</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"> <span class="c1"># apt-get install [packagename]</span>
+ <span class="c1"># apt-get install [packagename] --print-uris     //仅仅打印出URL，而不实际安装</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="11忽略依赖关系强制安装">11、忽略依赖关系强制安装</h3>
+<p><code> # dpkg -i --force-depends packagename.deb</code></p>
+<p>或</p>
+<p><code> # dpkg -i --ignore-depends=packageneme</code></p>
+<h3 id="12安装已经下载的包忽略缺少的包">12、安装已经下载的包，忽略缺少的包</h3>
+<p><code> # apt-get install [packagename] --ignore-missing --no-download</code></p>
+<h3 id="13将系统中所有软件升级到最新版本">13、将系统中所有软件升级到最新版本</h3>
+<p><code> # apt-get upgrade</code></p>
+<h3 id="14将操作系统连同所有软件升级到最新版本">14、将操作系统连同所有软件升级到最新版本</h3>
+<p><code># apt-get dist-upgrade</code></p>
+<h3 id="15下载指定软件包的源文件">15、下载指定软件包的源文件</h3>
+<p><code> # apt-get source [packagename]</code></p>
+<h3 id="16备份当前系统安装的所有包的列表">16、备份当前系统安装的所有包的列表</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># dpkg --get-selections | grep -v  deinstall &gt; ~/install_list</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="17从备份的安装包列表文件恢复选择并安装所有包">17、从备份的安装包列表文件恢复选择并安装所有包</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"> <span class="c1"># dpkg --set-selections &lt; install_list</span>
+ <span class="c1"># apt-get dselect-upgrade</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="18卸载软件包">18、卸载软件包</h3>
+<p><code> # apt-get remove [packagename]</code>
+<code> # apt-get purge [packagename]  //卸载软件并删除配置文件</code></p>
+<h3 id="19清理旧版本的软件缓存">19、清理旧版本的软件缓存</h3>
+<p><code> # apt-get autoclean</code></p>
+<h3 id="20清理所有软件包缓存">20、清理所有软件包缓存</h3>
+<p><code> # apt-get clean</code></p>
+<h3 id="21删除系统不再使用的孤立软件包">21、删除系统不再使用的孤立软件包</h3>
+<p><code># apt-get autoremove</code></p>
+<h3 id="22安装软件包到指定目录">22、安装软件包到指定目录</h3>
+<p><code> # dpkg -i --instdir=[install_dir] *.deb</code></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-02-07
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/ubuntupackage/">Ubuntu，Package</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2015/02/07/ubuntu%E5%8F%91%E8%A1%8C%E7%89%88%E5%8D%87%E7%BA%A7/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Ubuntu发行版升级</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2015/01/31/%E5%85%81%E8%AE%B8mysql%E7%94%A8%E6%88%B7%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/">
+            <span class="next-text nav-default">允许mysql用户远程登录</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

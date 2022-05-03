@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gawk on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/gawk/</link>
+    <description>Recent content in gawk on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 29 Nov 2014 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/gawk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gawk的基本用法</title>
+      <link>https://chenxiaopang.github.io/2014/11/29/gawk%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Sat, 29 Nov 2014 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/11/29/gawk%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>GNU gawk工具的功能是将指定文件或标准输入中符合指定模式（pattern）的行按指定的动作（action）进行格式化处理。 一、语法 1 2 3 gawk [options]</description>
+    </item>
+    
+  </channel>
+</rss>

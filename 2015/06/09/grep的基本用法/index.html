@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>grep的基本用法 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="一、grep家族 grep: Global search Regular Expression(RE) and Print out the line grep家族包括grep、egrep和fgrep egrep和fgrep和grep只有很小的不同 egrep" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/06/09/grep%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="grep的基本用法" />
+<meta property="og:description" content="一、grep家族 grep: Global search Regular Expression(RE) and Print out the line grep家族包括grep、egrep和fgrep egrep和fgrep和grep只有很小的不同 egrep" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/06/09/grep%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-06-09T23:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2015-06-09T23:18:26&#43;08:00" />
+
+<meta itemprop="name" content="grep的基本用法">
+<meta itemprop="description" content="一、grep家族 grep: Global search Regular Expression(RE) and Print out the line grep家族包括grep、egrep和fgrep egrep和fgrep和grep只有很小的不同 egrep"><meta itemprop="datePublished" content="2015-06-09T23:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2015-06-09T23:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="823">
+<meta itemprop="keywords" content="Bash,Shell,grep," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="grep的基本用法"/>
+<meta name="twitter:description" content="一、grep家族 grep: Global search Regular Expression(RE) and Print out the line grep家族包括grep、egrep和fgrep egrep和fgrep和grep只有很小的不同 egrep"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">grep的基本用法</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-06-09 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/bash/"> Bash </a>
+            </div>
+          <span class="more-meta"> 约 823 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#一grep家族">一、grep家族</a></li>
+            <li><a href="#2grep支持的元字符集">2、grep支持的元字符集</a></li>
+            <li><a href="#3egrep">3、egrep</a></li>
+            <li><a href="#4grep选项">4、grep选项</a></li>
+            <li><a href="#5例子">5、例子</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="一grep家族">一、grep家族</h3>
+<p><code>grep</code>: Global search Regular Expression(RE) and Print out the line
+<code>grep</code>家族包括<code>grep</code>、<code>egrep</code>和<code>fgrep</code>
+<code>egrep</code>和<code>fgrep</code>和<code>grep</code>只有很小的不同
+<code>egrep</code>是<code>grep</code>的扩展，使用正则表达式搜索，支持更多的元字符，等效于<code>grep -E</code>
+<code>fgrep</code>是<code>fixed grep</code>或<code>fast grep</code>，它不识别任何正则表达式，所有的字符都表示它自己，等效于<code>grep -F</code></p>
+<h3 id="2grep支持的元字符集">2、grep支持的元字符集</h3>
+<p>支持正则表达式基本元字符集和附加元字符集，还支持grep扩展元字符集，主要有：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符</th>
+<th style="text-align:left">意义</th>
+<th style="text-align:left">示例</th>
+<th style="text-align:left">示例意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">\w</td>
+<td style="text-align:left">文字和数字字符，即[A-Za-z0-9]</td>
+<td style="text-align:left">L\w*e</td>
+<td style="text-align:left">匹配一个L字符，紧跟着0个或者多个文字或数字字符，然后是e</td>
+</tr>
+<tr>
+<td style="text-align:center">\W</td>
+<td style="text-align:left">非文字和数字字符，即[^A-Za-z0-9]，和\w相反</td>
+<td style="text-align:left">L\W*e</td>
+<td style="text-align:left">匹配一个L字符，紧跟着0个或者多个非文字或数字字符，然后是e</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:left">匹配1个或多个先前字符</td>
+<td style="text-align:left">[a-z]+ove</td>
+<td style="text-align:left">匹配一个小写字符且后面是ove的。</td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:left">匹配0个或1个先前字符</td>
+<td style="text-align:left">l?ove</td>
+<td style="text-align:left">匹配love，llove</td>
+</tr>
+<tr>
+<td style="text-align:center">a_b_c</td>
+<td style="text-align:left">匹配a或b或c</td>
+<td style="text-align:left">hate_love</td>
+<td style="text-align:left">匹配hate或love</td>
+</tr>
+</tbody>
+</table>
+<p>注意：因<code>|</code>在Markdown中表示为表格分隔线，在上述表格中，将扩展元字符<code>|</code>表示为<code>_</code>。</p>
+<h3 id="3egrep">3、egrep</h3>
+<p>如果在字符前面加一个反斜杠，这个字符就被翻译成扩展正则表达式，就像<code>egrep</code>和<code>grep -E</code>一样。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ egrep <span class="s1">&#39;s(h|u)&#39;</span> datafile
+$ grep -E <span class="s1">&#39;s(h|u)&#39;</span> datafile
+$ grep <span class="s1">&#39;s\(h\|u\)&#39;</span> datafile
+</code></pre></td></tr></table>
+</div>
+</div><p>例外：单词锚定符号<code>\&lt;</code>、<code>\&gt;</code>，无论什么<code>grep</code>，都必须加反斜杠</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ grep <span class="s1">&#39;\&lt;north\&gt;&#39;</span> datafile
+$ grep -E <span class="s1">&#39;\&lt;north\&gt;&#39;</span> datafile
+$ egrep <span class="s1">&#39;\&lt;north\&gt;&#39;</span> datafile
+$ grep -w <span class="s1">&#39;north&#39;</span> datafile
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="4grep选项">4、grep选项</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">选项</th>
+<th style="text-align:left">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-c</td>
+<td style="text-align:left">只显示匹配行的数量</td>
+</tr>
+<tr>
+<td style="text-align:center">-i</td>
+<td style="text-align:left">忽略大小写</td>
+</tr>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:left">打印行号</td>
+</tr>
+<tr>
+<td style="text-align:center">-s</td>
+<td style="text-align:left">静默工作，不显示错误信息</td>
+</tr>
+<tr>
+<td style="text-align:center">-q</td>
+<td style="text-align:left">静默工作，不显示查找结果</td>
+</tr>
+<tr>
+<td style="text-align:center">-v</td>
+<td style="text-align:left">只显示不匹配的行</td>
+</tr>
+<tr>
+<td style="text-align:center">-w</td>
+<td style="text-align:left">等效于单词锚定符号&lt;&gt;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5例子">5、例子</h3>
+<ol>
+<li>在一个或多个文件中查找字符串</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ grep <span class="s2">&#34;hello,world&#34;</span> ./hello1.txt ./hello2.txt
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>查找Summary信息</li>
+</ol>
+<p>查找带有Summary的行，同时显示该行后面7行，这种用法用于显示一些测试结果中的summary信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ grep -A7 <span class="s2">&#34;Summary&#34;</span> datafile
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>递归查找目录</li>
+</ol>
+<p>查找当前目录及其子目录中包含指定字符串的文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ grep -R <span class="s1">&#39;typedef struct page {&#39;</span> ./
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>翻转查找结果</li>
+</ol>
+<p>查找不包含指定字符串的行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ grep -v  <span class="s2">&#34;deinstall&#34;</span> datafile 
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-06-09
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/bash/">Bash</a>
+          <a href="/tags/shell/">Shell</a>
+          <a href="/tags/grep/">grep</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2015/06/10/here%E6%96%87%E6%A1%A3/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Here文档</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2015/06/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+            <span class="next-text nav-default">正则表达式</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

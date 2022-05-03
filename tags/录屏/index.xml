@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>录屏 on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/%E5%BD%95%E5%B1%8F/</link>
+    <description>Recent content in 录屏 on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 02 May 2019 16:01:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/%E5%BD%95%E5%B1%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux下的录屏软件Kazam</title>
+      <link>https://chenxiaopang.github.io/2019/05/02/linux%E4%B8%8B%E7%9A%84%E5%BD%95%E5%B1%8F%E8%BD%AF%E4%BB%B6kazam/</link>
+      <pubDate>Thu, 02 May 2019 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2019/05/02/linux%E4%B8%8B%E7%9A%84%E5%BD%95%E5%B1%8F%E8%BD%AF%E4%BB%B6kazam/</guid>
+      <description>发现Ubuntu下一个很好用的录屏软件kazam，Ubuntu官方源中就有。 一、安装 $ sudo apt-get install kazam 二、使用 使用很简单，除了截图，还可以录制屏幕视</description>
+    </item>
+    
+  </channel>
+</rss>

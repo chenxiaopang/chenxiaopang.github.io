@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>用Emacs收发邮件 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="使用Emacs来收发邮件，将尽可能多的工作放到Emacs中来完成，这样可以提高工作效率。 1、安装必要的LISP插件和程序 1 2 3 4 5 $sudo apt-get install stunnel4 $sudo" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2014/10/23/%E7%94%A8emacs%E6%94%B6%E5%8F%91%E9%82%AE%E4%BB%B6/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="用Emacs收发邮件" />
+<meta property="og:description" content="使用Emacs来收发邮件，将尽可能多的工作放到Emacs中来完成，这样可以提高工作效率。 1、安装必要的LISP插件和程序 1 2 3 4 5 $sudo apt-get install stunnel4 $sudo" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2014/10/23/%E7%94%A8emacs%E6%94%B6%E5%8F%91%E9%82%AE%E4%BB%B6/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2014-10-23T23:06:18&#43;08:00" />
+<meta property="article:modified_time" content="2014-10-23T23:06:18&#43;08:00" />
+
+<meta itemprop="name" content="用Emacs收发邮件">
+<meta itemprop="description" content="使用Emacs来收发邮件，将尽可能多的工作放到Emacs中来完成，这样可以提高工作效率。 1、安装必要的LISP插件和程序 1 2 3 4 5 $sudo apt-get install stunnel4 $sudo"><meta itemprop="datePublished" content="2014-10-23T23:06:18&#43;08:00" />
+<meta itemprop="dateModified" content="2014-10-23T23:06:18&#43;08:00" />
+<meta itemprop="wordCount" content="2509">
+<meta itemprop="keywords" content="Linux,emacs,email," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="用Emacs收发邮件"/>
+<meta name="twitter:description" content="使用Emacs来收发邮件，将尽可能多的工作放到Emacs中来完成，这样可以提高工作效率。 1、安装必要的LISP插件和程序 1 2 3 4 5 $sudo apt-get install stunnel4 $sudo"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">用Emacs收发邮件</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-10-23 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/applications/"> Applications </a>
+            <a href="/categories/emacs/"> Emacs </a>
+            <a href="/categories/email/"> Email </a>
+            </div>
+          <span class="more-meta"> 约 2509 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1安装必要的lisp插件和程序">1、安装必要的LISP插件和程序</a></li>
+        <li><a href="#2编辑emacs配置文件">2、编辑emacs配置文件</a></li>
+        <li><a href="#3邮件分类">3、邮件分类</a>
+          <ul>
+            <li><a href="#１邮件分类">１）邮件分类</a></li>
+            <li><a href="#２查看分类邮件">２）查看分类邮件</a></li>
+          </ul>
+        </li>
+        <li><a href="#4配置stunnel4">4、配置stunnel4</a></li>
+        <li><a href="#5邮件附件操作">5、邮件附件操作</a>
+          <ul>
+            <li><a href="#１打开附件">１）打开附件</a></li>
+            <li><a href="#２保存附件">２）保存附件</a></li>
+          </ul>
+        </li>
+        <li><a href="#6mew中常用命令和热键">6、mew中常用命令和热键</a></li>
+        <li><a href="#７emacs收发邮件示例">７、Emacs收发邮件示例</a>
+          <ul>
+            <li><a href="#1启动mew">1）启动mew</a></li>
+            <li><a href="#２收邮件">２）收邮件</a></li>
+            <li><a href="#3-邮件分类">3） 邮件分类</a></li>
+            <li><a href="#４查看邮箱邮件">４）查看邮箱邮件</a></li>
+            <li><a href="#５发邮件">５）发邮件</a></li>
+            <li><a href="#６删除邮件">６）删除邮件</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>使用Emacs来收发邮件，将尽可能多的工作放到Emacs中来完成，这样可以提高工作效率。</p>
+<h2 id="1安装必要的lisp插件和程序">1、安装必要的LISP插件和程序</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$sudo</span> apt-get install stunnel4
+
+<span class="nv">$sudo</span> apt-get install mew //邮件处理程序
+
+<span class="nv">$sudo</span> apt-get install w3m w3m-el //用于阅读HTML邮件
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2编辑emacs配置文件">2、编辑emacs配置文件</h2>
+<p>编辑自己的mew邮件配置，保存到.emacs文件中，或者为了方便管理各种配置，保存到单独的配置文件~/.emacs.d/mew/my_mew_config.el中，然后在主配置文件.emacs中通过下面的代码加载：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;~/.emacs.d/mew&#34;</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;my_mew_config</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>my_new_config.el文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="c1">;; mew收发邮件配置</span>
+
+<span class="p">(</span><span class="nb">provide</span> <span class="ss">&#39;my_mew_config</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">[(</span><span class="nv">M</span> <span class="nv">e</span><span class="p">)]</span> <span class="ss">&#39;mew</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">autoload</span> <span class="ss">&#39;mew</span> <span class="s">&#34;mew&#34;</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">autoload</span> <span class="ss">&#39;mew-send</span> <span class="s">&#34;mew&#34;</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">mew-use-cached-passwd</span> <span class="no">t</span><span class="p">)</span> 
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">mew-pop-delete</span> <span class="no">nil</span><span class="p">)</span>
+ 
+<span class="c1">;; Optional setup (Read Mail menu for Emacs 21):</span>
+<span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">boundp</span> <span class="ss">&#39;read-mail-command</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">read-mail-command</span> <span class="ss">&#39;mew</span><span class="p">))</span>
+ 
+<span class="c1">;;(setq mew-prog-ssl &#34;/usr/bin/stunnel4&#34;)</span>
+ 
+<span class="c1">;; Optional setup (e.g. C-xm for sending a message):</span>
+<span class="p">(</span><span class="nf">autoload</span> <span class="ss">&#39;mew-user-agent-compose</span> <span class="s">&#34;mew&#34;</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">boundp</span> <span class="ss">&#39;mail-user-agent</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">mail-user-agent</span> <span class="ss">&#39;mew-user-agent</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">fboundp</span> <span class="ss">&#39;define-mail-user-agent</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">define-mail-user-agent</span>
+ <span class="ss">&#39;mew-user-agent</span>
+ <span class="ss">&#39;mew-user-agent-compose</span>
+ <span class="ss">&#39;mew-draft-send-message</span>
+ <span class="ss">&#39;mew-draft-kill</span>
+ <span class="ss">&#39;mew-send-hook</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">boundp</span> <span class="ss">&#39;utf-translate-cjk</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">setq</span> <span class="nv">utf-translate-cjk</span> <span class="no">t</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">custom-set-variables</span>
+   <span class="o">&#39;</span><span class="p">(</span><span class="nv">utf-translate-cjk</span> <span class="no">t</span><span class="p">)))</span>
+<span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">fboundp</span> <span class="ss">&#39;utf-translate-cjk-mode</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">utf-translate-cjk-mode</span> <span class="mi">1</span><span class="p">))</span>
+ 
+<span class="c1">;;用w3m来读html格式邮件</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">mew-mime-multipart-alternative-list</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;Text/Html&#34;</span> <span class="s">&#34;Text/Plain&#34;</span> <span class="s">&#34;*.&#34;</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">condition-case</span> <span class="no">nil</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;mew-w3m</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">file-error</span> <span class="no">nil</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">mew-use-text/html</span> <span class="no">t</span><span class="p">)</span>
+ 
+<span class="c1">;;mail account config</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">mew-config-alist</span>
+ <span class="o">&#39;</span><span class="p">(</span>
+<span class="p">(</span><span class="s">&#34;default&#34;</span>
+<span class="p">(</span><span class="nv">pop-server</span>            <span class="s">&#34;pop.126.com&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">name</span>                  <span class="s">&#34;126&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">user</span>                  <span class="s">&#34;chenbin512&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">mail-domain</span>           <span class="s">&#34;126.com&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">pop-auth</span>              <span class="nv">pass</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">pop-user</span>              <span class="s">&#34;chenbin512@126.com&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">smtp-user</span>             <span class="s">&#34;chenbin512@126.com&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">smtp-server</span>           <span class="s">&#34;smtp.126.com&#34;</span><span class="p">)</span>
+<span class="p">)</span>
+ 
+<span class="p">(</span><span class="s">&#34;gmail&#34;</span>
+<span class="p">(</span><span class="nv">pop-server</span>            <span class="s">&#34;127.0.0.1&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">pop-port</span>              <span class="mi">9959</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">name</span>                  <span class="s">&#34;gmail&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">user</span>                  <span class="s">&#34;chenbin512&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">mail-domain</span>           <span class="s">&#34;gmail.com&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">pop-auth</span>              <span class="nv">pass</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">pop-user</span>              <span class="s">&#34;chenbin512@gmail.com&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">smtp-user</span>             <span class="s">&#34;chenbin512@gmail.com&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">smtp-server</span>           <span class="s">&#34;127.0.0.1&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">smtp-port</span>             <span class="mi">4659</span><span class="p">)</span>
+<span class="p">)</span>
+ 
+<span class="p">(</span><span class="s">&#34;163&#34;</span>
+<span class="p">(</span><span class="nv">pop-server</span>            <span class="s">&#34;pop.163.com&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">name</span>                  <span class="s">&#34;163&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">user</span>                  <span class="s">&#34;pandachen512&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">mail-domain</span>           <span class="s">&#34;163.com&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">pop-auth</span>              <span class="nv">pass</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">pop-user</span>              <span class="s">&#34;pandachen512@163.com&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">smtp-user</span>             <span class="s">&#34;pandachen512@163.com&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">smtp-server</span>           <span class="s">&#34;smtp.163.com&#34;</span><span class="p">)</span>
+<span class="p">)</span>
+ <span class="p">)</span>
+<span class="p">)</span>
+ 
+<span class="c1">;;设置邮件签名档</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">mew-signature-file</span> <span class="s">&#34;~/Mail/signature&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">mew-signature-as-lastpart</span> <span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">mew-signature-insert-last</span> <span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;mew-before-cite-hook</span> <span class="ss">&#39;mew-header-goto-body</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;mew-draft-mode-newdraft-hook</span> <span class="ss">&#39;mew-draft-insert-signature</span><span class="p">)</span>
+ 
+<span class="c1">;;设置邮件分类</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">mew-refile-guess-alist</span>
+ <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;To:&#34;</span>
+<span class="p">(</span><span class="s">&#34;@126.com&#34;</span>                       <span class="o">.</span> <span class="s">&#34;+Mail/126&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="s">&#34;@gmail.com&#34;</span>                      <span class="o">.</span> <span class="s">&#34;+Mail/gmail&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="s">&#34;@163.com&#34;</span>                      <span class="o">.</span> <span class="s">&#34;+Mail/163&#34;</span><span class="p">))</span>
+<span class="p">(</span><span class="s">&#34;Cc:&#34;</span>
+<span class="p">(</span><span class="s">&#34;@126.com&#34;</span>                       <span class="o">.</span> <span class="s">&#34;+Mail/126&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="s">&#34;@gmail.com&#34;</span>                      <span class="o">.</span> <span class="s">&#34;+Mail/gmail&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="s">&#34;@163.com&#34;</span>                      <span class="o">.</span> <span class="s">&#34;+Mail/163&#34;</span><span class="p">))</span>
+<span class="p">(</span><span class="no">nil</span> <span class="o">.</span> <span class="s">&#34;+inbox&#34;</span><span class="p">)))</span>
+ 
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">mew-refile-guess-control</span>
+ <span class="o">&#39;</span><span class="p">(</span><span class="nv">mew-refile-guess-by-alist</span><span class="p">))</span>
+ 
+<span class="c1">;;设置邮件显示栏目</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">mew-summary-form</span>
+ <span class="o">&#39;</span><span class="p">(</span><span class="nv">type</span> <span class="p">(</span><span class="mi">10</span> <span class="nv">date</span><span class="p">)</span> <span class="s">&#34;      &#34;</span> <span class="p">(</span><span class="mi">40</span> <span class="nv">from</span><span class="p">)</span> <span class="s">&#34;    &#34;</span> <span class="no">t</span> <span class="p">(</span><span class="mi">0</span> <span class="nv">subj</span><span class="p">)))</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">mew-summary-form-extract-rule</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">name</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>注意：对于使用SSL/TLS加密连接的邮箱账户，pop-server和smtp-server需要配置成stunnel4服务器地址，如果stunnel4服务运行于本机，则地址为本机环回地址127.0.0.1</p>
+<h2 id="3邮件分类">3、邮件分类</h2>
+<p>如果有多个邮箱，当然希望将各自的邮件归类到相应的邮箱中，方便阅读和查找，这就需要设置邮件分类规则(mew-refile-guess-alist)。通常按邮件账户分类比较常用，例如上面配置文件中的分类，当然也可以设置其它分类规则。</p>
+<h3 id="１邮件分类">１）邮件分类</h3>
+<p>设置了上面例子配置文件中的邮件分类规则后，按<kbd>i</kbd>键收取邮件后，并不能自动分类。所有账户的邮件都首先收到Inbox中。这时需要需要按<kbd>ALT+o</kbd>执行分类规则，所有邮件都会打上<code>o</code>的标记，然后按<kbd>x</kbd>键，邮件就会被分类到各自的邮箱里，并从Inbox中删除。</p>
+<h3 id="２查看分类邮件">２）查看分类邮件</h3>
+<p>邮件分类完成并从Inbox中删除后，要想查看某个邮箱的邮件，按<kbd>g</kbd>键，minibuffer提示输入邮箱目录，输入邮箱分类目录（比如+Mail/126）后即可查看分类好的邮件。</p>
+<h2 id="4配置stunnel4">4、配置stunnel4</h2>
+<p>对于采用SSL/TLS连接的邮件服务器，需要配置stunnel来提供加密连接，例如：gmail</p>
+<p><code>$sudo vim /etc/stunnel/stunnel.conf</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="c1">; Protocol version (all, SSLv2, SSLv3, TLSv1)</span>
+
+<span class="nv">sslVersion</span> <span class="nf">=</span> <span class="nv">SSLv3</span>
+
+<span class="c1">; Some security enhancements for UNIX systems - comment them out on Win32</span>
+
+<span class="nv">chroot</span> <span class="nf">=</span> <span class="nv">/var/lib/stunnel4/</span>
+
+<span class="nv">setuid</span> <span class="nf">=</span> <span class="nv">stunnel4</span>
+
+<span class="nv">setgid</span> <span class="nf">=</span> <span class="nv">stunnel4</span>
+
+<span class="c1">; PID is created inside the chroot jail</span>
+
+<span class="nv">pid</span> <span class="nf">=</span> <span class="nv">/stunnel4.pid</span>
+
+<span class="c1">; Some performance tunings</span>
+
+<span class="nv">socket</span> <span class="nf">=</span> <span class="nv">l:TCP_NODELAY=1</span>
+
+<span class="nv">socket</span> <span class="nf">=</span> <span class="nv">r:TCP_NODELAY=1</span>
+
+<span class="c1">;compression = rle</span>
+
+<span class="c1">; Some debugging stuff useful for troubleshooting</span>
+
+<span class="nv">debug</span> <span class="nf">=</span> <span class="mi">7</span>
+
+<span class="nv">output</span> <span class="nf">=</span> <span class="nv">/var/log/stunnel4/stunnel.log</span>
+
+<span class="c1">; Use it for client mode</span>
+
+<span class="nv">client</span> <span class="nf">=</span> <span class="nv">yes</span>
+
+<span class="c1">; Service-level configuration</span>
+
+<span class="p">[</span><span class="nv">pop3s</span><span class="p">]</span>
+
+<span class="nv">accept</span> <span class="nf">=</span> <span class="mi">995</span>
+
+<span class="nv">connect</span> <span class="nf">=</span> <span class="mi">110</span>
+
+<span class="p">[</span><span class="nv">imaps</span><span class="p">]</span>
+
+<span class="nv">accept</span> <span class="nf">=</span> <span class="mi">993</span>
+
+<span class="nv">connect</span> <span class="nf">=</span> <span class="mi">143</span> 
+
+<span class="p">[</span><span class="nv">ssmtp</span><span class="p">]</span>
+
+<span class="nv">accept</span> <span class="nf">=</span> <span class="mi">465</span>
+
+<span class="nv">connect</span> <span class="nf">=</span> <span class="mi">25</span>
+
+<span class="c1">;;</span>
+
+<span class="c1">;; gmail seting</span>
+
+<span class="c1">;;</span>
+
+<span class="p">[</span><span class="nv">gmail-pops</span><span class="p">]</span>
+
+<span class="nv">accept</span> <span class="nf">=</span> <span class="mi">9959</span>
+
+<span class="nv">connect</span> <span class="nf">=</span> <span class="nv">imap.gmail.com:995</span>
+
+<span class="p">[</span><span class="nv">gmail-imaps</span><span class="p">]</span>
+
+<span class="nv">accept</span> <span class="nf">=</span> <span class="mi">9939</span>
+
+<span class="nv">connect</span> <span class="nf">=</span> <span class="nv">imap.gmail.com:993</span>
+
+<span class="p">[</span><span class="nv">gmail-ssmtp</span><span class="p">]</span>
+
+<span class="nv">accept</span> <span class="nf">=</span> <span class="mi">4659</span>
+
+<span class="nv">connect</span> <span class="nf">=</span> <span class="nv">imap.gmail.com:465</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>注：以上配置在ubuntu 12.04上测试通过</p>
+<h2 id="5邮件附件操作">5、邮件附件操作</h2>
+<p>如果邮件带有附件，则在邮件条目上按回车键后，附件也会以条目的形式显示在邮件条目下方。如果邮件的附件比较大，mew并不会从邮件服务器上下载完整的邮件，它会在minibuffer区提示你邮件比较大，如果需要下载完整的邮件，请按I键。</p>
+<h3 id="１打开附件">１）打开附件</h3>
+<p>在附件条目上按回车键，会打开附件，例如：如果是图片会显示图片。如果需要调用程序打开，再按<kbd>C-c C-e</kbd>调用默认程序打开，比如pdf文件默认是xpdf，但我还没找到在emacs和mew中修改打开附件默认程序的方法，知道的告诉我。</p>
+<h3 id="２保存附件">２）保存附件</h3>
+<p>按<kbd>y</kbd>键后，会在minibuffer区提示输入保存路径。</p>
+<h2 id="6mew中常用命令和热键">6、mew中常用命令和热键</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">w</td>
+<td style="text-align:left">撰写新邮件</td>
+</tr>
+<tr>
+<td style="text-align:left">a</td>
+<td style="text-align:left">回复邮件，不带引用</td>
+</tr>
+<tr>
+<td style="text-align:left">A</td>
+<td style="text-align:left">回复邮件，带引用</td>
+</tr>
+<tr>
+<td style="text-align:left">f</td>
+<td style="text-align:left">转发邮件</td>
+</tr>
+<tr>
+<td style="text-align:left">r</td>
+<td style="text-align:left">重新发送邮件</td>
+</tr>
+<tr>
+<td style="text-align:left">SPC或Enter</td>
+<td style="text-align:left">阅读邮件</td>
+</tr>
+<tr>
+<td style="text-align:left">I</td>
+<td style="text-align:left">从邮件服务器下载完整的邮件（用于邮件较大的场合）</td>
+</tr>
+<tr>
+<td style="text-align:left">y</td>
+<td style="text-align:left">保存文件（可以保存信件全文、信件正文、附件）</td>
+</tr>
+<tr>
+<td style="text-align:left">M-o</td>
+<td style="text-align:left">邮件分类</td>
+</tr>
+<tr>
+<td style="text-align:left">M-s</td>
+<td style="text-align:left">邮件排序</td>
+</tr>
+<tr>
+<td style="text-align:left">d</td>
+<td style="text-align:left">删除邮件</td>
+</tr>
+<tr>
+<td style="text-align:left">C-c/C-l</td>
+<td style="text-align:left">转换当前邮件的编码格式</td>
+</tr>
+<tr>
+<td style="text-align:left">C-c/C-e</td>
+<td style="text-align:left">调用默认程序打开附件</td>
+</tr>
+<tr>
+<td style="text-align:left">C-c/C-a</td>
+<td style="text-align:left">加入地址薄</td>
+</tr>
+<tr>
+<td style="text-align:left">C-u/C-c/C-a</td>
+<td style="text-align:left">比C-c/C-a多加入昵称和名字</td>
+</tr>
+<tr>
+<td style="text-align:left">C-c/C-q</td>
+<td style="text-align:left">不保存退出</td>
+</tr>
+<tr>
+<td style="text-align:left">C-c/C-a</td>
+<td style="text-align:left">准备插入附件</td>
+</tr>
+<tr>
+<td style="text-align:left">mew-attach-copy</td>
+<td style="text-align:left">用复制方式加入附件</td>
+</tr>
+<tr>
+<td style="text-align:left">mew-attach-link</td>
+<td style="text-align:left">用链接方式加入附件</td>
+</tr>
+<tr>
+<td style="text-align:left">mew-attach-delete</td>
+<td style="text-align:left">删除附件</td>
+</tr>
+<tr>
+<td style="text-align:left">C-c/C-c</td>
+<td style="text-align:left">发送邮件</td>
+</tr>
+<tr>
+<td style="text-align:left">C-c/RET</td>
+<td style="text-align:left">保存邮件到发送队列</td>
+</tr>
+<tr>
+<td style="text-align:left">C</td>
+<td style="text-align:left">如果设置了多个邮箱，用C命令切换</td>
+</tr>
+<tr>
+<td style="text-align:left">Q</td>
+<td style="text-align:left">退出Mew</td>
+</tr>
+<tr>
+<td style="text-align:left">鼠标中键　　　　　　</td>
+<td style="text-align:left">在浏览器中打开邮件中的链接</td>
+</tr>
+</tbody>
+</table>
+<h2 id="７emacs收发邮件示例">７、Emacs收发邮件示例</h2>
+<h3 id="1启动mew">1）启动mew</h3>
+<p>在emacs中，按<kbd>ALT+X</kbd>进入命令模式，输入<code>mew</code>回车，启动mew邮件插件。</p>
+<h3 id="２收邮件">２）收邮件</h3>
+<p>按<kbd>i</kbd>键，收取默认邮箱的邮件，接下来会提示输入POP邮箱密码，输入密码后即可从邮件服务器上下载邮件。
+如果有附件，按<kbd>I</kbd>键，下载完整的附件；
+如果附件过大，会提示按<kbd> . </kbd>键查看整个邮件，再在附件上按<kbd>SPACE</kbd>或<kbd>RET</kbd>，即可显示附件；
+按<kbd>y</kbd>键，提示输入路径和文件名来保存附件到本地。
+<img src="/pic/Linux/mew-%E6%9F%A5%E7%9C%8B%E9%82%AE%E4%BB%B6%E9%99%84%E4%BB%B6.png" alt="">
+如果有多个邮箱，按C键切换到对应邮箱，再按<kbd>i</kbd>键收取。
+<img src="/pic/Linux/mew-%E5%88%87%E6%8D%A2%E9%82%AE%E7%AE%B1.png" alt=""></p>
+<h3 id="3-邮件分类">3） 邮件分类</h3>
+<p>按<kbd>i</kbd>键收取的邮件都首先收到Inbox中。这时需要按<kbd>ALT+o</kbd>执行分类规则，所有邮件都会打上<code>o</code>的标记，然后按<kbd>x</kbd>键，邮件就会被分类到各自的邮箱里，并从Inbox中删除
+<img src="/pic/Linux/mew-%E9%82%AE%E4%BB%B6%E5%88%86%E7%B1%BB.png" alt=""></p>
+<h3 id="４查看邮箱邮件">４）查看邮箱邮件</h3>
+<p>按<kbd>g</kbd>键，输入<code>邮箱目录</code>，即可查看对应邮箱中的邮件。
+<img src="/pic/Linux/mew-%E6%9F%A5%E7%9C%8B%E6%9F%90%E4%B8%AA%E9%82%AE%E7%AE%B1.png" alt=""></p>
+<h3 id="５发邮件">５）发邮件</h3>
+<p>按<kbd>C</kbd>键切换到用于发邮件的邮箱；
+再按<kbd>w</kbd>写邮件，在<code>To:</code> 处输入<code>收件人地址</code>，在<code>Subject:</code>处输入<code>邮件主题</code>，然后输入<code>邮件正文</code>；
+如果有附件，按<kbd>C-c C-a</kbd>准备插入附件，然后按<kbd>c</kbd>以拷贝方式插入附件；
+最后按<kbd>C-c C-c</kbd>发送邮件，输入<code>SMTP邮件发送服务器密码</code>（通常和POP3收件箱密码一样，因为是同一台服务器），即可发送；若发送成功，在mini buffer会显示“Sending in background done.”。
+<img src="/pic/Linux/mew-%E5%8F%91%E9%82%AE%E4%BB%B6.png" alt=""></p>
+<h3 id="６删除邮件">６）删除邮件</h3>
+<p>按<kbd>g</kbd>切换到对应的邮箱；
+在要删除的邮件上按<kbd>D</kbd>键，可看到邮件前面增加了<code>D</code>标志，且颜色变红；
+最后再按<kbd>x</kbd>键，删除有<code>D</code>标志的邮件。
+<img src="/pic/Linux/mew%E5%88%A0%E9%99%A4%E9%82%AE%E4%BB%B6.png" alt=""></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2014-10-23
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/emacs/">emacs</a>
+          <a href="/tags/email/">email</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2014/10/28/kvm%E4%B9%8Blive-migration/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">KVM之Live Migration</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2012/02/10/emacs%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/">
+            <span class="next-text nav-default">Emacs常用用法</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

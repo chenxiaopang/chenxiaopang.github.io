@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Bash函数 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="一、什么是Bash函数 Bash不支持goto语句，可以用function实现程序流程跳转。 当前shell中一组组织在一起并被命名的命令。 比脚" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/01/31/bash%E5%87%BD%E6%95%B0/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Bash函数" />
+<meta property="og:description" content="一、什么是Bash函数 Bash不支持goto语句，可以用function实现程序流程跳转。 当前shell中一组组织在一起并被命名的命令。 比脚" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/01/31/bash%E5%87%BD%E6%95%B0/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-01-31T16:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2015-01-31T16:18:26&#43;08:00" />
+
+<meta itemprop="name" content="Bash函数">
+<meta itemprop="description" content="一、什么是Bash函数 Bash不支持goto语句，可以用function实现程序流程跳转。 当前shell中一组组织在一起并被命名的命令。 比脚"><meta itemprop="datePublished" content="2015-01-31T16:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2015-01-31T16:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="1064">
+<meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bash函数"/>
+<meta name="twitter:description" content="一、什么是Bash函数 Bash不支持goto语句，可以用function实现程序流程跳转。 当前shell中一组组织在一起并被命名的命令。 比脚"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Bash函数</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-01-31 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/bash/"> Bash </a>
+            </div>
+          <span class="more-meta"> 约 1064 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一什么是bash函数">一、什么是Bash函数</a></li>
+        <li><a href="#二函数定义">二、函数定义</a></li>
+        <li><a href="#三函数返回值">三、函数返回值</a></li>
+        <li><a href="#四函数参数">四、函数参数</a></li>
+        <li><a href="#五函数中的变量和陷阱">五、函数中的变量和陷阱</a></li>
+        <li><a href="#六函数调用">六、函数调用</a></li>
+        <li><a href="#七常用命令">七、常用命令</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="一什么是bash函数">一、什么是Bash函数</h2>
+<p><code>Bash</code>不支持<code>goto</code>语句，可以用<code>function</code>实现程序流程跳转。</p>
+<p>当前<code>shell</code>中一组组织在一起并被命名的命令。</p>
+<p>比脚本的效率高，一旦定义，就成为<code>shell</code>内存的一部分，可以随时被调用，不必从文件中读取。</p>
+<h2 id="二函数定义">二、函数定义</h2>
+<p>两种定义方式：</p>
+<p>1、函数名 + () + 定义</p>
+<p>2、funciton + 函数名 + () + 定义，()可选</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">function</span> func <span class="o">()</span> <span class="o">{</span>
+
+statements
+<span class="k">return</span> 1；
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>注意：第一个花括号两边的空格是必须的。</p>
+<h2 id="三函数返回值">三、函数返回值</h2>
+<p>1、如果使用函数返回值，<code>return</code>只能返回一个整数（0~255），不能返回字符串，且返回值保存在<code>$?</code>变量中，不能直接赋值给其它变量</p>
+<p>例如，下面获得函数返回值的写法是错误的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">function</span> func <span class="o">()</span> <span class="o">{</span> <span class="k">return</span> 3<span class="p">;</span> <span class="o">}</span>
+<span class="nv">i</span><span class="o">=</span><span class="sb">`</span>func<span class="sb">`</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>2、如果<code>return</code>没有指定参数，则是最后一行脚本的退出状态值</p>
+<p>3、如果要将函数返回值赋值给一个变量，有两种方式：</p>
+<p>a）用<code>$?</code>赋值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">func
+<span class="nv">i</span><span class="o">=</span><span class="nv">$?</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>b）在函数中用<code>echo</code>打印返回值，再赋值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">function</span> func <span class="o">()</span> <span class="o">{</span> <span class="nb">echo</span> 3<span class="p">;</span> <span class="o">}</span>
+<span class="nv">i</span><span class="o">=</span><span class="sb">`</span>func<span class="sb">`</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="四函数参数">四、函数参数</h2>
+<p>1、向函数传递的参数被当作位置参量来处理，在函数中是本地变量</p>
+<p>2、函数参数用<code>$1, $2 ,..., $n</code>来表示，但和通过命令行传递给脚本的参数不同。调用方式如下：</p>
+<p><code>func param1 param2</code></p>
+<p>3、如果函数中要使用脚本的参数，只能将脚本的参数作为函数的参数传递给函数</p>
+<p>例如，可以将脚本的第1个参数<code>$1</code>作为函数的第2个参数传给函数，那么函数则通过<code>$2</code>来访问脚本的第1个参数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="k">function</span> welcome <span class="o">{</span> <span class="nb">echo</span> <span class="s2">&#34;Hi, </span><span class="nv">$1</span><span class="s2"> and </span><span class="nv">$2</span><span class="s2">&#34;</span><span class="p">;</span> <span class="o">}</span>
+$ welcome tom joe
+Hi,tom and joe
+$ <span class="nb">set</span> cb panda <span class="p">;</span> <span class="nb">echo</span> <span class="nv">$*</span>
+cb panda
+$ welcome tom joe
+Hi,tome and joe
+$ <span class="nb">echo</span> <span class="nv">$1</span> <span class="nv">$2</span>
+cb panda
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="五函数中的变量和陷阱">五、函数中的变量和陷阱</h2>
+<p>1、<code>shell</code>中的变量无局部和全局之分，随用随声明，无作用域的概念</p>
+<p>例如，在一个<code>if...fi</code>块中定义的变量，出了这个块的作用域仍然有效。这也说明<code>Bash</code>不适合编写大的复杂的程序</p>
+<p>2、和变量一样，函数内部的陷阱是全局的</p>
+<p>3、函数中可以定义局部变量，出了函数无效，使用<code>local</code>来定义</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">func<span class="o">()</span> <span class="o">{</span>
+<span class="nb">local</span> count
+<span class="nb">echo</span> <span class="nv">$count</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="六函数调用">六、函数调用</h2>
+<p>1、使用<code>function</code>只是定义函数，要执行函数中的命令必须在脚本中或命令行上调用函数</p>
+<p>例如：</p>
+<p><code>$ func param1 param2</code></p>
+<p>将函数单独放入一个脚本里，再在命令行上执行脚本（直接执行，或使用<code>.</code>，或<code>source</code>），是不会执行函数里的命令的</p>
+<p>将函数单独放入一个脚本，然后执行，相当于在执行该脚本的<code>shell</code>环境中定义了该函数</p>
+<p>例如：下面的命令只是在shell环境中定义函数，并不会调用函数</p>
+<p><code>$ ./func_script.sh</code></p>
+<p>或</p>
+<p><code>$ source ./func_script.sh</code></p>
+<p>2、递归调用</p>
+<p>函数可以自己调用自己，调用次数没有限制</p>
+<p>3、退出</p>
+<p>函数中使用exit命令退出整个脚本</p>
+<h2 id="七常用命令">七、常用命令</h2>
+<p>1、查看定义的函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">declare</span> -f
+$ <span class="nb">declare</span> -F //只列出函数名
+</code></pre></td></tr></table>
+</div>
+</div><p>2、撤消函数定义</p>
+<p><code>$ unset func_name</code></p>
+<p>3、将函数输出给子shell</p>
+<p><code>$ export -f func_name</code></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-01-31
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/bash/">Bash</a>
+          <a href="/tags/shell/">Shell</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2015/01/31/%E5%85%81%E8%AE%B8mysql%E7%94%A8%E6%88%B7%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">允许mysql用户远程登录</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2015/01/31/bash%E5%8F%98%E9%87%8F/">
+            <span class="next-text nav-default">Bash变量</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

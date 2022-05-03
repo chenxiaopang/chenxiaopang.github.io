@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>公钥 on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/%E5%85%AC%E9%92%A5/</link>
+    <description>Recent content in 公钥 on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 28 Oct 2014 23:16:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/%E5%85%AC%E9%92%A5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ssh无密码登录远程主机</title>
+      <link>https://chenxiaopang.github.io/2014/10/28/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/</link>
+      <pubDate>Tue, 28 Oct 2014 23:16:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/10/28/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/</guid>
+      <description>方法：在客户端生成公/私钥对，将私钥文件保存在客户端，再将公钥文件上传到服务器端（远程主机） 1、在客户端生成公/私钥对 1 2 3 4 cb@cb251$ ssh-keygen ... cb@cb251$ ls .ssh/ id_rsa</description>
+    </item>
+    
+  </channel>
+</rss>

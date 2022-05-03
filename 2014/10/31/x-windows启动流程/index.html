@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>XWindow启动流程 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="一、X Window系统架构 二、基本概念 1、X Client：X客户端，运行在远端主机上 X Client最重要的工作就是处理来自 X Server 的动作，将该动" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2014/10/31/x-windows%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="XWindow启动流程" />
+<meta property="og:description" content="一、X Window系统架构 二、基本概念 1、X Client：X客户端，运行在远端主机上 X Client最重要的工作就是处理来自 X Server 的动作，将该动" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2014/10/31/x-windows%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2014-10-31T23:06:18&#43;08:00" />
+<meta property="article:modified_time" content="2014-10-31T23:06:18&#43;08:00" />
+
+<meta itemprop="name" content="XWindow启动流程">
+<meta itemprop="description" content="一、X Window系统架构 二、基本概念 1、X Client：X客户端，运行在远端主机上 X Client最重要的工作就是处理来自 X Server 的动作，将该动"><meta itemprop="datePublished" content="2014-10-31T23:06:18&#43;08:00" />
+<meta itemprop="dateModified" content="2014-10-31T23:06:18&#43;08:00" />
+<meta itemprop="wordCount" content="2602">
+<meta itemprop="keywords" content="Linux,XWindow,XServer," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="XWindow启动流程"/>
+<meta name="twitter:description" content="一、X Window系统架构 二、基本概念 1、X Client：X客户端，运行在远端主机上 X Client最重要的工作就是处理来自 X Server 的动作，将该动"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">XWindow启动流程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-10-31 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/applications/"> Applications </a>
+            <a href="/categories/x/"> X </a>
+            </div>
+          <span class="more-meta"> 约 2602 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一x-window系统架构">一、X Window系统架构</a></li>
+        <li><a href="#二基本概念">二、基本概念</a>
+          <ul>
+            <li><a href="#1x-clientx客户端运行在远端主机上">1、X Client：X客户端，运行在远端主机上</a></li>
+            <li><a href="#2x-serverx服务器运行在用户端主机上">2、X Server：X服务器，运行在用户端主机上</a></li>
+            <li><a href="#3window-manager窗口管理器">3、Window Manager：窗口管理器</a></li>
+            <li><a href="#4display-manager-显示管理器">4、Display Manager-显示管理器</a></li>
+          </ul>
+        </li>
+        <li><a href="#三命令行通过startx命令启动x-window">三、命令行通过startx命令启动X Window</a></li>
+        <li><a href="#四实际启动x-window系统的命令-xinit">四、实际启动X Window系统的命令-xinit</a></li>
+        <li><a href="#五x-server的启动">五、X Server的启动</a></li>
+        <li><a href="#六x-cllient的启动">六、X Cllient的启动</a></li>
+        <li><a href="#七x启动的端口">七、X启动的端口</a></li>
+        <li><a href="#八小结">八、小结</a></li>
+        <li><a href="#九主要的命令和配置文件">九、主要的命令和配置文件</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="一x-window系统架构">一、X Window系统架构</h2>
+<p><img src="/pic/Linux/xwindow-arch.jpeg" alt="xwindow-arch"></p>
+<h2 id="二基本概念">二、基本概念</h2>
+<h3 id="1x-clientx客户端运行在远端主机上">1、X Client：X客户端，运行在远端主机上</h3>
+<p>X Client最重要的工作就是处理来自 X Server 的动作，将该动作处理成为绘图数据, 再将这些绘图数据传回给 X Server。由亍 X Client 的目的在产生绘图的数据，因此也称呼 X Client为X Application (X 应用程序)。
+每个 X Client 并不知道其他 X Client 的存在, 如果有两个以上的 X client 同时存在,两者并不知道对方到底传了什举数据给 X Server , 因此 X Client 的绘图常常会互相重迭，这就需要Window Manager来处理重迭显示，等多个X Client相互协调的问题。</p>
+<h3 id="2x-serverx服务器运行在用户端主机上">2、X Server：X服务器，运行在用户端主机上</h3>
+<p>X Server 的重点是管理客户端的硬件,包括接受键盘/鼠标等设备的输入信息, 幵将X Client的请求图形绘制到屏幕上 。</p>
+<h3 id="3window-manager窗口管理器">3、Window Manager：窗口管理器</h3>
+<p>特殊的X Client，提供许多的控制元素,包括任务栏、背景桌面的设定等等; 管理虚拟桌面 (virtual desktop); 提供窗口控制参数,这包括窗口的大小、窗口的重迭显示、窗口的移劢、窗口的最小化等等。例如，GNOME，KDE，XFCE等。</p>
+<h3 id="4display-manager-显示管理器">4、Display Manager-显示管理器</h3>
+<p>提供登录X Window系统的环境，让用户输入用户名/密码，加载用户选择的Window Manager以及语系等数据。例如，gdm</p>
+<h2 id="三命令行通过startx命令启动x-window">三、命令行通过startx命令启动X Window</h2>
+<p>启动X Window System 时,必须要先启动管理硬件和绘图的X Server ,然后才启动X Client 。
+通过在命令行界面输入 startx 来启动X窗口，也能够通过display manager (如果有runlevel 5) 提供的登录界面输入你的账号密码来登入来启动X。</p>
+<p><code># startx //命令行界面启动X Window系统</code></p>
+<p>Linux是个多用户系统，每个用户启动X 时, X server 的分辨率、启动X client的相关软件及 Window Manager 的选择可能都不一样，
+startx 最重要的任务就是找出用户或者是系统默认的X server与X client的配置文件，而使用者也能够使用 startx 外接参数来取代配置文件的内容。</p>
+<p><code># startx [X client 参数] -- [X server 参数]</code></p>
+<p>例子：以16位颜色深度启动X server</p>
+<p><code># startx -- -depth 16</code></p>
+<p>startx 找出 X server / X client 的设定值而已！事实上启动X的是xinit这支程序, startx 仅是在帮忙找出设定值而已!
+startx 找到设定值的顺序基本上是这样的:</p>
+<p>X server 的参数方面:</p>
+<ol>
+<li>使用startx后面接的参数</li>
+<li>若无参数,则找寻用户主目录的文件~/.xserverrc</li>
+<li>若无上述两者，则以 /etc/X11/xinit/xserverrc</li>
+<li>若无上述三者，则单纯执行 /usr/bin/X (此即 X server 执行文件，X有时链接到Xorg)</li>
+</ol>
+<p>X client 的参数方面:</p>
+<ol>
+<li>使用 startx 后面接的参数</li>
+<li>若无参数,则找寻用户主目录的文件~/.xinitrc</li>
+<li>若无上述两者,则以 /etc/X11/xinit/xinitrc</li>
+<li>若无上述三者,则单纯执行 xterm (此为X客户端软件)</li>
+</ol>
+<p>当 startx 找到需要的设定值后,就调用xinit实际启动X。</p>
+<h2 id="四实际启动x-window系统的命令-xinit">四、实际启动X Window系统的命令-xinit</h2>
+<p>xinit的语法：</p>
+<p><code># xinit [client option] -- [server or display option]</code></p>
+<p>若X server配置文件不存在，则直接执行/usr/bin/X，通过startx调用xinit的参数可能如下：</p>
+<p><code># xinit /etc/X11/xinit/xinitrc -- /usr/bin/X</code></p>
+<p>若只是执行 xinit，系统的默认 X Client 和 X Server 的参数如下：</p>
+<p><code>#xinit xterm -geometry +1+1 -n login -display :0 -- X :0</code></p>
+<h2 id="五x-server的启动">五、X Server的启动</h2>
+<p>X Window最先需要启动的就是X Server。X server启动的预设脚本是主目录下的<code>~/.xserverrc</code>或<code>/etc/X11/xinit/xserverrc</code>，若都不存在，则直接执行<code>/usr/bin/X</code>启动X server。</p>
+<p>在启动X Server 时，Xorg会去读取<code>/etc/X11/xorg.conf</code>这个配置文件。如果一切顺利，那么X就会顺利的在tty7的环境中启动了X 。单纯的X启动时，你只会看到画面一片漆黑，然后中心有个鼠标的光标。</p>
+<p>X启动的时候可以指定启动的接口。事实上，Linux可以同时启动多个X。第一个X的画面会在 <code>:0</code> 亦即是tty7，第二个X则是 <code>:1</code>，亦即是tty8 。 后续还可以有其他的X存在的。因此，X client应用程序在加载时，必须要使用<code>-display</code>来说明这个X应用程序是需要在哪个X加载(如上例中xterm的启动参数)。需要注意的是：X server未注明加载的接口时，默认是使用<code>:0</code>，但是X client未注明时，则无法执行。</p>
+<h2 id="六x-cllient的启动">六、X Cllient的启动</h2>
+<p>假设你的主目彔没有<code>~/.xinitrc</code>,则此时X Client会以<code>/etc/X11/xinit/xinitrc</code>来作为启动X Client的预设脚本。</p>
+<p><code>xinitrc</code>这个文件会将许多其他的文件参数引进来, 包括<code>/etc/X11/xinit/xinitrc-common</code>、<code>/etc/X11/xinit/Xclients</code>，还有<code>/etc/sysconfig/desktop</code>。可以参考<code>xinitrc</code>后去搜寻各个文件来了解彼此的关系。</p>
+<p>不过分析到最后,就是载入KDE或者是GNOME。它们通过两个指令来启动, 包括<code>startkde</code>或<code>gnome-session</code>。KDE和GNOME是CentOS预设提供的两个主要的Window Manager。可以通过修改<code>/etc/sysconfig/desktop</code>内的<code>DESKTOP=GNOME</code>或<code>DESKTOP=KDE</code>来决定默认使用哪个窗口管理器的。</p>
+<p>如果有特殊需求，可以自定义X client的参数。这就得要修改用户主目彔下的<code>~/.xinitrc</code>这个文件。要注意的是，如果你的<code>.xinitrc</code>配置文件里面启动的x client很多的时候，千万注意将除了最后一个window manager或X Client之外，都应该放到背景里面去执行，例如:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">xclock -geometry 100x100-5+5 <span class="p">&amp;</span>
+xterm -geometry 80x50-50+150 <span class="p">&amp;</span>
+<span class="nb">exec</span> /usr/bin/twm
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="七x启动的端口">七、X启动的端口</h2>
+<p>默认情况下，X server通过port 6000来与X client进行沟通。但由于系统上面可能有多个X存在，因此就会有port 6001, port 6002&hellip;等等。
+在X Window System的环境下，称port 6000为第0个显示接口，即<code>hostname:0</code>,主机名通常可以省略，所以就成了<code>:0</code>。其它显示接口依次类推，如下图。</p>
+<p><img src="/pic/Linux/xwindow.jpg" alt="xwindow"></p>
+<h2 id="八小结">八、小结</h2>
+<p>在文字界面下启动X时，直接使用startx来找到X server与Xclient的参数或配置文件, 然后再调用xinit来启动X窗口系统。xinit先载入X server到预设的<code>:0</code>这个显示接口(默认在tty7),然后再加载X client到这个X显示接口上。而X client通常就是<code>GNOME</code>或<code>KDE</code>,具体用哪个窗口管理器是通过在<code>/etc/sysconfig/desktop</code>里面设置的。</p>
+<h2 id="九主要的命令和配置文件">九、主要的命令和配置文件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">/usr/bin/startx
+/usr/bin/xinit
+/usr/bin/X <span class="o">(</span>或Xorg<span class="o">)</span>
+/etc/X11/xinit/xserverrc
+/etc/X11/xinit/xinitrc
+/etc/X11/xorg.conf
+/etc/sysconfig/desktop
+~/.xserverrc
+~/.xinitrc 
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2014-10-31
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/xwindow/">XWindow</a>
+          <a href="/tags/xserver/">XServer</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2014/11/06/bash-shell%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Bash Shell执行命令的优先级</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2014/10/29/%E5%9C%A8windows%E4%B8%8A%E8%BF%90%E8%A1%8Clinux%E7%A8%8B%E5%BA%8F/">
+            <span class="next-text nav-default">在Windows上运行Linux程序</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

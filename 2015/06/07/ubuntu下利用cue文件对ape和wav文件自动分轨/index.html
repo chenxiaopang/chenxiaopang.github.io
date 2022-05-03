@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Ubuntu下利用cue文件对ape和wav镜像文件自动分轨 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="很多音乐CD的镜像文件都带cue格式的分轨文件，在Ubuntu下可以通过一些工具来实现自动分轨。 一、安装工具 Ubuntu下需要安装的工具有f" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/06/07/ubuntu%E4%B8%8B%E5%88%A9%E7%94%A8cue%E6%96%87%E4%BB%B6%E5%AF%B9ape%E5%92%8Cwav%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E5%88%86%E8%BD%A8/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Ubuntu下利用cue文件对ape和wav镜像文件自动分轨" />
+<meta property="og:description" content="很多音乐CD的镜像文件都带cue格式的分轨文件，在Ubuntu下可以通过一些工具来实现自动分轨。 一、安装工具 Ubuntu下需要安装的工具有f" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/06/07/ubuntu%E4%B8%8B%E5%88%A9%E7%94%A8cue%E6%96%87%E4%BB%B6%E5%AF%B9ape%E5%92%8Cwav%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E5%88%86%E8%BD%A8/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-06-07T16:01:26&#43;08:00" />
+<meta property="article:modified_time" content="2015-06-07T16:01:26&#43;08:00" />
+
+<meta itemprop="name" content="Ubuntu下利用cue文件对ape和wav镜像文件自动分轨">
+<meta itemprop="description" content="很多音乐CD的镜像文件都带cue格式的分轨文件，在Ubuntu下可以通过一些工具来实现自动分轨。 一、安装工具 Ubuntu下需要安装的工具有f"><meta itemprop="datePublished" content="2015-06-07T16:01:26&#43;08:00" />
+<meta itemprop="dateModified" content="2015-06-07T16:01:26&#43;08:00" />
+<meta itemprop="wordCount" content="752">
+<meta itemprop="keywords" content="Linux,Ubuntu，ape,cue," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ubuntu下利用cue文件对ape和wav镜像文件自动分轨"/>
+<meta name="twitter:description" content="很多音乐CD的镜像文件都带cue格式的分轨文件，在Ubuntu下可以通过一些工具来实现自动分轨。 一、安装工具 Ubuntu下需要安装的工具有f"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Ubuntu下利用cue文件对ape和wav镜像文件自动分轨</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-06-07 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/ubuntu/"> Ubuntu </a>
+            <a href="/categories/%E5%A4%9A%E5%AA%92%E4%BD%93/"> 多媒体 </a>
+            </div>
+          <span class="more-meta"> 约 752 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#一安装工具">一、安装工具</a></li>
+            <li><a href="#二对cue索引的镜像文件分轨">二、对cue索引的镜像文件分轨</a></li>
+            <li><a href="#三将ape转换为wav或flac格式">三、将ape转换为wav或flac格式</a></li>
+            <li><a href="#四其它格式转换">四、其它格式转换</a></li>
+            <li><a href="#五自动分轨脚本audio-cue-splitsh">五、自动分轨脚本<code>audio-cue-split.sh</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>很多音乐CD的镜像文件都带<code>cue</code>格式的分轨文件，在<code>Ubuntu</code>下可以通过一些工具来实现自动分轨。</p>
+<h3 id="一安装工具">一、安装工具</h3>
+<p>Ubuntu下需要安装的工具有<code>flac</code>、<code>shntool</code>、<code>libav-tools</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install flac shntool libav-tools
+</code></pre></td></tr></table>
+</div>
+</div><p>要对<code>ape</code>文件直接分轨的话需要<code>Linux</code>版的<code>mac</code>编解码器，编译安装；或者，先将<code>ape</code>文件转换为<code>wav</code>或<code>flac</code>格式。</p>
+<h3 id="二对cue索引的镜像文件分轨">二、对cue索引的镜像文件分轨</h3>
+<p><code>shntool</code>的<code>split</code>模块能够根据<code>cue</code>文件将镜像文件分割成多个文件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ shntool split -t <span class="s2">&#34;%n.%p-%t&#34;</span> -f example.cue -o flac music.flac -d outputdir
+</code></pre></td></tr></table>
+</div>
+</div><p><code>-d</code> 指定分轨后的<code>falc</code>文件的输出目录，不指定的话在当前目录生成</p>
+<p><code>-t</code> 指定输出文件的文件名格式，<code>%n</code>是音轨号，<code>%p</code>是演奏者/艺术家, <code>%t</code>标题</p>
+<p><code>-o</code> 指定输出文件编码格式</p>
+<p>目前发现<code>ape</code>分轨成多个ape似乎会出现错误无法处理，可以先将<code>ape</code>分轨文件转码成其他格式(flac,wav等)，再进行分轨处理。</p>
+<p><code>cue</code>文件的字符集最好与系统当前使用的字符集相同，否则最后生成的文件名可能乱码，可以使用<code>iconv</code>进行编码转换。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ iconv -f gb18030 -t utf8 CDImage.cue -o CDImage-linux.cue
+
+$ dos2unix CDImage-linux.cue
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="三将ape转换为wav或flac格式">三、将ape转换为wav或flac格式</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ avconv -i CDImage.ape CDImage.flac  //ape-----&gt;flac, 以前用ffmpeg，现在用avconv
+$ avconv -i CDImage.wav CDImage.flac  //wav-----&gt;flac
+$ avconv -i CDImage.ape CDImage.wav   //ape----&gt;wav 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="四其它格式转换">四、其它格式转换</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ flac CDImage.wav CDImage.flac        //wav----&gt;flac
+$ shnconv -i ape -o flac CDImage.ape   //ape-----&gt;flac
+$ shnconv -i flac -o ape CDImage.flac   //flac-----&gt;ape
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="五自动分轨脚本audio-cue-splitsh">五、自动分轨脚本<code>audio-cue-split.sh</code></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#/bin/bash</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -ne <span class="m">2</span> <span class="o">]</span>
+<span class="k">then</span>
+	<span class="nb">echo</span> -e <span class="s2">&#34;Usage: audio-cue-split.sh [AUDIO_FILE_NAME] [DECODE_MODULE]&#34;</span>
+	<span class="nb">echo</span> <span class="s2">&#34;example: audio-cue-split.sh CDImage.wav wav&#34;</span>
+	<span class="nb">echo</span> <span class="s2">&#34;Note: The cue file must has the same name with the audio file.&#34;</span>
+	<span class="nb">echo</span> -e <span class="s2">&#34;Note: DECODE_MODULE: wav, flac, etc&#34;</span>
+	<span class="nb">exit</span>
+<span class="k">fi</span>
+
+<span class="nv">AUDIO_FILE</span><span class="o">=</span><span class="nv">$1</span>
+<span class="nv">DECODE_MODULE</span><span class="o">=</span><span class="nv">$2</span>
+<span class="nv">FILE_PREFIX</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$AUDIO_FILE</span> <span class="p">|</span> sed <span class="s2">&#34;s/.</span><span class="nv">$DECODE_MODULE</span>$<span class="s2">//&#34;</span><span class="sb">`</span>
+
+<span class="c1"># if ape file, first convert file format to flac</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$DECODE_MODULE</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;ape&#34;</span> <span class="o">]</span>
+<span class="k">then</span>
+	<span class="nb">echo</span> -e <span class="s2">&#34;First, convert ape format to flac format, waite a minute...&#34;</span>
+	<span class="nv">FLAC_FILE</span><span class="o">=</span><span class="nv">$FILE_PREFIX</span>.flac
+	<span class="c1">#ffmpeg -i &#34;$AUDIO_FILE&#34; &#34;$FLAC_FILE&#34;</span>
+	avconv -i <span class="s2">&#34;</span><span class="nv">$AUDIO_FILE</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$FLAC_FILE</span><span class="s2">&#34;</span>
+	<span class="nv">AUDIO_FILE</span><span class="o">=</span><span class="nv">$FLAC_FILE</span>
+	<span class="nv">DECODE_MODULE</span><span class="o">=</span><span class="s1">&#39;flac&#39;</span>
+	<span class="nv">CONVERT</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>
+<span class="k">fi</span>
+
+<span class="nv">CUE_FILE</span><span class="o">=</span><span class="nv">$FILE_PREFIX</span>.cue
+<span class="nv">CUE_FILE_LINUX</span><span class="o">=</span><span class="nv">$FILE_PREFIX</span>-linux.cue
+
+iconv -f gb18030 -t utf8 <span class="s2">&#34;</span><span class="nv">$CUE_FILE</span><span class="s2">&#34;</span> -o <span class="s2">&#34;</span><span class="nv">$CUE_FILE_LINUX</span><span class="s2">&#34;</span>
+dos2unix <span class="s2">&#34;</span><span class="nv">$CUE_FILE_LINUX</span><span class="s2">&#34;</span>
+shntool split -t <span class="s2">&#34;%n-%t&#34;</span> -f <span class="s2">&#34;</span><span class="nv">$CUE_FILE_LINUX</span><span class="s2">&#34;</span> -o <span class="nv">$DECODE_MODULE</span> <span class="s2">&#34;</span><span class="nv">$AUDIO_FILE</span><span class="s2">&#34;</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$CONVERT</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;true&#34;</span> -a <span class="s2">&#34;</span><span class="nv">$FLAC_FILE</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;&#34;</span> <span class="o">]</span>
+<span class="k">then</span>
+	<span class="nb">echo</span> -e <span class="s2">&#34;Remove temporary flac file: </span><span class="nv">$FLAC_FILE</span><span class="s2">&#34;</span>
+	rm -f <span class="s2">&#34;</span><span class="nv">$FLAC_FILE</span><span class="s2">&#34;</span>
+<span class="k">fi</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>以上脚本在Ubuntu Kylin 14.04下测试通过。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-06-07
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/ubuntuape/">Ubuntu，ape</a>
+          <a href="/tags/cue/">cue</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2015/06/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">正则表达式</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2015/06/06/bash%E5%86%85%E7%BD%AE%E5%91%BD%E4%BB%A4exec%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/">
+            <span class="next-text nav-default">Bash内置命令exec和重定向</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

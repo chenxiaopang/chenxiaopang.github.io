@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ubuntu on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/ubuntu/</link>
+    <description>Recent content in Ubuntu on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 07 Feb 2015 16:01:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu发行版升级</title>
+      <link>https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%8F%91%E8%A1%8C%E7%89%88%E5%8D%87%E7%BA%A7/</link>
+      <pubDate>Sat, 07 Feb 2015 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%8F%91%E8%A1%8C%E7%89%88%E5%8D%87%E7%BA%A7/</guid>
+      <description>从UK 13.10升级到UK 14.10 方法一 1 2 $ sudo apt-get update $ sudo update-manager -c -d 选择upgrade 方法二 首先将源/etc/apt/sources.list修改为指向</description>
+    </item>
+    
+    <item>
+      <title>解决Ubuntu开机动画不正常问题</title>
+      <link>https://chenxiaopang.github.io/2014/11/10/%E8%A7%A3%E5%86%B3ubuntu%E5%BC%80%E6%9C%BA%E5%8A%A8%E7%94%BB%E4%B8%8D%E6%AD%A3%E5%B8%B8%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 10 Nov 2014 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2014/11/10/%E8%A7%A3%E5%86%B3ubuntu%E5%BC%80%E6%9C%BA%E5%8A%A8%E7%94%BB%E4%B8%8D%E6%AD%A3%E5%B8%B8%E9%97%AE%E9%A2%98/</guid>
+      <description>联想的笔记本，显卡NVIDIA GT218M，默认使用开源的驱动，但挂起后，再唤醒就黑屏回不到桌面。经过摸索，解决办法为安装NVIDIA专有驱</description>
+    </item>
+    
+  </channel>
+</rss>

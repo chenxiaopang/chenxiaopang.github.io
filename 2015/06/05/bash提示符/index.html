@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Bash提示符 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="Bash有四种提示符 一、基本提示符PS1 即$符号，是默认的基本提示符，当Shell运行在交互模式下时，该提示符会出现在屏幕上，可以设置为其它" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/06/05/bash%E6%8F%90%E7%A4%BA%E7%AC%A6/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Bash提示符" />
+<meta property="og:description" content="Bash有四种提示符 一、基本提示符PS1 即$符号，是默认的基本提示符，当Shell运行在交互模式下时，该提示符会出现在屏幕上，可以设置为其它" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/06/05/bash%E6%8F%90%E7%A4%BA%E7%AC%A6/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-06-05T23:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2015-06-05T23:18:26&#43;08:00" />
+
+<meta itemprop="name" content="Bash提示符">
+<meta itemprop="description" content="Bash有四种提示符 一、基本提示符PS1 即$符号，是默认的基本提示符，当Shell运行在交互模式下时，该提示符会出现在屏幕上，可以设置为其它"><meta itemprop="datePublished" content="2015-06-05T23:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2015-06-05T23:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="485">
+<meta itemprop="keywords" content="Bash,Shell,Prompt," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bash提示符"/>
+<meta name="twitter:description" content="Bash有四种提示符 一、基本提示符PS1 即$符号，是默认的基本提示符，当Shell运行在交互模式下时，该提示符会出现在屏幕上，可以设置为其它"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Bash提示符</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-06-05 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/bash/"> Bash </a>
+            </div>
+          <span class="more-meta"> 约 485 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>Bash有四种提示符</p>
+<p>一、基本提示符<code>PS1</code></p>
+<p>即<code>$</code>符号，是默认的基本提示符，当<code>Shell</code>运行在交互模式下时，该提示符会出现在屏幕上，可以设置为其它符号。</p>
+<p>显示<code>PS1</code>设置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>cb@cb:16:36:23:~<span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$PS1</span>
+<span class="o">[</span><span class="se">\u</span>@<span class="se">\h</span>:<span class="se">\t</span>:<span class="se">\W</span><span class="o">]</span>$
+</code></pre></td></tr></table>
+</div>
+</div><p>设置PS1
+<code>$ PS1=&quot;[\u@\h:\t:\W]\$&quot;</code></p>
+<p>用于设置PS1的常用的特殊转义序列：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">转义符</th>
+<th style="text-align:left">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">\t</td>
+<td style="text-align:left">以HH:MM:SS格式显示时间</td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td style="text-align:left">以&quot;星期/月/日&quot;格式显示时间</td>
+</tr>
+<tr>
+<td style="text-align:center">\w</td>
+<td style="text-align:left">当前工作目录的全名</td>
+</tr>
+<tr>
+<td style="text-align:center">\W</td>
+<td style="text-align:left">当前工作目录的基本名</td>
+</tr>
+<tr>
+<td style="text-align:center">\u</td>
+<td style="text-align:left">当前用户的用户名</td>
+</tr>
+<tr>
+<td style="text-align:center">\h</td>
+<td style="text-align:left">主机名</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:left">如果有效UID=0，则为#，否则为$</td>
+</tr>
+</tbody>
+</table>
+<p>二、次提示符<code>PS2</code></p>
+<p>当没有完成输入或期望更多的输入时就会出现这个提示符，默认为<code>&gt;</code>符号</p>
+<p>显示<code>PS2</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># ehco $PS2</span>
+&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>重新设置<code>PS2</code></p>
+<p><code>#PS2=&quot;--&gt;&quot;</code></p>
+<p>三、PS3</p>
+<p>Shell脚本中使用<code>select</code>建立菜单时的提示符，默认为<code>#？</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">PS3</span><span class="o">=</span><span class="s2">&#34;Select a day[1-4]:&#34;</span>
+
+<span class="k">select</span> day in mon tue wed <span class="nb">exit</span>
+<span class="k">do</span>
+        <span class="k">case</span> <span class="nv">$day</span> in
+                mon<span class="o">)</span> <span class="nb">echo</span> <span class="s2">&#34;Monday&#34;</span><span class="p">;;</span>
+                tue<span class="o">)</span> <span class="nb">echo</span> <span class="s2">&#34;Tuesday&#34;</span><span class="p">;;</span>
+                wed<span class="o">)</span> <span class="nb">echo</span> <span class="s2">&#34;Wednesday&#34;</span><span class="p">;;</span>
+                <span class="nb">exit</span><span class="o">)</span> exit<span class="p">;;</span>
+        <span class="k">esac</span>
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>四、PS4</p>
+<p>当使用sex -x跟踪脚本输出时的提示符，默认为<code>++</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ cat ps4.sh
+  
+<span class="nb">set</span> –x
+<span class="nb">echo</span> <span class="s2">&#34;PS4 demo script&#34;</span>
+ls -l /etc/ <span class="p">|</span> wc –l
+ 
+$ ./ps4.sh
+++ <span class="nb">echo</span> <span class="s1">&#39;PS4 demo script&#39;</span>
+PS4 demo script
+++ ls -l /etc/
+++ wc –l
+<span class="m">243</span>
+
+$ <span class="nb">export</span> <span class="nv">PS4</span><span class="o">=</span><span class="s1">&#39;$0.$LINENO+ &#39;</span>  //<span class="nv">$0</span>显示当前的脚本名, <span class="nv">$LINENO显示的当前的行号</span>
+
+$ ./ps4.sh
+./ps4.sh.3+ <span class="nb">echo</span> <span class="s1">&#39;PS4 demo script&#39;</span>
+PS4 demo script
+./ps4.sh.4+ ls -l /etc/
+./ps4.sh.4+ wc -l
+<span class="m">243</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-06-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/bash/">Bash</a>
+          <a href="/tags/shell/">Shell</a>
+          <a href="/tags/prompt/">Prompt</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2015/06/06/bash%E5%86%85%E7%BD%AE%E5%91%BD%E4%BB%A4exec%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Bash内置命令exec和重定向</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2015/06/05/bash%E5%90%AF%E5%8A%A8%E9%80%89%E9%A1%B9/">
+            <span class="next-text nav-default">Bash启动选项</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

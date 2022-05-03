@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>mysql基本操作 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="一、安装mysql服务器和客户端 $ sudo apt-get install mysql-server mysql-client 二、启动mysql服务 $ sudo /etc/init.d/mysql start 三、连接mysql服务器 1、root超级用户登录 # mysql -u root -p 2、普通" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2014/11/07/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="mysql基本操作" />
+<meta property="og:description" content="一、安装mysql服务器和客户端 $ sudo apt-get install mysql-server mysql-client 二、启动mysql服务 $ sudo /etc/init.d/mysql start 三、连接mysql服务器 1、root超级用户登录 # mysql -u root -p 2、普通" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2014/11/07/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2014-11-07T15:50:08&#43;08:00" />
+<meta property="article:modified_time" content="2014-11-07T15:50:08&#43;08:00" />
+
+<meta itemprop="name" content="mysql基本操作">
+<meta itemprop="description" content="一、安装mysql服务器和客户端 $ sudo apt-get install mysql-server mysql-client 二、启动mysql服务 $ sudo /etc/init.d/mysql start 三、连接mysql服务器 1、root超级用户登录 # mysql -u root -p 2、普通"><meta itemprop="datePublished" content="2014-11-07T15:50:08&#43;08:00" />
+<meta itemprop="dateModified" content="2014-11-07T15:50:08&#43;08:00" />
+<meta itemprop="wordCount" content="761">
+<meta itemprop="keywords" content="数据库,mysql," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="mysql基本操作"/>
+<meta name="twitter:description" content="一、安装mysql服务器和客户端 $ sudo apt-get install mysql-server mysql-client 二、启动mysql服务 $ sudo /etc/init.d/mysql start 三、连接mysql服务器 1、root超级用户登录 # mysql -u root -p 2、普通"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">mysql基本操作</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-11-07 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/database/"> Database </a>
+            </div>
+          <span class="more-meta"> 约 761 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#一安装mysql服务器和客户端">一、安装mysql服务器和客户端</a></li>
+            <li><a href="#二启动mysql服务">二、启动mysql服务</a></li>
+            <li><a href="#三连接mysql服务器">三、连接mysql服务器</a></li>
+            <li><a href="#四停止mysql服务">四、停止mysql服务</a></li>
+            <li><a href="#五禁止匿名登陆">五、禁止匿名登陆</a></li>
+            <li><a href="#六更改root用户密码">六、更改root用户密码</a></li>
+            <li><a href="#七查看数据库存放位置">七、查看数据库存放位置</a></li>
+            <li><a href="#八删除数据库">八、删除数据库</a></li>
+            <li><a href="#九查看数据库信息">九、查看数据库信息</a></li>
+            <li><a href="#十变量">十、变量</a></li>
+            <li><a href="#十一函数">十一、函数</a></li>
+            <li><a href="#十二创建用户并授权">十二、创建用户并授权</a></li>
+            <li><a href="#十三给数据表授权">十三、给数据表授权</a></li>
+            <li><a href="#十四修改数据库列">十四、修改数据库列</a></li>
+            <li><a href="#十五修改数据表名">十五、修改数据表名</a></li>
+            <li><a href="#十六-执行外部脚本">十六. 执行外部脚本</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="一安装mysql服务器和客户端">一、安装mysql服务器和客户端</h3>
+<p><code>$ sudo apt-get install mysql-server mysql-client</code></p>
+<h3 id="二启动mysql服务">二、启动mysql服务</h3>
+<p><code>$ sudo /etc/init.d/mysql start</code></p>
+<h3 id="三连接mysql服务器">三、连接mysql服务器</h3>
+<h4 id="1root超级用户登录">1、root超级用户登录</h4>
+<p><code># mysql -u root -p</code></p>
+<h4 id="2普通用户登录">2、普通用户登录</h4>
+<p><code>$ mysql -u bookorama -p</code></p>
+<h4 id="3访问数据库表">3、访问数据库表</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">databases</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="n">use</span><span class="w"> </span><span class="n">books</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">books</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="四停止mysql服务">四、停止mysql服务</h3>
+<p><code>$ sudo /etc/init.d/mysql stop</code></p>
+<h3 id="五禁止匿名登陆">五、禁止匿名登陆</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="o">#</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="n">use</span><span class="w"> </span><span class="n">mysql</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">User</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="n">quit</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="n">mysqladmin</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">reload</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="六更改root用户密码">六、更改root用户密码</h3>
+<p><code>$ mysqladmin -u root -p password 'newpassword'</code></p>
+<h3 id="七查看数据库存放位置">七、查看数据库存放位置</h3>
+<p><code># mysqladmin -u root -p variables|grep datadir</code></p>
+<h3 id="八删除数据库">八、删除数据库</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&gt;</span><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">cmd</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">drop</span><span class="w"> </span><span class="n">tables</span><span class="w"> </span><span class="n">cmd</span><span class="p">,</span><span class="n">cmd_all</span><span class="p">,</span><span class="n">proptags</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>注意：删除表时，如果没有外键约束，才能删除成功</p>
+<h3 id="九查看数据库信息">九、查看数据库信息</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">databases</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="w"> </span><span class="p">(</span><span class="k">from</span><span class="w"> </span><span class="n">databasename</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">books</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">databasename</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">describe</span><span class="w"> </span><span class="n">books</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">books</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="十变量">十、变量</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;%character%&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">set</span><span class="w"> </span><span class="o">@</span><span class="n">var1</span><span class="o">=</span><span class="s1">&#39;chenbin&#39;</span><span class="p">,</span><span class="o">@</span><span class="n">var2</span><span class="o">=</span><span class="s1">&#39;panda&#39;</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">定义并设置用户变量</span><span class="n">var1和var2</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="o">@</span><span class="n">var1</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">查看用户变量</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">set</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">sort_buffer_size</span><span class="o">=</span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">设置全局系统变量</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="o">@@</span><span class="k">global</span><span class="p">.</span><span class="n">sort_buffer_size</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">察看全局系统变量</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">set</span><span class="w"> </span><span class="n">sort_buffer_size</span><span class="o">=</span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">设置</span><span class="n">session系统变量</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="o">@@</span><span class="n">sort_buffer_size</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">察看</span><span class="n">session系统变量</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="十一函数">十一、函数</h3>
+<p><code>mysql&gt;select last_insert_id();</code></p>
+<h3 id="十二创建用户并授权">十二、创建用户并授权</h3>
+<p>创建admin用户，该用户拥有所有数据库，包括mysql数据库的所有权限，并且能对其它用户授权。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="o">#</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">grant</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">admin</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">grant</span><span class="w"> </span><span class="k">option</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">grants</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">admin</span><span class="p">;</span><span class="w"> 
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="十三给数据表授权">十三、给数据表授权</h3>
+<p><code>mysql&gt;grant update (password) on cmddb_comm.system_users to test;</code></p>
+<h3 id="十四修改数据库列">十四、修改数据库列</h3>
+<p>change需要加上旧列和新列的名称，即使不改变名称，也要写上</p>
+<p><code>mysql&gt;alter table cmds change cmd_syntax1 cmd_syntax varchar(150) not null;</code></p>
+<p>modify不能改变列的名称</p>
+<p><code>mysql&gt;alter table cmds modify param_description varchar(600) DEFAULT null; </code></p>
+<h3 id="十五修改数据表名">十五、修改数据表名</h3>
+<p><code>mysql&gt;alter table dev_sub_series rename to device_sub_series; </code></p>
+<h3 id="十六-执行外部脚本">十六. 执行外部脚本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="err">$</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;/</span><span class="n">home</span><span class="o">/</span><span class="n">cb</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">working</span><span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">program</span><span class="o">/</span><span class="n">webapps</span><span class="o">/</span><span class="n">jsp</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">guestbook</span><span class="p">.</span><span class="k">sql</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">source</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">cb</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">working</span><span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">program</span><span class="o">/</span><span class="n">webapps</span><span class="o">/</span><span class="n">jsp</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">guestbook</span><span class="p">.</span><span class="k">sql</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2014-11-07
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          <a href="/tags/mysql/">mysql</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2014/11/07/mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">mysql基本操作</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2014/11/07/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/">
+            <span class="next-text nav-default">mysql数据导入方法</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
