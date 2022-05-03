@@ -349,5 +349,14 @@
       <description>hdparm是Linux下一款能够获取和设置SATA/IDE设备参数的工具。 1、获取硬盘参数 $ sudo hdparm -i /dev/sda $ sudo hdparam -i /dev/sda | grep SerialNo //获取硬盘序列号 2、</description>
     </item>
     
+    <item>
+      <title>Bash变量扩展修改符</title>
+      <link>https://chenxiaopang.github.io/1/01/01/bash%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95%E4%BF%AE%E6%94%B9%E7%AC%A6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/1/01/01/bash%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95%E4%BF%AE%E6%94%B9%E7%AC%A6/</guid>
+      <description>一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $fruit=peach $echo ${fruit:-plum} peach $fruit= $echo ${fruit:-plum} plum $echo $fruit $ 二、未</description>
+    </item>
+    
   </channel>
 </rss>
