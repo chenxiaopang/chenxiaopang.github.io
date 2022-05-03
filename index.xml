@@ -215,6 +215,15 @@
     </item>
     
     <item>
+      <title>Ubuntu中ADSL拨号上网</title>
+      <link>https://chenxiaopang.github.io/2015/07/10/ubuntu%E4%B8%ADadsl%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91/</link>
+      <pubDate>Fri, 10 Jul 2015 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/07/10/ubuntu%E4%B8%ADadsl%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91/</guid>
+      <description>一直在家用接ADSL的无线wifi上网，最近用了很久的NetGear无线路由器被我毁了，只好暂时用有线了。 在Ubuntu Linux下也可直接</description>
+    </item>
+    
+    <item>
       <title>Bash中单引号和双引号的区别</title>
       <link>https://chenxiaopang.github.io/2015/06/27/bash%E4%B8%AD%E5%8D%95%E5%BC%95%E5%8F%B7%E5%92%8C%E5%8F%8C%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
       <pubDate>Sat, 27 Jun 2015 16:48:26 +0800</pubDate>
@@ -536,15 +545,6 @@
       
       <guid>https://chenxiaopang.github.io/2012/02/10/emacs%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</guid>
       <description>一、Emacs常用热键和命令 序号 快捷键 命令 功能 备注 1 M-x 进入输入命令状态,万能状态 2 C-x C-c save-buffers-kill-emacs 退出Emacs 3 C-k kill-line 删除从光标到行尾 4 C-u 0 C-k 删除从光</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu中ADSL拨号上网</title>
-      <link>https://chenxiaopang.github.io/2012/02/10/ubuntu%E4%B8%ADadsl%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91/</link>
-      <pubDate>Fri, 10 Feb 2012 23:06:18 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/2012/02/10/ubuntu%E4%B8%ADadsl%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91/</guid>
-      <description>一直在家用接ADSL的无线wifi上网，最近用了很久的NetGear无线路由器被我毁了，只好暂时用有线了。 在Ubuntu Linux下也可直接</description>
     </item>
     
     <item>

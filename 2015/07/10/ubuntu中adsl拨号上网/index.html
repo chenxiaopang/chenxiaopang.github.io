@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>用hdparm获取硬盘参数 - Panda的随笔</title>
+  <title>Ubuntu中ADSL拨号上网 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="hdparm是Linux下一款能够获取和设置SATA/IDE设备参数的工具。 1、获取硬盘参数 $ sudo hdparm -i /dev/sda $ sudo hdparam -i /dev/sda | grep SerialNo //获取硬盘序列号 2、" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一直在家用接ADSL的无线wifi上网，最近用了很久的NetGear无线路由器被我毁了，只好暂时用有线了。 在Ubuntu Linux下也可直接" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/2012/01/29/%E7%94%A8hdparm%E8%8E%B7%E5%8F%96%E7%A1%AC%E7%9B%98%E5%8F%82%E6%95%B0/" />
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/07/10/ubuntu%E4%B8%ADadsl%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="用hdparm获取硬盘参数" />
-<meta property="og:description" content="hdparm是Linux下一款能够获取和设置SATA/IDE设备参数的工具。 1、获取硬盘参数 $ sudo hdparm -i /dev/sda $ sudo hdparam -i /dev/sda | grep SerialNo //获取硬盘序列号 2、" />
+<meta property="og:title" content="Ubuntu中ADSL拨号上网" />
+<meta property="og:description" content="一直在家用接ADSL的无线wifi上网，最近用了很久的NetGear无线路由器被我毁了，只好暂时用有线了。 在Ubuntu Linux下也可直接" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxiaopang.github.io/2012/01/29/%E7%94%A8hdparm%E8%8E%B7%E5%8F%96%E7%A1%AC%E7%9B%98%E5%8F%82%E6%95%B0/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2012-01-29T11:21:00&#43;08:00" />
-<meta property="article:modified_time" content="2012-01-29T11:21:00&#43;08:00" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/07/10/ubuntu%E4%B8%ADadsl%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-07-10T23:06:18&#43;08:00" />
+<meta property="article:modified_time" content="2015-07-10T23:06:18&#43;08:00" />
 
-<meta itemprop="name" content="用hdparm获取硬盘参数">
-<meta itemprop="description" content="hdparm是Linux下一款能够获取和设置SATA/IDE设备参数的工具。 1、获取硬盘参数 $ sudo hdparm -i /dev/sda $ sudo hdparam -i /dev/sda | grep SerialNo //获取硬盘序列号 2、"><meta itemprop="datePublished" content="2012-01-29T11:21:00&#43;08:00" />
-<meta itemprop="dateModified" content="2012-01-29T11:21:00&#43;08:00" />
-<meta itemprop="wordCount" content="80">
-<meta itemprop="keywords" content="硬盘,参数,hdparm," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="用hdparm获取硬盘参数"/>
-<meta name="twitter:description" content="hdparm是Linux下一款能够获取和设置SATA/IDE设备参数的工具。 1、获取硬盘参数 $ sudo hdparm -i /dev/sda $ sudo hdparam -i /dev/sda | grep SerialNo //获取硬盘序列号 2、"/>
+<meta itemprop="name" content="Ubuntu中ADSL拨号上网">
+<meta itemprop="description" content="一直在家用接ADSL的无线wifi上网，最近用了很久的NetGear无线路由器被我毁了，只好暂时用有线了。 在Ubuntu Linux下也可直接"><meta itemprop="datePublished" content="2015-07-10T23:06:18&#43;08:00" />
+<meta itemprop="dateModified" content="2015-07-10T23:06:18&#43;08:00" />
+<meta itemprop="wordCount" content="305">
+<meta itemprop="keywords" content="Linux,ADSL," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ubuntu中ADSL拨号上网"/>
+<meta name="twitter:description" content="一直在家用接ADSL的无线wifi上网，最近用了很久的NetGear无线路由器被我毁了，只好暂时用有线了。 在Ubuntu Linux下也可直接"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,15 +129,16 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">用hdparm获取硬盘参数</h1>
+      <h1 class="post-title">Ubuntu中ADSL拨号上网</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2012-01-29 </span>
+        <span class="post-time"> 2015-07-10 </span>
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
-            <a href="/categories/tools/"> Tools </a>
+            <a href="/categories/applications/"> Applications </a>
+            <a href="/categories/network/"> network </a>
             </div>
-          <span class="more-meta"> 约 80 字 </span>
+          <span class="more-meta"> 约 305 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -152,7 +153,10 @@
       <ul>
         <li>
           <ul>
-            <li></li>
+            <li><a href="#一连接设备">一、连接设备</a></li>
+            <li><a href="#二编辑连接">二、编辑连接</a></li>
+            <li><a href="#三新建dsl连接">三、新建DSL连接</a></li>
+            <li><a href="#四拨号">四、拨号</a></li>
           </ul>
         </li>
       </ul>
@@ -162,13 +166,21 @@
   </div>
 </div>
     <div class="post-content">
-      <p>hdparm是Linux下一款能够获取和设置SATA/IDE设备参数的工具。</p>
-<h4 id="1获取硬盘参数">1、获取硬盘参数</h4>
-<p>$ sudo hdparm -i /dev/sda
-$ sudo hdparam -i /dev/sda | grep <strong>SerialNo</strong>  //获取硬盘序列号</p>
-<h4 id="2测试硬盘读速率">2、测试硬盘读速率</h4>
-<p>#hdparm -t /dev/sda</p>
-<p><img src="/pic/Linux/Tools/hdparm.png" alt=""></p>
+      <p>一直在家用接ADSL的无线wifi上网，最近用了很久的NetGear无线路由器被我毁了，只好暂时用有线了。
+在Ubuntu Linux下也可直接使用ADSL拨号上网。</p>
+<h3 id="一连接设备">一、连接设备</h3>
+<p>这没什么可多说的，一般都是联通上门服务。电话线连接联通ADSL猫的ADSL口，电脑连接任何一个LAN口。</p>
+<h3 id="二编辑连接">二、编辑连接</h3>
+<p>鼠标点击任务栏托盘区的网络连接图标-&gt;编辑连接，打开“网络连接”对话框</p>
+<p><img src="/pic/Linux/Applications/%E7%BD%91%E7%BB%9C%E6%89%98%E7%9B%98.png" alt="网络托盘"></p>
+<p><img src="/pic/Linux/Applications/%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5.png" alt="网络连接"></p>
+<h3 id="三新建dsl连接">三、新建DSL连接</h3>
+<p><img src="/pic/Linux/Applications/DSL%E8%BF%9E%E6%8E%A5.png" alt="DSL连接"></p>
+<p>输入联通公司分配的用户名和密码，按“保存”即可。</p>
+<h3 id="四拨号">四、拨号</h3>
+<p>鼠标点击任务栏托盘区的网络连接图标-&gt;DSL 连接2，稍等片刻，如果拨号成功，则显示连接成功信息。</p>
+<p>打开浏览器就可以上网了。</p>
+<p>以上设置在Ubuntu 12.04上测试通过。</p>
 
     </div>
 
@@ -180,7 +192,7 @@ $ sudo hdparam -i /dev/sda | grep <strong>SerialNo</strong>  //获取硬盘序�
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2012-01-29
+        2015-07-10
         
     </span>
   </p>
@@ -189,17 +201,20 @@ $ sudo hdparam -i /dev/sda | grep <strong>SerialNo</strong>  //获取硬盘序�
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E7%A1%AC%E7%9B%98/">硬盘</a>
-          <a href="/tags/%E5%8F%82%E6%95%B0/">参数</a>
-          <a href="/tags/hdparm/">hdparm</a>
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/adsl/">ADSL</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2012/02/10/emacs%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/">
+        <a class="prev" href="/2015/12/27/%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%E8%A6%81%E7%82%B9/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Emacs常用用法</span>
+            <span class="prev-text nav-default">硬盘分区要点</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        
+        <a class="next" href="/2015/06/27/bash%E4%B8%AD%E5%8D%95%E5%BC%95%E5%8F%B7%E5%92%8C%E5%8F%8C%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/">
+            <span class="next-text nav-default">Bash中单引号和双引号的区别</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
       </nav>
     </footer>
   </article>

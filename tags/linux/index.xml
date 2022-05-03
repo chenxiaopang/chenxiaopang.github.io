@@ -35,6 +35,15 @@
     </item>
     
     <item>
+      <title>Ubuntu中ADSL拨号上网</title>
+      <link>https://chenxiaopang.github.io/2015/07/10/ubuntu%E4%B8%ADadsl%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91/</link>
+      <pubDate>Fri, 10 Jul 2015 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/07/10/ubuntu%E4%B8%ADadsl%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91/</guid>
+      <description>一直在家用接ADSL的无线wifi上网，最近用了很久的NetGear无线路由器被我毁了，只好暂时用有线了。 在Ubuntu Linux下也可直接</description>
+    </item>
+    
+    <item>
       <title>Ubuntu下利用cue文件对ape和wav镜像文件自动分轨</title>
       <link>https://chenxiaopang.github.io/2015/06/07/ubuntu%E4%B8%8B%E5%88%A9%E7%94%A8cue%E6%96%87%E4%BB%B6%E5%AF%B9ape%E5%92%8Cwav%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E5%88%86%E8%BD%A8/</link>
       <pubDate>Sun, 07 Jun 2015 16:01:26 +0800</pubDate>
@@ -140,15 +149,6 @@
       
       <guid>https://chenxiaopang.github.io/2012/02/10/emacs%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</guid>
       <description>一、Emacs常用热键和命令 序号 快捷键 命令 功能 备注 1 M-x 进入输入命令状态,万能状态 2 C-x C-c save-buffers-kill-emacs 退出Emacs 3 C-k kill-line 删除从光标到行尾 4 C-u 0 C-k 删除从光</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu中ADSL拨号上网</title>
-      <link>https://chenxiaopang.github.io/2012/02/10/ubuntu%E4%B8%ADadsl%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91/</link>
-      <pubDate>Fri, 10 Feb 2012 23:06:18 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/2012/02/10/ubuntu%E4%B8%ADadsl%E6%8B%A8%E5%8F%B7%E4%B8%8A%E7%BD%91/</guid>
-      <description>一直在家用接ADSL的无线wifi上网，最近用了很久的NetGear无线路由器被我毁了，只好暂时用有线了。 在Ubuntu Linux下也可直接</description>
     </item>
     
   </channel>
