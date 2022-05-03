@@ -206,6 +206,15 @@
     </item>
     
     <item>
+      <title>标准IO和重定向</title>
+      <link>https://chenxiaopang.github.io/2015/06/22/%E6%A0%87%E5%87%86io%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/</link>
+      <pubDate>Mon, 22 Jun 2015 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/06/22/%E6%A0%87%E5%87%86io%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/</guid>
+      <description>一、标准输入/输出/错误 当shell启动，它继承三个文件：stdin、stdout、stderr，标准输入通常来自键盘，标准输出和标准错误通</description>
+    </item>
+    
+    <item>
       <title>Bash变量扩展修改符</title>
       <link>https://chenxiaopang.github.io/2015/06/21/bash%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95%E4%BF%AE%E6%94%B9%E7%AC%A6/</link>
       <pubDate>Sun, 21 Jun 2015 16:18:26 +0800</pubDate>

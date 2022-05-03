@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Bash变量扩展修改符 - Panda的随笔</title>
+  <title>标准IO和重定向 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $ fruit=peach $ echo ${fruit:-plum} peach $ fruit= $ echo ${fruit:-plum} plum $ echo" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一、标准输入/输出/错误 当shell启动，它继承三个文件：stdin、stdout、stderr，标准输入通常来自键盘，标准输出和标准错误通" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/2015/06/21/bash%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95%E4%BF%AE%E6%94%B9%E7%AC%A6/" />
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/06/22/%E6%A0%87%E5%87%86io%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Bash变量扩展修改符" />
-<meta property="og:description" content="一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $ fruit=peach $ echo ${fruit:-plum} peach $ fruit= $ echo ${fruit:-plum} plum $ echo" />
+<meta property="og:title" content="标准IO和重定向" />
+<meta property="og:description" content="一、标准输入/输出/错误 当shell启动，它继承三个文件：stdin、stdout、stderr，标准输入通常来自键盘，标准输出和标准错误通" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxiaopang.github.io/2015/06/21/bash%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95%E4%BF%AE%E6%94%B9%E7%AC%A6/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2015-06-21T16:18:26&#43;08:00" />
-<meta property="article:modified_time" content="2015-06-21T16:18:26&#43;08:00" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/06/22/%E6%A0%87%E5%87%86io%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-06-22T16:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2015-06-22T16:18:26&#43;08:00" />
 
-<meta itemprop="name" content="Bash变量扩展修改符">
-<meta itemprop="description" content="一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $ fruit=peach $ echo ${fruit:-plum} peach $ fruit= $ echo ${fruit:-plum} plum $ echo"><meta itemprop="datePublished" content="2015-06-21T16:18:26&#43;08:00" />
-<meta itemprop="dateModified" content="2015-06-21T16:18:26&#43;08:00" />
-<meta itemprop="wordCount" content="238">
+<meta itemprop="name" content="标准IO和重定向">
+<meta itemprop="description" content="一、标准输入/输出/错误 当shell启动，它继承三个文件：stdin、stdout、stderr，标准输入通常来自键盘，标准输出和标准错误通"><meta itemprop="datePublished" content="2015-06-22T16:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2015-06-22T16:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="453">
 <meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Bash变量扩展修改符"/>
-<meta name="twitter:description" content="一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $ fruit=peach $ echo ${fruit:-plum} peach $ fruit= $ echo ${fruit:-plum} plum $ echo"/>
+<meta name="twitter:title" content="标准IO和重定向"/>
+<meta name="twitter:description" content="一、标准输入/输出/错误 当shell启动，它继承三个文件：stdin、stdout、stderr，标准输入通常来自键盘，标准输出和标准错误通"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,15 +129,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Bash变量扩展修改符</h1>
+      <h1 class="post-title">标准IO和重定向</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2015-06-21 </span>
+        <span class="post-time"> 2015-06-22 </span>
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/bash/"> Bash </a>
             </div>
-          <span class="more-meta"> 约 238 字 </span>
+          <span class="more-meta"> 约 453 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -152,11 +152,9 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#一未设置就临时替换-">一、未设置就临时替换（:-）</a></li>
-            <li><a href="#二未设置就永久替换">二、未设置就永久替换(:=)</a></li>
-            <li><a href="#三设置了就临时替换">三、设置了就临时替换(:+)</a></li>
-            <li><a href="#四未设置就打印消息">四、未设置就打印消息(:?)</a></li>
-            <li><a href="#五子字符串mn">五、子字符串(:m:n)</a></li>
+            <li><a href="#一标准输入输出错误">一、标准输入/输出/错误</a></li>
+            <li><a href="#二重定向操作符">二、重定向操作符</a></li>
+            <li><a href="#三例子">三、例子</a></li>
           </ul>
         </li>
       </ul>
@@ -166,118 +164,107 @@
   </div>
 </div>
     <div class="post-content">
-      <h3 id="一未设置就临时替换-">一、未设置就临时替换（:-）</h3>
-<p>冒号<code>：</code>用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换</p>
+      <h3 id="一标准输入输出错误">一、标准输入/输出/错误</h3>
+<p>当shell启动，它继承三个文件：stdin、stdout、stderr，标准输入通常来自键盘，标准输出和标准错误通常是屏幕。</p>
+<p>标准输入/输出/错误的文件描述符为0、1、2</p>
+<h3 id="二重定向操作符">二、重定向操作符</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:left">重定向输入</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&amp;</td>
+<td style="text-align:left">重定向输入，后接数字格式的文件描述符</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:left">重定向输出</td>
+</tr>
+<tr>
+<td style="text-align:center">&raquo;</td>
+<td style="text-align:left">追加输出</td>
+</tr>
+<tr>
+<td style="text-align:center">2&gt;</td>
+<td style="text-align:left">重定向错误</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;&gt;</td>
+<td style="text-align:left">重定向错误和输出，后接文件名</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;&amp;</td>
+<td style="text-align:left">重定向错误和输出，后接文件名或数字格式的文件描述符</td>
+</tr>
+<tr>
+<td style="text-align:center">2&gt;&amp;1</td>
+<td style="text-align:left">重定向标准错误到标准输出</td>
+</tr>
+<tr>
+<td style="text-align:center">1&gt;&amp;2</td>
+<td style="text-align:left">重定向标准输出到标准错误</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&gt;filename</td>
+<td style="text-align:left">如果是一个设备文件，就把这个文件作为标准输入和标准输出</td>
+</tr>
+</tbody>
+</table>
+<h3 id="三例子">三、例子</h3>
+<h4 id="1将标准错误重定向到文件">1、将标准错误重定向到文件</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nv">fruit</span><span class="o">=</span>peach
-$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">fruit</span><span class="k">:-</span><span class="nv">plum</span><span class="si">}</span>
-peach
-
-$ <span class="nv">fruit</span><span class="o">=</span>
-$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">fruit</span><span class="k">:-</span><span class="nv">plum</span><span class="si">}</span>
-plum
-
-$ <span class="nb">echo</span> <span class="nv">$fruit</span>
-$
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ cc prog.c 2&gt;errfile
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="二未设置就永久替换">二、未设置就永久替换(:=)</h3>
+</div><h4 id="2将标准输出重定向到文件标准错误重定向到空设备文件">2、将标准输出重定向到文件，标准错误重定向到空设备文件</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ cc prog.c &gt;logfile 2&gt;/dev/null
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3将标准输出和标准错误都定向到文件或文件描述符">3、将标准输出和标准错误都定向到文件或文件描述符</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nv">name</span><span class="o">=</span>
-$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">name</span><span class="p">:=Peter</span><span class="si">}</span>
-Peter
-
-$ <span class="nb">echo</span> <span class="nv">$name</span>
-Peter
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ cc prog.c <span class="p">&amp;</span>&gt; logfile //必须是文件名
+$ cc prog.c &gt;<span class="p">&amp;</span> logfile //可以是文件名或数字格式的文件描述符
+$ cc prog.c &gt;<span class="p">&amp;</span> <span class="m">1</span> //将标准输出和标准错误重定向到标准输出，标准输出的文件描述符为1
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="三设置了就临时替换">三、设置了就临时替换(:+)</h3>
+</div><h4 id="4将标准输出重定向到文件将标准错误重定向到标准输出定向的设备">4、将标准输出重定向到文件，将标准错误重定向到标准输出定向的设备</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nv">foo</span><span class="o">=</span>grapes
-$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">foo</span><span class="p">:+pears</span><span class="si">}</span>
-pears
-$ <span class="nb">echo</span> <span class="nv">$foo</span>
-grapes
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="四未设置就打印消息">四、未设置就打印消息(:?)</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">namex</span><span class="p">:?</span><span class="s2">&#34;namex is undefined&#34;</span><span class="si">}</span>
-namex: namex is undefined
-
-$ <span class="nb">echo</span> <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">1</span><span class="p">:?</span><span class="s2">&#34;requires an argument&#34;</span><span class="si">}</span> //适用于脚本中检测位置参量
-1: requires an argument
-
-$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">y</span><span class="p">:?</span><span class="si">}</span>
-y: parameter null or not <span class="nb">set</span> //打印默认消息
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="五子字符串mn">五、子字符串(:m:n)</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nv">var</span><span class="o">=</span>notebook
-
-$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">:</span><span class="nv">0</span><span class="si">}</span>
-notebook
-
-$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">4</span><span class="si">}</span>
-note
-
-$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">:</span><span class="nv">4</span><span class="p">:</span><span class="nv">4</span><span class="si">}</span>
-book 
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ cc prog.c &gt;logfile 2&gt;<span class="p">&amp;</span><span class="m">1</span>
+等效于
+$ cc prog.c &gt;<span class="p">&amp;</span> logfile 
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -291,7 +278,7 @@ book
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2015-06-21
+        2015-06-22
         
     </span>
   </p>
@@ -304,13 +291,13 @@ book
           <a href="/tags/shell/">Shell</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2015/06/22/%E6%A0%87%E5%87%86io%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/">
+        <a class="prev" href="/2015/12/27/%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%E8%A6%81%E7%82%B9/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">标准IO和重定向</span>
+            <span class="prev-text nav-default">硬盘分区要点</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2015/06/20/mysql%E4%B8%BB%E9%94%AE%E7%BA%A6%E6%9D%9F%E5%92%8C%E5%94%AF%E4%B8%80%E6%80%A7%E7%BA%A6%E6%9D%9F/">
-            <span class="next-text nav-default">mysql主键约束和唯一性约束</span>
+        <a class="next" href="/2015/06/21/bash%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95%E4%BF%AE%E6%94%B9%E7%AC%A6/">
+            <span class="next-text nav-default">Bash变量扩展修改符</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
