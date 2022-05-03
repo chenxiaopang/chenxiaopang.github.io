@@ -173,6 +173,54 @@
 
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2015/06/27/bash%E4%B8%AD%E5%8D%95%E5%BC%95%E5%8F%B7%E5%92%8C%E5%8F%8C%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/">Bash中单引号和双引号的区别</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-06-27 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          <a href="/categories/bash/"> Bash </a>
+          </div>
+        <span class="more-meta"> 约 495 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      一、单引号和双引号的区别 1. 单引号``` 必须成对使用，它可以保护所有的字符不被翻译。 如变量'$1'，和奇数个单引号的作用相同，偶数个单引号=1
+    </div>
+    <div class="read-more">
+      <a href="/2015/06/27/bash%E4%B8%AD%E5%8D%95%E5%BC%95%E5%8F%B7%E5%92%8C%E5%8F%8C%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2015/06/22/%E5%BB%BA%E7%AB%8B%E8%8F%9C%E5%8D%95/">建立菜单</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-06-22 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          <a href="/categories/bash/"> Bash </a>
+          </div>
+        <span class="more-meta"> 约 242 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      方法一：用here文档和case语句建立 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 #!/bin/bash while true do cat&lt;&lt;- ENDIT //&lt;&
+    </div>
+    <div class="read-more">
+      <a href="/2015/06/22/%E5%BB%BA%E7%AB%8B%E8%8F%9C%E5%8D%95/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2015/06/22/%E6%B3%A2%E6%B5%AA%E5%8F%B7%E5%92%8Chyphen%E6%89%A9%E5%B1%95/">波浪号和Hyphen扩展</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2015-06-22 </span>
@@ -180,65 +228,17 @@
           <a href="/categories/linux/"> Linux </a>
           <a href="/categories/bash/"> Bash </a>
           </div>
-        <span class="more-meta"> 约 132 字 </span>
+        <span class="more-meta"> 约 138 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      Bash将波浪号~作为路径扩展符 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 扩展为当前用户主目录的全路径名 $echo ~ /home/user 扩展为用户user的主目录
+      Bash将波浪号~作为路径扩展符 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 扩展为当前用户主目录的全路径名 $ echo ~ /home/user 扩展为用户user的主目
     </div>
     <div class="read-more">
       <a href="/2015/06/22/%E6%B3%A2%E6%B5%AA%E5%8F%B7%E5%92%8Chyphen%E6%89%A9%E5%B1%95/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2015/06/22/%E6%A0%87%E5%87%86io%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/">标准IO和重定向</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2015-06-22 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/bash/"> Bash </a>
-          </div>
-        <span class="more-meta"> 约 484 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      一、标准输入/输出/错误 当shell启动，它继承三个文件：stdin、stdout、stderr，标准输入通常来自键盘，标准输出和标准错误通
-    </div>
-    <div class="read-more">
-      <a href="/2015/06/22/%E6%A0%87%E5%87%86io%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2015/06/21/bash%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95%E4%BF%AE%E6%94%B9%E7%AC%A6/">Bash变量扩展修改符</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2015-06-21 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/bash/"> Bash </a>
-          </div>
-        <span class="more-meta"> 约 238 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $ fruit=peach $ echo ${fruit:-plum} peach $ fruit= $ echo ${fruit:-plum} plum $ echo
-    </div>
-    <div class="read-more">
-      <a href="/2015/06/21/bash%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95%E4%BF%AE%E6%94%B9%E7%AC%A6/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

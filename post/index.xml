@@ -206,12 +206,30 @@
     </item>
     
     <item>
+      <title>Bash中单引号和双引号的区别</title>
+      <link>https://chenxiaopang.github.io/2015/06/27/bash%E4%B8%AD%E5%8D%95%E5%BC%95%E5%8F%B7%E5%92%8C%E5%8F%8C%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Sat, 27 Jun 2015 16:48:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/06/27/bash%E4%B8%AD%E5%8D%95%E5%BC%95%E5%8F%B7%E5%92%8C%E5%8F%8C%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>一、单引号和双引号的区别 1. 单引号``` 必须成对使用，它可以保护所有的字符不被翻译。 如变量&#39;$1&#39;，和奇数个单引号的作用相同，偶数个单引号=1</description>
+    </item>
+    
+    <item>
+      <title>建立菜单</title>
+      <link>https://chenxiaopang.github.io/2015/06/22/%E5%BB%BA%E7%AB%8B%E8%8F%9C%E5%8D%95/</link>
+      <pubDate>Mon, 22 Jun 2015 16:48:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/06/22/%E5%BB%BA%E7%AB%8B%E8%8F%9C%E5%8D%95/</guid>
+      <description>方法一：用here文档和case语句建立 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 #!/bin/bash while true do cat&amp;lt;&amp;lt;- ENDIT //&amp;lt;&amp;</description>
+    </item>
+    
+    <item>
       <title>波浪号和Hyphen扩展</title>
       <link>https://chenxiaopang.github.io/2015/06/22/%E6%B3%A2%E6%B5%AA%E5%8F%B7%E5%92%8Chyphen%E6%89%A9%E5%B1%95/</link>
       <pubDate>Mon, 22 Jun 2015 16:38:26 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/2015/06/22/%E6%B3%A2%E6%B5%AA%E5%8F%B7%E5%92%8Chyphen%E6%89%A9%E5%B1%95/</guid>
-      <description>Bash将波浪号~作为路径扩展符 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 扩展为当前用户主目录的全路径名 $echo ~ /home/user 扩展为用户user的主目录</description>
+      <description>Bash将波浪号~作为路径扩展符 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 扩展为当前用户主目录的全路径名 $ echo ~ /home/user 扩展为用户user的主目</description>
     </item>
     
     <item>
