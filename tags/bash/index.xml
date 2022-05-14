@@ -6,7 +6,16 @@
     <description>Recent content in Bash on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 02 Aug 2015 17:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Aug 2015 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>top的用法</title>
+      <link>https://chenxiaopang.github.io/2015/08/06/top%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Thu, 06 Aug 2015 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/08/06/top%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>top命令可以用来方便地观察当前系统中运行的进程的信息，并可以在运行过程中执行改变进程的优先级、更改排序规则、导出状态信息等操作，非常方便。</description>
+    </item>
+    
     <item>
       <title>格式化输出和printf命令</title>
       <link>https://chenxiaopang.github.io/2015/08/02/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA%E5%92%8Cprintf%E5%91%BD%E4%BB%A4/</link>
