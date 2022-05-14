@@ -181,10 +181,10 @@
 </div>
 </div><h3 id="二显示在后台运行的作业">二、显示在后台运行的作业</h3>
 <ol>
-<li>列出所有后台作业，不显示PID
-<code>+</code>代表最后放到后台运行的作业
-<code>-</code>代表倒数第二个放到后台运行的作业</li>
+<li>列出所有后台作业，不显示PID</li>
 </ol>
+<p><code>+</code>代表最后放到后台运行的作业</p>
+<p><code>-</code>代表倒数第二个放到后台运行的作业</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -289,24 +289,24 @@ gedit
 </code></pre></td></tr></table>
 </div>
 </div><ol start="3">
-<li>
-<p>启动后台停止的作业1
-<code># bg %1</code></p>
-</li>
-<li>
-<p>将作业1从从作业表中移除，shell不会将其识别为可用的作业（成为一个正常的进程，ps能查看）
-<code># disown %1</code></p>
-</li>
-<li>
-<p>杀掉作业1
-<code># kill %1</code></p>
-</li>
-<li>
-<p>强制杀掉作业1
-<code># kill -9 %1</code></p>
-</li>
-<li>
-<p>kill常用信号</p>
+<li>启动后台停止的作业1</li>
+</ol>
+<p><code># bg %1</code></p>
+<ol start="4">
+<li>将作业1从从作业表中移除，shell不会将其识别为可用的作业（成为一个正常的进程，ps能查看）</li>
+</ol>
+<p><code># disown %1</code></p>
+<ol start="5">
+<li>杀掉作业1</li>
+</ol>
+<p><code># kill %1</code></p>
+<ol start="6">
+<li>强制杀掉作业1</li>
+</ol>
+<p><code># kill -9 %1</code></p>
+<ol start="7">
+<li>kill常用信号</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -333,8 +333,6 @@ gedit
 </tr>
 </tbody>
 </table>
-</li>
-</ol>
 <h3 id="四终端后台和系统后台">四、终端后台和系统后台</h3>
 <ol>
 <li><kbd>CTRL</kbd>+<kbd>z</kbd>将正在运行的前台作业送后台，并挂起(暂停执行)，显示提示符。</li>
