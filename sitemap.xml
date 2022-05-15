@@ -492,6 +492,34 @@
   </url>
   
   <url>
+    <loc>https://chenxiaopang.github.io/tags/bash/</loc>
+    <lastmod>2015-08-08T16:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/categories/bash/</loc>
+    <lastmod>2015-08-08T16:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2015/08/08/bash%E7%9A%84%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2/</loc>
+    <lastmod>2015-08-08T16:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/shell/</loc>
+    <lastmod>2015-08-08T16:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://chenxiaopang.github.io/tags/snapshot/</loc>
     <lastmod>2015-08-06T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -515,34 +543,6 @@
   <url>
     <loc>https://chenxiaopang.github.io/tags/vm/</loc>
     <lastmod>2015-08-06T23:06:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/bash/</loc>
-    <lastmod>2015-08-06T16:18:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/categories/bash/</loc>
-    <lastmod>2015-08-06T16:18:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/2015/08/06/bash%E7%9A%84%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2/</loc>
-    <lastmod>2015-08-06T16:18:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/shell/</loc>
-    <lastmod>2015-08-06T16:18:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

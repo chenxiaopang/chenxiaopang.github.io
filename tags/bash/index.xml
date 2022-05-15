@@ -6,13 +6,13 @@
     <description>Recent content in Bash on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 06 Aug 2015 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Aug 2015 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bash的命令替换</title>
-      <link>https://chenxiaopang.github.io/2015/08/06/bash%E7%9A%84%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2/</link>
-      <pubDate>Thu, 06 Aug 2015 16:18:26 +0800</pubDate>
+      <link>https://chenxiaopang.github.io/2015/08/08/bash%E7%9A%84%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2/</link>
+      <pubDate>Sat, 08 Aug 2015 16:18:26 +0800</pubDate>
       
-      <guid>https://chenxiaopang.github.io/2015/08/06/bash%E7%9A%84%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2/</guid>
+      <guid>https://chenxiaopang.github.io/2015/08/08/bash%E7%9A%84%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2/</guid>
       <description>命令替换是将命令替换为命令的执行输出，所有的shell支持使用反引号的方法进行命令替换。 Bash支持两种形式：$(command) 和comm</description>
     </item>
     
