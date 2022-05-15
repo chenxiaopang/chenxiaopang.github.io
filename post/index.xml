@@ -215,6 +215,15 @@
     </item>
     
     <item>
+      <title>Bash的数学扩展</title>
+      <link>https://chenxiaopang.github.io/2015/08/08/bash%E7%9A%84%E6%95%B0%E5%AD%A6%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Sat, 08 Aug 2015 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/08/08/bash%E7%9A%84%E6%95%B0%E5%AD%A6%E6%89%A9%E5%B1%95/</guid>
+      <description>Bash只支持整数运算，不支持浮点运算。如果需要进行浮点运算，需要使用bc等程序。 一、整数计算 1. 整数的表示 整数可以表达为不同的进制（二进制、</description>
+    </item>
+    
+    <item>
       <title>VirtualBox快照</title>
       <link>https://chenxiaopang.github.io/2015/08/06/virtualbox%E5%BF%AB%E7%85%A7/</link>
       <pubDate>Thu, 06 Aug 2015 23:06:18 +0800</pubDate>
