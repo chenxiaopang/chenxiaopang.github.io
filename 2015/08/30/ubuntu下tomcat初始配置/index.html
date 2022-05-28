@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Ubuntu下Tomcat初始配置">
 <meta itemprop="description" content="一、下载tomcat安装包 从tomcat官方网站 http://tomcat.apache.org 下载安装包，然后解压到某个目录，比如: ~/opt/apache-tomcat-7.0.63 官方文档中建议不要使用各个Linux发行版中已经打"><meta itemprop="datePublished" content="2015-08-30T23:06:18&#43;08:00" />
 <meta itemprop="dateModified" content="2015-08-30T23:06:18&#43;08:00" />
-<meta itemprop="wordCount" content="875">
+<meta itemprop="wordCount" content="879">
 <meta itemprop="keywords" content="Linux,Tomcat," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ubuntu下Tomcat初始配置"/>
 <meta name="twitter:description" content="一、下载tomcat安装包 从tomcat官方网站 http://tomcat.apache.org 下载安装包，然后解压到某个目录，比如: ~/opt/apache-tomcat-7.0.63 官方文档中建议不要使用各个Linux发行版中已经打"/>
@@ -138,7 +138,7 @@
             <a href="/categories/applications/"> Applications </a>
             <a href="/categories/ubuntu/"> Ubuntu </a>
             </div>
-          <span class="more-meta"> 约 875 字 </span>
+          <span class="more-meta"> 约 879 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -268,7 +268,7 @@ $ ln -s ~/working/project/program/webapps/mywebapp mywebapp
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$vim</span> <span class="nv">$TOMCAT_INSTALL_DIR</span>/bin/setenv.sh
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ vim <span class="nv">$TOMCAT_INSTALL_DIR</span>/bin/setenv.sh
 
 <span class="c1">#!/bin/sh</span>
 
@@ -327,8 +327,8 @@ $ sudo vim /etc/init.d/tomcat
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$sudo</span> service tomcat start
-<span class="nv">$sudo</span> service tomcat stop
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo service tomcat start
+$ sudo service tomcat stop
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="六测试">六、测试</h3>
@@ -337,7 +337,7 @@ $ sudo vim /etc/init.d/tomcat
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$sudo</span> service tomcat start
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo service tomcat start
 </code></pre></td></tr></table>
 </div>
 </div><p>然后，打开浏览器，输入: http://localhost</p>
