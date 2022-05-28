@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Ubuntu下Tomcat初始配置">
 <meta itemprop="description" content="一、下载tomcat安装包 从tomcat官方网站 http://tomcat.apache.org 下载安装包，然后解压到某个目录，比如: ~/opt/apache-tomcat-7.0.63 官方文档中建议不要使用各个Linux发行版中已经打"><meta itemprop="datePublished" content="2015-08-30T23:06:18&#43;08:00" />
 <meta itemprop="dateModified" content="2015-08-30T23:06:18&#43;08:00" />
-<meta itemprop="wordCount" content="879">
+<meta itemprop="wordCount" content="884">
 <meta itemprop="keywords" content="Linux,Tomcat," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ubuntu下Tomcat初始配置"/>
 <meta name="twitter:description" content="一、下载tomcat安装包 从tomcat官方网站 http://tomcat.apache.org 下载安装包，然后解压到某个目录，比如: ~/opt/apache-tomcat-7.0.63 官方文档中建议不要使用各个Linux发行版中已经打"/>
@@ -138,7 +138,7 @@
             <a href="/categories/applications/"> Applications </a>
             <a href="/categories/ubuntu/"> Ubuntu </a>
             </div>
-          <span class="more-meta"> 约 879 字 </span>
+          <span class="more-meta"> 约 884 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -154,10 +154,10 @@
         <li>
           <ul>
             <li><a href="#一下载tomcat安装包">一、下载tomcat安装包</a></li>
-            <li><a href="#二监听80端口">二、监听80端口</a></li>
+            <li><a href="#二设置监听80端口">二、设置监听80端口</a></li>
             <li><a href="#三增加用户">三、增加用户</a></li>
             <li><a href="#四设置工作目录">四、设置工作目录</a></li>
-            <li><a href="#五安装tomcat为随系统启动的服务">五、安装<code>Tomcat</code>为随系统启动的服务</a></li>
+            <li><a href="#五安装tomcat为随系统启动的服务">五、安装<code>tomcat</code>为随系统启动的服务</a></li>
             <li><a href="#六测试">六、测试</a></li>
           </ul>
         </li>
@@ -179,7 +179,7 @@
 <pre class="chroma"><code class="language-shell" data-lang="shell">$ tar xzvf apache-tomcat-7.0.63.tar.gz -C ~/opt
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="二监听80端口">二、监听80端口</h3>
+</div><h3 id="二设置监听80端口">二、设置监听80端口</h3>
 <p>修改<code>tomcat</code>安装目录下<code>conf</code>目录下的<code>server.xml</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -200,7 +200,7 @@ $ vim server.xml
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="三增加用户">三、增加用户</h3>
-<p>修改<code>tomcat7</code>安装目录下<code>conf</code>目录下的<code>tomcat-users.xml</code>文件</p>
+<p>修改<code>tomcat</code>安装目录下<code>conf</code>目录下的<code>tomcat-users.xml</code>文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -224,16 +224,22 @@ $ vim tomcat-user.xml
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="四设置工作目录">四、设置工作目录</h3>
-<p><code>Tomcat</code>下的<code>web</code>程序默认目录为<code>$TOMCAT_INSTALL_DIR/webapps</code>，只要将自己的<code>web</code>程序目录放置到该目录下就可，但用户通常需要设置自己的工作目录。两种方法：</p>
-<h4 id="1通过context的docbase变量设置">1）通过Context的docBase变量设置</h4>
+<p><code>tomcat</code>下的<code>web</code>程序默认目录为<code>$TOMCAT_INSTALL_DIR/webapps</code>，只要将自己的<code>web</code>程序目录放置到该目录下就可，但用户通常需要设置自己的工作目录。两种方法：</p>
+<h4 id="1通过context的docbase变量设置">1）通过<code>Context</code>的<code>docBase</code>变量设置</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">$ vim <span class="nv">$TOMCAT_INSTALL_DIR</span>/conf/Catalina/localhost/mywebapp.xml
+
+...
 &lt;Context <span class="nv">path</span><span class="o">=</span><span class="s2">&#34;/mywebapp&#34;</span> <span class="nv">docBase</span><span class="o">=</span><span class="s2">&#34;~/working/project/program/webapps/mywebapp&#34;</span> <span class="nv">reloadable</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>/&gt;
+...
 </code></pre></td></tr></table>
 </div>
 </div><p>注意：</p>
@@ -256,7 +262,7 @@ $ vim tomcat-user.xml
 $ ln -s ~/working/project/program/webapps/mywebapp mywebapp
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="五安装tomcat为随系统启动的服务">五、安装<code>Tomcat</code>为随系统启动的服务</h3>
+</div><h3 id="五安装tomcat为随系统启动的服务">五、安装<code>tomcat</code>为随系统启动的服务</h3>
 <h4 id="1-设置java_home环境变量">1) 设置<code>JAVA_HOME</code>环境变量</h4>
 <p>在<code>$TOMCAT_INSTALL_DIR/bin/setenv.sh</code>脚本中设置<code>JAVA_HOME</code>环境变量</p>
 <div class="highlight"><div class="chroma">
@@ -340,7 +346,7 @@ $ sudo service tomcat stop
 <pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo service tomcat start
 </code></pre></td></tr></table>
 </div>
-</div><p>然后，打开浏览器，输入: http://localhost</p>
+</div><p>然后，打开浏览器，输入 http://localhost</p>
 <p>以上在<code>Ubuntu Kylin 14.04</code>下测试通过。</p>
 
     </div>
