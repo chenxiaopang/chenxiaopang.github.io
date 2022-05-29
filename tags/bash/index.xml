@@ -6,7 +6,16 @@
     <description>Recent content in Bash on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 08 Aug 2015 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Aug 2015 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bash的条件表达式求值</title>
+      <link>https://chenxiaopang.github.io/2015/08/30/bash%E7%9A%84%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/</link>
+      <pubDate>Sun, 30 Aug 2015 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/08/30/bash%E7%9A%84%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/</guid>
+      <description>Bash的条件控制允许两种类型：命令的成功或失败、逻辑表达式的真假 这两种类型都可以通过退出状态（$?）来检验，$?=0为真，否则为假 一、命令</description>
+    </item>
+    
     <item>
       <title>Bash的命令替换</title>
       <link>https://chenxiaopang.github.io/2015/08/08/bash%E7%9A%84%E5%91%BD%E4%BB%A4%E6%9B%BF%E6%8D%A2/</link>
@@ -185,15 +194,6 @@
       
       <guid>https://chenxiaopang.github.io/2015/01/31/bash%E5%8F%98%E9%87%8F/</guid>
       <description>一、变量类型 Bash变量有两种：局部变量和环境变量。 1、局部变量 局部变量的范围仅在创建它的Shell中有效。 2、环境变量 能为创建它的Shel</description>
-    </item>
-    
-    <item>
-      <title>Bash的条件表达式求值</title>
-      <link>https://chenxiaopang.github.io/2015/01/31/bash%E7%9A%84%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/</link>
-      <pubDate>Sat, 31 Jan 2015 16:18:26 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/2015/01/31/bash%E7%9A%84%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/</guid>
-      <description>Bash的条件控制允许两种类型：1）命令的成功或失败 2）逻辑表达式的真假 这两种类型都可以通过退出状态（$?）来检验，$?=0为真，否则为假 一</description>
     </item>
     
     <item>
