@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>mysql关闭和启用外键约束 - Panda的随笔</title>
+  <title>Bash的条件表达式求值 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="有时为了导入数据方便，需要临时关闭外键约束，导入数据完成后再启用外键约束。 一、关闭外键约束 mysql&amp;gt;SET FOREIGN_KEY_CHECKS=0; 二、启用外键约束 mysql&amp;gt;SET FOREIGN_KEY_CHECKS=1; 三、查看FOREIGN_K" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="Bash的条件控制允许两种类型：1）命令的成功或失败 2）逻辑表达式的真假 这两种类型都可以通过退出状态（$?）来检验，$?=0为真，否则为假 一" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/2015/01/31/mysql%E5%85%B3%E9%97%AD%E5%92%8C%E5%90%AF%E7%94%A8%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F/" />
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/01/31/bash%E7%9A%84%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="mysql关闭和启用外键约束" />
-<meta property="og:description" content="有时为了导入数据方便，需要临时关闭外键约束，导入数据完成后再启用外键约束。 一、关闭外键约束 mysql&gt;SET FOREIGN_KEY_CHECKS=0; 二、启用外键约束 mysql&gt;SET FOREIGN_KEY_CHECKS=1; 三、查看FOREIGN_K" />
+<meta property="og:title" content="Bash的条件表达式求值" />
+<meta property="og:description" content="Bash的条件控制允许两种类型：1）命令的成功或失败 2）逻辑表达式的真假 这两种类型都可以通过退出状态（$?）来检验，$?=0为真，否则为假 一" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxiaopang.github.io/2015/01/31/mysql%E5%85%B3%E9%97%AD%E5%92%8C%E5%90%AF%E7%94%A8%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2015-01-31T15:50:08&#43;08:00" />
-<meta property="article:modified_time" content="2015-01-31T15:50:08&#43;08:00" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/01/31/bash%E7%9A%84%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-01-31T16:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2015-01-31T16:18:26&#43;08:00" />
 
-<meta itemprop="name" content="mysql关闭和启用外键约束">
-<meta itemprop="description" content="有时为了导入数据方便，需要临时关闭外键约束，导入数据完成后再启用外键约束。 一、关闭外键约束 mysql&gt;SET FOREIGN_KEY_CHECKS=0; 二、启用外键约束 mysql&gt;SET FOREIGN_KEY_CHECKS=1; 三、查看FOREIGN_K"><meta itemprop="datePublished" content="2015-01-31T15:50:08&#43;08:00" />
-<meta itemprop="dateModified" content="2015-01-31T15:50:08&#43;08:00" />
-<meta itemprop="wordCount" content="83">
-<meta itemprop="keywords" content="数据库,mysql," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="mysql关闭和启用外键约束"/>
-<meta name="twitter:description" content="有时为了导入数据方便，需要临时关闭外键约束，导入数据完成后再启用外键约束。 一、关闭外键约束 mysql&gt;SET FOREIGN_KEY_CHECKS=0; 二、启用外键约束 mysql&gt;SET FOREIGN_KEY_CHECKS=1; 三、查看FOREIGN_K"/>
+<meta itemprop="name" content="Bash的条件表达式求值">
+<meta itemprop="description" content="Bash的条件控制允许两种类型：1）命令的成功或失败 2）逻辑表达式的真假 这两种类型都可以通过退出状态（$?）来检验，$?=0为真，否则为假 一"><meta itemprop="datePublished" content="2015-01-31T16:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2015-01-31T16:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="700">
+<meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bash的条件表达式求值"/>
+<meta name="twitter:description" content="Bash的条件控制允许两种类型：1）命令的成功或失败 2）逻辑表达式的真假 这两种类型都可以通过退出状态（$?）来检验，$?=0为真，否则为假 一"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,16 +129,16 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">mysql关闭和启用外键约束</h1>
+      <h1 class="post-title">Bash的条件表达式求值</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2015-01-31 </span>
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
-            <a href="/categories/database/"> Database </a>
+            <a href="/categories/bash/"> Bash </a>
             </div>
-          <span class="more-meta"> 约 83 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 700 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
     </header>
@@ -152,9 +152,9 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#一关闭外键约束">一、关闭外键约束</a></li>
-            <li><a href="#二启用外键约束">二、启用外键约束</a></li>
-            <li><a href="#三查看foreign_key_checks变量">三、查看FOREIGN_KEY_CHECKS变量</a></li>
+            <li><a href="#一命令的成功或失败">一、命令的成功或失败</a></li>
+            <li><a href="#二逻辑表达式求值">二、逻辑表达式求值</a></li>
+            <li><a href="#三小结">三、小结</a></li>
           </ul>
         </li>
       </ul>
@@ -164,13 +164,68 @@
   </div>
 </div>
     <div class="post-content">
-      <p>有时为了导入数据方便，需要临时关闭外键约束，导入数据完成后再启用外键约束。</p>
-<h3 id="一关闭外键约束">一、关闭外键约束</h3>
-<p><code>mysql&gt;SET FOREIGN_KEY_CHECKS=0;</code></p>
-<h3 id="二启用外键约束">二、启用外键约束</h3>
-<p><code>mysql&gt;SET FOREIGN_KEY_CHECKS=1;</code></p>
-<h3 id="三查看foreign_key_checks变量">三、查看FOREIGN_KEY_CHECKS变量</h3>
-<p><code>mysql&gt;select @@FOREIGN_KEY_CHECKS;</code></p>
+      <p>Bash的条件控制允许两种类型：1）命令的成功或失败 2）逻辑表达式的真假
+这两种类型都可以通过退出状态（$?）来检验，$?=0为真，否则为假</p>
+<h3 id="一命令的成功或失败">一、命令的成功或失败</h3>
+<p>通过查看$?值
+$echo $?</p>
+<h3 id="二逻辑表达式求值">二、逻辑表达式求值</h3>
+<p>可以用test命令，[ ]、 [ [ ] ]
+[ ]是test命令的变形
+test命令和[ ]不能使用正则表达式，[ [ ] ] 可以使用正则表达式</p>
+<h4 id="1字符串判断">1、字符串判断</h4>
+<p>$name=Tom
+$friend=Jose
+$test name != Tom
+$echo $?
+1</p>
+<p>$[ $name = Tom ]
+$echo $?
+0</p>
+<p>$[ $name == Tom -a &ldquo;$friend&rdquo; == &ldquo;Jose&rdquo; ]
+$echo $?
+1</p>
+<p>$[ [ $name == [Tt]om ] ]
+$echo $?
+0</p>
+<p>$[ [ $name == [Tt]om &amp;&amp; $friend == &ldquo;Jose&rdquo; ] ]
+$echo $?
+0</p>
+<p>if [ &ldquo;$name&rdquo; = &quot;&quot; ]
+then
+command(s)</p>
+<p>fi</p>
+<p>注意：
+1）第一个括号 [ 后面必须有空格，第二个括号 ] 前必须有空格，=、！=、==两边必须有空格
+2）字符串比较时，可以使用一个或两个等号，因此，=也可换成==
+3）[ ]中逻辑操作用-a,-o; [ [ ] ] 中逻辑操作用&amp;&amp;,||
+4）和空字符串比较，注意变量也要加上双引号；如果不是和空字符串比较，则变量不用加双引号</p>
+<h4 id="2整数判断">2、整数判断</h4>
+<p>用test, [ ], [ [ ] ]
+还可以用(( ))，更方便，可以直接用比较运算符，变量前不用加$</p>
+<p>$x=5
+$y=20
+$test $x -gt $y
+$echo $?
+1</p>
+<p>$[ $x -gt $y ]
+$echo $?
+1</p>
+<p>$[ [ $x -gt $y ] ]
+$echo $?
+1</p>
+<p>$((x&gt;y))
+$echo $?
+1</p>
+<p>$((x&gt;5 &amp;&amp; y==20))
+$echo $?
+1</p>
+<h3 id="三小结">三、小结</h3>
+<p>1、字符串和整数：test、[ ]、[ [ ] ] 既可以用于字符串的比较，也能用于整数的比较；而(( ))仅能用于整数的比较
+2、正则表达式：test、[ ]不能使用正则表达式； [ [ ] ]可以使用正则表达式
+3、逻辑操作符：test、[ ]使用-a, -o逻辑操作符；[ [ ] ] 、(( ))使用&amp;&amp;、||逻辑操作符
+4、空格：test、[ ]、[ [ ] ] 中比较操作符前后、[和以及]和之前必须有空格；(( ))没有要求
+5、建议：字符串比较用[ [ ] ] 、整数比较用(( ))</p>
 
     </div>
 
@@ -191,17 +246,17 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-          <a href="/tags/mysql/">mysql</a>
+          <a href="/tags/bash/">Bash</a>
+          <a href="/tags/shell/">Shell</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2015/01/31/bash%E7%9A%84%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/">
+        <a class="prev" href="/2015/01/31/bash%E5%8F%98%E9%87%8F/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Bash的条件表达式求值</span>
+            <span class="prev-text nav-default">Bash变量</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2014/11/29/find%E7%9A%84%E7%94%A8%E6%B3%95/">
-            <span class="next-text nav-default">find的基本用法</span>
+        <a class="next" href="/2015/01/31/mysql%E5%85%B3%E9%97%AD%E5%92%8C%E5%90%AF%E7%94%A8%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F/">
+            <span class="next-text nav-default">mysql关闭和启用外键约束</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
