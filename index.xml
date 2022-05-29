@@ -229,7 +229,7 @@
       <pubDate>Sun, 30 Aug 2015 16:18:26 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/2015/08/30/bash%E7%9A%84%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/</guid>
-      <description>Bash的条件控制允许两种类型：命令的成功或失败、逻辑表达式的真假 这两种类型都可以通过退出状态（$?）来检验，$?=0为真，否则为假 一、命令</description>
+      <description>Bash的条件控制允许两种类型：命令的成功或失败、逻辑表达式的真假。 两种类型都可以通过退出状态（$?）来检验，$?=0为真，否则为假。 一、命</description>
     </item>
     
     <item>
