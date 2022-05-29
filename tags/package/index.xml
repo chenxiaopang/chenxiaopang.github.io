@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Package on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/package/</link>
+    <description>Recent content in Package on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 07 Feb 2015 16:01:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/package/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu常用软件包管理命令</title>
+      <link>https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 07 Feb 2015 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</guid>
+      <description>1、查看软件包安装内容 1 2 3 4 # dpkg -L [packagename] //查看安装binutils包会安装哪些文件 # dpkg -L binutils 2、列出指定包的安装状态信息 # dpkg -l [packagename] 3、查找文件所</description>
+    </item>
+    
+  </channel>
+</rss>
