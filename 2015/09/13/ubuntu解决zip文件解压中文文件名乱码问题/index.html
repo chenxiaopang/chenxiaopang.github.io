@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Ubuntu下解决ZIP文件解压中文文件名乱码问题 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="在Ubuntu下解压Windows下压缩的zip文件时，会出现解压出的带中文文件名的文件名乱码，这是因为Ubuntu和Windows默认的编" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/09/13/ubuntu%E8%A7%A3%E5%86%B3zip%E6%96%87%E4%BB%B6%E8%A7%A3%E5%8E%8B%E4%B8%AD%E6%96%87%E6%96%87%E4%BB%B6%E5%90%8D%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Ubuntu下解决ZIP文件解压中文文件名乱码问题" />
+<meta property="og:description" content="在Ubuntu下解压Windows下压缩的zip文件时，会出现解压出的带中文文件名的文件名乱码，这是因为Ubuntu和Windows默认的编" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/09/13/ubuntu%E8%A7%A3%E5%86%B3zip%E6%96%87%E4%BB%B6%E8%A7%A3%E5%8E%8B%E4%B8%AD%E6%96%87%E6%96%87%E4%BB%B6%E5%90%8D%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-09-13T23:06:18&#43;08:00" />
+<meta property="article:modified_time" content="2015-09-13T23:06:18&#43;08:00" />
+
+<meta itemprop="name" content="Ubuntu下解决ZIP文件解压中文文件名乱码问题">
+<meta itemprop="description" content="在Ubuntu下解压Windows下压缩的zip文件时，会出现解压出的带中文文件名的文件名乱码，这是因为Ubuntu和Windows默认的编"><meta itemprop="datePublished" content="2015-09-13T23:06:18&#43;08:00" />
+<meta itemprop="dateModified" content="2015-09-13T23:06:18&#43;08:00" />
+<meta itemprop="wordCount" content="885">
+<meta itemprop="keywords" content="Linux,ZIP," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ubuntu下解决ZIP文件解压中文文件名乱码问题"/>
+<meta name="twitter:description" content="在Ubuntu下解压Windows下压缩的zip文件时，会出现解压出的带中文文件名的文件名乱码，这是因为Ubuntu和Windows默认的编"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Ubuntu下解决ZIP文件解压中文文件名乱码问题</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-09-13 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/applications/"> Applications </a>
+            </div>
+          <span class="more-meta"> 约 885 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#一命令行指定解压字符集">一、命令行指定解压字符集</a></li>
+            <li><a href="#二在环境变量中指定unzip显示和解压参数">二、在环境变量中指定unzip显示和解压参数</a></li>
+            <li><a href="#四结论">四、结论</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>在Ubuntu下解压Windows下压缩的<code>zip</code>文件时，会出现解压出的带中文文件名的文件名乱码，这是因为Ubuntu和Windows默认的编码不同，Ubuntu下默认的编码是<code>UTF-8</code>，而Windows下默认的编码是<code>GBK</code>，而<code>zip</code>文件自身却不带有任何标识其编码的信息。对于这个问题，主要有以下三种解决方法：</p>
+<h3 id="一命令行指定解压字符集">一、命令行指定解压字符集</h3>
+<p>解压时指定字符集，可以是<code>CP936</code>，<code>GBK</code>，<code>GB18030</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ unzip -O CP936 xxx.zip
+</code></pre></td></tr></table>
+</div>
+</div><p>不过，&ldquo;man unzip&quot;对这个参数没有任何说明，但是&quot;unzip &ndash;help&quot;对这个参数有一行简单的说明。
+网上有人说，这个方法不总是凑效，在Ubuntu 12.04上，它是可以的。</p>
+<h3 id="二在环境变量中指定unzip显示和解压参数">二、在环境变量中指定unzip显示和解压参数</h3>
+<p>在<code>/etc/environment</code>中加入以下两行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">UNZIP</span><span class="o">=</span><span class="s2">&#34;-O CP936&#34;</span>
+<span class="nv">ZIPINFO</span><span class="o">=</span><span class="s2">&#34;-O CP936&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后在file-roller归档管理器中操作，中文名称依然是乱码，据说是因为file-roller优先使用p7zip，删除p7zip后问题解决。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get remove p7zip p7zip-full
+</code></pre></td></tr></table>
+</div>
+</div><p>这样<code>Gnome</code>桌面的归档文件管理器(<code>file-roller</code>)可以正常使用<code>unzip</code>解压中文。</p>
+<p>三、使用<code>p7zip</code>解压</p>
+<h4 id="1-安装p7zip-full">1. 安装p7zip-full</h4>
+<p><code>$ sudo apt-get install p7zip-full</code></p>
+<h4 id="2-卸载unzip">2. 卸载unzip</h4>
+<p><code>$ sudo apt-get remove unzip</code></p>
+<h4 id="3-替换系统的p7zip">3. 替换系统的p7zip</h4>
+<p>再下载更新的<code>p7zip-full</code><img src="/soft/p7z-bin.tar.gz" alt="p7z-bin.tar.gz">包把原来的程序替换掉<code>/usr/lib/p7zip/</code></p>
+<p>下载更新版</p>
+<p><code>$ sudo tar xzvf p7z-bin.tar.gz -C /usr/lib/p7zip</code></p>
+<h4 id="4--锁定p7zip版本">4.  锁定p7zip版本</h4>
+<p>锁定<code>p7zip</code>、<code>p7zip-rar</code>和<code>p7zip-full</code>版本，防止更新后失效。</p>
+<ol>
+<li>安装新立得软件管理器 <code>sudo apt-get install synaptic</code>，如果已经安装可以略过；</li>
+<li>打开新立得软件包管理器，搜索<code>p7zip</code>；</li>
+<li>在搜索出的结果中，选择<code>p7zip</code>、<code>p7zip-rar</code>和<code>p7zip-full</code>，再点击<code>软件包 -&gt; 设置 -&gt; 锁定版本</code>。</li>
+</ol>
+<h3 id="四结论">四、结论</h3>
+<ol>
+<li>推荐使用方法二解决<code>zip</code>文件解压中文文件名乱码的问题。</li>
+<li>方法一使用命令行带参数的方法不太方便。</li>
+<li>方法三需要卸载<code>unzip</code>，而很多软件是依赖<code>unzip</code>的，卸载<code>unzip</code>的同时，这些依赖<code>unzip</code>的软件也会被卸载。</li>
+</ol>
+<p>以上方法在Ubuntu 12.04下测试通过。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-09-13
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/zip/">ZIP</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2015/12/27/%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%E8%A6%81%E7%82%B9/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">硬盘分区要点</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2015/08/30/ubuntu%E4%B8%8Btomcat%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/">
+            <span class="next-text nav-default">Ubuntu下Tomcat初始配置</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

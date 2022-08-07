@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ZIP on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/zip/</link>
+    <description>Recent content in ZIP on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 13 Sep 2015 23:06:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/zip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu下解决ZIP文件解压中文文件名乱码问题</title>
+      <link>https://chenxiaopang.github.io/2015/09/13/ubuntu%E8%A7%A3%E5%86%B3zip%E6%96%87%E4%BB%B6%E8%A7%A3%E5%8E%8B%E4%B8%AD%E6%96%87%E6%96%87%E4%BB%B6%E5%90%8D%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 13 Sep 2015 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/09/13/ubuntu%E8%A7%A3%E5%86%B3zip%E6%96%87%E4%BB%B6%E8%A7%A3%E5%8E%8B%E4%B8%AD%E6%96%87%E6%96%87%E4%BB%B6%E5%90%8D%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</guid>
+      <description>在Ubuntu下解压Windows下压缩的zip文件时，会出现解压出的带中文文件名的文件名乱码，这是因为Ubuntu和Windows默认的编</description>
+    </item>
+    
+  </channel>
+</rss>
