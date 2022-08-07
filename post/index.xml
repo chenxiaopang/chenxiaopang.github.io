@@ -206,6 +206,15 @@
     </item>
     
     <item>
+      <title>Bash变量</title>
+      <link>https://chenxiaopang.github.io/2015/09/20/bash%E6%89%A9%E5%B1%95%E9%A1%BA%E5%BA%8F/</link>
+      <pubDate>Sun, 20 Sep 2015 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/09/20/bash%E6%89%A9%E5%B1%95%E9%A1%BA%E5%BA%8F/</guid>
+      <description>一、扩展顺序 当进行变量替换、命令替换、数学扩展以及路径扩展时，Bash Shell遵循如下顺序： 1、大括号扩展 $ ls f{oo,aa,unble} 2、~扩展 ~cb, ~/doc/working 3、命令参数</description>
+    </item>
+    
+    <item>
       <title>Ubuntu下解决ZIP文件解压中文文件名乱码问题</title>
       <link>https://chenxiaopang.github.io/2015/09/13/ubuntu%E8%A7%A3%E5%86%B3zip%E6%96%87%E4%BB%B6%E8%A7%A3%E5%8E%8B%E4%B8%AD%E6%96%87%E6%96%87%E4%BB%B6%E5%90%8D%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sun, 13 Sep 2015 23:06:18 +0800</pubDate>
