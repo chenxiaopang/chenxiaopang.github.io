@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Ubuntu下解决ZIP文件解压中文文件名乱码问题">
 <meta itemprop="description" content="在Ubuntu下解压Windows下压缩的zip文件时，会出现解压出的带中文文件名的文件名乱码，这是因为Ubuntu和Windows默认的编"><meta itemprop="datePublished" content="2015-09-13T23:06:18&#43;08:00" />
 <meta itemprop="dateModified" content="2015-09-13T23:06:18&#43;08:00" />
-<meta itemprop="wordCount" content="885">
+<meta itemprop="wordCount" content="881">
 <meta itemprop="keywords" content="Linux,ZIP," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ubuntu下解决ZIP文件解压中文文件名乱码问题"/>
 <meta name="twitter:description" content="在Ubuntu下解压Windows下压缩的zip文件时，会出现解压出的带中文文件名的文件名乱码，这是因为Ubuntu和Windows默认的编"/>
@@ -137,7 +137,7 @@
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/applications/"> Applications </a>
             </div>
-          <span class="more-meta"> 约 885 字 </span>
+          <span class="more-meta"> 约 881 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -205,16 +205,14 @@
 <h4 id="2-卸载unzip">2. 卸载unzip</h4>
 <p><code>$ sudo apt-get remove unzip</code></p>
 <h4 id="3-替换系统的p7zip">3. 替换系统的p7zip</h4>
-<p>再下载更新的<code>p7zip-full</code><img src="/soft/p7z-bin.tar.gz" alt="p7z-bin.tar.gz">包把原来的程序替换掉<code>/usr/lib/p7zip/</code></p>
+<p>再下载更新的<img src="/soft/p7z-bin.tar.gz" alt="p7z-bin.tar.gz">，把原来的程序替换掉<code>/usr/lib/p7zip/</code></p>
 <p>下载更新版</p>
 <p><code>$ sudo tar xzvf p7z-bin.tar.gz -C /usr/lib/p7zip</code></p>
 <h4 id="4--锁定p7zip版本">4.  锁定p7zip版本</h4>
 <p>锁定<code>p7zip</code>、<code>p7zip-rar</code>和<code>p7zip-full</code>版本，防止更新后失效。</p>
-<ol>
-<li>安装新立得软件管理器 <code>sudo apt-get install synaptic</code>，如果已经安装可以略过；</li>
-<li>打开新立得软件包管理器，搜索<code>p7zip</code>；</li>
-<li>在搜索出的结果中，选择<code>p7zip</code>、<code>p7zip-rar</code>和<code>p7zip-full</code>，再点击<code>软件包 -&gt; 设置 -&gt; 锁定版本</code>。</li>
-</ol>
+<p>1)安装新立得软件管理器 <code>sudo apt-get install synaptic</code>，如果已经安装可以略过；
+2)打开新立得软件包管理器，搜索<code>p7zip</code>；
+3)在搜索出的结果中，选择<code>p7zip</code>、<code>p7zip-rar</code>和<code>p7zip-full</code>，再点击<code>软件包 -&gt; 设置 -&gt; 锁定版本</code>。</p>
 <h3 id="四结论">四、结论</h3>
 <ol>
 <li>推荐使用方法二解决<code>zip</code>文件解压中文文件名乱码的问题。</li>
