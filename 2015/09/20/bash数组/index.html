@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Bash扩展顺序 - Panda的随笔</title>
+  <title>Bash数组 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="一、扩展顺序 当进行变量替换、命令替换、数学扩展以及路径扩展时，Bash Shell遵循如下顺序： 1、大括号扩展 $ ls f{oo,aa,unble} 2、~扩展 ~cb, ~/doc/working 3、命令参数" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一、Bash数组 Bash 2.x提供了创建一维数组的能力。 有多种方法创建，用内建命令declare -a或直接数组元素赋值。 向数组赋值时，如果不指定下" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/2015/09/20/bash%E6%89%A9%E5%B1%95%E9%A1%BA%E5%BA%8F/" />
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/09/20/bash%E6%95%B0%E7%BB%84/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Bash扩展顺序" />
-<meta property="og:description" content="一、扩展顺序 当进行变量替换、命令替换、数学扩展以及路径扩展时，Bash Shell遵循如下顺序： 1、大括号扩展 $ ls f{oo,aa,unble} 2、~扩展 ~cb, ~/doc/working 3、命令参数" />
+<meta property="og:title" content="Bash数组" />
+<meta property="og:description" content="一、Bash数组 Bash 2.x提供了创建一维数组的能力。 有多种方法创建，用内建命令declare -a或直接数组元素赋值。 向数组赋值时，如果不指定下" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxiaopang.github.io/2015/09/20/bash%E6%89%A9%E5%B1%95%E9%A1%BA%E5%BA%8F/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2015-09-20T16:18:26&#43;08:00" />
-<meta property="article:modified_time" content="2015-09-20T16:18:26&#43;08:00" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/09/20/bash%E6%95%B0%E7%BB%84/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-09-20T20:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2015-09-20T20:18:26&#43;08:00" />
 
-<meta itemprop="name" content="Bash扩展顺序">
-<meta itemprop="description" content="一、扩展顺序 当进行变量替换、命令替换、数学扩展以及路径扩展时，Bash Shell遵循如下顺序： 1、大括号扩展 $ ls f{oo,aa,unble} 2、~扩展 ~cb, ~/doc/working 3、命令参数"><meta itemprop="datePublished" content="2015-09-20T16:18:26&#43;08:00" />
-<meta itemprop="dateModified" content="2015-09-20T16:18:26&#43;08:00" />
-<meta itemprop="wordCount" content="145">
+<meta itemprop="name" content="Bash数组">
+<meta itemprop="description" content="一、Bash数组 Bash 2.x提供了创建一维数组的能力。 有多种方法创建，用内建命令declare -a或直接数组元素赋值。 向数组赋值时，如果不指定下"><meta itemprop="datePublished" content="2015-09-20T20:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2015-09-20T20:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="301">
 <meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Bash扩展顺序"/>
-<meta name="twitter:description" content="一、扩展顺序 当进行变量替换、命令替换、数学扩展以及路径扩展时，Bash Shell遵循如下顺序： 1、大括号扩展 $ ls f{oo,aa,unble} 2、~扩展 ~cb, ~/doc/working 3、命令参数"/>
+<meta name="twitter:title" content="Bash数组"/>
+<meta name="twitter:description" content="一、Bash数组 Bash 2.x提供了创建一维数组的能力。 有多种方法创建，用内建命令declare -a或直接数组元素赋值。 向数组赋值时，如果不指定下"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,7 +129,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Bash扩展顺序</h1>
+      <h1 class="post-title">Bash数组</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2015-09-20 </span>
@@ -137,7 +137,7 @@
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/bash/"> Bash </a>
             </div>
-          <span class="more-meta"> 约 145 字 </span>
+          <span class="more-meta"> 约 301 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -152,7 +152,7 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#一扩展顺序">一、扩展顺序</a></li>
+            <li><a href="#一bash数组">一、Bash数组</a></li>
             <li><a href="#二例子">二、例子</a></li>
           </ul>
         </li>
@@ -163,38 +163,70 @@
   </div>
 </div>
     <div class="post-content">
-      <h3 id="一扩展顺序">一、扩展顺序</h3>
-<p>当进行变量替换、命令替换、数学扩展以及路径扩展时，Bash Shell遵循如下顺序：</p>
-<h4 id="1大括号扩展">1、大括号扩展</h4>
-<p><code>$ ls f{oo,aa,unble}</code></p>
-<h4 id="2扩展">2、~扩展</h4>
-<p><code>~cb, ~/doc/working</code></p>
-<h4 id="3命令参数扩展">3、命令参数扩展</h4>
-<p><code>$0-9, $(n)</code></p>
-<h4 id="4变量替换">4、变量替换</h4>
-<p><code>$var1</code></p>
-<h4 id="5命令替换">5、命令替换</h4>
-<p><code>$(pwd)</code>, <code>pwd</code></p>
-<h4 id="6数学扩展">6、数学扩展</h4>
-<p><code>$[2+3-1]</code></p>
-<h4 id="7单词分割">7、单词分割</h4>
-<p><code>?</code></p>
-<h4 id="8路径扩展">8、路径扩展</h4>
-<p><code>$ ls my*</code></p>
+      <h3 id="一bash数组">一、Bash数组</h3>
+<p>Bash 2.x提供了创建一维数组的能力。</p>
+<ol>
+<li>有多种方法创建，用内建命令<code>declare -a</code>或直接数组元素赋值。</li>
+<li>向数组赋值时，如果不指定下标，下标自动从<code>0</code>开始，每次增加<code>1</code>。</li>
+<li>数组的尺寸没有限制，下标也不必是一定顺序的数字。</li>
+<li>获取数组元素的语法是：<code>${arrayname[index]}</code></li>
+<li>获取所有数组元素列表的语法是：<code>${arrayname[*]}</code></li>
+<li>获取数组元素数目的语法是：<code>${#arrayname[*]}</code></li>
+</ol>
 <h3 id="二例子">二、例子</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ ls h$<span class="o">[</span>1+2<span class="o">]</span>*
-h3c_cmd.sql h3c_cmd.sql~ h3c_insert.sql h3c_insert.sql~ h3c_insert.sql.bak
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">declare</span> -a <span class="nv">nums</span><span class="o">=(</span><span class="m">45</span> <span class="m">33</span> <span class="m">100</span> 65<span class="o">)</span>
+
+$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">nums</span><span class="p">[0]</span><span class="si">}</span>
+<span class="m">45</span>
+
+$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">nums</span><span class="p">[*]</span><span class="si">}</span>
+<span class="m">45</span> <span class="m">33</span> <span class="m">100</span> <span class="m">65</span>
+
+$ <span class="nv">states</span><span class="o">=(</span>ME <span class="o">[</span>3<span class="o">]=</span>CA <span class="o">[</span>2<span class="o">]=</span>CT<span class="o">)</span>
+$ <span class="nb">echo</span> <span class="si">${</span><span class="nv">states</span><span class="p">[*]</span><span class="si">}</span>
+ME CA CT
+
+$ <span class="nv">names</span><span class="o">=(</span>Tom Peter Mike<span class="o">)</span>
+
+$ names<span class="o">[</span>5<span class="o">]=</span>panda
+
+$ <span class="nb">echo</span> <span class="s2">&#34;All the array elements are </span><span class="si">${</span><span class="nv">names</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&#34;</span>
+All the array elements are Tom Peter Mike panda
+
+$ <span class="nb">echo</span> <span class="s2">&#34;The number of elements in the array is </span><span class="si">${#</span><span class="nv">names</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&#34;</span>
+The number of elements in the array is <span class="m">4</span>
+
+$ <span class="nb">unset</span> names
 </code></pre></td></tr></table>
 </div>
-</div><p>先数学扩展，再文件名扩展，等效于
-<code>$ ls h3*</code></p>
-
+</div>
     </div>
 
     <div class="post-copyright">
@@ -218,13 +250,13 @@ h3c_cmd.sql h3c_cmd.sql~ h3c_insert.sql h3c_insert.sql~ h3c_insert.sql.bak
           <a href="/tags/shell/">Shell</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2015/09/20/bash%E6%95%B0%E7%BB%84/">
+        <a class="prev" href="/2015/12/27/%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%E8%A6%81%E7%82%B9/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Bash数组</span>
+            <span class="prev-text nav-default">硬盘分区要点</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2015/09/13/ubuntu%E8%A7%A3%E5%86%B3zip%E6%96%87%E4%BB%B6%E8%A7%A3%E5%8E%8B%E4%B8%AD%E6%96%87%E6%96%87%E4%BB%B6%E5%90%8D%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/">
-            <span class="next-text nav-default">Ubuntu下解决ZIP文件解压中文文件名乱码问题</span>
+        <a class="next" href="/2015/09/20/bash%E6%89%A9%E5%B1%95%E9%A1%BA%E5%BA%8F/">
+            <span class="next-text nav-default">Bash扩展顺序</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

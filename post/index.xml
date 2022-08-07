@@ -206,7 +206,16 @@
     </item>
     
     <item>
-      <title>Bash变量</title>
+      <title>Bash数组</title>
+      <link>https://chenxiaopang.github.io/2015/09/20/bash%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Sun, 20 Sep 2015 20:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/09/20/bash%E6%95%B0%E7%BB%84/</guid>
+      <description>一、Bash数组 Bash 2.x提供了创建一维数组的能力。 有多种方法创建，用内建命令declare -a或直接数组元素赋值。 向数组赋值时，如果不指定下</description>
+    </item>
+    
+    <item>
+      <title>Bash扩展顺序</title>
       <link>https://chenxiaopang.github.io/2015/09/20/bash%E6%89%A9%E5%B1%95%E9%A1%BA%E5%BA%8F/</link>
       <pubDate>Sun, 20 Sep 2015 16:18:26 +0800</pubDate>
       

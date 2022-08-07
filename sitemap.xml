@@ -493,27 +493,34 @@
   
   <url>
     <loc>https://chenxiaopang.github.io/tags/bash/</loc>
-    <lastmod>2015-09-20T16:18:26+08:00</lastmod>
+    <lastmod>2015-09-20T20:18:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chenxiaopang.github.io/categories/bash/</loc>
-    <lastmod>2015-09-20T16:18:26+08:00</lastmod>
+    <lastmod>2015-09-20T20:18:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://chenxiaopang.github.io/2015/09/20/bash%E6%89%A9%E5%B1%95%E9%A1%BA%E5%BA%8F/</loc>
-    <lastmod>2015-09-20T16:18:26+08:00</lastmod>
+    <loc>https://chenxiaopang.github.io/2015/09/20/bash%E6%95%B0%E7%BB%84/</loc>
+    <lastmod>2015-09-20T20:18:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chenxiaopang.github.io/tags/shell/</loc>
+    <lastmod>2015-09-20T20:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2015/09/20/bash%E6%89%A9%E5%B1%95%E9%A1%BA%E5%BA%8F/</loc>
     <lastmod>2015-09-20T16:18:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
