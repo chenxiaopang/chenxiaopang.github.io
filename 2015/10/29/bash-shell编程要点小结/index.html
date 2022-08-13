@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Bash Shell编程要点小结 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="一、case命令 1 2 3 4 5 6 7 8 9 10 11 12 13 14 case variable in value1) command(s) ;; value2) command(s) ;; *) command(s) ;; esac 如果case变量没有被匹配，程序就执行*)后面的语句。 case值中允许" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/10/29/bash-shell%E7%BC%96%E7%A8%8B%E8%A6%81%E7%82%B9%E5%B0%8F%E7%BB%93/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Bash Shell编程要点小结" />
+<meta property="og:description" content="一、case命令 1 2 3 4 5 6 7 8 9 10 11 12 13 14 case variable in value1) command(s) ;; value2) command(s) ;; *) command(s) ;; esac 如果case变量没有被匹配，程序就执行*)后面的语句。 case值中允许" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/10/29/bash-shell%E7%BC%96%E7%A8%8B%E8%A6%81%E7%82%B9%E5%B0%8F%E7%BB%93/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-10-29T16:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2015-10-29T16:18:26&#43;08:00" />
+
+<meta itemprop="name" content="Bash Shell编程要点小结">
+<meta itemprop="description" content="一、case命令 1 2 3 4 5 6 7 8 9 10 11 12 13 14 case variable in value1) command(s) ;; value2) command(s) ;; *) command(s) ;; esac 如果case变量没有被匹配，程序就执行*)后面的语句。 case值中允许"><meta itemprop="datePublished" content="2015-10-29T16:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2015-10-29T16:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="3088">
+<meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bash Shell编程要点小结"/>
+<meta name="twitter:description" content="一、case命令 1 2 3 4 5 6 7 8 9 10 11 12 13 14 case variable in value1) command(s) ;; value2) command(s) ;; *) command(s) ;; esac 如果case变量没有被匹配，程序就执行*)后面的语句。 case值中允许"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Bash Shell编程要点小结</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-10-29 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/bash/"> Bash </a>
+            </div>
+          <span class="more-meta"> 约 3088 字 </span>
+          <span class="more-meta"> 预计阅读 7 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#一case命令">一、case命令</a></li>
+            <li><a href="#二if命令">二、if命令</a></li>
+            <li><a href="#三eval命令">三、eval命令</a></li>
+            <li><a href="#四exit命令">四、exit命令</a></li>
+            <li><a href="#五ifs域分隔符">五、IFS域分隔符</a></li>
+            <li><a href="#六null命令">六、null命令</a></li>
+            <li><a href="#七shift命令">七、shift命令</a></li>
+            <li><a href="#八循环命令">八、循环命令</a></li>
+            <li><a href="#九文件检验操作符">九、文件检验操作符</a></li>
+            <li><a href="#十陷阱trap命令">十、陷阱trap命令</a></li>
+            <li><a href="#十一getopts命令">十一、getopts命令</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="一case命令">一、case命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">case</span> variable in
+value1<span class="o">)</span>
+command<span class="o">(</span>s<span class="o">)</span>
+<span class="p">;;</span>
+
+value2<span class="o">)</span>
+command<span class="o">(</span>s<span class="o">)</span>
+<span class="p">;;</span>
+
+*<span class="o">)</span>
+command<span class="o">(</span>s<span class="o">)</span>
+<span class="p">;;</span>
+
+<span class="k">esac</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果<code>case</code>变量没有被匹配，程序就执行<code>*)</code>后面的语句。
+<code>case</code>值中允许出现<code>Shell</code>通配符和竖线<code>|</code>作为<code>OR</code>操作符</p>
+<h3 id="二if命令">二、if命令</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">if</span> <span class="nb">command</span>
+<span class="k">then</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">fi</span>
+
+<span class="k">if</span> <span class="nb">test</span> expression
+<span class="k">then</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">fi</span>
+
+<span class="k">if</span> <span class="o">[</span> string/numeric expression <span class="o">]</span>
+<span class="k">then</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">fi</span>
+
+<span class="k">if</span> <span class="o">[[</span> string/numeric expression <span class="o">]</span>
+<span class="k">then</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">fi</span>
+
+<span class="k">if</span> <span class="o">((</span>numeric expression<span class="o">))</span>
+<span class="k">then</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">fi</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="1if命令">1、if命令</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">if</span> <span class="nb">command</span>
+<span class="k">then</span>
+command<span class="o">(</span>s<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>if命令可以嵌套，在嵌套的情况下，fi命令总是和最近的if配对使用</p>
+<h4 id="2ifelse命令">2、if/else命令</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">if</span> <span class="nb">command</span>
+<span class="k">then</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">else</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">fi</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3ifelifelse命令">3、if/elif/else命令</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">if</span> <span class="nb">command</span>
+<span class="k">then</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">elif</span> <span class="nb">command</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">elif</span> <span class="nb">command</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">else</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">fi</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="4注意">4、注意</h4>
+<p>1）elif=else if，但elif不需要fi命令对应了
+2）else块被称为默认块</p>
+<h3 id="三eval命令">三、eval命令</h3>
+<p><code>eval</code>命令可以对命令行求值，做<code>shell</code>替换，并执行命令行。通常在普通命令行解析不能满足要求时使用。</p>
+<p>例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">set</span> a b c d
+$ <span class="nb">echo</span> The last argument is<span class="se">\$</span><span class="nv">$#</span>
+The last argument is <span class="nv">$4</span>
+
+$ <span class="nb">eval</span> <span class="nb">echo</span> The last argument is<span class="se">\$</span><span class="nv">$#</span>
+The last argument is d
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">cb@cb-K43SV:~$ <span class="nb">set</span> -x //打开bash shell的调试功能
+cb@cb-K43SV:~$ <span class="nb">eval</span> <span class="nb">echo</span> The last argument is <span class="se">\$</span><span class="nv">$#</span>
++ <span class="nb">eval</span> <span class="nb">echo</span> The last argument is <span class="s1">&#39;$4&#39;</span>
+++ <span class="nb">echo</span> The last argument is d
+The last argument is d
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="四exit命令">四、exit命令</h3>
+<p><code>exit</code>命令结束脚本返回命令行。
+<code>exit</code>命令可以带一个返回值参数，<code>0</code>表示顺利退出，否则，非正常退出。
+<code>exit</code>命令的返回值保存在<code>$?</code>变量中。</p>
+<h3 id="五ifs域分隔符">五、IFS域分隔符</h3>
+<p><code>shell</code>的内部域分隔符<code>IFS</code>可以是空格、制表符和换行符，它可以作为命令的分隔符用在<code>read</code>、<code>set</code>、<code>for</code>等命令中。
+在修改<code>IFS</code>之前，最好将原始的<code>IFS</code>保存在另一个变量中。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">names</span><span class="o">=</span>Tom:Dick:Harray:John
+<span class="nv">OLD_IFS</span><span class="o">=</span><span class="nv">$IFS</span>
+<span class="nv">IFS</span><span class="o">=</span><span class="s2">&#34;:&#34;</span>
+<span class="k">for</span> persons in <span class="nv">$names</span>
+<span class="k">do</span>
+<span class="nb">echo</span> <span class="nv">$persons</span>
+
+<span class="k">done</span>
+<span class="nv">IFS</span><span class="o">=</span><span class="nv">$OLD_IFS</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="六null命令">六、null命令</h3>
+<p><code>null</code>命令用<code>：</code>表示，是一个内建的什么都不做的命令，返回状态值为<code>0</code>（真），通常用来建立无限循环。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">if</span> grep <span class="s2">&#34;hello&#34;</span> hello.txt
+<span class="k">then</span>
+:
+
+<span class="k">else</span>
+<span class="nb">echo</span> <span class="s2">&#34;not found!&#34;</span>
+
+<span class="k">fi</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="七shift命令">七、shift命令</h3>
+<p><code>shift</code>命令用来把位置参量向左位移指定次数，没有参数的<code>shift</code>命令则把参数变量表向左位移一位。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">shift</span> <span class="o">[</span>n<span class="o">]</span>
+
+<span class="k">while</span> <span class="o">((</span><span class="nv">$#</span>&gt;0<span class="o">))</span>
+<span class="k">do</span>
+<span class="nb">echo</span> <span class="nv">$*</span>
+<span class="nb">shift</span>
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="八循环命令">八、循环命令</h3>
+<p><code>Bash shell</code>有四种循环：<code>for</code>循环、<code>while</code>循环、<code>until</code>循环、<code>select</code>循环</p>
+<h4 id="1for循环">1、for循环</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">for</span> variable in word_list
+<span class="k">do</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">for</span> pal in Tom Dick Harry Joe
+<span class="k">do</span>
+<span class="nb">echo</span> <span class="s2">&#34;Hi </span><span class="nv">$pal</span><span class="s2">&#34;</span>
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">for</span> file in memo<span class="o">[</span>1-5<span class="o">]</span>
+<span class="k">do</span>
+......
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2while循环">2、while循环</h4>
+<p><code>while</code>循环形式：当<code>command</code>退出状态值为<code>0</code>时，执行循环体内的命令<code>command(s)</code>，直到<code>command</code>退出状态值非<code>0</code></p>
+<p><code>true</code>命令是<code>Linux</code>中退出状态值永远为<code>0</code>的命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">while</span> <span class="nb">command</span>
+<span class="k">do</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">num</span><span class="o">=</span><span class="m">0</span>
+<span class="k">while</span> <span class="o">((</span>num&lt;10<span class="o">))</span>
+<span class="k">do</span>
+<span class="nb">let</span> <span class="nv">num</span><span class="o">+=</span><span class="m">1</span>
+<span class="nb">echo</span> <span class="s2">&#34;num=</span><span class="nv">$num</span><span class="s2">&#34;</span>
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">while</span> <span class="s2">&#34;</span><span class="nv">$answer</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;Bill Clinton&#34;</span>
+<span class="k">do</span>
+......
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">while</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$go</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="c1">#-n：字符串长度非0</span>
+<span class="k">do</span>
+......
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">while</span> <span class="nb">true</span>
+<span class="k">do</span>
+......
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3until循环">3、until循环</h4>
+<p><code>until</code>循环形式：和<code>while</code>循环相反，当<code>command</code>退出值为非<code>0</code>时，执行循环体内的命令<code>command(s)</code>，否则，退出循环</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">until</span> <span class="nb">command</span>
+<span class="k">do</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">until</span> who <span class="p">|</span> grep linda
+<span class="k">do</span>
+sleep <span class="m">5</span>
+
+<span class="k">done</span>
+talk linda@dragonwings
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">num</span><span class="o">=</span><span class="m">0</span>
+<span class="k">until</span> <span class="o">((</span>num&gt;10<span class="o">))</span>
+<span class="k">do</span>
+<span class="nb">let</span> <span class="nv">num</span><span class="o">+=</span><span class="m">1</span>
+<span class="nb">echo</span> <span class="s2">&#34;num=</span><span class="nv">$num</span><span class="s2">&#34;</span>
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="4select循环">4、select循环</h4>
+<p><code>select</code>循环的主要作用是建立菜单，数字化的菜单显示在标准错误上，<code>PS3</code>（默认为<code>#？</code>）提示用户输入。
+输入的是菜单序号，并被保存到<code>REPLY</code>中。
+如果<code>REPLY</code>变量为空，将会重新显示菜单。
+变量<code>COLUMN</code>表示终端上显示的用<code>select</code>命令建立的菜单的列宽度，默认<code>80</code>。
+变量<code>LINES</code>控制菜单在终端上的垂直显示的行数，默认为<code>24</code>；当<code>LINES=1</code>时，菜单将在一行上显示。
+<code>break</code>命令或<kbd>CTL</kbd>+<kbd>C</kbd>退出循环。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">select</span> var in wordlist
+<span class="k">do</span>
+command<span class="o">(</span>s<span class="o">)</span>
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">select</span> name in chenjy panda xiaopang
+<span class="k">do</span>
+<span class="nb">echo</span> <span class="s2">&#34;name=</span><span class="nv">$name</span><span class="s2">, REPLY=</span><span class="nv">$REPLY</span><span class="s2">&#34;</span>
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>输出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">1<span class="o">)</span> chenjy
+2<span class="o">)</span> panda
+3<span class="o">)</span> xiaopang
+<span class="c1">#? 2</span>
+<span class="nv">name</span><span class="o">=</span>panda, <span class="nv">REPLY</span><span class="o">=</span><span class="m">2</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="5break命令">5、break命令</h4>
+<p>内建的<code>break</code>命令用来从循环中强形退出，但是不退出程序。
+<code>break</code>可以用一个数字作为参数，指定强行退出的循环层数。如果有三层循环，最外层的循环为<code>3</code>，中间的为<code>2</code>，最里层的为<code>1</code>。
+<code>break [n]</code> <code>n</code>默认值为<code>1</code></p>
+<h4 id="6continue命令">6、continue命令</h4>
+<p><code>continue [n]</code> <code>n</code>默认值为<code>1</code>
+如果某些条件为真，<code>continue</code>命令控制跳转到循环的顶部，所有<code>continue</code>命令后面的语句都将被忽略。
+如果用一个数字作为参数，控制就可以在指定的任何层的循环顶部重新开始执行。如果有三层循环，最外面的循环号为<code>3</code>，中间层为<code>2</code>，最里层为<code>1</code>。</p>
+<h4 id="7循环中的io重定向">7、循环中的IO重定向</h4>
+<p>文件中的输入可以通过管道重定向给一个循环，循环的输出也可以重定向给一个文件或通过管道重定向给其它程序。<code>Shell</code>启动一个子<code>shell</code>来处理<code>IO</code>重定向和管道。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">cat file <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> line
+<span class="k">do</span>
+<span class="nb">echo</span> <span class="nv">$line</span>
+
+<span class="k">done</span> &gt;tmp<span class="nv">$$</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">for</span> i in <span class="m">7</span> <span class="m">9</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span>
+<span class="k">do</span>
+<span class="nb">echo</span> <span class="nv">$i</span>
+
+<span class="k">done</span> <span class="p">|</span> sort -n
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="8后台运行循环">8、后台运行循环</h4>
+<p>循环可以在后台运行，程序可以不等待循环结束而连续运行。</p>
+<p>关键字<code>done</code>后面的<code>&amp;</code>使得循环在后台运行。在循环运行的同时，程序继续运行。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="k">for</span> person in bob jim joe sam
+<span class="k">do</span>
+mail <span class="nv">$person</span> &lt; memo
+
+<span class="k">done</span> <span class="p">&amp;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="九文件检验操作符">九、文件检验操作符</h3>
+<p>常用文件检验操作符，可分为四类：</p>
+<h4 id="1文件读写执行权限检验">1、文件读写执行权限检验</h4>
+<p>-r filename 文件可读
+-w filename 文件可写
+-x filename 文件可执行</p>
+<h4 id="2文件存在检验">2、文件存在检验</h4>
+<p>-e filename 文件存在
+-d filename 目录存在
+-f filename 非目录普通文件存在</p>
+<h4 id="3文件类型检验">3、文件类型检验</h4>
+<p>-b filename 块文件
+-c filename 字符文件
+-L filename 符号链接</p>
+<h4 id="4文件大小检验">4、文件大小检验</h4>
+<p>-s filename 文件尺寸非0</p>
+<h3 id="十陷阱trap命令">十、陷阱trap命令</h3>
+<p><code>trap</code>命令允许你控制程序在收到信号以后的行为。当接收到指定的信号数字后，就执行<code>trap</code>命令中用引号引用的命令。
+<code>信号</code>：由一个进程发送给另一个进程的，或者在特定的健按下后由操作系统发送给进程的，又或者在异常情况下发生时由数字组成的非同步消息。</p>
+<p>trap命令格式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">trap</span> <span class="s1">&#39;command;command&#39;</span> signal-number
+<span class="nb">trap</span> <span class="s1">&#39;command;command&#39;</span> signal-name
+</code></pre></td></tr></table>
+</div>
+</div><p>注意：
+1、Shell总共读取两次命令字符串，一次是在设置trap的时候，一次是在信号到达的时候。
+2、如果命令字符串被双引号引用，在第一次设置trap时执行变量和命令替换。如果用的是单引号，则等到信号到达trap开始执行时，才看执行变量和命令替换。
+3、陷阱的设置对于脚本来说是全局的。</p>
+<p>例子：
+1、信号列表</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">trap</span> -l
+1<span class="o">)</span> SIGHUP 2<span class="o">)</span> SIGINT 3<span class="o">)</span> SIGQUIT 4<span class="o">)</span> SIGILL 5<span class="o">)</span> SIGTRAP
+6<span class="o">)</span> SIGABRT 7<span class="o">)</span> SIGBUS 8<span class="o">)</span> SIGFPE 9<span class="o">)</span> SIGKILL 10<span class="o">)</span> SIGUSR1
+11<span class="o">)</span> SIGSEGV 12<span class="o">)</span> SIGUSR2 13<span class="o">)</span> SIGPIPE 14<span class="o">)</span> SIGALRM 15<span class="o">)</span> SIGTERM
+16<span class="o">)</span> SIGSTKFLT 17<span class="o">)</span> SIGCHLD 18<span class="o">)</span> SIGCONT 19<span class="o">)</span> SIGSTOP 20<span class="o">)</span> SIGTSTP
+21<span class="o">)</span> SIGTTIN 22<span class="o">)</span> SIGTTOU 23<span class="o">)</span> SIGURG 24<span class="o">)</span> SIGXCPU 25<span class="o">)</span> SIGXFSZ
+26<span class="o">)</span> SIGVTALRM 27<span class="o">)</span> SIGPROF 28<span class="o">)</span> SIGWINCH 29<span class="o">)</span> SIGIO 30<span class="o">)</span> SIGPWR
+31<span class="o">)</span> SIGSYS 34<span class="o">)</span> SIGRTMIN 35<span class="o">)</span> SIGRTMIN+1 36<span class="o">)</span> SIGRTMIN+2 37<span class="o">)</span> SIGRTMIN+3
+38<span class="o">)</span> SIGRTMIN+4 39<span class="o">)</span> SIGRTMIN+5 40<span class="o">)</span> SIGRTMIN+6 41<span class="o">)</span> SIGRTMIN+7 42<span class="o">)</span> SIGRTMIN+8
+43<span class="o">)</span> SIGRTMIN+9 44<span class="o">)</span> SIGRTMIN+10 45<span class="o">)</span> SIGRTMIN+11 46<span class="o">)</span> SIGRTMIN+12 47<span class="o">)</span> SIGRTMIN+13
+48<span class="o">)</span> SIGRTMIN+14 49<span class="o">)</span> SIGRTMIN+15 50<span class="o">)</span> SIGRTMAX-14 51<span class="o">)</span> SIGRTMAX-13 52<span class="o">)</span> SIGRTMAX-12
+53<span class="o">)</span> SIGRTMAX-11 54<span class="o">)</span> SIGRTMAX-10 55<span class="o">)</span> SIGRTMAX-9 56<span class="o">)</span> SIGRTMAX-8 57<span class="o">)</span> SIGRTMAX-7
+58<span class="o">)</span> SIGRTMAX-6 59<span class="o">)</span> SIGRTMAX-5 60<span class="o">)</span> SIGRTMAX-4 61<span class="o">)</span> SIGRTMAX-3 62<span class="o">)</span> SIGRTMAX-2
+63<span class="o">)</span> SIGRTMAX-1 64<span class="o">)</span> SIGRTMAX
+</code></pre></td></tr></table>
+</div>
+</div><p>2、设置信号陷阱
+<code>$ trap 'rm tmp*;exit 1' 0 1 2 15</code>
+或
+<code>$ trap 'rm tmp*;exit 1' EXIT HUP INT TERM</code></p>
+<p>3、忽略信号
+<code>$ trap &quot;&quot; 1 2</code></p>
+<p>4、信号复位</p>
+<p>在<code>trap</code>命令后面跟一个信号或者数字，可以把信号复位为默认动作。</p>
+<p><code>$ trap 2</code>
+或
+<code>$ trap INT</code></p>
+<p>5、陷阱嵌套
+<code>$ trap 'trap 2' 2</code></p>
+<p>设置用户按两次<code>Control-C</code>终止程序。第一次陷阱捕捉信号，第二个陷阱复位信号<code>2</code>的默认动作-杀死进程</p>
+<h3 id="十一getopts命令">十一、getopts命令</h3>
+<p>当脚本需要一些命令行选项时，位置参量不是总有效的，因为有的选项需要指定参数，而位置参量无法区分。</p>
+<p><code>bash</code>内嵌函数<code>getopts</code>能够处理带参数的选项</p>
+<h4 id="1基本用法">1、基本用法</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">while</span> <span class="nb">getopts</span> :xyn: name
+<span class="k">do</span>
+<span class="k">case</span> <span class="nv">$name</span> in
+x<span class="o">)</span>
+command<span class="o">(</span>s<span class="o">)</span><span class="p">;;</span>
+y<span class="o">)</span>
+command<span class="o">(</span>s<span class="o">)</span><span class="p">;;</span>
+n<span class="o">)</span>
+<span class="nb">echo</span> <span class="s2">&#34;The argument for -n is </span><span class="nv">$OPTARG</span><span class="s2">&#34;</span><span class="p">;;</span>
+<span class="se">\?</span><span class="o">)</span>
+command<span class="o">(</span>s<span class="o">)</span><span class="p">;;</span>
+<span class="k">esac</span><span class="p">;</span>
+
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2说明">2、说明</h4>
+<ol>
+<li><code>x</code>、<code>y</code>和<code>n</code>都是选项。选项<code>x</code>前面有一个冒号<code>：</code>，选项<code>n</code>后面有一个冒号<code>：</code></li>
+<li>选项前面的冒号<code>：</code>告诉<code>getopts</code>静默错误报告</li>
+<li>选项后面的冒号<code>：</code>表示选项需要一个用空格与它间隔开的参数，参数是非破折号开头的单词。<code>-n</code>选项就需要参数。</li>
+<li>没有破折号的选项告诉<code>getopts</code>已经到了选项清单的末尾。当<code>getopts</code>没有参数可处理时，返回一个非<code>0</code>退出状态值，导致<code>while</code>循环终止。</li>
+<li>每次调用<code>getopts</code>时，它把从位置参量读取的合法选项赋值给指定的变量（例子中为<code>name</code>），如果不合法，就把问号<code>？</code>赋值给变量。</li>
+<li>选项参数保存在变量<code>OPTARG</code>中。</li>
+<li>变量<code>OPTIND</code>初始值为<code>1</code>，并在<code>getopts</code>每处理完一个命令行参数后增加<code>1</code>，因此<code>$OPTIND=$#+1</code>。</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-10-29
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/bash/">Bash</a>
+          <a href="/tags/shell/">Shell</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2015/12/27/%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%E8%A6%81%E7%82%B9/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">硬盘分区要点</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2015/09/21/bash%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95/">
+            <span class="next-text nav-default">Bash中的字符串变量扩展</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

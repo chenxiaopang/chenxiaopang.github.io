@@ -492,6 +492,34 @@
   </url>
   
   <url>
+    <loc>https://chenxiaopang.github.io/tags/bash/</loc>
+    <lastmod>2015-10-29T16:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/categories/bash/</loc>
+    <lastmod>2015-10-29T16:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2015/10/29/bash-shell%E7%BC%96%E7%A8%8B%E8%A6%81%E7%82%B9%E5%B0%8F%E7%BB%93/</loc>
+    <lastmod>2015-10-29T16:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/shell/</loc>
+    <lastmod>2015-10-29T16:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://chenxiaopang.github.io/2015/09/21/bash%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95/</loc>
     <lastmod>2015-09-21T23:16:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -520,28 +548,7 @@
   </url>
   
   <url>
-    <loc>https://chenxiaopang.github.io/tags/bash/</loc>
-    <lastmod>2015-09-20T23:18:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/categories/bash/</loc>
-    <lastmod>2015-09-20T23:18:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://chenxiaopang.github.io/2015/09/20/bash%E7%9A%84%E7%89%B9%E6%AE%8A%E5%8F%98%E9%87%8F%E5%92%8C%E4%BD%8D%E7%BD%AE%E5%8F%82%E9%87%8F/</loc>
-    <lastmod>2015-09-20T23:18:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/shell/</loc>
     <lastmod>2015-09-20T23:18:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -977,13 +984,6 @@
   <url>
     <loc>https://chenxiaopang.github.io/2015/01/31/%E5%85%81%E8%AE%B8mysql%E7%94%A8%E6%88%B7%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</loc>
     <lastmod>2015-01-31T16:50:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/2015/01/31/bash-shell%E7%BC%96%E7%A8%8B%E8%A6%81%E7%82%B9%E5%B0%8F%E7%BB%93/</loc>
-    <lastmod>2015-01-31T16:18:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
