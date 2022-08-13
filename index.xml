@@ -539,6 +539,15 @@
     </item>
     
     <item>
+      <title>Bash Shell编程要点小结</title>
+      <link>https://chenxiaopang.github.io/2015/01/31/bash-shell%E7%BC%96%E7%A8%8B%E8%A6%81%E7%82%B9%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Sat, 31 Jan 2015 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/01/31/bash-shell%E7%BC%96%E7%A8%8B%E8%A6%81%E7%82%B9%E5%B0%8F%E7%BB%93/</guid>
+      <description>一、case命令 1 2 3 4 5 6 7 8 9 10 11 12 13 14 case variable in value1) command(s) ;; value2) command(s) ;; *) command(s) ;; esac 如果case变量没有被匹配，程序就执行*)后面的语句。 case值中允许</description>
+    </item>
+    
+    <item>
       <title>Bash变量</title>
       <link>https://chenxiaopang.github.io/2015/01/31/bash%E5%8F%98%E9%87%8F/</link>
       <pubDate>Sat, 31 Jan 2015 16:18:26 +0800</pubDate>
