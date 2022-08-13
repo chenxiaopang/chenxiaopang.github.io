@@ -35,6 +35,15 @@
     </item>
     
     <item>
+      <title>Bash中的字符串变量扩展</title>
+      <link>https://chenxiaopang.github.io/2015/09/21/bash%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Mon, 21 Sep 2015 23:16:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/09/21/bash%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95/</guid>
+      <description>1、向尾部方向的最小化删除 (%) 1 2 3 $ pathname=&amp;#34;/usr/bin/local/bin&amp;#34; $ echo ${pathname%/bin*} /usr/bin/local 2、向尾部方向的最大化删除(%%) 1 2 3 $ pathname=&amp;#34;/usr/bin/local/bin&amp;#34; $ echo ${pathname%%/bin*} /usr 3、向首部方向的最小化删除（#） 1 2 3 $ pathname=/home/lilliput/jake/.bashrc</description>
+    </item>
+    
+    <item>
       <title>Ubuntu下解决ZIP文件解压中文文件名乱码问题</title>
       <link>https://chenxiaopang.github.io/2015/09/13/ubuntu%E8%A7%A3%E5%86%B3zip%E6%96%87%E4%BB%B6%E8%A7%A3%E5%8E%8B%E4%B8%AD%E6%96%87%E6%96%87%E4%BB%B6%E5%90%8D%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sun, 13 Sep 2015 23:06:18 +0800</pubDate>
