@@ -6,7 +6,16 @@
     <description>Recent content in Shell on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 10 Dec 2015 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Dec 2015 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bash命令行编辑</title>
+      <link>https://chenxiaopang.github.io/2015/12/19/bash%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%BE%91/</link>
+      <pubDate>Sat, 19 Dec 2015 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/12/19/bash%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%BE%91/</guid>
+      <description>1、Readline库和命令行编辑 bash shell提供了两个内置编辑器：emacs和vi，利用它们可以以交互模式对命令行列表进行编辑，这项特性是</description>
+    </item>
+    
     <item>
       <title>Bash环境配置文件</title>
       <link>https://chenxiaopang.github.io/2015/12/10/bash%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>

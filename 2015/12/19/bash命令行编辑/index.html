@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>硬盘分区要点 - Panda的随笔</title>
+  <title>Bash命令行编辑 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="一、主引导扇区 1、主引导扇区是硬盘上０面０柱第１个扇区 2、主引导记录区MBR(Master Boot Record):是主引导扇区上前446个字节，可" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="1、Readline库和命令行编辑 bash shell提供了两个内置编辑器：emacs和vi，利用它们可以以交互模式对命令行列表进行编辑，这项特性是" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/2015/12/27/%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%E8%A6%81%E7%82%B9/" />
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/12/19/bash%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%BE%91/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="硬盘分区要点" />
-<meta property="og:description" content="一、主引导扇区 1、主引导扇区是硬盘上０面０柱第１个扇区 2、主引导记录区MBR(Master Boot Record):是主引导扇区上前446个字节，可" />
+<meta property="og:title" content="Bash命令行编辑" />
+<meta property="og:description" content="1、Readline库和命令行编辑 bash shell提供了两个内置编辑器：emacs和vi，利用它们可以以交互模式对命令行列表进行编辑，这项特性是" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxiaopang.github.io/2015/12/27/%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%E8%A6%81%E7%82%B9/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2015-12-27T00:50:10&#43;08:00" />
-<meta property="article:modified_time" content="2015-12-27T00:50:10&#43;08:00" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/12/19/bash%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%BE%91/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-12-19T16:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2015-12-19T16:18:26&#43;08:00" />
 
-<meta itemprop="name" content="硬盘分区要点">
-<meta itemprop="description" content="一、主引导扇区 1、主引导扇区是硬盘上０面０柱第１个扇区 2、主引导记录区MBR(Master Boot Record):是主引导扇区上前446个字节，可"><meta itemprop="datePublished" content="2015-12-27T00:50:10&#43;08:00" />
-<meta itemprop="dateModified" content="2015-12-27T00:50:10&#43;08:00" />
-<meta itemprop="wordCount" content="443">
-<meta itemprop="keywords" content="硬盘分区," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="硬盘分区要点"/>
-<meta name="twitter:description" content="一、主引导扇区 1、主引导扇区是硬盘上０面０柱第１个扇区 2、主引导记录区MBR(Master Boot Record):是主引导扇区上前446个字节，可"/>
+<meta itemprop="name" content="Bash命令行编辑">
+<meta itemprop="description" content="1、Readline库和命令行编辑 bash shell提供了两个内置编辑器：emacs和vi，利用它们可以以交互模式对命令行列表进行编辑，这项特性是"><meta itemprop="datePublished" content="2015-12-19T16:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2015-12-19T16:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="425">
+<meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bash命令行编辑"/>
+<meta name="twitter:description" content="1、Readline库和命令行编辑 bash shell提供了两个内置编辑器：emacs和vi，利用它们可以以交互模式对命令行列表进行编辑，这项特性是"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">硬盘分区要点</h1>
+      <h1 class="post-title">Bash命令行编辑</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2015-12-27 </span>
+        <span class="post-time"> 2015-12-19 </span>
         <div class="post-category">
-            <a href="/categories/basics/"> Basics </a>
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/bash/"> Bash </a>
             </div>
-          <span class="more-meta"> 约 443 字 </span>
+          <span class="more-meta"> 约 425 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -149,9 +150,11 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#一主引导扇区">一、主引导扇区</a></li>
-        <li><a href="#二分区表">二、分区表</a></li>
-        <li><a href="#三主分区扩展分区和逻辑分区">三、主分区、扩展分区和逻辑分区</a></li>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -159,20 +162,97 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="一主引导扇区">一、主引导扇区</h2>
-<p>1、主引导扇区是硬盘上０面０柱第１个扇区
-2、主引导记录区MBR(Master Boot Record):是主引导扇区上前446个字节，可以安装开机管理程序的地方
-3、分区表(partition table):是主引导扇区上最后64个字节，记录整个硬盘分区的状态</p>
-<h2 id="二分区表">二、分区表</h2>
-<p>1、硬盘默认的分区表只有64个字节，仅能写入四组分区信息，这四组分区信息称为主(Primary)和扩展(Extended)分区
-2、分区的最小单位为柱面(cylinder)
-3、当系统要写入磁盘时,一定会参考磁盘分区表,才能针对某个分区进行数据的处理</p>
-<h2 id="三主分区扩展分区和逻辑分区">三、主分区、扩展分区和逻辑分区</h2>
-<p>1、主分区和扩展分区最多可以有四个(硬盘的限制)
-2、扩展分区最多只能有一个(操作系统的限制)
-3、逻辑分区是由扩展分区连续分割出来的分区
-4、主分区和逻辑分区能够被格式化后用于存取数据，扩展分区无法格式化
-5、逻辑分区的数量依操作系统而不同,在Linux系统中,IDE 硬盘最多有59个逻辑分区(5 号到63 号), SATA 硬盘则有 11 个逻辑分区(5 号到 15 号)</p>
+      <h4 id="1readline库和命令行编辑">1、<code>Readline</code>库和命令行编辑</h4>
+<p><code>bash shell</code>提供了两个内置编辑器：<code>emacs</code>和<code>vi</code>，利用它们可以以交互模式对命令行列表进行编辑，这项特性是通过<code>Readline</code>库的软件包实现的。</p>
+<p>当使用命令行编辑功能时，无论是<code>vi</code>还是<code>emacs</code>模式，都是<code>readline</code>的函数决定哪一个键对应哪一项功能。例如，使用<code>emacs</code>模式，则<kbd>Ctrl</kbd>-<kbd>P</kbd>允许在历史列表中向上滚动。</p>
+<h4 id="2设置命令行编辑器">2、设置命令行编辑器</h4>
+<p>内置<code>emacs</code>编辑器是默认的内置编辑器。</p>
+<p>设置<code>vi</code>为命令行编辑器
+<code># set -o vi</code></p>
+<p>设置<code>emacs</code>为命令行编辑器
+<code># set -o emacs</code></p>
+<h4 id="3emacs命令行编辑命令">3、emacs命令行编辑命令</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Ctrl-P</td>
+<td style="text-align:left">向上移动命令列表</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl-N</td>
+<td style="text-align:left">向下移动命令列表</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">ESC&lt;</td>
+<td style="text-align:left">移动到命令列表的第一行</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">ESC&gt;</td>
+<td style="text-align:left">移动到命令列表的最后一行</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl-A</td>
+<td style="text-align:left">移至行首</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl-E</td>
+<td style="text-align:left">移至行尾=</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">ESC+F</td>
+<td style="text-align:left">向前移动一个单词</td>
+<td style="text-align:left">+:先后按键，不是连着</td>
+</tr>
+<tr>
+<td style="text-align:center">ESC+B</td>
+<td style="text-align:left">向后移动一个单词</td>
+<td style="text-align:left">+:先后按键，不是连着</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl-U</td>
+<td style="text-align:left">从光标处删除至行首</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl-K</td>
+<td style="text-align:left">从光标处删除至行尾</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl-Y</td>
+<td style="text-align:left">粘贴回行</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl-D</td>
+<td style="text-align:left">删除一个字母</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">ESC+D</td>
+<td style="text-align:left">向前删除一个单词</td>
+<td style="text-align:left">+:先后按键，不是连着</td>
+</tr>
+<tr>
+<td style="text-align:center">ESC+H</td>
+<td style="text-align:left">向后删除一个单词</td>
+<td style="text-align:left">+:先后按键，不是连着</td>
+</tr>
+</tbody>
+</table>
 
     </div>
 
@@ -184,7 +264,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2015-12-27
+        2015-12-19
         
     </span>
   </p>
@@ -193,16 +273,17 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA/">硬盘分区</a>
+          <a href="/tags/bash/">Bash</a>
+          <a href="/tags/shell/">Shell</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/">
+        <a class="prev" href="/2015/12/27/%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%E8%A6%81%E7%82%B9/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Linux上的防病毒软件ClamAV</span>
+            <span class="prev-text nav-default">硬盘分区要点</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2015/12/19/bash%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%BE%91/">
-            <span class="next-text nav-default">Bash命令行编辑</span>
+        <a class="next" href="/2015/12/10/%E5%88%B6%E4%BD%9Cubuntu%E5%B1%80%E5%9F%9F%E7%BD%91%E6%BA%90/">
+            <span class="next-text nav-default">制作Ubuntu局域网源</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
