@@ -6,7 +6,16 @@
     <description>Recent content in Shell on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 04 Dec 2015 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Dec 2015 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bash环境配置文件</title>
+      <link>https://chenxiaopang.github.io/2015/12/10/bash%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 10 Dec 2015 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/12/10/bash%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <description>一、环境配置文件读取优先级 其中~/.bash_profile,~/.bash_login,~/.profile三个文件只有一个有效，查找优先</description>
+    </item>
+    
     <item>
       <title>多重Bash登入的history写入问题</title>
       <link>https://chenxiaopang.github.io/2015/12/04/%E5%A4%9A%E9%87%8Dbash%E7%99%BB%E5%85%A5%E7%9A%84history%E5%86%99%E5%85%A5%E9%97%AE%E9%A2%98/</link>
