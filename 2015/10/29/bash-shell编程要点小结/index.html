@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Bash Shell编程要点小结">
 <meta itemprop="description" content="一、case命令 1 2 3 4 5 6 7 8 9 10 11 12 13 14 case variable in value1) command(s) ;; value2) command(s) ;; *) command(s) ;; esac 如果case变量没有被匹配，程序就执行*)后面的语句。 case值中允许"><meta itemprop="datePublished" content="2015-10-29T16:18:26&#43;08:00" />
 <meta itemprop="dateModified" content="2015-10-29T16:18:26&#43;08:00" />
-<meta itemprop="wordCount" content="3073">
+<meta itemprop="wordCount" content="3079">
 <meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Bash Shell编程要点小结"/>
 <meta name="twitter:description" content="一、case命令 1 2 3 4 5 6 7 8 9 10 11 12 13 14 case variable in value1) command(s) ;; value2) command(s) ;; *) command(s) ;; esac 如果case变量没有被匹配，程序就执行*)后面的语句。 case值中允许"/>
@@ -137,7 +137,7 @@
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/bash/"> Bash </a>
             </div>
-          <span class="more-meta"> 约 3073 字 </span>
+          <span class="more-meta"> 约 3079 字 </span>
           <span class="more-meta"> 预计阅读 7 分钟 </span>
         
       </div>
@@ -287,7 +287,7 @@ command<span class="o">(</span>s<span class="o">)</span>
 command<span class="o">(</span>s<span class="o">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>if命令可以嵌套，在嵌套的情况下，fi命令总是和最近的if配对使用</p>
+</div><p>if命令可以嵌套，在嵌套的情况下，fi命令总是和最近的if配对使用。</p>
 <h4 id="2ifelse命令">2、if/else命令</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -724,7 +724,7 @@ command<span class="o">(</span>s<span class="o">)</span>
 </div><h4 id="5break命令">5、break命令</h4>
 <p>内建的<code>break</code>命令用来从循环中强形退出，但是不退出程序。</p>
 <p><code>break</code>可以用一个数字作为参数，指定强行退出的循环层数。如果有三层循环，最外层的循环为<code>3</code>，中间的为<code>2</code>，最里层的为<code>1</code>。</p>
-<p><code>break [n]</code> <code>n</code>默认值为<code>1</code></p>
+<p><code>break [n]</code> <code>n</code>默认值为<code>1</code>。</p>
 <h4 id="6continue命令">6、continue命令</h4>
 <p><code>continue [n]</code> <code>n</code>默认值为<code>1</code></p>
 <p>如果某些条件为真，<code>continue</code>命令控制跳转到循环的顶部，所有<code>continue</code>命令后面的语句都将被忽略。</p>
@@ -869,10 +869,10 @@ mail <span class="nv">$person</span> &lt; memo
 <code>$ trap INT</code></p>
 <p>5、陷阱嵌套
 <code>$ trap 'trap 2' 2</code></p>
-<p>设置用户按两次<code>Control-C</code>终止程序。第一次陷阱捕捉信号，第二个陷阱复位信号<code>2</code>的默认动作-杀死进程</p>
+<p>设置用户按两次<code>Control-C</code>终止程序。第一次陷阱捕捉信号，第二个陷阱复位信号<code>2</code>的默认动作-杀死进程。</p>
 <h3 id="十一getopts命令">十一、getopts命令</h3>
 <p>当脚本需要一些命令行选项时，位置参量不是总有效的，因为有的选项需要指定参数，而位置参量无法区分。</p>
-<p><code>bash</code>内嵌函数<code>getopts</code>能够处理带参数的选项</p>
+<p><code>bash</code>内嵌函数<code>getopts</code>能够处理带参数的选项。</p>
 <h4 id="1基本用法">1、基本用法</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -910,8 +910,8 @@ command<span class="o">(</span>s<span class="o">)</span><span class="p">;;</span
 </div>
 </div><h4 id="2说明">2、说明</h4>
 <ol>
-<li><code>x</code>、<code>y</code>和<code>n</code>都是选项。选项<code>x</code>前面有一个冒号<code>：</code>，选项<code>n</code>后面有一个冒号<code>：</code></li>
-<li>选项前面的冒号<code>：</code>告诉<code>getopts</code>静默错误报告</li>
+<li><code>x</code>、<code>y</code>和<code>n</code>都是选项。选项<code>x</code>前面有一个冒号<code>：</code>，选项<code>n</code>后面有一个冒号<code>：</code>。</li>
+<li>选项前面的冒号<code>：</code>告诉<code>getopts</code>静默错误报告。</li>
 <li>选项后面的冒号<code>：</code>表示选项需要一个用空格与它间隔开的参数，参数是非破折号开头的单词。<code>-n</code>选项就需要参数。</li>
 <li>没有破折号的选项告诉<code>getopts</code>已经到了选项清单的末尾。当<code>getopts</code>没有参数可处理时，返回一个非<code>0</code>退出状态值，导致<code>while</code>循环终止。</li>
 <li>每次调用<code>getopts</code>时，它把从位置参量读取的合法选项赋值给指定的变量（例子中为<code>name</code>），如果不合法，就把问号<code>？</code>赋值给变量。</li>
