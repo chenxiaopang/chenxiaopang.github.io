@@ -35,6 +35,15 @@
     </item>
     
     <item>
+      <title>cat和tac的用法</title>
+      <link>https://chenxiaopang.github.io/2015/12/19/cat%E5%92%8Ctac%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Sat, 19 Dec 2015 23:19:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/12/19/cat%E5%92%8Ctac%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>1、cat和tac的功能 cat从前往后显示文本文件内容，tac与cat相反，从后往前显示文本文件内容 2、cat用法 $ cat [-AbEnTv] [filename] 选项与参数: 选项 功</description>
+    </item>
+    
+    <item>
       <title>cal日历工具的用法</title>
       <link>https://chenxiaopang.github.io/2015/12/19/cal%E6%97%A5%E5%8E%86%E5%B7%A5%E5%85%B7%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Sat, 19 Dec 2015 23:16:18 +0800</pubDate>
