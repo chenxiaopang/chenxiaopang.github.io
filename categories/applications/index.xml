@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>cal日历工具的用法</title>
+      <link>https://chenxiaopang.github.io/2015/12/19/cal%E6%97%A5%E5%8E%86%E5%B7%A5%E5%85%B7%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Sat, 19 Dec 2015 23:16:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/12/19/cal%E6%97%A5%E5%8E%86%E5%B7%A5%E5%85%B7%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>日历工具cal的基本语法: $ cal [month] [year] 1、显示当前月的日历 $ cal 2、显示某年的日历 $ cal 2015 3、显示某年某月日历 $ cal 12 2015</description>
+    </item>
+    
+    <item>
       <title>制作Ubuntu局域网源</title>
       <link>https://chenxiaopang.github.io/2015/12/10/%E5%88%B6%E4%BD%9Cubuntu%E5%B1%80%E5%9F%9F%E7%BD%91%E6%BA%90/</link>
       <pubDate>Thu, 10 Dec 2015 23:06:18 +0800</pubDate>
