@@ -6,7 +6,16 @@
     <description>Recent content in Bash on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 19 Dec 2015 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Dec 2015 16:18:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>comm的用法</title>
+      <link>https://chenxiaopang.github.io/2015/12/20/comm%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Sun, 20 Dec 2015 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/12/20/comm%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>一、comm的功能 对两个排序过的文本文件进行逐行比较。 基本用法： comm -[123] file1 file2 二、例子 1、显示两个文本文件都有的行 $ comm -12 file1 file2 2、显示file1中独</description>
+    </item>
+    
     <item>
       <title>Bash命令行编辑</title>
       <link>https://chenxiaopang.github.io/2015/12/19/bash%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%BE%91/</link>
