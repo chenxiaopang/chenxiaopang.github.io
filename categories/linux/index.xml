@@ -62,6 +62,15 @@
     </item>
     
     <item>
+      <title>cp的用法</title>
+      <link>https://chenxiaopang.github.io/2015/12/20/cp%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Sun, 20 Dec 2015 17:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/12/20/cp%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>一、cp的功能 拷贝一个或多个文件（或目录）到目的地 二、例子 1、一次拷贝多个源文件到目的地 1 $ cp /mnt/hgfs/DOC/{1,2,3,4,5}.txt /root/ldj 2、只拷贝链接文件，不拷贝实际链接的文件 用</description>
+    </item>
+    
+    <item>
       <title>comm的用法</title>
       <link>https://chenxiaopang.github.io/2015/12/20/comm%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Sun, 20 Dec 2015 16:18:26 +0800</pubDate>
