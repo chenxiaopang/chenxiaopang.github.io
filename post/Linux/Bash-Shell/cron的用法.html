@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>cron的用法.html</title>
+
+</head>
+
+<body>
+
+<p>Linux中的cron命令是Linux的内置服务，用于定时的循环的服务。</p>
+<h3 id="一启动重启关闭服务">一、启动/重启/关闭服务</h3>
+<pre class="shell"><code>启动服务
+# /sbin/service crond start
+
+关闭服务
+# /sbin/service crond stop 
+
+重启服务
+# /sbin/service crond restart 
+
+重新载入配置
+# /sbin/service crond reload </code></pre>
+<h3 id="二系统启动时自启动服务">二、系统启动时自启动服务</h3>
+<p>编辑<code>/etc/rc.d/rc.local</code>文件，在脚本上加入</p>
+<p><code>/sbin/service crond start</code></p>
+<h3 id="三用crontab命令编辑配置用户的cron任务">三、用crontab命令编辑配置用户的cron任务</h3>
+<h4 id="crontab用法">1、crontab用法</h4>
+<p><code>cron</code>服务提供<code>crontab</code>命令来设定用户的<code>cron</code>任务，每次编辑完某个用户的<code>cron</code>设置后，<code>cron</code>自动在<code>/var/spool/cron</code>(此目录对于不同的发行版可能不相同)下生成一个与此用户同名的文件，此用户的<code>cron</code>信息都记录在这个文件中，这个文件是不可以直接编辑的，只可以用<code>crontab -e</code> 来编辑。</p>
+<p><code>cron</code>启动后每过一分钟读一次这个文件，检查是否要执行里面的命令，因此此文件修改后不需要重新启动<code>cron</code>服务。</p>
+<p>下面是这个命令的一些参数与说明：</p>
+<pre class="shell"><code>设定某个用户的cron服务，一般root用户在执行这个命令的时候需要此参数
+$ crontab -u 
+
+列出某个用户cron服务的详细内容
+$ crontab -l
+
+删除每个用户的cron服务
+$ crontab -r
+
+编辑某个用户的cron服务
+$ crontab -e </code></pre>
+<h4 id="crontab用法例子">2、crontab用法例子</h4>
+<p>设置<code>EDITOR</code>环境变量来设置<code>crontab</code>使用的编辑器</p>
+<pre class="shell"><code>$ export EDITOR=vim
+$ crontab -e </code></pre>
+<p>查看<code>root</code>用户的<code>cron</code>设置 <code>$ crontab -u root -l</code></p>
+<p><code>root</code>想删除用户<code>fred</code>的<code>cron</code>设置 <code># crontab -u fred -r</code></p>
+<p>编辑<code>root</code>用户<code>cron</code>服务设置 <code># crontab -u root -e</code></p>
+<p>编辑当前用户的<code>cron</code>服务设置 <code>$ crontab -e</code></p>
+<h4 id="用户cron任务设置格式">3、用户cron任务设置格式</h4>
+<p>使用<code>crontab -e</code>进入编辑模式，编辑的内容一定要符合下面的格式</p>
+<p><code>*/1 * * * * ls &gt;&gt; /tmp/ls.txt</code></p>
+<ol style="list-style-type: decimal">
+<li><p>这个格式的前一部分是对时间的设定，后面一部分是要执行的命令。</p></li>
+<li><p>如果要执行的命令太多，可以把这些命令写到一个脚本里面，然后在这里直接调用这个脚本就可以 了，调用的时候记得写出命令的完整路径。</p></li>
+<li><p>时间的设定有一定的约定，前面五个<code>*</code>号代表五个数字，五个<code>*</code>代表的含义和数字的取值范围如下：</p></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th>*序号</th>
+<th>时间</th>
+<th align="left">取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>第1个*</td>
+<td>分钟</td>
+<td align="left">0-59</td>
+</tr>
+<tr class="even">
+<td>第2个*</td>
+<td>小時</td>
+<td align="left">0-23</td>
+</tr>
+<tr class="odd">
+<td>第3个*</td>
+<td>日期</td>
+<td align="left">1-31</td>
+</tr>
+<tr class="even">
+<td>第4个*</td>
+<td>月份</td>
+<td align="left">1-12</td>
+</tr>
+<tr class="odd">
+<td>第5个*</td>
+<td>星期</td>
+<td align="left">0-6，0代表星期天</td>
+</tr>
+</tbody>
+</table>
+<ol start="4" style="list-style-type: decimal">
+<li>除了数字还有几个特殊的符号就是<code>*</code>、<code>/</code>、<code>-</code>、<code>,</code></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th>符号</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>*</td>
+<td align="left">代表所有的取值范围内的数字</td>
+</tr>
+<tr class="even">
+<td>/</td>
+<td align="left">代表每的意思,&quot;*/5&quot;表示每5个单位</td>
+</tr>
+<tr class="odd">
+<td>-</td>
+<td align="left">代表从某个数字到某个数字</td>
+</tr>
+<tr class="even">
+<td>,</td>
+<td align="left">分开几个离散的数字</td>
+</tr>
+</tbody>
+</table>
+<h4 id="用户cron任务设置举例">4、用户cron任务设置举例</h4>
+<p>每天早上6点</p>
+<p>注意单纯echo，从屏幕上看不到任何输出，因为cron把任何输出都email到root的信箱了。</p>
+<pre class="shell"><code>0 6 * * * echo &quot;Good morning.&quot; &gt;&gt; /tmp/test.txt </code></pre>
+<p>每两个小时</p>
+<pre class="shell"><code>0 */2 * * * echo &quot;Have a break now.&quot; &gt;&gt; /tmp/test.txt</code></pre>
+<p>晚上11点到早上7点之间每两个小时、早上8点</p>
+<pre class="shell"><code>0 23-7/2,8 * * * echo &quot;Have a good dream：）&quot; &gt;&gt; /tmp/test.txt</code></pre>
+<p>每个月的4号和每周的星期一到星期三的早上11点</p>
+<pre class="shell"><code>0 11 4 * 1-3 command</code></pre>
+<p>1月1日早上4点</p>
+<pre class="shell"><code>0 4 1 1 * command</code></pre>
+<h3 id="四编辑etccrontab文件配置系统的cron任务">四、编辑/etc/crontab文件配置系统的cron任务</h3>
+<h4 id="系统cron任务设置格式">1、系统<code>cron</code>任务设置格式</h4>
+<p><code>cron</code>服务每分钟不仅要读一次<code>/var/spool/cron</code>内的所有文件，还需要读一次<code>/etc/crontab</code>。用<code>crontab</code>配置是针对某个用户的，而编辑<code>/etc/crontab</code>是针对系统的任务。此文件示例如下：</p>
+<pre class="shell"><code>SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root 如果出现错误，或者有数据输出，数据作为邮件发给这个帐号
+HOME=/ 使用者运行的路径,这里是根目录
+
+# run-parts
+01 * * * * root run-parts /etc/cron.hourly     //每小时1分执行/etc/cron.hourly内的脚本
+02 4 * * * root run-parts /etc/cron.daily      //每天04:02执行/etc/cron.daily内的脚本
+22 4 * * 0 root run-parts /etc/cron.weekly     //每周日04:22执行/etc/cron.weekly内的脚本
+42 4 1 * * root run-parts /etc/cron.monthly    //每月1号04:42去执行/etc/cron.monthly内的脚本</code></pre>
+<p>说明：</p>
+<ol style="list-style-type: decimal">
+<li><p>时间设置和用户cron任务设置方法相同</p></li>
+<li><p>时间设置之后是执行系统cron任务的用户名</p></li>
+<li><p>用户名之后是run-parts这个参数，run-parts这个命令可以运行某个目录中的所有脚本或程序。如果去掉这个参数的话，后面就直接写要运行的脚本名，而不是文件夹名。</p></li>
+</ol>
+<h4 id="系统cron任务设置例子">2、系统cron任务设置例子</h4>
+<p>每天2:15定时关机</p>
+<p>在<code>/etc/crontab</code>文件末尾加入一条</p>
+<pre class="shell"><code>15 2 * * * root shutdown -h now</code></pre>
+
+</body>
+</html>
