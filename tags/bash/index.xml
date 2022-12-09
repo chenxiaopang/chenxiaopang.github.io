@@ -31,7 +31,7 @@
       <pubDate>Sun, 31 Jan 2016 17:18:26 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/2016/01/31/tr%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
-      <description>一、tr的基本功能 转换、挤压或删除字符串，从标准输入接收输入，输出到标准输出。 二、基本用法 $ tr [options] string1 [string2] 三、例子 1、转换 1 2 $ echo &amp;#34;CDImage.CUE&amp;#34; | tr [A-Z] [a-z] CDImage.cue 1 2</description>
+      <description>一、tr的基本功能 转换、挤压或删除字符串，从标准输入接收输入，输出到标准输出。 二、基本用法 $ tr [options] string1 [string2] 三、例子 1、转换 1 2 $ echo &amp;#34;CDImage.CUE&amp;#34; | tr [A-Z] [a-z] cdimage.cue 1 2</description>
     </item>
     
     <item>
