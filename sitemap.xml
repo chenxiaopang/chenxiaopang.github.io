@@ -479,14 +479,28 @@
   
   <url>
     <loc>https://chenxiaopang.github.io/categories/application/</loc>
-    <lastmod>2016-02-08T17:18:26+08:00</lastmod>
+    <lastmod>2016-02-09T17:18:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chenxiaopang.github.io/tags/bash/</loc>
-    <lastmod>2016-02-08T17:18:26+08:00</lastmod>
+    <lastmod>2016-02-09T17:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/iptux/</loc>
+    <lastmod>2016-02-09T17:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2016/02/09/ubuntu%E4%B8%8B%E7%9A%84iptux%E5%92%8Cwindows%E4%B8%8B%E7%9A%84%E9%A3%9E%E7%A7%8B%E4%BA%92%E4%BC%A0%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2016-02-09T17:18:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
