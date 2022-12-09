@@ -243,14 +243,14 @@ $ crontab -e
 $ crontab -e 
 </code></pre></td></tr></table>
 </div>
-</div><p>查看<code>root</code>用户的<code>cron</code>设置
-<code>$ crontab -u root -l</code></p>
-<p><code>root</code>想删除用户<code>fred</code>的<code>cron</code>设置
-<code># crontab -u fred -r</code></p>
-<p>编辑<code>root</code>用户<code>cron</code>服务设置
-<code># crontab -u root -e</code></p>
-<p>编辑当前用户的<code>cron</code>服务设置
-<code>$ crontab -e</code></p>
+</div><p>查看<code>root</code>用户的<code>cron</code>设置</p>
+<p><code>$ crontab -u root -l</code></p>
+<p><code>root</code>想删除用户<code>fred</code>的<code>cron</code>设置</p>
+<p><code># crontab -u fred -r</code></p>
+<p>编辑<code>root</code>用户<code>cron</code>服务设置</p>
+<p><code># crontab -u root -e</code></p>
+<p>编辑当前用户的<code>cron</code>服务设置</p>
+<p><code>$ crontab -e</code></p>
 <h4 id="3用户cron任务设置格式">3、用户cron任务设置格式</h4>
 <p>使用<code>crontab -e</code>进入编辑模式，编辑的内容一定要符合下面的格式</p>
 <p><code>*/1 * * * * ls &gt;&gt; /tmp/ls.txt</code></p>
