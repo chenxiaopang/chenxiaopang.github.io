@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Linux上的防病毒软件ClamAV - Panda的随笔</title>
+  <title>UTC、GMT时间和本地时间 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一、问题 对于装有Windows和Linux系统的机器，进入Windows显示的时间和Linux不一致，Linux中的时间比Windows提前" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/" />
+<link rel="canonical" href="https://chenxiaopang.github.io/2016/02/08/utcgtc%E6%97%B6%E9%97%B4%E5%92%8C%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Linux上的防病毒软件ClamAV" />
-<meta property="og:description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin" />
+<meta property="og:title" content="UTC、GMT时间和本地时间" />
+<meta property="og:description" content="一、问题 对于装有Windows和Linux系统的机器，进入Windows显示的时间和Linux不一致，Linux中的时间比Windows提前" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxiaopang.github.io/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2016-04-04T15:50:08&#43;08:00" />
-<meta property="article:modified_time" content="2016-04-04T15:50:08&#43;08:00" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2016/02/08/utcgtc%E6%97%B6%E9%97%B4%E5%92%8C%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-02-08T17:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2016-02-08T17:18:26&#43;08:00" />
 
-<meta itemprop="name" content="Linux上的防病毒软件ClamAV">
-<meta itemprop="description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin"><meta itemprop="datePublished" content="2016-04-04T15:50:08&#43;08:00" />
-<meta itemprop="dateModified" content="2016-04-04T15:50:08&#43;08:00" />
-<meta itemprop="wordCount" content="436">
-<meta itemprop="keywords" content="病毒,安全," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux上的防病毒软件ClamAV"/>
-<meta name="twitter:description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin"/>
+<meta itemprop="name" content="UTC、GMT时间和本地时间">
+<meta itemprop="description" content="一、问题 对于装有Windows和Linux系统的机器，进入Windows显示的时间和Linux不一致，Linux中的时间比Windows提前"><meta itemprop="datePublished" content="2016-02-08T17:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2016-02-08T17:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="633">
+<meta itemprop="keywords" content="Bash,UTC,GMT," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UTC、GMT时间和本地时间"/>
+<meta name="twitter:description" content="一、问题 对于装有Windows和Linux系统的机器，进入Windows显示的时间和Linux不一致，Linux中的时间比Windows提前"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,16 +129,16 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Linux上的防病毒软件ClamAV</h1>
+      <h1 class="post-title">UTC、GMT时间和本地时间</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2016-04-04 </span>
+        <span class="post-time"> 2016-02-08 </span>
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
-            <a href="/categories/tools/"> Tools </a>
+            <a href="/categories/application/"> Application </a>
             </div>
-          <span class="more-meta"> 约 436 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 633 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
     </header>
@@ -152,11 +152,9 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#1安装clamav">1、安装clamav</a></li>
-            <li><a href="#2升级病毒库">2、升级病毒库</a></li>
-            <li><a href="#3查看版本">3、查看版本</a></li>
-            <li><a href="#4查毒">4、查毒</a></li>
-            <li><a href="#5注意">5、注意</a></li>
+            <li><a href="#一问题">一、问题</a></li>
+            <li><a href="#二解决方法">二、解决方法</a></li>
+            <li><a href="#三说明">三、说明</a></li>
           </ul>
         </li>
       </ul>
@@ -166,58 +164,27 @@
   </div>
 </div>
     <div class="post-content">
-      <p>Clam  AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Linux、FreeBSD等Unix-like系统架设的邮件服务器上，提供电子邮件的病毒扫描服务。ClamAV本身是在文字接口下运作，但也有许多图形接口的前端工具可用，另外由于其开放源代码的特性，在Windows与Mac OS X平台都有其移植版。</p>
-<h3 id="1安装clamav">1、安装clamav</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt-get install clamav clamav-docs
-$ sudo apt-get install clamav-daemon                             //安装clamav服务
-$ sudo apt-get install clamtk                                                 //安装图形前端
-$ sudo apt-get install clamtk-nautilus 				                //安装nautilus右键支持查毒
-$ sudo apt-get install libclamunrar6                                   //支持rar文件查毒
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="2升级病毒库">2、升级病毒库</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo freshclam
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="3查看版本">3、查看版本</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ clamscan -V
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="4查毒">4、查毒</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ clamav -r /home/cb/software     //-r递归扫描目录
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="5注意">5、注意</h3>
-<ul>
-<li>clamav只能查毒，不能杀毒，但可以删除或隔离被病毒感染的文件</li>
-<li>病毒库文件位于/var/lib/clamav目录下，可备份并拷贝到其它机器上用于离线升级</li>
-<li>可结合at或cron服务定时扫描系统</li>
-</ul>
-<p>以上在Ubuntu 12.04上测试通过。</p>
+      <h3 id="一问题">一、问题</h3>
+<p>对于装有<code>Windows</code>和<code>Linux</code>系统的机器，进入<code>Windows</code>显示的时间和<code>Linux</code>不一致，<code>Linux</code>中的时间比<code>Windows</code>提前8个小时。</p>
+<h3 id="二解决方法">二、解决方法</h3>
+<p>修改<code>/etc/default/rcS</code>，设置不使用<code>UTC</code>时间，设置如下：</p>
+<p><code>UTC=no</code></p>
+<h3 id="三说明">三、说明</h3>
+<p>这个是一个关于时间的问题，我们就先来了解一下关于时间的概念</p>
+<p><code>UTC（Universal Time Coordinated）</code>：协调世界时</p>
+<p><code>GMT（Greenwich Mean Time）</code>：格林威治时间</p>
+<p>本地时间<code>（local time）</code>：全球二十四个时区，以<code>GMT</code>或<code>UTC</code>为基准进行调整。例如，北京为东八区，则北京时间为<code>GMT+8</code>或<code>UTC+8</code></p>
+<p><code>UTC</code>和<code>GMT</code>基本上一致，但<code>UTC</code>经过平均太阳时(以格林威治时间<code>GMT</code>为准)、地轴运动修正后的新时标以及以秒为单位的国际原子时所综合精算而成的时间，计算过程相当严谨精密，因此<code>UTC</code>比<code>GMT</code>来得更加精准更为精确。</p>
+<p><code>Windows</code>与<code>Mac/Linux</code>缺省看待系统硬件时间的方式是不一样的：</p>
+<ol>
+<li>
+<p><code>Windows</code>把系统硬件时间当作本地时间<code>(local time)</code>，即操作系统中显示的时间跟<code>BIOS</code>中显示的时间是一样的。</p>
+</li>
+<li>
+<p><code>Linux/Unix/Mac</code>默认把硬件时间当作<code>UTC</code>，操作系统中显示的时间是硬件时间经过换算得来的，比如说北京时间是<code>GMT+8</code>，则系统中显示时间是硬件时间<code>+8</code>。</p>
+</li>
+</ol>
+<p>因此，若要解决上述<code>Windows</code>和<code>Linux</code>显示时间不一致的问题，只要设置<code>Linux/Unix/Mac</code>不要将硬件时间当做<code>UTC</code>时间，而是作为本地时间即可。</p>
 
     </div>
 
@@ -229,7 +196,7 @@ $ sudo apt-get install libclamunrar6                                   //支持r
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2016-04-04
+        2016-02-08
         
     </span>
   </p>
@@ -238,17 +205,18 @@ $ sudo apt-get install libclamunrar6                                   //支持r
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E7%97%85%E6%AF%92/">病毒</a>
-          <a href="/tags/%E5%AE%89%E5%85%A8/">安全</a>
+          <a href="/tags/bash/">Bash</a>
+          <a href="/tags/utc/">UTC</a>
+          <a href="/tags/gmt/">GMT</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2019/05/02/linux%E4%B8%8B%E7%9A%84%E5%BD%95%E5%B1%8F%E8%BD%AF%E4%BB%B6kazam/">
+        <a class="prev" href="/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Linux下的录屏软件Kazam</span>
+            <span class="prev-text nav-default">Linux上的防病毒软件ClamAV</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2016/02/08/utcgtc%E6%97%B6%E9%97%B4%E5%92%8C%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4/">
-            <span class="next-text nav-default">UTC、GMT时间和本地时间</span>
+        <a class="next" href="/2016/01/31/tr%E7%9A%84%E7%94%A8%E6%B3%95/">
+            <span class="next-text nav-default">tr的用法</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

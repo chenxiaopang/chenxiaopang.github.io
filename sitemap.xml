@@ -478,8 +478,36 @@
   </url>
   
   <url>
+    <loc>https://chenxiaopang.github.io/categories/application/</loc>
+    <lastmod>2016-02-08T17:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://chenxiaopang.github.io/tags/bash/</loc>
-    <lastmod>2016-01-31T17:18:26+08:00</lastmod>
+    <lastmod>2016-02-08T17:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/gmt/</loc>
+    <lastmod>2016-02-08T17:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/utc/</loc>
+    <lastmod>2016-02-08T17:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2016/02/08/utcgtc%E6%97%B6%E9%97%B4%E5%92%8C%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4/</loc>
+    <lastmod>2016-02-08T17:18:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

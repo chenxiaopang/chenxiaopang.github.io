@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="1、基本功能 从文件或标准输入的每行中删除指定的部分。 2、基本用法 cut -[cdf] [FILE] 3、例子 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $ ls -l total 2944 -rwxr-xr-x 1 zach pubs 259 Feb 1 00:12 countout" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一、基本功能 从文件或标准输入的每行中删除指定的部分。 二、基本用法 cut -[cdf] [FILE] 三、例子 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $ ls -l total 2944 -rwxr-xr-x 1 zach pubs 259 Feb 1 00:12 countout" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="cut的用法" />
-<meta property="og:description" content="1、基本功能 从文件或标准输入的每行中删除指定的部分。 2、基本用法 cut -[cdf] [FILE] 3、例子 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $ ls -l total 2944 -rwxr-xr-x 1 zach pubs 259 Feb 1 00:12 countout" />
+<meta property="og:description" content="一、基本功能 从文件或标准输入的每行中删除指定的部分。 二、基本用法 cut -[cdf] [FILE] 三、例子 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $ ls -l total 2944 -rwxr-xr-x 1 zach pubs 259 Feb 1 00:12 countout" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chenxiaopang.github.io/2015/12/27/cut%E7%9A%84%E7%94%A8%E6%B3%95/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-12-27T17:18:26&#43;08:00" />
 <meta property="article:modified_time" content="2015-12-27T17:18:26&#43;08:00" />
 
 <meta itemprop="name" content="cut的用法">
-<meta itemprop="description" content="1、基本功能 从文件或标准输入的每行中删除指定的部分。 2、基本用法 cut -[cdf] [FILE] 3、例子 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $ ls -l total 2944 -rwxr-xr-x 1 zach pubs 259 Feb 1 00:12 countout"><meta itemprop="datePublished" content="2015-12-27T17:18:26&#43;08:00" />
+<meta itemprop="description" content="一、基本功能 从文件或标准输入的每行中删除指定的部分。 二、基本用法 cut -[cdf] [FILE] 三、例子 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $ ls -l total 2944 -rwxr-xr-x 1 zach pubs 259 Feb 1 00:12 countout"><meta itemprop="datePublished" content="2015-12-27T17:18:26&#43;08:00" />
 <meta itemprop="dateModified" content="2015-12-27T17:18:26&#43;08:00" />
-<meta itemprop="wordCount" content="417">
+<meta itemprop="wordCount" content="415">
 <meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="cut的用法"/>
-<meta name="twitter:description" content="1、基本功能 从文件或标准输入的每行中删除指定的部分。 2、基本用法 cut -[cdf] [FILE] 3、例子 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $ ls -l total 2944 -rwxr-xr-x 1 zach pubs 259 Feb 1 00:12 countout"/>
+<meta name="twitter:description" content="一、基本功能 从文件或标准输入的每行中删除指定的部分。 二、基本用法 cut -[cdf] [FILE] 三、例子 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $ ls -l total 2944 -rwxr-xr-x 1 zach pubs 259 Feb 1 00:12 countout"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -137,7 +137,7 @@
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/bash/"> Bash </a>
             </div>
-          <span class="more-meta"> 约 417 字 </span>
+          <span class="more-meta"> 约 415 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -152,9 +152,9 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#1基本功能">1、基本功能</a></li>
-            <li><a href="#2基本用法">2、基本用法</a></li>
-            <li><a href="#3例子">3、例子</a></li>
+            <li><a href="#一基本功能">一、基本功能</a></li>
+            <li><a href="#二基本用法">二、基本用法</a></li>
+            <li><a href="#三例子">三、例子</a></li>
           </ul>
         </li>
       </ul>
@@ -164,11 +164,11 @@
   </div>
 </div>
     <div class="post-content">
-      <h3 id="1基本功能">1、基本功能</h3>
+      <h3 id="一基本功能">一、基本功能</h3>
 <p>从文件或标准输入的每行中删除指定的部分。</p>
-<h3 id="2基本用法">2、基本用法</h3>
+<h3 id="二基本用法">二、基本用法</h3>
 <p><code>cut -[cdf] [FILE]</code></p>
-<h3 id="3例子">3、例子</h3>
+<h3 id="三例子">三、例子</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -270,7 +270,7 @@ rw-rw-r--
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ ls -l <span class="p">|</span> tr -s <span class="s1">&#39; &#39;</span> <span class="s1">&#39; &#39;</span> <span class="p">|</span> cut -f5,9 -d<span class="s1">&#39; &#39;</span>
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ ls -l <span class="p">|</span> tr -s <span class="s1">&#39; &#39;</span> <span class="p">|</span> cut -f5,9 -d<span class="s1">&#39; &#39;</span>
 
 <span class="m">259</span> countout
 

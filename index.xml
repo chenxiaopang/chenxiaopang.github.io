@@ -215,12 +215,21 @@
     </item>
     
     <item>
+      <title>UTC、GMT时间和本地时间</title>
+      <link>https://chenxiaopang.github.io/2016/02/08/utcgtc%E6%97%B6%E9%97%B4%E5%92%8C%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Mon, 08 Feb 2016 17:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/02/08/utcgtc%E6%97%B6%E9%97%B4%E5%92%8C%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4/</guid>
+      <description>一、问题 对于装有Windows和Linux系统的机器，进入Windows显示的时间和Linux不一致，Linux中的时间比Windows提前</description>
+    </item>
+    
+    <item>
       <title>tr的用法</title>
       <link>https://chenxiaopang.github.io/2016/01/31/tr%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Sun, 31 Jan 2016 17:18:26 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/2016/01/31/tr%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
-      <description>一、tr的基本功能 转换、挤压或删除字符串，从标准输入接收输入，输出到标准输出 基本用法 tr [options] string1 [string2] 二、例子 1、转换 1 2 $ echo &amp;#34;CDImage.CUE&amp;#34; | tr [A-Z] [a-z] CDImage.cue 1 2 $ echo hi there</description>
+      <description>一、tr的基本功能 转换、挤压或删除字符串，从标准输入接收输入，输出到标准输出。 二、基本用法 $ tr [options] string1 [string2] 三、例子 1、转换 1 2 $ echo &amp;#34;CDImage.CUE&amp;#34; | tr [A-Z] [a-z] CDImage.cue 1 2</description>
     </item>
     
     <item>
@@ -229,7 +238,7 @@
       <pubDate>Sun, 27 Dec 2015 17:18:26 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/2015/12/27/cut%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
-      <description>1、基本功能 从文件或标准输入的每行中删除指定的部分。 2、基本用法 cut -[cdf] [FILE] 3、例子 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $ ls -l total 2944 -rwxr-xr-x 1 zach pubs 259 Feb 1 00:12 countout</description>
+      <description>一、基本功能 从文件或标准输入的每行中删除指定的部分。 二、基本用法 cut -[cdf] [FILE] 三、例子 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $ ls -l total 2944 -rwxr-xr-x 1 zach pubs 259 Feb 1 00:12 countout</description>
     </item>
     
     <item>
