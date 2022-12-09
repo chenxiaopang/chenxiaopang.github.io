@@ -49,7 +49,7 @@
 <meta itemprop="name" content="UTC、GMT时间和本地时间">
 <meta itemprop="description" content="一、问题 对于装有Windows和Linux系统的机器，进入Windows显示的时间和Linux不一致，Linux中的时间比Windows提前"><meta itemprop="datePublished" content="2016-02-08T17:18:26&#43;08:00" />
 <meta itemprop="dateModified" content="2016-02-08T17:18:26&#43;08:00" />
-<meta itemprop="wordCount" content="634">
+<meta itemprop="wordCount" content="670">
 <meta itemprop="keywords" content="Bash,UTC,GMT," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="UTC、GMT时间和本地时间"/>
 <meta name="twitter:description" content="一、问题 对于装有Windows和Linux系统的机器，进入Windows显示的时间和Linux不一致，Linux中的时间比Windows提前"/>
@@ -137,7 +137,7 @@
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/application/"> Application </a>
             </div>
-          <span class="more-meta"> 约 634 字 </span>
+          <span class="more-meta"> 约 670 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -167,9 +167,19 @@
       <h3 id="一问题">一、问题</h3>
 <p>对于装有<code>Windows</code>和<code>Linux</code>系统的机器，进入<code>Windows</code>显示的时间和<code>Linux</code>不一致，<code>Linux</code>中的时间比<code>Windows</code>提前8个小时。</p>
 <h3 id="二解决方法">二、解决方法</h3>
+<p>Ubuntu 14.04采用下面的方法解决</p>
 <p>修改<code>/etc/default/rcS</code>，设置不使用<code>UTC</code>时间，设置如下：</p>
 <p><code>UTC=no</code></p>
-<h3 id="三说明">三、说明</h3>
+<p>Ubuntu 18.04采用下面的方法解决</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo hwclock --localtime --systohc
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="三说明">三、说明</h3>
 <p>这个是一个关于时间的问题，我们就先来了解一下关于时间的概念。</p>
 <p><code>UTC（Universal Time Coordinated）</code>：协调世界时</p>
 <p><code>GMT（Greenwich Mean Time）</code>：格林威治时间</p>
