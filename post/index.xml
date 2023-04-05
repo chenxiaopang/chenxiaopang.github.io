@@ -224,6 +224,24 @@
     </item>
     
     <item>
+      <title>dd的用法</title>
+      <link>https://chenxiaopang.github.io/2016/04/01/dd%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Fri, 01 Apr 2016 20:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/04/01/dd%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>dd工具用来转换和复制文件。 1、 生成文件 生成一个空的，大小为1G的文件 1 # dd if=/dev/zero of=winxp.img bs=1k seek=1024k count=1 2、 读写硬盘 用0填充硬盘 1 2 3 # dd if=/dev/zero of=junk # sync # rm junk 3、 读</description>
+    </item>
+    
+    <item>
+      <title>od的用法</title>
+      <link>https://chenxiaopang.github.io/2016/04/01/od%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Fri, 01 Apr 2016 16:18:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/04/01/od%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>od工具可以多种形式查看非文本文档的内容。 一、用法 １、语法 od [-A RADIX] [-t TYPE] 文件名 ２、选项与参数 选项 功能 -A 指定偏移量的输出形式 -t 指定内容的输出形式 -</description>
+    </item>
+    
+    <item>
       <title>Windows 7安装Oracle 10g的方法</title>
       <link>https://chenxiaopang.github.io/2016/03/12/windows7%E5%AE%89%E8%A3%85oracle10g%E6%96%B9%E6%B3%95/</link>
       <pubDate>Sat, 12 Mar 2016 15:50:08 +0800</pubDate>
@@ -284,15 +302,6 @@
       
       <guid>https://chenxiaopang.github.io/2015/12/20/cron%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
       <description>Linux中的cron命令是Linux的内置服务，用于定时的循环的服务。 一、启动/重启/关闭服务 1 2 3 4 5 6 7 8 9 10 11 启动服务 # /sbin/service crond start 关闭服</description>
-    </item>
-    
-    <item>
-      <title>od的用法</title>
-      <link>https://chenxiaopang.github.io/2015/12/20/od%E7%9A%84%E7%94%A8%E6%B3%95/</link>
-      <pubDate>Sun, 20 Dec 2015 20:18:26 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/2015/12/20/od%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
-      <description>od工具可以多种形式查看非文本文档的内容。 一、用法 １、语法 od [-A RADIX] [-t TYPE] 文件名 ２、选项与参数 选项 功能 -A 指定偏移量的输出形式 -t 指定内容的输出形式 -</description>
     </item>
     
     <item>

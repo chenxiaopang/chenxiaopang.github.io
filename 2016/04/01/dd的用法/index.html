@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Windows 7安装Oracle 10g的方法 - Panda的随笔</title>
+  <title>dd的用法 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="Windows 7下安装Oracle 10g提示“程序异常终止，发生未知错误”的解决方法 一.修改Oracle配置文件refhost.xml 修改\Oracle" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="dd工具用来转换和复制文件。 1、 生成文件 生成一个空的，大小为1G的文件 1 # dd if=/dev/zero of=winxp.img bs=1k seek=1024k count=1 2、 读写硬盘 用0填充硬盘 1 2 3 # dd if=/dev/zero of=junk # sync # rm junk 3、 读" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/2016/03/12/windows7%E5%AE%89%E8%A3%85oracle10g%E6%96%B9%E6%B3%95/" />
+<link rel="canonical" href="https://chenxiaopang.github.io/2016/04/01/dd%E7%9A%84%E7%94%A8%E6%B3%95/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Windows 7安装Oracle 10g的方法" />
-<meta property="og:description" content="Windows 7下安装Oracle 10g提示“程序异常终止，发生未知错误”的解决方法 一.修改Oracle配置文件refhost.xml 修改\Oracle" />
+<meta property="og:title" content="dd的用法" />
+<meta property="og:description" content="dd工具用来转换和复制文件。 1、 生成文件 生成一个空的，大小为1G的文件 1 # dd if=/dev/zero of=winxp.img bs=1k seek=1024k count=1 2、 读写硬盘 用0填充硬盘 1 2 3 # dd if=/dev/zero of=junk # sync # rm junk 3、 读" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxiaopang.github.io/2016/03/12/windows7%E5%AE%89%E8%A3%85oracle10g%E6%96%B9%E6%B3%95/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2016-03-12T15:50:08&#43;08:00" />
-<meta property="article:modified_time" content="2016-03-12T15:50:08&#43;08:00" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2016/04/01/dd%E7%9A%84%E7%94%A8%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-04-01T20:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2016-04-01T20:18:26&#43;08:00" />
 
-<meta itemprop="name" content="Windows 7安装Oracle 10g的方法">
-<meta itemprop="description" content="Windows 7下安装Oracle 10g提示“程序异常终止，发生未知错误”的解决方法 一.修改Oracle配置文件refhost.xml 修改\Oracle"><meta itemprop="datePublished" content="2016-03-12T15:50:08&#43;08:00" />
-<meta itemprop="dateModified" content="2016-03-12T15:50:08&#43;08:00" />
-<meta itemprop="wordCount" content="290">
-<meta itemprop="keywords" content="数据库,oracle," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Windows 7安装Oracle 10g的方法"/>
-<meta name="twitter:description" content="Windows 7下安装Oracle 10g提示“程序异常终止，发生未知错误”的解决方法 一.修改Oracle配置文件refhost.xml 修改\Oracle"/>
+<meta itemprop="name" content="dd的用法">
+<meta itemprop="description" content="dd工具用来转换和复制文件。 1、 生成文件 生成一个空的，大小为1G的文件 1 # dd if=/dev/zero of=winxp.img bs=1k seek=1024k count=1 2、 读写硬盘 用0填充硬盘 1 2 3 # dd if=/dev/zero of=junk # sync # rm junk 3、 读"><meta itemprop="datePublished" content="2016-04-01T20:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2016-04-01T20:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="138">
+<meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="dd的用法"/>
+<meta name="twitter:description" content="dd工具用来转换和复制文件。 1、 生成文件 生成一个空的，大小为1G的文件 1 # dd if=/dev/zero of=winxp.img bs=1k seek=1024k count=1 2、 读写硬盘 用0填充硬盘 1 2 3 # dd if=/dev/zero of=junk # sync # rm junk 3、 读"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,15 +129,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Windows 7安装Oracle 10g的方法</h1>
+      <h1 class="post-title">dd的用法</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2016-03-12 </span>
+        <span class="post-time"> 2016-04-01 </span>
         <div class="post-category">
-            <a href="/categories/windows/"> Windows </a>
-            <a href="/categories/database/"> Database </a>
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/bash/"> Bash </a>
             </div>
-          <span class="more-meta"> 约 290 字 </span>
+          <span class="more-meta"> 约 138 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -152,9 +152,7 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#一修改oracle配置文件refhostxml">一.修改Oracle配置文件refhost.xml</a></li>
-            <li><a href="#二修改oracle配置文件oraparamini">二.修改Oracle配置文件oraparam.ini</a></li>
-            <li><a href="#三以管理员身份安装">三.以管理员身份安装</a></li>
+            <li></li>
           </ul>
         </li>
       </ul>
@@ -164,51 +162,53 @@
   </div>
 </div>
     <div class="post-content">
-      <p><code>Windows 7</code>下安装<code>Oracle 10g</code>提示<code>“程序异常终止，发生未知错误”</code>的解决方法</p>
-<h3 id="一修改oracle配置文件refhostxml">一.修改Oracle配置文件refhost.xml</h3>
-<p>修改<code>\Oracle 10G\database\stage\prereq\db\refhost.xml</code></p>
-<p>在<code>&lt;/SYSTEM&gt; &lt;CERTIFIED_SYSTEMS&gt;</code>后面添加</p>
+      <p><code>dd</code>工具用来转换和复制文件。</p>
+<h4 id="1-生成文件">1、 生成文件</h4>
+<p>生成一个空的，大小为1G的文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># dd if=/dev/zero of=winxp.img bs=1k seek=1024k count=1</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2-读写硬盘">2、 读写硬盘</h4>
+<p>用0填充硬盘</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">&lt;!--Microsoft Windows 7--&gt;
-&lt;OPERATING_SYSTEM&gt;
-&lt;VERSION <span class="nv">VALUE</span><span class="o">=</span><span class="s2">&#34;6.1&#34;</span>/&gt;
-&lt;/OPERATING_SYSTEM&gt;
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># dd if=/dev/zero of=junk</span>
+<span class="c1"># sync</span>
+<span class="c1"># rm junk</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="二修改oracle配置文件oraparamini">二.修改Oracle配置文件oraparam.ini</h3>
-<p>到<code>install</code>目录中找到<code>oraparam.ini</code>文件，把</p>
-<p><code>#Windows=4.0,5.0,5.1,5.2</code></p>
-<p>修改成</p>
-<p><code>#Windows=4.0,5.0,5.1,5.2,6.1</code></p>
-<p>并在后面添加</p>
+</div><h4 id="3-读写软盘">3、 读写软盘</h4>
+<p>读软盘，并以16进制保存到文件中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># dd if=/dev/fd0 bs=1k count=1440 | od –tx1 –Ax &gt;/tmp/dump_hex</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="4备份硬盘的主引导扇区mbr">4、备份硬盘的主引导扇区MBR</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>Windows-6.1-required<span class="o">]</span>
-<span class="c1">#Minimum display colours for OUI to run</span>
-<span class="nv">MIN_DISPLAY_COLORS</span><span class="o">=</span><span class="m">256</span>
-<span class="c1">#Minimum CPU speed required for OUI</span>
-<span class="c1">#CPU=300</span>
-<span class="o">[</span>Windows-6.1-optional<span class="o">]</span>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># dd if=/dev/hda of=mbr.bak bs=512 count=1</span>
+<span class="c1"># od –Ax –tx2 mbr.bak</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="三以管理员身份安装">三.以管理员身份安装</h3>
-<p>右键<code>setup.exe</code>，选择<code>属性-&gt;兼容性-&gt;以兼容模式运行这个程序 windows xp（ service pack 3）</code>，以<code>管理员身份运行</code>安装就可以了。</p>
-
+</div>
     </div>
 
     <div class="post-copyright">
@@ -219,7 +219,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2016-03-12
+        2016-04-01
         
     </span>
   </p>
@@ -228,17 +228,17 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-          <a href="/tags/oracle/">oracle</a>
+          <a href="/tags/bash/">Bash</a>
+          <a href="/tags/shell/">Shell</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2016/04/01/od%E7%9A%84%E7%94%A8%E6%B3%95/">
+        <a class="prev" href="/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">od的用法</span>
+            <span class="prev-text nav-default">Linux上的防病毒软件ClamAV</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2016/02/09/ubuntu%E4%B8%8B%E7%9A%84iptux%E5%92%8Cwindows%E4%B8%8B%E7%9A%84%E9%A3%9E%E7%A7%8B%E4%BA%92%E4%BC%A0%E6%96%87%E4%BB%B6/">
-            <span class="next-text nav-default">Ubuntu下iptux和Windows飞秋互传文件</span>
+        <a class="next" href="/2016/04/01/od%E7%9A%84%E7%94%A8%E6%B3%95/">
+            <span class="next-text nav-default">od的用法</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

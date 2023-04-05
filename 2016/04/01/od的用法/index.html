@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Linux上的防病毒软件ClamAV - Panda的随笔</title>
+  <title>od的用法 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="od工具可以多种形式查看非文本文档的内容。 一、用法 １、语法 od [-A RADIX] [-t TYPE] 文件名 ２、选项与参数 选项 功能 -A 指定偏移量的输出形式 -t 指定内容的输出形式 -" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/" />
+<link rel="canonical" href="https://chenxiaopang.github.io/2016/04/01/od%E7%9A%84%E7%94%A8%E6%B3%95/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Linux上的防病毒软件ClamAV" />
-<meta property="og:description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin" />
+<meta property="og:title" content="od的用法" />
+<meta property="og:description" content="od工具可以多种形式查看非文本文档的内容。 一、用法 １、语法 od [-A RADIX] [-t TYPE] 文件名 ２、选项与参数 选项 功能 -A 指定偏移量的输出形式 -t 指定内容的输出形式 -" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxiaopang.github.io/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2016-04-04T15:50:08&#43;08:00" />
-<meta property="article:modified_time" content="2016-04-04T15:50:08&#43;08:00" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2016/04/01/od%E7%9A%84%E7%94%A8%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-04-01T16:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2016-04-01T16:18:26&#43;08:00" />
 
-<meta itemprop="name" content="Linux上的防病毒软件ClamAV">
-<meta itemprop="description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin"><meta itemprop="datePublished" content="2016-04-04T15:50:08&#43;08:00" />
-<meta itemprop="dateModified" content="2016-04-04T15:50:08&#43;08:00" />
-<meta itemprop="wordCount" content="436">
-<meta itemprop="keywords" content="病毒,安全," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux上的防病毒软件ClamAV"/>
-<meta name="twitter:description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin"/>
+<meta itemprop="name" content="od的用法">
+<meta itemprop="description" content="od工具可以多种形式查看非文本文档的内容。 一、用法 １、语法 od [-A RADIX] [-t TYPE] 文件名 ２、选项与参数 选项 功能 -A 指定偏移量的输出形式 -t 指定内容的输出形式 -"><meta itemprop="datePublished" content="2016-04-01T16:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2016-04-01T16:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="551">
+<meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="od的用法"/>
+<meta name="twitter:description" content="od工具可以多种形式查看非文本文档的内容。 一、用法 １、语法 od [-A RADIX] [-t TYPE] 文件名 ２、选项与参数 选项 功能 -A 指定偏移量的输出形式 -t 指定内容的输出形式 -"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,16 +129,16 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Linux上的防病毒软件ClamAV</h1>
+      <h1 class="post-title">od的用法</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2016-04-04 </span>
+        <span class="post-time"> 2016-04-01 </span>
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
-            <a href="/categories/tools/"> Tools </a>
+            <a href="/categories/bash/"> Bash </a>
             </div>
-          <span class="more-meta"> 约 436 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 551 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
     </header>
@@ -152,11 +152,8 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#1安装clamav">1、安装clamav</a></li>
-            <li><a href="#2升级病毒库">2、升级病毒库</a></li>
-            <li><a href="#3查看版本">3、查看版本</a></li>
-            <li><a href="#4查毒">4、查毒</a></li>
-            <li><a href="#5注意">5、注意</a></li>
+            <li><a href="#一用法">一、用法</a></li>
+            <li><a href="#三例子">三、例子</a></li>
           </ul>
         </li>
       </ul>
@@ -166,59 +163,132 @@
   </div>
 </div>
     <div class="post-content">
-      <p>Clam  AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Linux、FreeBSD等Unix-like系统架设的邮件服务器上，提供电子邮件的病毒扫描服务。ClamAV本身是在文字接口下运作，但也有许多图形接口的前端工具可用，另外由于其开放源代码的特性，在Windows与Mac OS X平台都有其移植版。</p>
-<h3 id="1安装clamav">1、安装clamav</h3>
+      <p><code>od</code>工具可以多种形式查看非文本文档的内容。</p>
+<h3 id="一用法">一、用法</h3>
+<h4 id="１语法">１、语法</h4>
+<p><code>od [-A RADIX] [-t TYPE] 文件名</code></p>
+<h4 id="２选项与参数">２、选项与参数</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-A</td>
+<td style="text-align:left">指定偏移量的输出形式</td>
+</tr>
+<tr>
+<td style="text-align:left">-t</td>
+<td style="text-align:left">指定内容的输出形式</td>
+</tr>
+</tbody>
+</table>
+<p><code>-A</code>选项的参数如下表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">d[size]</td>
+<td style="text-align:left">利用十进制(decimal)输出数据，每个整数占用size字节</td>
+</tr>
+<tr>
+<td style="text-align:left">o[size]</td>
+<td style="text-align:left">利用八进制(octal)输出数据，每个整数占用size字节</td>
+</tr>
+<tr>
+<td style="text-align:left">x[size]</td>
+<td style="text-align:left">利用十六进制(hexadecimal)输出数据，每个整数占用size字节</td>
+</tr>
+</tbody>
+</table>
+<p><code>-t</code>选项的参数如下表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">a</td>
+<td style="text-align:left">利用默认的字符来输出</td>
+</tr>
+<tr>
+<td style="text-align:left">c</td>
+<td style="text-align:left">使用ASCII字符来输出</td>
+</tr>
+<tr>
+<td style="text-align:left">d[size]</td>
+<td style="text-align:left">利用十进制(decimal)输出数据,每个整数占用size字节</td>
+</tr>
+<tr>
+<td style="text-align:left">f[size]</td>
+<td style="text-align:left">利用浮点数(floating)输出数据,每个数占用size字节</td>
+</tr>
+<tr>
+<td style="text-align:left">o[size]</td>
+<td style="text-align:left">利用八进制(octal)输出数据,每个整数占用size字节</td>
+</tr>
+<tr>
+<td style="text-align:left">x[size]</td>
+<td style="text-align:left">利用十六进制(hexadecimal)输出数据,每个整数占用size字节</td>
+</tr>
+</tbody>
+</table>
+<h3 id="三例子">三、例子</h3>
+<p><code>-Ax</code>：地址偏移量用16进制形式（<code>x</code>）表示</p>
+<p><code>-tx1</code>: 输出内容的格式以16进制形式（<code>x</code>）的单字节（<code>1</code>）形式表示</p>
+<h4 id="1备份硬盘的主引导扇区mbr">1、备份硬盘的主引导扇区MBR</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt-get install clamav clamav-docs
-$ sudo apt-get install clamav-daemon                             //安装clamav服务
-$ sudo apt-get install clamtk                                                 //安装图形前端
-$ sudo apt-get install clamtk-nautilus 				                //安装nautilus右键支持查毒
-$ sudo apt-get install libclamunrar6                                   //支持rar文件查毒
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># dd if=/dev/hda of=mbr.bak bs=512 count=1</span>
+<span class="c1"># od –Ax –tx2 mbr.bak</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="2升级病毒库">2、升级病毒库</h3>
+</div><h4 id="2查看硬盘分区的数据并查找启动分区标志位0xaa55">2、查看硬盘分区的数据,并查找启动分区标志位0xaa55</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo freshclam
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># od –Ax –tx2 /dev/had |grep aa55</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="3查看版本">3、查看版本</h3>
+</div><h4 id="3输出到less查看">3、输出到less查看####</h4>
+<p>可用[page up]和[page down]翻页查看</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ clamscan -V
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># od -Ax -tx2 file.txt | less</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="4查毒">4、查毒</h3>
+</div><h4 id="4察看ascii码">4、察看ASCII码</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ clamav -r /home/cb/software     //-r递归扫描目录
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">echo</span> <span class="s1">&#39;a&#39;</span> <span class="p">|</span> od -t d1 <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
+<span class="m">97</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="5注意">5、注意</h3>
-<ul>
-<li>clamav只能查毒，不能杀毒，但可以删除或隔离被病毒感染的文件</li>
-<li>病毒库文件位于/var/lib/clamav目录下，可备份并拷贝到其它机器上用于离线升级</li>
-<li>可结合at或cron服务定时扫描系统</li>
-</ul>
-<p>以上在Ubuntu 12.04上测试通过。</p>
-
+</div>
     </div>
 
     <div class="post-copyright">
@@ -229,7 +299,7 @@ $ sudo apt-get install libclamunrar6                                   //支持r
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2016-04-04
+        2016-04-01
         
     </span>
   </p>
@@ -238,17 +308,17 @@ $ sudo apt-get install libclamunrar6                                   //支持r
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E7%97%85%E6%AF%92/">病毒</a>
-          <a href="/tags/%E5%AE%89%E5%85%A8/">安全</a>
+          <a href="/tags/bash/">Bash</a>
+          <a href="/tags/shell/">Shell</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2019/05/02/linux%E4%B8%8B%E7%9A%84%E5%BD%95%E5%B1%8F%E8%BD%AF%E4%BB%B6kazam/">
+        <a class="prev" href="/2016/04/01/dd%E7%9A%84%E7%94%A8%E6%B3%95/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Linux下的录屏软件Kazam</span>
+            <span class="prev-text nav-default">dd的用法</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2016/04/01/dd%E7%9A%84%E7%94%A8%E6%B3%95/">
-            <span class="next-text nav-default">dd的用法</span>
+        <a class="next" href="/2016/03/12/windows7%E5%AE%89%E8%A3%85oracle10g%E6%96%B9%E6%B3%95/">
+            <span class="next-text nav-default">Windows 7安装Oracle 10g的方法</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

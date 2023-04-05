@@ -506,6 +506,41 @@
   </url>
   
   <url>
+    <loc>https://chenxiaopang.github.io/tags/bash/</loc>
+    <lastmod>2016-04-01T20:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/categories/bash/</loc>
+    <lastmod>2016-04-01T20:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2016/04/01/dd%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
+    <lastmod>2016-04-01T20:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/shell/</loc>
+    <lastmod>2016-04-01T20:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2016/04/01/od%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
+    <lastmod>2016-04-01T16:18:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://chenxiaopang.github.io/categories/database/</loc>
     <lastmod>2016-03-12T15:50:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -548,13 +583,6 @@
   </url>
   
   <url>
-    <loc>https://chenxiaopang.github.io/tags/bash/</loc>
-    <lastmod>2016-02-09T17:18:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://chenxiaopang.github.io/tags/iptux/</loc>
     <lastmod>2016-02-09T17:18:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -585,20 +613,6 @@
   <url>
     <loc>https://chenxiaopang.github.io/2016/02/08/utcgtc%E6%97%B6%E9%97%B4%E5%92%8C%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4/</loc>
     <lastmod>2016-02-08T17:18:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/categories/bash/</loc>
-    <lastmod>2016-01-31T17:18:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/shell/</loc>
-    <lastmod>2016-01-31T17:18:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -640,13 +654,6 @@
   
   <url>
     <loc>https://chenxiaopang.github.io/2015/12/20/cron%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
-    <lastmod>2015-12-20T20:18:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/2015/12/20/od%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
     <lastmod>2015-12-20T20:18:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
