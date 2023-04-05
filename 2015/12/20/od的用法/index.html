@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>cp的用法 - Panda的随笔</title>
+  <title>od的用法 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="一、cp的功能 拷贝一个或多个文件（或目录）到目的地 二、例子 1、一次拷贝多个源文件到目的地 1 $ cp /mnt/hgfs/DOC/{1,2,3,4,5}.txt /root/ldj 2、只拷贝链接文件，不拷贝实际链接的文件 用" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="od工具可以多种形式查看非文本文档的内容。 一、用法 １、语法 od [-A RADIX] [-t TYPE] 文件名 ２、选项与参数 选项 功能 -A 指定偏移量的输出形式 -t 指定内容的输出形式 -" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/2015/12/20/cp%E7%9A%84%E7%94%A8%E6%B3%95/" />
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/12/20/od%E7%9A%84%E7%94%A8%E6%B3%95/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="cp的用法" />
-<meta property="og:description" content="一、cp的功能 拷贝一个或多个文件（或目录）到目的地 二、例子 1、一次拷贝多个源文件到目的地 1 $ cp /mnt/hgfs/DOC/{1,2,3,4,5}.txt /root/ldj 2、只拷贝链接文件，不拷贝实际链接的文件 用" />
+<meta property="og:title" content="od的用法" />
+<meta property="og:description" content="od工具可以多种形式查看非文本文档的内容。 一、用法 １、语法 od [-A RADIX] [-t TYPE] 文件名 ２、选项与参数 选项 功能 -A 指定偏移量的输出形式 -t 指定内容的输出形式 -" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxiaopang.github.io/2015/12/20/cp%E7%9A%84%E7%94%A8%E6%B3%95/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2015-12-20T17:18:26&#43;08:00" />
-<meta property="article:modified_time" content="2015-12-20T17:18:26&#43;08:00" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/12/20/od%E7%9A%84%E7%94%A8%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-12-20T20:18:26&#43;08:00" />
+<meta property="article:modified_time" content="2015-12-20T20:18:26&#43;08:00" />
 
-<meta itemprop="name" content="cp的用法">
-<meta itemprop="description" content="一、cp的功能 拷贝一个或多个文件（或目录）到目的地 二、例子 1、一次拷贝多个源文件到目的地 1 $ cp /mnt/hgfs/DOC/{1,2,3,4,5}.txt /root/ldj 2、只拷贝链接文件，不拷贝实际链接的文件 用"><meta itemprop="datePublished" content="2015-12-20T17:18:26&#43;08:00" />
-<meta itemprop="dateModified" content="2015-12-20T17:18:26&#43;08:00" />
-<meta itemprop="wordCount" content="471">
+<meta itemprop="name" content="od的用法">
+<meta itemprop="description" content="od工具可以多种形式查看非文本文档的内容。 一、用法 １、语法 od [-A RADIX] [-t TYPE] 文件名 ２、选项与参数 选项 功能 -A 指定偏移量的输出形式 -t 指定内容的输出形式 -"><meta itemprop="datePublished" content="2015-12-20T20:18:26&#43;08:00" />
+<meta itemprop="dateModified" content="2015-12-20T20:18:26&#43;08:00" />
+<meta itemprop="wordCount" content="551">
 <meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="cp的用法"/>
-<meta name="twitter:description" content="一、cp的功能 拷贝一个或多个文件（或目录）到目的地 二、例子 1、一次拷贝多个源文件到目的地 1 $ cp /mnt/hgfs/DOC/{1,2,3,4,5}.txt /root/ldj 2、只拷贝链接文件，不拷贝实际链接的文件 用"/>
+<meta name="twitter:title" content="od的用法"/>
+<meta name="twitter:description" content="od工具可以多种形式查看非文本文档的内容。 一、用法 １、语法 od [-A RADIX] [-t TYPE] 文件名 ２、选项与参数 选项 功能 -A 指定偏移量的输出形式 -t 指定内容的输出形式 -"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,7 +129,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">cp的用法</h1>
+      <h1 class="post-title">od的用法</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2015-12-20 </span>
@@ -137,8 +137,8 @@
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/bash/"> Bash </a>
             </div>
-          <span class="more-meta"> 约 471 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 551 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
     </header>
@@ -152,9 +152,8 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#一cp的功能">一、cp的功能</a></li>
-            <li><a href="#二例子">二、例子</a></li>
-            <li><a href="#三注意">三、注意</a></li>
+            <li><a href="#一用法">一、用法</a></li>
+            <li><a href="#三例子">三、例子</a></li>
           </ul>
         </li>
       </ul>
@@ -164,98 +163,132 @@
   </div>
 </div>
     <div class="post-content">
-      <h3 id="一cp的功能">一、cp的功能</h3>
-<p>拷贝一个或多个文件（或目录）到目的地</p>
-<h3 id="二例子">二、例子</h3>
-<p>1、一次拷贝多个源文件到目的地</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ cp /mnt/hgfs/DOC/<span class="o">{</span>1,2,3,4,5<span class="o">}</span>.txt /root/ldj
-</code></pre></td></tr></table>
-</div>
-</div><p>2、只拷贝链接文件，不拷贝实际链接的文件</p>
-<p>用<code>-d</code>、<code>-P</code>或<code>--preserve=links</code>选项</p>
+      <p><code>od</code>工具可以多种形式查看非文本文档的内容。</p>
+<h3 id="一用法">一、用法</h3>
+<h4 id="１语法">１、语法</h4>
+<p><code>od [-A RADIX] [-t TYPE] 文件名</code></p>
+<h4 id="２选项与参数">２、选项与参数</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-A</td>
+<td style="text-align:left">指定偏移量的输出形式</td>
+</tr>
+<tr>
+<td style="text-align:left">-t</td>
+<td style="text-align:left">指定内容的输出形式</td>
+</tr>
+</tbody>
+</table>
+<p><code>-A</code>选项的参数如下表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">d[size]</td>
+<td style="text-align:left">利用十进制(decimal)输出数据，每个整数占用size字节</td>
+</tr>
+<tr>
+<td style="text-align:left">o[size]</td>
+<td style="text-align:left">利用八进制(octal)输出数据，每个整数占用size字节</td>
+</tr>
+<tr>
+<td style="text-align:left">x[size]</td>
+<td style="text-align:left">利用十六进制(hexadecimal)输出数据，每个整数占用size字节</td>
+</tr>
+</tbody>
+</table>
+<p><code>-t</code>选项的参数如下表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">a</td>
+<td style="text-align:left">利用默认的字符来输出</td>
+</tr>
+<tr>
+<td style="text-align:left">c</td>
+<td style="text-align:left">使用ASCII字符来输出</td>
+</tr>
+<tr>
+<td style="text-align:left">d[size]</td>
+<td style="text-align:left">利用十进制(decimal)输出数据,每个整数占用size字节</td>
+</tr>
+<tr>
+<td style="text-align:left">f[size]</td>
+<td style="text-align:left">利用浮点数(floating)输出数据,每个数占用size字节</td>
+</tr>
+<tr>
+<td style="text-align:left">o[size]</td>
+<td style="text-align:left">利用八进制(octal)输出数据,每个整数占用size字节</td>
+</tr>
+<tr>
+<td style="text-align:left">x[size]</td>
+<td style="text-align:left">利用十六进制(hexadecimal)输出数据,每个整数占用size字节</td>
+</tr>
+</tbody>
+</table>
+<h3 id="三例子">三、例子</h3>
+<p><code>-Ax</code>：地址偏移量用16进制形式（<code>x</code>）表示</p>
+<p><code>-tx1</code>: 输出内容的格式以16进制形式（<code>x</code>）的单字节（<code>1</code>）形式表示</p>
+<h4 id="1备份硬盘的主引导扇区mbr">1、备份硬盘的主引导扇区MBR</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ cp -d libc.so.6 / 
-$ sudo cp -P ~/opt/stardict/*link /usr/share/stardict/dic/
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># dd if=/dev/hda of=mbr.bak bs=512 count=1</span>
+<span class="c1"># od –Ax –tx2 mbr.bak</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>3、拷贝实际链接所指向的实际文件</p>
-<p>用<code>-L</code>选项</p>
+</div><h4 id="2查看硬盘分区的数据并查找启动分区标志位0xaa55">2、查看硬盘分区的数据,并查找启动分区标志位0xaa55</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ cp -L file1-link file2
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># od –Ax –tx2 /dev/had |grep aa55</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>4、建立文件file1的软链接(符号链接)file2</p>
-<p>用<code>-s</code>选项</p>
+</div><h4 id="3输出到less查看">3、输出到less查看####</h4>
+<p>可用[page up]和[page down]翻页查看</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># od -Ax -tx2 file.txt | less</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="4察看ascii码">4、察看ASCII码</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ cp -s file1 file2
-同
-$ ln -s file1 file2
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">echo</span> <span class="s1">&#39;a&#39;</span> <span class="p">|</span> od -t d1 <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
+<span class="m">97</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>5、建立文件file1的硬链接file2</p>
-<p>用<code>-l</code>选项</p>
-<p>file2是file1的硬链接，则file1和file2是同一个文件</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ cp -l file1 file2
-</code></pre></td></tr></table>
 </div>
-</div><p>6、保持文件的属性（mode,ownership,timestamps）</p>
-<p>用<code>-p</code>或<code> --preserve=mode,ownership,timestamps</code>选项</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ cp -p file1 file2 
-</code></pre></td></tr></table>
-</div>
-</div><p>7、保持文件的所有属性</p>
-<p>用<code>-a</code>、<code>--preserve=all</code>或<code>-dpR</code>选项</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ cp -a file1 file2 
-</code></pre></td></tr></table>
-</div>
-</div><p>8、当源文件比目标文件较新时拷贝</p>
-<p>用<code>-u</code>或<code>--update</code>选项</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ cp -u file1 file2
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="三注意">三、注意</h3>
-<p>将一个符号链接拷贝到另外一个地方，要想保持符号链接仍然有效，则创建的源符号链接必须带有路径信息，不能使用相对路径（./） 。</p>
-
     </div>
 
     <div class="post-copyright">
@@ -279,13 +312,13 @@ $ ln -s file1 file2
           <a href="/tags/shell/">Shell</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2015/12/20/od%E7%9A%84%E7%94%A8%E6%B3%95/">
+        <a class="prev" href="/2015/12/20/cron%E7%9A%84%E7%94%A8%E6%B3%95/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">od的用法</span>
+            <span class="prev-text nav-default">cron的用法</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2015/12/20/comm%E7%9A%84%E7%94%A8%E6%B3%95/">
-            <span class="next-text nav-default">comm的用法</span>
+        <a class="next" href="/2015/12/20/cp%E7%9A%84%E7%94%A8%E6%B3%95/">
+            <span class="next-text nav-default">cp的用法</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
