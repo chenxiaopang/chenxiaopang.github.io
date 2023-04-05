@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Linux上的防病毒软件ClamAV - Panda的随笔</title>
+  <title>Windows 7安装Oracle 10g的方法 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="Windows 7安装Oracle 10g的方法 Windows 7下安装Oracle 10g提示“程序异常终止，发生未知错误”的解决方法 一.修改Oracle配置文件refh" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/" />
+<link rel="canonical" href="https://chenxiaopang.github.io/2016/03/12/windows7%E5%AE%89%E8%A3%85oracle10g%E6%96%B9%E6%B3%95/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Linux上的防病毒软件ClamAV" />
-<meta property="og:description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin" />
+<meta property="og:title" content="Windows 7安装Oracle 10g的方法" />
+<meta property="og:description" content="Windows 7安装Oracle 10g的方法 Windows 7下安装Oracle 10g提示“程序异常终止，发生未知错误”的解决方法 一.修改Oracle配置文件refh" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxiaopang.github.io/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2016-04-04T15:50:08&#43;08:00" />
-<meta property="article:modified_time" content="2016-04-04T15:50:08&#43;08:00" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2016/03/12/windows7%E5%AE%89%E8%A3%85oracle10g%E6%96%B9%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-03-12T15:50:08&#43;08:00" />
+<meta property="article:modified_time" content="2016-03-12T15:50:08&#43;08:00" />
 
-<meta itemprop="name" content="Linux上的防病毒软件ClamAV">
-<meta itemprop="description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin"><meta itemprop="datePublished" content="2016-04-04T15:50:08&#43;08:00" />
-<meta itemprop="dateModified" content="2016-04-04T15:50:08&#43;08:00" />
-<meta itemprop="wordCount" content="436">
-<meta itemprop="keywords" content="病毒,安全," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux上的防病毒软件ClamAV"/>
-<meta name="twitter:description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin"/>
+<meta itemprop="name" content="Windows 7安装Oracle 10g的方法">
+<meta itemprop="description" content="Windows 7安装Oracle 10g的方法 Windows 7下安装Oracle 10g提示“程序异常终止，发生未知错误”的解决方法 一.修改Oracle配置文件refh"><meta itemprop="datePublished" content="2016-03-12T15:50:08&#43;08:00" />
+<meta itemprop="dateModified" content="2016-03-12T15:50:08&#43;08:00" />
+<meta itemprop="wordCount" content="306">
+<meta itemprop="keywords" content="数据库,oracle," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Windows 7安装Oracle 10g的方法"/>
+<meta name="twitter:description" content="Windows 7安装Oracle 10g的方法 Windows 7下安装Oracle 10g提示“程序异常终止，发生未知错误”的解决方法 一.修改Oracle配置文件refh"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,15 +129,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Linux上的防病毒软件ClamAV</h1>
+      <h1 class="post-title">Windows 7安装Oracle 10g的方法</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2016-04-04 </span>
+        <span class="post-time"> 2016-03-12 </span>
         <div class="post-category">
-            <a href="/categories/linux/"> Linux </a>
-            <a href="/categories/tools/"> Tools </a>
+            <a href="/categories/windows/"> Windows </a>
+            <a href="/categories/database/"> Database </a>
             </div>
-          <span class="more-meta"> 约 436 字 </span>
+          <span class="more-meta"> 约 306 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -152,11 +152,9 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#1安装clamav">1、安装clamav</a></li>
-            <li><a href="#2升级病毒库">2、升级病毒库</a></li>
-            <li><a href="#3查看版本">3、查看版本</a></li>
-            <li><a href="#4查毒">4、查毒</a></li>
-            <li><a href="#5注意">5、注意</a></li>
+            <li><a href="#一修改oracle配置文件refhostxml">一.修改Oracle配置文件refhost.xml</a></li>
+            <li><a href="#二修改oracle配置文件oraparamini">二.修改Oracle配置文件oraparam.ini</a></li>
+            <li><a href="#三以管理员身份安装">三.以管理员身份安装</a></li>
           </ul>
         </li>
       </ul>
@@ -166,8 +164,31 @@
   </div>
 </div>
     <div class="post-content">
-      <p>Clam  AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Linux、FreeBSD等Unix-like系统架设的邮件服务器上，提供电子邮件的病毒扫描服务。ClamAV本身是在文字接口下运作，但也有许多图形接口的前端工具可用，另外由于其开放源代码的特性，在Windows与Mac OS X平台都有其移植版。</p>
-<h3 id="1安装clamav">1、安装clamav</h3>
+      <p><code>Windows 7</code>安装<code>Oracle 10g</code>的方法</p>
+<p><code>Windows 7</code>下安装<code>Oracle 10g</code>提示“程序异常终止，发生未知错误”的解决方法</p>
+<h3 id="一修改oracle配置文件refhostxml">一.修改Oracle配置文件refhost.xml</h3>
+<p>修改<code>\Oracle 10G\database\stage\prereq\db\refhost.xml</code></p>
+<p>在<code>&lt;/SYSTEM&gt; &lt;CERTIFIED_SYSTEMS&gt;</code>后面添加</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">&lt;!--Microsoft Windows 7--&gt;
+&lt;OPERATING_SYSTEM&gt;
+&lt;VERSION <span class="nv">VALUE</span><span class="o">=</span><span class="s2">&#34;6.1&#34;</span>/&gt;
+&lt;/OPERATING_SYSTEM&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="二修改oracle配置文件oraparamini">二.修改Oracle配置文件oraparam.ini</h3>
+<p>到<code>install</code>目录中找到<code>oraparam.ini</code>文件，把</p>
+<p><code>#Windows=4.0,5.0,5.1,5.2</code></p>
+<p>修改成</p>
+<p><code>#Windows=4.0,5.0,5.1,5.2,6.1</code></p>
+<p>并在后面添加</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -175,49 +196,19 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt-get install clamav clamav-docs
-$ sudo apt-get install clamav-daemon                             //安装clamav服务
-$ sudo apt-get install clamtk                                                 //安装图形前端
-$ sudo apt-get install clamtk-nautilus 				                //安装nautilus右键支持查毒
-$ sudo apt-get install libclamunrar6                                   //支持rar文件查毒
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>Windows-6.1-required<span class="o">]</span>
+<span class="c1">#Minimum display colours for OUI to run</span>
+<span class="nv">MIN_DISPLAY_COLORS</span><span class="o">=</span><span class="m">256</span>
+<span class="c1">#Minimum CPU speed required for OUI</span>
+<span class="c1">#CPU=300</span>
+<span class="o">[</span>Windows-6.1-optional<span class="o">]</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="2升级病毒库">2、升级病毒库</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo freshclam
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="3查看版本">3、查看版本</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ clamscan -V
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="4查毒">4、查毒</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ clamav -r /home/cb/software     //-r递归扫描目录
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="5注意">5、注意</h3>
-<ul>
-<li>clamav只能查毒，不能杀毒，但可以删除或隔离被病毒感染的文件</li>
-<li>病毒库文件位于/var/lib/clamav目录下，可备份并拷贝到其它机器上用于离线升级</li>
-<li>可结合at或cron服务定时扫描系统</li>
-</ul>
-<p>以上在Ubuntu 12.04上测试通过。</p>
+</div><h3 id="三以管理员身份安装">三.以管理员身份安装</h3>
+<p>右键<code>setup.exe</code>，选择<code>属性-&gt;兼容性-&gt;以兼容模式运行这个程序 windows xp（ service pack 3）</code>，以<code>管理员身份运行</code>安装就可以了。</p>
 
     </div>
 
@@ -229,7 +220,7 @@ $ sudo apt-get install libclamunrar6                                   //支持r
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2016-04-04
+        2016-03-12
         
     </span>
   </p>
@@ -238,17 +229,17 @@ $ sudo apt-get install libclamunrar6                                   //支持r
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E7%97%85%E6%AF%92/">病毒</a>
-          <a href="/tags/%E5%AE%89%E5%85%A8/">安全</a>
+          <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          <a href="/tags/oracle/">oracle</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2019/05/02/linux%E4%B8%8B%E7%9A%84%E5%BD%95%E5%B1%8F%E8%BD%AF%E4%BB%B6kazam/">
+        <a class="prev" href="/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Linux下的录屏软件Kazam</span>
+            <span class="prev-text nav-default">Linux上的防病毒软件ClamAV</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2016/03/12/windows7%E5%AE%89%E8%A3%85oracle10g%E6%96%B9%E6%B3%95/">
-            <span class="next-text nav-default">Windows 7安装Oracle 10g的方法</span>
+        <a class="next" href="/2016/02/09/ubuntu%E4%B8%8B%E7%9A%84iptux%E5%92%8Cwindows%E4%B8%8B%E7%9A%84%E9%A3%9E%E7%A7%8B%E4%BA%92%E4%BC%A0%E6%96%87%E4%BB%B6/">
+            <span class="next-text nav-default">Ubuntu下iptux和Windows飞秋互传文件</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

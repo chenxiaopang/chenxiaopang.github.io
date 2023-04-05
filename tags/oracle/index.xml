@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>oracle on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/oracle/</link>
+    <description>Recent content in oracle on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 12 Mar 2016 15:50:08 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows 7安装Oracle 10g的方法</title>
+      <link>https://chenxiaopang.github.io/2016/03/12/windows7%E5%AE%89%E8%A3%85oracle10g%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Sat, 12 Mar 2016 15:50:08 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/03/12/windows7%E5%AE%89%E8%A3%85oracle10g%E6%96%B9%E6%B3%95/</guid>
+      <description>Windows 7安装Oracle 10g的方法 Windows 7下安装Oracle 10g提示“程序异常终止，发生未知错误”的解决方法 一.修改Oracle配置文件refh</description>
+    </item>
+    
+  </channel>
+</rss>
