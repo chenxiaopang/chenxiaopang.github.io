@@ -229,7 +229,7 @@
       <pubDate>Sat, 12 Mar 2016 15:50:08 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/2016/03/12/windows7%E5%AE%89%E8%A3%85oracle10g%E6%96%B9%E6%B3%95/</guid>
-      <description>Windows 7安装Oracle 10g的方法 Windows 7下安装Oracle 10g提示“程序异常终止，发生未知错误”的解决方法 一.修改Oracle配置文件refh</description>
+      <description>Windows 7下安装Oracle 10g提示“程序异常终止，发生未知错误”的解决方法 一.修改Oracle配置文件refhost.xml 修改\Oracle</description>
     </item>
     
     <item>
