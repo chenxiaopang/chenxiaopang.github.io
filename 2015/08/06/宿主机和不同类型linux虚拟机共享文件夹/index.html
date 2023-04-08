@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>VirtualBox快照 - Panda的随笔</title>
+  <title>宿主机和不同类型Linux虚拟机共享文件夹 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="VirtualBox是非常好用的一个虚拟机软件，无论是性能还是易用性不比商用的Vmware差。VirtualBox最初是Sun公司的产品，由" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一、宿主机共享文件夹给VMWare中的Linux虚拟机 Windows/Linux宿主机共享文件夹给VMWare中的Linux虚拟机 1、安装v" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/2015/08/06/virtualbox%E5%BF%AB%E7%85%A7/" />
+<link rel="canonical" href="https://chenxiaopang.github.io/2015/08/06/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="VirtualBox快照" />
-<meta property="og:description" content="VirtualBox是非常好用的一个虚拟机软件，无论是性能还是易用性不比商用的Vmware差。VirtualBox最初是Sun公司的产品，由" />
+<meta property="og:title" content="宿主机和不同类型Linux虚拟机共享文件夹" />
+<meta property="og:description" content="一、宿主机共享文件夹给VMWare中的Linux虚拟机 Windows/Linux宿主机共享文件夹给VMWare中的Linux虚拟机 1、安装v" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxiaopang.github.io/2015/08/06/virtualbox%E5%BF%AB%E7%85%A7/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2015/08/06/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2015-08-06T23:06:18&#43;08:00" />
 <meta property="article:modified_time" content="2015-08-06T23:06:18&#43;08:00" />
 
-<meta itemprop="name" content="VirtualBox快照">
-<meta itemprop="description" content="VirtualBox是非常好用的一个虚拟机软件，无论是性能还是易用性不比商用的Vmware差。VirtualBox最初是Sun公司的产品，由"><meta itemprop="datePublished" content="2015-08-06T23:06:18&#43;08:00" />
+<meta itemprop="name" content="宿主机和不同类型Linux虚拟机共享文件夹">
+<meta itemprop="description" content="一、宿主机共享文件夹给VMWare中的Linux虚拟机 Windows/Linux宿主机共享文件夹给VMWare中的Linux虚拟机 1、安装v"><meta itemprop="datePublished" content="2015-08-06T23:06:18&#43;08:00" />
 <meta itemprop="dateModified" content="2015-08-06T23:06:18&#43;08:00" />
-<meta itemprop="wordCount" content="628">
-<meta itemprop="keywords" content="Linux,VM,Snapshot," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="VirtualBox快照"/>
-<meta name="twitter:description" content="VirtualBox是非常好用的一个虚拟机软件，无论是性能还是易用性不比商用的Vmware差。VirtualBox最初是Sun公司的产品，由"/>
+<meta itemprop="wordCount" content="313">
+<meta itemprop="keywords" content="Linux,VM,share folder," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="宿主机和不同类型Linux虚拟机共享文件夹"/>
+<meta name="twitter:description" content="一、宿主机共享文件夹给VMWare中的Linux虚拟机 Windows/Linux宿主机共享文件夹给VMWare中的Linux虚拟机 1、安装v"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,7 +129,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">VirtualBox快照</h1>
+      <h1 class="post-title">宿主机和不同类型Linux虚拟机共享文件夹</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2015-08-06 </span>
@@ -138,8 +138,8 @@
             <a href="/categories/applications/"> Applications </a>
             <a href="/categories/virtualization/"> Virtualization </a>
             </div>
-          <span class="more-meta"> 约 628 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+          <span class="more-meta"> 约 313 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
     </header>
@@ -153,8 +153,8 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#一virtualbox的快照功能">一、<code>VirtualBox</code>的快照功能</a></li>
-            <li><a href="#二应用实例offcie-2003和2007使用切换">二、应用实例：<code>offcie 2003</code>和<code>2007</code>使用切换</a></li>
+            <li><a href="#一宿主机共享文件夹给vmware中的linux虚拟机">一、宿主机共享文件夹给<code>VMWare</code>中的<code>Linux</code>虚拟机</a></li>
+            <li><a href="#二宿主机共享文件夹给virtualbox中的linux虚拟机">二、宿主机共享文件夹给<code>VirtualBox</code>中的<code>Linux</code>虚拟机</a></li>
           </ul>
         </li>
       </ul>
@@ -164,27 +164,30 @@
   </div>
 </div>
     <div class="post-content">
-      <p><code>VirtualBox</code>是非常好用的一个虚拟机软件，无论是性能还是易用性不比商用的<code>Vmware</code>差。<code>VirtualBox</code>最初是<code>Sun</code>公司的产品，由于<code>Sun</code>被<code>Oracle</code>收购，现在也归<code>Oracle</code>了。</p>
-<p>除了虚拟机的虚拟多个<code>OS</code>、软件测试、安全等方面的应用外，虚拟机的快照功能在软件快速部署方面也有很重要的应用。</p>
-<h3 id="一virtualbox的快照功能">一、<code>VirtualBox</code>的快照功能</h3>
-<h4 id="1生成备份">1、生成备份</h4>
-<p>对虚拟机的当前磁盘状态做一个快照(<code>snapshot</code>)，后续对磁盘的更改都写入<code>&quot;当前状态&quot;</code>。</p>
-<h4 id="2恢复备份">2、恢复备份</h4>
-<p>删除<code>&quot;当前状态&quot;</code>，将磁盘状态恢复到生成指定快照时的状态。该操作会提示<code>“是否创建当前状态”</code>的备份，如果选择否，则当前状态中对磁盘所做的修改全部丢掉（慎用）</p>
-<h4 id="3-删除备份">3、 删除备份</h4>
-<p>该操作是在删除选定的快照之前，先将快照的内容向上合并。（推荐）</p>
-<h3 id="二应用实例offcie-2003和2007使用切换">二、应用实例：<code>offcie 2003</code>和<code>2007</code>使用切换</h3>
+      <h3 id="一宿主机共享文件夹给vmware中的linux虚拟机">一、宿主机共享文件夹给<code>VMWare</code>中的<code>Linux</code>虚拟机</h3>
+<p><code>Windows/Linux</code>宿主机共享文件夹给<code>VMWare</code>中的<code>Linux</code>虚拟机</p>
+<h4 id="1安装vmware-tools">1、安装<code>vmware tools</code></h4>
 <ol>
-<li>安装干净的xp系统，安装office 2003</li>
-<li>关机、生成备份20111122-office2003</li>
-<li>启动备份，卸载 2003，安装2007</li>
-<li>关机，生成备份20111122-office2007</li>
-<li>如果要用office2003，则在备份20111122-office2003上点右键，选择“恢复备份”，然后启动即可，如图所示</li>
+<li>在<code>vmware</code>的<code>ubuntu</code>中安装<code>vmware tools</code></li>
+<li>在<code>vmware</code>中开启共享文件夹</li>
+<li>进入<code>ubuntu</code>，<code>/mnt/hgfs</code>即可访问宿主机的共享文件夹</li>
 </ol>
-<p><img src="/pic/Linux/Applications/office2003.jpg" alt="office2003" title="office2003">
-6. 如果要用office2007，则在备份20111122-office2007上点右键，选择“恢复备份”，然后启动即可，如图所示</p>
-<p><img src="/pic/Linux/Applications/office2007.jpg" alt="office2007" title="office2007"></p>
-<p>实际上可以生成一棵树，在多种软件安装状态之间进行快速切换。</p>
+<h4 id="2有的阉割版的vmware不带vmware-tools则采用下面的方法">2、有的阉割版的<code>vmware</code>不带<code>vmware tools</code>，则采用下面的方法</h4>
+<ol>
+<li>
+<p>安装<code>open-vm-dkms</code>
+<code>$ sudo apt-get install open-vm-dkms</code></p>
+</li>
+<li>
+<p>挂载
+<code>$ sudo mount -t vmhgfs .host://mnt/hgfs</code></p>
+</li>
+</ol>
+<h3 id="二宿主机共享文件夹给virtualbox中的linux虚拟机">二、宿主机共享文件夹给<code>VirtualBox</code>中的<code>Linux</code>虚拟机</h3>
+<p><code>Windows/Linux</code>宿主机共享文件夹给<code>VirtualBox</code>中的<code>Linux</code>虚拟机</p>
+<p>1、安装<code>virtualBox</code>增强功能</p>
+<p>2、挂载
+<code>$ sudo mount -t vboxsf [-o OPTIONS] sharename mountpoint</code></p>
 
     </div>
 
@@ -207,16 +210,16 @@
       <div class="post-tags">
           <a href="/tags/linux/">Linux</a>
           <a href="/tags/vm/">VM</a>
-          <a href="/tags/snapshot/">Snapshot</a>
+          <a href="/tags/share-folder/">share folder</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2015/08/08/bash%E7%9A%84%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97/">
+        <a class="prev" href="/2015/08/06/virtualbox%E5%BF%AB%E7%85%A7/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Bash的数学运算</span>
+            <span class="prev-text nav-default">VirtualBox快照</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2015/08/06/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/">
-            <span class="next-text nav-default">宿主机和不同类型Linux虚拟机共享文件夹</span>
+        <a class="next" href="/2015/08/06/top%E7%9A%84%E7%94%A8%E6%B3%95/">
+            <span class="next-text nav-default">top的用法</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
