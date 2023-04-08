@@ -173,30 +173,6 @@
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2019/05/02/lftp%E7%9A%84%E7%94%A8%E6%B3%95/">lftp常用用法</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-05-02 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/tools/"> Tools </a>
-          </div>
-        <span class="more-meta"> 约 1905 字 </span>
-        <span class="more-meta"> 预计阅读 4 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      一、lftp工具简介 lftp是Linux下的一个ftp工具，支持ftp, ftps, http, https, hftp, fish, sftp, file, bittorrent等协议(支持https和ftps，
-    </div>
-    <div class="read-more">
-      <a href="/2019/05/02/lftp%E7%9A%84%E7%94%A8%E6%B3%95/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2019/05/02/linux%E4%B8%8B%E7%9A%84%E5%BD%95%E5%B1%8F%E8%BD%AF%E4%BB%B6kazam/">Linux下的录屏软件Kazam</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-05-02 </span>
@@ -221,24 +197,49 @@
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/">Linux上的防病毒软件ClamAV</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2016/09/16/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/">宿主机和不同类型Linux虚拟机共享文件夹</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2016-04-04 </span>
+      <span class="post-time"> 2016-09-16 </span>
       <div class="post-category">
           <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/tools/"> Tools </a>
+          <a href="/categories/applications/"> Applications </a>
+          <a href="/categories/virtualization/"> Virtualization </a>
           </div>
-        <span class="more-meta"> 约 436 字 </span>
+        <span class="more-meta"> 约 313 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin
+      一、宿主机共享文件夹给VMWare中的Linux虚拟机 Windows/Linux宿主机共享文件夹给VMWare中的Linux虚拟机 1、安装v
     </div>
     <div class="read-more">
-      <a href="/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/" class="read-more-link">阅读更多</a>
+      <a href="/2016/09/16/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/09/16/linux%E4%B8%8B%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%B7%A5%E5%85%B7minicom%E7%9A%84%E7%94%A8%E6%B3%95/">Linux下串口通信工具minicom的用法</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-09-16 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          <a href="/categories/tools/"> Tools </a>
+          </div>
+        <span class="more-meta"> 约 148 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      一、查看串口设备 将USB转串口线插入交换机Console口后，执行命令 $ ll /dev/ttyUSB* 二、连接串口设备 $ sudo minicom -D /dev/ttyUSB0 三、设置串口参数 在minicom中按C
+    </div>
+    <div class="read-more">
+      <a href="/2016/09/16/linux%E4%B8%8B%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%B7%A5%E5%85%B7minicom%E7%9A%84%E7%94%A8%E6%B3%95/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

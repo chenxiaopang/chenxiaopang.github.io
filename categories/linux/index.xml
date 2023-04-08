@@ -44,21 +44,39 @@
     </item>
     
     <item>
-      <title>lftp常用用法</title>
-      <link>https://chenxiaopang.github.io/2019/05/02/lftp%E7%9A%84%E7%94%A8%E6%B3%95/</link>
-      <pubDate>Thu, 02 May 2019 16:01:26 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/2019/05/02/lftp%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
-      <description>一、lftp工具简介 lftp是Linux下的一个ftp工具，支持ftp, ftps, http, https, hftp, fish, sftp, file, bittorrent等协议(支持https和ftps，</description>
-    </item>
-    
-    <item>
       <title>Linux下的录屏软件Kazam</title>
       <link>https://chenxiaopang.github.io/2019/05/02/linux%E4%B8%8B%E7%9A%84%E5%BD%95%E5%B1%8F%E8%BD%AF%E4%BB%B6kazam/</link>
       <pubDate>Thu, 02 May 2019 16:01:26 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/2019/05/02/linux%E4%B8%8B%E7%9A%84%E5%BD%95%E5%B1%8F%E8%BD%AF%E4%BB%B6kazam/</guid>
       <description>发现Ubuntu下一个很好用的录屏软件kazam，Ubuntu官方源中就有。 一、安装 $ sudo apt-get install kazam 二、使用 使用很简单，除了截图，还可以录制屏幕视</description>
+    </item>
+    
+    <item>
+      <title>宿主机和不同类型Linux虚拟机共享文件夹</title>
+      <link>https://chenxiaopang.github.io/2016/09/16/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <pubDate>Fri, 16 Sep 2016 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/09/16/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <description>一、宿主机共享文件夹给VMWare中的Linux虚拟机 Windows/Linux宿主机共享文件夹给VMWare中的Linux虚拟机 1、安装v</description>
+    </item>
+    
+    <item>
+      <title>Linux下串口通信工具minicom的用法</title>
+      <link>https://chenxiaopang.github.io/2016/09/16/linux%E4%B8%8B%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%B7%A5%E5%85%B7minicom%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Fri, 16 Sep 2016 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/09/16/linux%E4%B8%8B%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%B7%A5%E5%85%B7minicom%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>一、查看串口设备 将USB转串口线插入交换机Console口后，执行命令 $ ll /dev/ttyUSB* 二、连接串口设备 $ sudo minicom -D /dev/ttyUSB0 三、设置串口参数 在minicom中按C</description>
+    </item>
+    
+    <item>
+      <title>lftp常用用法</title>
+      <link>https://chenxiaopang.github.io/2016/04/10/lftp%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Sun, 10 Apr 2016 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/04/10/lftp%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>一、lftp工具简介 lftp是Linux下的一个ftp工具，支持ftp, ftps, http, https, hftp, fish, sftp, file, bittorrent等协议(支持https和ftps，</description>
     </item>
     
     <item>
@@ -311,15 +329,6 @@
       
       <guid>https://chenxiaopang.github.io/2015/08/06/virtualbox%E5%BF%AB%E7%85%A7/</guid>
       <description>VirtualBox是非常好用的一个虚拟机软件，无论是性能还是易用性不比商用的Vmware差。VirtualBox最初是Sun公司的产品，由</description>
-    </item>
-    
-    <item>
-      <title>宿主机和不同类型Linux虚拟机共享文件夹</title>
-      <link>https://chenxiaopang.github.io/2015/08/06/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
-      <pubDate>Thu, 06 Aug 2015 23:06:18 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/2015/08/06/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
-      <description>一、宿主机共享文件夹给VMWare中的Linux虚拟机 Windows/Linux宿主机共享文件夹给VMWare中的Linux虚拟机 1、安装v</description>
     </item>
     
     <item>

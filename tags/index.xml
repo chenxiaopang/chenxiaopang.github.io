@@ -296,29 +296,11 @@
     </item>
     
     <item>
-      <title>ftp</title>
-      <link>https://chenxiaopang.github.io/tags/ftp/</link>
-      <pubDate>Thu, 02 May 2019 16:01:26 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/tags/ftp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>git</title>
       <link>https://chenxiaopang.github.io/tags/git/</link>
       <pubDate>Thu, 02 May 2019 16:01:26 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>lftp</title>
-      <link>https://chenxiaopang.github.io/tags/lftp/</link>
-      <pubDate>Thu, 02 May 2019 16:01:26 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/tags/lftp/</guid>
       <description></description>
     </item>
     
@@ -337,6 +319,51 @@
       <pubDate>Thu, 02 May 2019 16:01:26 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>share folder</title>
+      <link>https://chenxiaopang.github.io/tags/share-folder/</link>
+      <pubDate>Fri, 16 Sep 2016 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/tags/share-folder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VM</title>
+      <link>https://chenxiaopang.github.io/tags/vm/</link>
+      <pubDate>Fri, 16 Sep 2016 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/tags/vm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>串口通信</title>
+      <link>https://chenxiaopang.github.io/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Fri, 16 Sep 2016 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ftp</title>
+      <link>https://chenxiaopang.github.io/tags/ftp/</link>
+      <pubDate>Sun, 10 Apr 2016 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/tags/ftp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lftp</title>
+      <link>https://chenxiaopang.github.io/tags/lftp/</link>
+      <pubDate>Sun, 10 Apr 2016 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/tags/lftp/</guid>
       <description></description>
     </item>
     
@@ -512,29 +539,11 @@
     </item>
     
     <item>
-      <title>share folder</title>
-      <link>https://chenxiaopang.github.io/tags/share-folder/</link>
-      <pubDate>Thu, 06 Aug 2015 23:06:18 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/tags/share-folder/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Snapshot</title>
       <link>https://chenxiaopang.github.io/tags/snapshot/</link>
       <pubDate>Thu, 06 Aug 2015 23:06:18 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/tags/snapshot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>VM</title>
-      <link>https://chenxiaopang.github.io/tags/vm/</link>
-      <pubDate>Thu, 06 Aug 2015 23:06:18 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/tags/vm/</guid>
       <description></description>
     </item>
     

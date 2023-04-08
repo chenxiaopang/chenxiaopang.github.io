@@ -6,13 +6,13 @@
     <description>Recent content in lftp on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 02 May 2019 16:01:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/lftp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Apr 2016 16:01:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/lftp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>lftp常用用法</title>
-      <link>https://chenxiaopang.github.io/2019/05/02/lftp%E7%9A%84%E7%94%A8%E6%B3%95/</link>
-      <pubDate>Thu, 02 May 2019 16:01:26 +0800</pubDate>
+      <link>https://chenxiaopang.github.io/2016/04/10/lftp%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Sun, 10 Apr 2016 16:01:26 +0800</pubDate>
       
-      <guid>https://chenxiaopang.github.io/2019/05/02/lftp%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <guid>https://chenxiaopang.github.io/2016/04/10/lftp%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
       <description>一、lftp工具简介 lftp是Linux下的一个ftp工具，支持ftp, ftps, http, https, hftp, fish, sftp, file, bittorrent等协议(支持https和ftps，</description>
     </item>
     

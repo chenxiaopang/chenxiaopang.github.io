@@ -6,7 +6,16 @@
     <description>Recent content in VM on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 06 Aug 2015 23:06:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/vm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Sep 2016 23:06:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/vm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>宿主机和不同类型Linux虚拟机共享文件夹</title>
+      <link>https://chenxiaopang.github.io/2016/09/16/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <pubDate>Fri, 16 Sep 2016 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/09/16/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <description>一、宿主机共享文件夹给VMWare中的Linux虚拟机 Windows/Linux宿主机共享文件夹给VMWare中的Linux虚拟机 1、安装v</description>
+    </item>
+    
     <item>
       <title>VirtualBox快照</title>
       <link>https://chenxiaopang.github.io/2015/08/06/virtualbox%E5%BF%AB%E7%85%A7/</link>
@@ -14,15 +23,6 @@
       
       <guid>https://chenxiaopang.github.io/2015/08/06/virtualbox%E5%BF%AB%E7%85%A7/</guid>
       <description>VirtualBox是非常好用的一个虚拟机软件，无论是性能还是易用性不比商用的Vmware差。VirtualBox最初是Sun公司的产品，由</description>
-    </item>
-    
-    <item>
-      <title>宿主机和不同类型Linux虚拟机共享文件夹</title>
-      <link>https://chenxiaopang.github.io/2015/08/06/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
-      <pubDate>Thu, 06 Aug 2015 23:06:18 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/2015/08/06/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
-      <description>一、宿主机共享文件夹给VMWare中的Linux虚拟机 Windows/Linux宿主机共享文件夹给VMWare中的Linux虚拟机 1、安装v</description>
     </item>
     
     <item>
