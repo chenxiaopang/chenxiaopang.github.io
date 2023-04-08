@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>lftp常用用法 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="一、lftp工具简介 lftp是Linux下的一个ftp工具，支持ftp, ftps, http, https, hftp, fish, sftp, file, bittorrent等协议(支持https和ftps，" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2019/05/02/lftp%E7%9A%84%E7%94%A8%E6%B3%95/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="lftp常用用法" />
+<meta property="og:description" content="一、lftp工具简介 lftp是Linux下的一个ftp工具，支持ftp, ftps, http, https, hftp, fish, sftp, file, bittorrent等协议(支持https和ftps，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2019/05/02/lftp%E7%9A%84%E7%94%A8%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-05-02T16:01:26&#43;08:00" />
+<meta property="article:modified_time" content="2019-05-02T16:01:26&#43;08:00" />
+
+<meta itemprop="name" content="lftp常用用法">
+<meta itemprop="description" content="一、lftp工具简介 lftp是Linux下的一个ftp工具，支持ftp, ftps, http, https, hftp, fish, sftp, file, bittorrent等协议(支持https和ftps，"><meta itemprop="datePublished" content="2019-05-02T16:01:26&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-02T16:01:26&#43;08:00" />
+<meta itemprop="wordCount" content="1905">
+<meta itemprop="keywords" content="Linux,lftp,ftp," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="lftp常用用法"/>
+<meta name="twitter:description" content="一、lftp工具简介 lftp是Linux下的一个ftp工具，支持ftp, ftps, http, https, hftp, fish, sftp, file, bittorrent等协议(支持https和ftps，"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">lftp常用用法</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-05-02 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/tools/"> Tools </a>
+            </div>
+          <span class="more-meta"> 约 1905 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#一lftp工具简介">一、lftp工具简介</a></li>
+            <li><a href="#二配置">二、配置</a></li>
+            <li><a href="#三登录服务器">三、登录服务器</a></li>
+            <li><a href="#四下载">四、下载</a></li>
+            <li><a href="#五上传">五、上传</a></li>
+            <li><a href="#六删除服务器上文件">六、删除服务器上文件</a></li>
+            <li><a href="#七任务队列">七、任务队列</a></li>
+            <li><a href="#八命令行下载">八、命令行下载</a></li>
+            <li><a href="#九小结">九、小结</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="一lftp工具简介">一、lftp工具简介</h3>
+<ol>
+<li><code>lftp</code>是Linux下的一个<code>ftp</code>工具，支持<code>ftp, ftps, http, https, hftp, fish, sftp, file, bittorrent</code>等协议(支持<code>https</code>和<code>ftps</code>，必须编译时和<code>openssl library</code>一起编译)。</li>
+<li><code>lftp</code>内建了<code>shell-like</code>的命令格式, 允许在背景同时执行多个命令(<code>&amp;</code>)。所有背景执行的工作都是在同一个程序中(<code>process</code>), 能将前景执行的命令放到背景执行(<code>Ctrl-z</code>), 或从背景拿回前景执行(<code>wait</code> 或 <code>fg</code>), 甚至还可以经由上个命令的传回值来决定目前这个命令是否要执行(<code>&amp;&amp; ||</code>)。在结束<code>lftp</code>时, 如果还有程序执行中, <code>lftp</code>会将自己切换到<code>no hup</code>模式並放到背景执行，因此不必担心正在执行的任务会结束。</li>
+</ol>
+<h3 id="二配置">二、配置</h3>
+<p>在用<code>lftp</code>访问国内一些<code>ftp</code>服务器时，往往看到的中文是乱码，这是由于服务器和本地编码不一致造成的。我们只要在主目录下新建一个文件<code>~/.lftprc</code>或者<code>~/.lftp/rc</code>，并在其中加入以下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">debug <span class="m">3</span>
+<span class="nb">set</span> ftp:charset GBK
+<span class="nb">set</span> file:charset UTF-8
+<span class="c1">#set ftp:passtive-mode no</span>
+<span class="c1">#alias utf8 &#34; set ftp:charset UTF-8&#34;</span>
+<span class="c1">#alias gbk &#34; set ftp:charset GBK&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="三登录服务器">三、登录服务器</h3>
+<p>1、显示书签</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">cb@127:~$ lftp -c bookmark list
+net ftp://ftp.net/
+lingBooks http://24.72.100.108/lingBooks/
+zdhz 23.65.2.16
+
+cb@127:~$ lftp zdhz
+lftp 23.65.2.16:~&gt; user cb
+口令:
+</code></pre></td></tr></table>
+</div>
+</div><p>2、同时登录多个FTP服务器，使用<code>slot</code>设定别名，并在它们之间切换</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp cb@23.65.2.16:~&gt; slot zdhz
+lftp zdhz cb@23.65.2.16:~&gt; slot net
+lftp net cb@23.65.2.16:~&gt; open ftp.net
+<span class="nb">cd</span> 成功, <span class="nv">当前目录</span><span class="o">=</span>/
+lftp net ftp.net:/&gt; slot zdhz
+lftp zdhz cb@23.65.2.16:~&gt; slot net
+lftp net ftp.net:/&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="四下载">四、下载</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp zdhz cb@23.65.2.16:/&gt; <span class="nb">cd</span> working/
+lftp zdhz cb@23.65.2.16:/working&gt; lcd ~/tmp/
+lcd 成功, <span class="nv">本地目录</span><span class="o">=</span>/home/cb/tmp
+lftp zdhz cb@23.65.2.16:/working&gt; get kaiti.rar
+<span class="m">1782318</span> 字节 已传输
+</code></pre></td></tr></table>
+</div>
+</div><p>1、指定下载文件的目标目录，需要每个文件之后用<code>-o</code>选项（小写），否则上传到服务器的当前目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp cb@23.65.2.16:/working&gt; get kaiti.rar -o ~/tmp 指挥信息系统军事需求分析.doc -o ~/doc
+<span class="m">1806382</span> 字节 已传输
+总共传输 <span class="m">2</span> 个文件
+</code></pre></td></tr></table>
+</div>
+</div><p>2、使用通配符下载多个文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp zdhz cb@23.65.2.16:/working&gt; mget *.doc
+<span class="m">202969</span> 字节 已传输
+总共传输 <span class="m">6</span> 个文件
+</code></pre></td></tr></table>
+</div>
+</div><p>3、指定下载的基目录（<code>base</code>），使用<code>-O</code>选项，注意是大写</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp zdhz cb@23.65.2.16:/&gt; mget ebook/source* -O ~/tmp
+<span class="m">52511692</span> 字节, 在 <span class="m">5</span> 秒中传输完毕 <span class="o">(</span>10.96M/s<span class="o">)</span>
+总共传输 <span class="m">2</span> 个文件
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp cb@23.65.2.16:/ebook&gt; mget 十天学会PHP.rar 程序设计实践.rar -O ~/tmp/
+<span class="m">8004043</span> 字节, 在 <span class="m">2</span> 秒中传输完毕 <span class="o">(</span>3.72M/s<span class="o">)</span>
+总共传输 <span class="m">2</span> 个文件
+</code></pre></td></tr></table>
+</div>
+</div><p>4、镜像下载整个目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp zdhz cb@23.65.2.16:/working&gt; mirror network ~/tmp/
+全部: <span class="m">1</span> 个目录,9 个文件, <span class="m">0</span> 个符号链接
+新建: <span class="m">9</span> 个文件, <span class="m">0</span> 个符号链接
+<span class="m">1453557</span> 字节 已传输
+</code></pre></td></tr></table>
+</div>
+</div><p>5、多线程下载, <code>-o</code>选项指定下载的目标目录，注意是小写。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp zdhz cb@23.65.2.16:/&gt; pget -n <span class="m">4</span> ebook/source1.pdf ebook/source2.pdf -o ~/tmp
+<span class="m">52514342</span> 字节, 在 <span class="m">7</span> 秒中传输完毕 <span class="o">(</span>7.34M/s<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="五上传">五、上传</h3>
+<p>1、指定上传的目标目录需要每个文件之后用<code>-o</code>选项（小写），否则上传到服务器的当前目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp zdhz cb@23.65.2.16:/&gt; put source1.pdf -o ebook/ source2.pdf -o ebook/ Linux命令大全.chm
+<span class="m">52866871</span> 字节, 在 <span class="m">5</span> 秒中传输完毕 <span class="o">(</span>11.09M/s<span class="o">)</span>
+总共传输 <span class="m">3</span> 个文件
+</code></pre></td></tr></table>
+</div>
+</div><p>2、使用通配符上传多个文件，注意：使用<code>-O</code>参数指定上传的基目录，要大写</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp zdhz cb@23.65.2.16:/&gt; mput source*.pdf -O ebook/
+<span class="m">52511692</span> 字节, 在 <span class="m">4</span> 秒中传输完毕 <span class="o">(</span>11.14M/s<span class="o">)</span>
+总共传输 <span class="m">2</span> 个文件
+</code></pre></td></tr></table>
+</div>
+</div><p>3、镜像上传整个目录，可用于同步</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp zdhz cb@23.65.2.16:/&gt; mirror -R ~/ebook/Linux/LFS/ ebook/
+全部: <span class="m">15</span> 个目录,137 个文件, <span class="m">0</span> 个符号链接
+新建: <span class="m">137</span> 个文件, <span class="m">0</span> 个符号链接
+<span class="m">4456290</span> 字节, 在 <span class="m">6</span> 秒中传输完毕 <span class="o">(</span>688.9K/s<span class="o">)</span>
+lftp zdhz cb@23.65.2.16:/&gt; ls ebook/
+total <span class="m">0</span>
+drw-rw-rw- <span class="m">1</span> user group <span class="m">0</span> Sep <span class="m">28</span> 16:50 .
+drw-rw-rw- <span class="m">1</span> user group <span class="m">0</span> Sep <span class="m">28</span> 16:50 ..
+drw-rw-rw- <span class="m">1</span> user group <span class="m">0</span> Sep <span class="m">28</span> 16:50 LFS
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="六删除服务器上文件">六、删除服务器上文件</h3>
+<p>1、删除多个文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp zdhz cb@23.65.2.16:/&gt; rm ebook/source1.pdf Linux命令大全.chm
+rm 成功, 删除 <span class="m">2</span> 个文件
+</code></pre></td></tr></table>
+</div>
+</div><p>2、删除整个目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp zdhz cb@23.65.2.16:/&gt; rm -r ebook/
+rm 成功, 删除 <span class="sb">`</span>ebook/<span class="err">&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>3、删除某个目录下的多个文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp zdhz cb@23.65.2.16:/&gt; mrm ebook/*.pdf
+rm 成功, 删除 <span class="m">2</span> 个文件
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="七任务队列">七、任务队列</h3>
+<p>对于那些只能一个<code>IP</code>只能登录一次的服务器,如果想同时下载多个不同目录下的文件,就只能一次下载一个,等到下载完了第一个才能再切换到别的目录去下载第二个, 这时<code>lftp</code>的<code>queue</code>派上用场了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">lftp cb@23.65.2.16:/pub/Iso&gt; queue
+
+lftp cb@23.65.2.16:/pub/Iso&gt; <span class="nb">jobs</span>
+<span class="m">0</span> queue <span class="o">(</span>ftp://cb@23.65.2.16<span class="o">)</span>
+Queue is stopped.
+
+lftp cb@23.65.2.16:/pub/Iso&gt; queue get rettcd.iso
+
+lftp cb@23.65.2.16:/pub/Iso&gt; <span class="nb">jobs</span>
+<span class="m">0</span> queue <span class="o">(</span>ftp://cb@23.65.2.16<span class="o">)</span>
+Queue is stopped.
+Commands queued:
+1. get rettcd.iso
+
+lftp cb@23.65.2.16:/pub/Iso&gt; queue mirror Linux/
+
+lftp cb@23.65.2.16:/pub/Iso&gt; <span class="nb">jobs</span>
+<span class="m">0</span> queue <span class="o">(</span>ftp://cb@23.65.2.16<span class="o">)</span>
+Queue is stopped.
+Commands queued:
+1. get rettcd.iso
+2. mirror Linux/
+
+lftp cb@23.65.2.16:/pub/Iso&gt; queue start
+
+lftp cb@23.65.2.16:/pub/Iso&gt; <span class="nb">jobs</span>
+<span class="m">0</span> queue <span class="o">(</span>ftp://cb@23.65.2.16<span class="o">)</span>
+Now executing: <span class="m">1</span> get rettcd.iso
+Commands queued:
+1. mirror Linux/
+<span class="m">1</span> get rettcd.iso
+<span class="s1">&#39;rettcd.iso&#39;</span> at <span class="m">4772864</span> <span class="o">(</span>9%<span class="o">)</span> 3.00M/s eta:14s Receiving data
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="八命令行下载">八、命令行下载</h3>
+<p>1、多线程下载</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ lftp -c <span class="s1">&#39;pget -n $Thread_num -c $URL -o $SAVE_PATH&#39;</span> <span class="p">&amp;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>2、<code>BitTorrent</code>下载</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ lftp -c <span class="s1">&#39;torrent ubuntu-14.04-dvd-amd64.iso.torrent&#39;</span> <span class="p">&amp;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>3、镜像下载</p>
+<p>使用<code>pget</code>，<code>4</code>线程下载每个文件，递归下载，断点续传</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ lftp -c <span class="s1">&#39;mirror -c -n -P -n=4 http://mirrors.neusoft.edu.cn/android/repository/ ~/tmp/&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="九小结">九、小结</h3>
+<ol>
+<li>
+<p>常用命令：<code>cd, lcd, get, mget, put, mput, mirror, rm, mrm, pget, queue, jobs</code></p>
+</li>
+<li>
+<p><code>mget, mput, mrm</code>可使用通配符<code>*</code>匹配多个文件</p>
+</li>
+<li>
+<p>默认<code>mirror:set-permissions on</code>，则<code>mirror</code>会拷贝文件和目录的（原有）权限，否则（<code>off</code>）利用文件系统创建文件和目录的规则重新设置文件目录的权限（文件<code>666 &amp; umask</code>，目录<code>777 &amp; umask</code>）；和<code>-p</code>(或<code>—no-perms</code>)将该变量设置为<code>off</code>是等效的；建议在<code>~/.lftprc</code>中将该变量设置为<code>off</code>状态：<code>set mirror:set-permission off</code></p>
+</li>
+</ol>
+<p>4.<code>-O</code>指定<code>mput</code>和<code>mget</code>命令上传或下载的基目录，因此多个文件不用每个文件都使用<code>-o</code>选项指定目标路径。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-05-02
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/lftp/">lftp</a>
+          <a href="/tags/ftp/">ftp</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2019/05/02/git%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">git常用用法</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2019/05/02/linux%E4%B8%8B%E7%9A%84%E5%BD%95%E5%B1%8F%E8%BD%AF%E4%BB%B6kazam/">
+            <span class="next-text nav-default">Linux下的录屏软件Kazam</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

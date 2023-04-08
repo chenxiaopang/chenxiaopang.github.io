@@ -126,120 +126,24 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2015/06/22/%E5%BB%BA%E7%AB%8B%E8%8F%9C%E5%8D%95/">建立菜单</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/01/29/%E7%94%A8hdparm%E8%8E%B7%E5%8F%96%E7%A1%AC%E7%9B%98%E5%8F%82%E6%95%B0/">用hdparm获取硬盘参数</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2015-06-22 </span>
+      <span class="post-time"> 2012-01-29 </span>
       <div class="post-category">
           <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/bash/"> Bash </a>
+          <a href="/categories/tools/"> Tools </a>
           </div>
-        <span class="more-meta"> 约 242 字 </span>
+        <span class="more-meta"> 约 80 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      方法一：用here文档和case语句建立 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 #!/bin/bash while true do cat&lt;&lt;- ENDIT //&lt;&
+      hdparm是Linux下一款能够获取和设置SATA/IDE设备参数的工具。 1、获取硬盘参数 $ sudo hdparm -i /dev/sda $ sudo hdparam -i /dev/sda | grep SerialNo //获取硬盘序列号 2、
     </div>
     <div class="read-more">
-      <a href="/2015/06/22/%E5%BB%BA%E7%AB%8B%E8%8F%9C%E5%8D%95/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2015/06/22/%E6%B3%A2%E6%B5%AA%E5%8F%B7%E5%92%8Chyphen%E6%89%A9%E5%B1%95/">波浪号和Hyphen扩展</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2015-06-22 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/bash/"> Bash </a>
-          </div>
-        <span class="more-meta"> 约 138 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Bash将波浪号~作为路径扩展符 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 扩展为当前用户主目录的全路径名 $ echo ~ /home/user 扩展为用户user的主目
-    </div>
-    <div class="read-more">
-      <a href="/2015/06/22/%E6%B3%A2%E6%B5%AA%E5%8F%B7%E5%92%8Chyphen%E6%89%A9%E5%B1%95/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2015/06/22/%E6%A0%87%E5%87%86io%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/">标准IO和重定向</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2015-06-22 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/bash/"> Bash </a>
-          </div>
-        <span class="more-meta"> 约 484 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      一、标准输入/输出/错误 当shell启动，它继承三个文件：stdin、stdout、stderr，标准输入通常来自键盘，标准输出和标准错误通
-    </div>
-    <div class="read-more">
-      <a href="/2015/06/22/%E6%A0%87%E5%87%86io%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2015/06/21/bash%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95%E4%BF%AE%E6%94%B9%E7%AC%A6/">Bash变量扩展修改符</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2015-06-21 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/bash/"> Bash </a>
-          </div>
-        <span class="more-meta"> 约 238 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      一、未设置就临时替换（:-） 冒号：用来检验变量是否设置过，如果没有冒号，则认为设置过，不替换 1 2 3 4 5 6 7 8 9 10 $ fruit=peach $ echo ${fruit:-plum} peach $ fruit= $ echo ${fruit:-plum} plum $ echo
-    </div>
-    <div class="read-more">
-      <a href="/2015/06/21/bash%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95%E4%BF%AE%E6%94%B9%E7%AC%A6/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2015/06/20/mysql%E4%B8%BB%E9%94%AE%E7%BA%A6%E6%9D%9F%E5%92%8C%E5%94%AF%E4%B8%80%E6%80%A7%E7%BA%A6%E6%9D%9F/">mysql主键约束和唯一性约束</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2015-06-20 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/database/"> Database </a>
-          </div>
-        <span class="more-meta"> 约 217 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      一、主键约束和唯一性约束的区别 主键约束和唯一性约束都是索引，它们的区别是： 主键字段可以确保唯一性，但主键字段不能为NULL 唯一性约束可以确保
-    </div>
-    <div class="read-more">
-      <a href="/2015/06/20/mysql%E4%B8%BB%E9%94%AE%E7%BA%A6%E6%9D%9F%E5%92%8C%E5%94%AF%E4%B8%80%E6%80%A7%E7%BA%A6%E6%9D%9F/" class="read-more-link">阅读更多</a>
+      <a href="/2012/01/29/%E7%94%A8hdparm%E8%8E%B7%E5%8F%96%E7%A1%AC%E7%9B%98%E5%8F%82%E6%95%B0/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -247,14 +151,11 @@
     </section>
   
   <nav class="pagination">
-    <a class="prev" href="/page/12/">
+    <a class="prev" href="/page/19/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text">上一页</span>
       </a>
-    <a class="next" href="/page/14/">
-        <span class="next-text">下一页</span>
-        <i class="iconfont icon-right"></i>
-      </a>
+    
   </nav>
         </div>
         

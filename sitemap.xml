@@ -450,6 +450,13 @@
   </url>
   
   <url>
+    <loc>https://chenxiaopang.github.io/tags/ftp/</loc>
+    <lastmod>2019-05-02T16:01:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://chenxiaopang.github.io/tags/git/</loc>
     <lastmod>2019-05-02T16:01:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -458,6 +465,20 @@
   
   <url>
     <loc>https://chenxiaopang.github.io/2019/05/02/git%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</loc>
+    <lastmod>2019-05-02T16:01:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/lftp/</loc>
+    <lastmod>2019-05-02T16:01:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2019/05/02/lftp%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
     <lastmod>2019-05-02T16:01:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

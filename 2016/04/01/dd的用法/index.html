@@ -49,7 +49,7 @@
 <meta itemprop="name" content="dd的用法">
 <meta itemprop="description" content="dd工具用来转换和复制文件。 1、 生成文件 生成一个空的，大小为1G的文件 1 # dd if=/dev/zero of=winxp.img bs=1k seek=1024k count=1 2、 读写硬盘 用0填充硬盘 1 2 3 # dd if=/dev/zero of=junk # sync # rm junk 3、 读"><meta itemprop="datePublished" content="2016-04-01T20:18:26&#43;08:00" />
 <meta itemprop="dateModified" content="2016-04-01T20:18:26&#43;08:00" />
-<meta itemprop="wordCount" content="138">
+<meta itemprop="wordCount" content="128">
 <meta itemprop="keywords" content="Bash,Shell," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="dd的用法"/>
 <meta name="twitter:description" content="dd工具用来转换和复制文件。 1、 生成文件 生成一个空的，大小为1G的文件 1 # dd if=/dev/zero of=winxp.img bs=1k seek=1024k count=1 2、 读写硬盘 用0填充硬盘 1 2 3 # dd if=/dev/zero of=junk # sync # rm junk 3、 读"/>
@@ -137,7 +137,7 @@
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/bash/"> Bash </a>
             </div>
-          <span class="more-meta"> 约 138 字 </span>
+          <span class="more-meta"> 约 128 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -194,7 +194,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># dd if=/dev/fd0 bs=1k count=1440 | od –tx1 –Ax &gt;/tmp/dump_hex</span>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># dd if=/dev/fd0 bs=1k count=1440 | od -tx1 -Ax &gt;/tmp/dump_hex</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="4备份硬盘的主引导扇区mbr">4、备份硬盘的主引导扇区MBR</h4>
@@ -205,7 +205,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># dd if=/dev/hda of=mbr.bak bs=512 count=1</span>
-<span class="c1"># od –Ax –tx2 mbr.bak</span>
+<span class="c1"># od -Ax -tx2 mbr.bak</span>
 </code></pre></td></tr></table>
 </div>
 </div>
