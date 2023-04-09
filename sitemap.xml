@@ -548,6 +548,27 @@
   </url>
   
   <url>
+    <loc>https://chenxiaopang.github.io/tags/rsync/</loc>
+    <lastmod>2016-04-10T16:01:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2016/04/10/rsync%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
+    <lastmod>2016-04-10T16:01:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/%E5%A4%87%E4%BB%BD/</loc>
+    <lastmod>2016-04-10T16:01:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://chenxiaopang.github.io/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/</loc>
     <lastmod>2016-04-04T15:50:08+08:00</lastmod>
     <changefreq>weekly</changefreq>

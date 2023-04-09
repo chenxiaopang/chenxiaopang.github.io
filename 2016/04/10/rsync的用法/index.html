@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Linux上的防病毒软件ClamAV - Panda的随笔</title>
+  <title>rsync的用法 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一、用法例子 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ //注意：文件名中最好不要有 : $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 $ rsync -auv --delete program doc /media/CBDISK/project/ //同步到" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/" />
+<link rel="canonical" href="https://chenxiaopang.github.io/2016/04/10/rsync%E7%9A%84%E7%94%A8%E6%B3%95/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Linux上的防病毒软件ClamAV" />
-<meta property="og:description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin" />
+<meta property="og:title" content="rsync的用法" />
+<meta property="og:description" content="一、用法例子 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ //注意：文件名中最好不要有 : $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 $ rsync -auv --delete program doc /media/CBDISK/project/ //同步到" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxiaopang.github.io/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2016-04-04T15:50:08&#43;08:00" />
-<meta property="article:modified_time" content="2016-04-04T15:50:08&#43;08:00" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2016/04/10/rsync%E7%9A%84%E7%94%A8%E6%B3%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-04-10T16:01:26&#43;08:00" />
+<meta property="article:modified_time" content="2016-04-10T16:01:26&#43;08:00" />
 
-<meta itemprop="name" content="Linux上的防病毒软件ClamAV">
-<meta itemprop="description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin"><meta itemprop="datePublished" content="2016-04-04T15:50:08&#43;08:00" />
-<meta itemprop="dateModified" content="2016-04-04T15:50:08&#43;08:00" />
-<meta itemprop="wordCount" content="436">
-<meta itemprop="keywords" content="病毒,安全," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux上的防病毒软件ClamAV"/>
-<meta name="twitter:description" content="Clam AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Lin"/>
+<meta itemprop="name" content="rsync的用法">
+<meta itemprop="description" content="一、用法例子 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ //注意：文件名中最好不要有 : $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 $ rsync -auv --delete program doc /media/CBDISK/project/ //同步到"><meta itemprop="datePublished" content="2016-04-10T16:01:26&#43;08:00" />
+<meta itemprop="dateModified" content="2016-04-10T16:01:26&#43;08:00" />
+<meta itemprop="wordCount" content="896">
+<meta itemprop="keywords" content="Linux,rsync,备份," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="rsync的用法"/>
+<meta name="twitter:description" content="一、用法例子 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ //注意：文件名中最好不要有 : $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 $ rsync -auv --delete program doc /media/CBDISK/project/ //同步到"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,16 +129,16 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Linux上的防病毒软件ClamAV</h1>
+      <h1 class="post-title">rsync的用法</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2016-04-04 </span>
+        <span class="post-time"> 2016-04-10 </span>
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/tools/"> Tools </a>
             </div>
-          <span class="more-meta"> 约 436 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 896 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
     </header>
@@ -152,11 +152,9 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#1安装clamav">1、安装clamav</a></li>
-            <li><a href="#2升级病毒库">2、升级病毒库</a></li>
-            <li><a href="#3查看版本">3、查看版本</a></li>
-            <li><a href="#4查毒">4、查毒</a></li>
-            <li><a href="#5注意">5、注意</a></li>
+            <li><a href="#一用法例子">一、用法例子</a></li>
+            <li><a href="#二常用选项说明">二、常用选项说明</a></li>
+            <li><a href="#三rsync的优点与不足">三、rsync的优点与不足</a></li>
           </ul>
         </li>
       </ul>
@@ -166,58 +164,68 @@
   </div>
 </div>
     <div class="post-content">
-      <p>Clam  AntiVirus（ClamAV）是免费而且开放源代码的防毒软件，软件与病毒码的更新皆由社群免费发布。目前ClamAV主要是使用在由Linux、FreeBSD等Unix-like系统架设的邮件服务器上，提供电子邮件的病毒扫描服务。ClamAV本身是在文字接口下运作，但也有许多图形接口的前端工具可用，另外由于其开放源代码的特性，在Windows与Mac OS X平台都有其移植版。</p>
-<h3 id="1安装clamav">1、安装clamav</h3>
+      <h3 id="一用法例子">一、用法例子</h3>
+<p>1、增量备份本地文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ rsync -av ebook/ tmp/ //注意：文件名中最好不要有 :
+$ rsync -avzrtopgL --progress /src /dst
+</code></pre></td></tr></table>
+</div>
+</div><p>2、本地和远程目录同步</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt-get install clamav clamav-docs
-$ sudo apt-get install clamav-daemon                             //安装clamav服务
-$ sudo apt-get install clamtk                                                 //安装图形前端
-$ sudo apt-get install clamtk-nautilus 				                //安装nautilus右键支持查毒
-$ sudo apt-get install libclamunrar6                                   //支持rar文件查毒
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ rsync -auv --delete program doc /media/CBDISK/project/ //同步到U盘上
+$ rsync -auv --delete program doc cb@23.65.55.48:/home/cb/doc/working/project/ //和远程主机同步，需要输入远程主机密码
+$ rsync -auv --delete -e ssh program doc cb@23.65.55.48:/home/cb/doc/working/project/ //和远程主机同步，可设置ssh无密码登录远程主机，不需要输入远程主机密码
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="2升级病毒库">2、升级病毒库</h3>
+</div><p>3、rsync+ssh应用实例
+案例要求：</p>
+<ol>
+<li>以root身份，将远程主机cb251上的/data/Ubuntu目录同步到本机/data目录下</li>
+<li>同步完成后，将远程主机cb251关机</li>
+<li>自己关机</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo freshclam
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ rsync -auv -e ssh root@cb251:/data/Ubuntu /data/<span class="p">;</span> sync<span class="p">;</span> ssh root@cb251 /sbin/shutdown -h now<span class="p">;</span> /sbin/shutdown -h now
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="3查看版本">3、查看版本</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ clamscan -V
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="4查毒">4、查毒</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ clamav -r /home/cb/software     //-r递归扫描目录
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="5注意">5、注意</h3>
-<ul>
-<li>clamav只能查毒，不能杀毒，但可以删除或隔离被病毒感染的文件</li>
-<li>病毒库文件位于/var/lib/clamav目录下，可备份并拷贝到其它机器上用于离线升级</li>
-<li>可结合at或cron服务定时扫描系统</li>
-</ul>
-<p>以上在Ubuntu 12.04上测试通过。</p>
+</div><p>无密码登陆远程主机cb251请参考<a href="!%5Bssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%5D(/Linux/Applications/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA.md" title="ssh">ssh无密码登陆远程主机</a> &ldquo;ssh&rdquo;)</p>
+<p>4、排除
+rsync -auv &ndash;delete &ndash;exclude &lsquo;.git&rsquo; $SRC_DIR/program $DEST_DISK/project/</p>
+<h3 id="二常用选项说明">二、常用选项说明</h3>
+<p>-v是“&ndash;verbose”, 即详细模式输出
+-z表示“&ndash;compress”，即传输时对数据进行压缩处理
+-r表示“&ndash;recursive”，即对子目录以递归的模式处理
+-t是“&ndash;time”，即保持文件时间信息
+-o表示“owner”，用来保持文件属主信息
+-p是“perms”，用来保持文件权限
+-g是“group”，用来保持文件的属组信息
+-L是“copy-links”, 传输链接的实际文件
+&ndash;delete 选项指定以rsync服务器端为基础进行数据镜像同步，也就是要保持rsync服务器端目录与客户端目录的完全一致
+&ndash;exclude 选项用于排除不需要传输的文件类型
+&ndash;progress 选项用于显示数据镜像同步的过程
+ </p>
+<h3 id="三rsync的优点与不足">三、rsync的优点与不足</h3>
+<p> 1、优点
+与传统的cp、tar备份方式对比，rsync具有安全性高、备份迅速、支持增量备份等优点，通过rsync可以解决对实时性要求不高的数据备份需求，例如，定期地备份文件服务器数据到远端服务器，对本地磁盘定期进行数据镜像等。
+2、不足
+sync做数据同步时，需要扫描所有文件后进行对比，然后进行差量传输。如果文 件很大，扫面文件是非常耗时的，而且发生变化的文件往往是很少一部分，因此rsync是非常低效的方式。
+其次，rsync不能实时监测、同步数据，虽然它 可以通过Linux守护进程的方式触发同步，但是两次触发动作一定会有时间差，可能导致服务器端和客户端数据出现不一致。</p>
 
     </div>
 
@@ -229,7 +237,7 @@ $ sudo apt-get install libclamunrar6                                   //支持r
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2016-04-04
+        2016-04-10
         
     </span>
   </p>
@@ -238,17 +246,18 @@ $ sudo apt-get install libclamunrar6                                   //支持r
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E7%97%85%E6%AF%92/">病毒</a>
-          <a href="/tags/%E5%AE%89%E5%85%A8/">安全</a>
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/rsync/">rsync</a>
+          <a href="/tags/%E5%A4%87%E4%BB%BD/">备份</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2016/04/10/rsync%E7%9A%84%E7%94%A8%E6%B3%95/">
+        <a class="prev" href="/2016/04/10/lftp%E7%9A%84%E7%94%A8%E6%B3%95/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">rsync的用法</span>
+            <span class="prev-text nav-default">lftp常用用法</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2016/04/01/dd%E7%9A%84%E7%94%A8%E6%B3%95/">
-            <span class="next-text nav-default">dd的用法</span>
+        <a class="next" href="/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/">
+            <span class="next-text nav-default">Linux上的防病毒软件ClamAV</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

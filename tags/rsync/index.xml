@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rsync on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/rsync/</link>
+    <description>Recent content in rsync on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 10 Apr 2016 16:01:26 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rsync的用法</title>
+      <link>https://chenxiaopang.github.io/2016/04/10/rsync%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Sun, 10 Apr 2016 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/04/10/rsync%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>一、用法例子 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ //注意：文件名中最好不要有 : $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 $ rsync -auv --delete program doc /media/CBDISK/project/ //同步到</description>
+    </item>
+    
+  </channel>
+</rss>
