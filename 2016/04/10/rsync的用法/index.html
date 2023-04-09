@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="一、用法例子 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ //注意：文件名中最好不要有 : $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 $ rsync -auv --delete program doc /media/CBDISK/project/ //同步到" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一、用法举例 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 4 5 6 7 8 //同步到U盘上 $ rsync -auv --delete program doc /media/CBDISK/project/ //和远程主机" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="rsync的用法" />
-<meta property="og:description" content="一、用法例子 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ //注意：文件名中最好不要有 : $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 $ rsync -auv --delete program doc /media/CBDISK/project/ //同步到" />
+<meta property="og:description" content="一、用法举例 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 4 5 6 7 8 //同步到U盘上 $ rsync -auv --delete program doc /media/CBDISK/project/ //和远程主机" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chenxiaopang.github.io/2016/04/10/rsync%E7%9A%84%E7%94%A8%E6%B3%95/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2016-04-10T16:01:26&#43;08:00" />
 <meta property="article:modified_time" content="2016-04-10T16:01:26&#43;08:00" />
 
 <meta itemprop="name" content="rsync的用法">
-<meta itemprop="description" content="一、用法例子 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ //注意：文件名中最好不要有 : $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 $ rsync -auv --delete program doc /media/CBDISK/project/ //同步到"><meta itemprop="datePublished" content="2016-04-10T16:01:26&#43;08:00" />
+<meta itemprop="description" content="一、用法举例 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 4 5 6 7 8 //同步到U盘上 $ rsync -auv --delete program doc /media/CBDISK/project/ //和远程主机"><meta itemprop="datePublished" content="2016-04-10T16:01:26&#43;08:00" />
 <meta itemprop="dateModified" content="2016-04-10T16:01:26&#43;08:00" />
-<meta itemprop="wordCount" content="896">
+<meta itemprop="wordCount" content="773">
 <meta itemprop="keywords" content="Linux,rsync,备份," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="rsync的用法"/>
-<meta name="twitter:description" content="一、用法例子 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ //注意：文件名中最好不要有 : $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 $ rsync -auv --delete program doc /media/CBDISK/project/ //同步到"/>
+<meta name="twitter:description" content="一、用法举例 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 4 5 6 7 8 //同步到U盘上 $ rsync -auv --delete program doc /media/CBDISK/project/ //和远程主机"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -137,7 +137,7 @@
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/tools/"> Tools </a>
             </div>
-          <span class="more-meta"> 约 896 字 </span>
+          <span class="more-meta"> 约 773 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -152,7 +152,7 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#一用法例子">一、用法例子</a></li>
+            <li><a href="#一用法举例">一、用法举例</a></li>
             <li><a href="#二常用选项说明">二、常用选项说明</a></li>
             <li><a href="#三rsync的优点与不足">三、rsync的优点与不足</a></li>
           </ul>
@@ -164,7 +164,7 @@
   </div>
 </div>
     <div class="post-content">
-      <h3 id="一用法例子">一、用法例子</h3>
+      <h3 id="一用法举例">一、用法举例</h3>
 <p>1、增量备份本地文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -172,7 +172,7 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ rsync -av ebook/ tmp/ //注意：文件名中最好不要有 :
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ rsync -av ebook/ tmp/
 $ rsync -avzrtopgL --progress /src /dst
 </code></pre></td></tr></table>
 </div>
@@ -182,15 +182,25 @@ $ rsync -avzrtopgL --progress /src /dst
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ rsync -auv --delete program doc /media/CBDISK/project/ //同步到U盘上
-$ rsync -auv --delete program doc cb@23.65.55.48:/home/cb/doc/working/project/ //和远程主机同步，需要输入远程主机密码
-$ rsync -auv --delete -e ssh program doc cb@23.65.55.48:/home/cb/doc/working/project/ //和远程主机同步，可设置ssh无密码登录远程主机，不需要输入远程主机密码
+<pre class="chroma"><code class="language-shell" data-lang="shell">//同步到U盘上
+$ rsync -auv --delete program doc /media/CBDISK/project/
+
+//和远程主机同步，需要输入远程主机密码
+$ rsync -auv --delete program doc cb@23.65.55.48:/home/cb/doc/working/project/ 
+
+//和远程主机同步，可设置ssh无密码登录远程主机，不需要输入远程主机密码
+$ rsync -auv --delete -e ssh program doc cb@23.65.55.48:/home/cb/doc/working/project/
 </code></pre></td></tr></table>
 </div>
-</div><p>3、rsync+ssh应用实例
-案例要求：</p>
+</div><p>3、rsync+ssh应用实例</p>
+<p>要求：</p>
 <ol>
 <li>以root身份，将远程主机cb251上的/data/Ubuntu目录同步到本机/data目录下</li>
 <li>同步完成后，将远程主机cb251关机</li>
@@ -204,28 +214,91 @@ $ rsync -auv --delete -e ssh program doc cb@23.65.55.48:/home/cb/doc/working/pro
 <pre class="chroma"><code class="language-shell" data-lang="shell">$ rsync -auv -e ssh root@cb251:/data/Ubuntu /data/<span class="p">;</span> sync<span class="p">;</span> ssh root@cb251 /sbin/shutdown -h now<span class="p">;</span> /sbin/shutdown -h now
 </code></pre></td></tr></table>
 </div>
-</div><p>无密码登陆远程主机cb251请参考<a href="!%5Bssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%5D(/Linux/Applications/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA.md" title="ssh">ssh无密码登陆远程主机</a> &ldquo;ssh&rdquo;)</p>
-<p>4、排除
-rsync -auv &ndash;delete &ndash;exclude &lsquo;.git&rsquo; $SRC_DIR/program $DEST_DISK/project/</p>
-<h3 id="二常用选项说明">二、常用选项说明</h3>
-<p>-v是“&ndash;verbose”, 即详细模式输出
--z表示“&ndash;compress”，即传输时对数据进行压缩处理
--r表示“&ndash;recursive”，即对子目录以递归的模式处理
--t是“&ndash;time”，即保持文件时间信息
--o表示“owner”，用来保持文件属主信息
--p是“perms”，用来保持文件权限
--g是“group”，用来保持文件的属组信息
--L是“copy-links”, 传输链接的实际文件
-&ndash;delete 选项指定以rsync服务器端为基础进行数据镜像同步，也就是要保持rsync服务器端目录与客户端目录的完全一致
-&ndash;exclude 选项用于排除不需要传输的文件类型
-&ndash;progress 选项用于显示数据镜像同步的过程
- </p>
+</div><p>无密码登陆远程主机cb251请参考<a href="!%5Bssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%5D(https://chenxiaopang.github.io/2014/10/28/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/)">ssh无密码登陆远程主机</a></p>
+<p>4、指定不需要同步的文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ rsync -auv --delete --exclude <span class="s1">&#39;.git&#39;</span> <span class="nv">$SRC_DIR</span>/program <span class="nv">$DEST_DISK</span>/project/
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="二常用选项说明">二、常用选项说明</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">选项</th>
+<th style="text-align:center">选项</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-v</td>
+<td style="text-align:center">&ndash;verbose</td>
+<td style="text-align:left">即详细模式输出</td>
+</tr>
+<tr>
+<td style="text-align:center">-z</td>
+<td style="text-align:center">&ndash;compress</td>
+<td style="text-align:left">即传输时对数据进行压缩处理</td>
+</tr>
+<tr>
+<td style="text-align:center">-r</td>
+<td style="text-align:center">&ndash;recursive</td>
+<td style="text-align:left">即对子目录以递归的模式处理</td>
+</tr>
+<tr>
+<td style="text-align:center">-t</td>
+<td style="text-align:center">&ndash;time</td>
+<td style="text-align:left">即保持文件时间信息</td>
+</tr>
+<tr>
+<td style="text-align:center">-o</td>
+<td style="text-align:center">owner</td>
+<td style="text-align:left">用来保持文件属主信息</td>
+</tr>
+<tr>
+<td style="text-align:center">-p</td>
+<td style="text-align:center">perms</td>
+<td style="text-align:left">用来保持文件权限</td>
+</tr>
+<tr>
+<td style="text-align:center">-g</td>
+<td style="text-align:center">group</td>
+<td style="text-align:left">用来保持文件的属组信息</td>
+</tr>
+<tr>
+<td style="text-align:center">-L</td>
+<td style="text-align:center">copy-links</td>
+<td style="text-align:left">传输链接的实际文件</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">&ndash;delete</td>
+<td style="text-align:left">指定以rsync服务器端为基础进行数据镜像同步，保持rsync服务器端目录与客户端目录的完全一致</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">&ndash;exclude</td>
+<td style="text-align:left">用于排除不需要传输的文件类型</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">&ndash;progress</td>
+<td style="text-align:left">用于显示数据镜像同步的过程</td>
+</tr>
+</tbody>
+</table>
 <h3 id="三rsync的优点与不足">三、rsync的优点与不足</h3>
-<p> 1、优点
-与传统的cp、tar备份方式对比，rsync具有安全性高、备份迅速、支持增量备份等优点，通过rsync可以解决对实时性要求不高的数据备份需求，例如，定期地备份文件服务器数据到远端服务器，对本地磁盘定期进行数据镜像等。
-2、不足
-sync做数据同步时，需要扫描所有文件后进行对比，然后进行差量传输。如果文 件很大，扫面文件是非常耗时的，而且发生变化的文件往往是很少一部分，因此rsync是非常低效的方式。
-其次，rsync不能实时监测、同步数据，虽然它 可以通过Linux守护进程的方式触发同步，但是两次触发动作一定会有时间差，可能导致服务器端和客户端数据出现不一致。</p>
+<h4 id="1优点">1、优点</h4>
+<p>与传统的cp、tar备份方式对比，rsync具有安全性高、备份迅速、支持增量备份等优点，通过rsync可以解决对实时性要求不高的数据备份需求，例如，定期地备份文件服务器数据到远端服务器，对本地磁盘定期进行数据镜像等。</p>
+<h4 id="2不足">2、不足</h4>
+<ol>
+<li>sync做数据同步时，需要扫描所有文件后进行对比，然后进行差量传输。如果文件很大，扫面文件是非常耗时的，而且发生变化的文件往往是很少一部分，因此rsync是非常低效的方式。</li>
+<li>其次，rsync不能实时监测、同步数据，虽然它可以通过Linux守护进程的方式触发同步，但是两次触发动作一定会有时间差，可能导致服务器端和客户端数据出现不一致。</li>
+</ol>
 
     </div>
 
