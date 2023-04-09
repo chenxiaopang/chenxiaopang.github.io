@@ -71,21 +71,30 @@
     </item>
     
     <item>
+      <title>添加openstack源</title>
+      <link>https://chenxiaopang.github.io/2016/09/16/%E6%B7%BB%E5%8A%A0openstack%E6%BA%90/</link>
+      <pubDate>Fri, 16 Sep 2016 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/09/16/%E6%B7%BB%E5%8A%A0openstack%E6%BA%90/</guid>
+      <description>添加OpenStack Mitaka源 1 2 3 sudo apt-get install ubuntu-cloud-keyring sudo add-apt-repository cloud-archive:mitaka 相同方法，可以添加其它版本，如kilo 1 2 3 sudo add-apt-repository clound-archive:kilo sudo apt-get update</description>
+    </item>
+    
+    <item>
+      <title>rsync的用法</title>
+      <link>https://chenxiaopang.github.io/2016/09/16/rsync%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Fri, 16 Sep 2016 20:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/09/16/rsync%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>一、用法举例 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 4 5 6 7 8 //同步到U盘上 $ rsync -auv --delete program doc /media/CBDISK/project/ //和远程主机</description>
+    </item>
+    
+    <item>
       <title>Linux下串口通信工具minicom的用法</title>
       <link>https://chenxiaopang.github.io/2016/09/16/linux%E4%B8%8B%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%B7%A5%E5%85%B7minicom%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Fri, 16 Sep 2016 16:01:26 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/2016/09/16/linux%E4%B8%8B%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%B7%A5%E5%85%B7minicom%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
       <description>一、查看串口设备 将USB转串口线插入交换机Console口后，执行命令 $ ll /dev/ttyUSB* 二、连接串口设备 $ sudo minicom -D /dev/ttyUSB0 三、设置串口参数 在minicom中按C</description>
-    </item>
-    
-    <item>
-      <title>rsync的用法</title>
-      <link>https://chenxiaopang.github.io/2016/09/16/rsync%E7%9A%84%E7%94%A8%E6%B3%95/</link>
-      <pubDate>Fri, 16 Sep 2016 16:01:26 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/2016/09/16/rsync%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
-      <description>一、用法举例 1、增量备份本地文件 1 2 $ rsync -av ebook/ tmp/ $ rsync -avzrtopgL --progress /src /dst 2、本地和远程目录同步 1 2 3 4 5 6 7 8 //同步到U盘上 $ rsync -auv --delete program doc /media/CBDISK/project/ //和远程主机</description>
     </item>
     
     <item>

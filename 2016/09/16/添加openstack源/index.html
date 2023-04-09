@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>宿主机和不同类型Linux虚拟机共享文件夹 - Panda的随笔</title>
+  <title>添加openstack源 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="一、宿主机共享文件夹给VMWare中的Linux虚拟机 Windows/Linux宿主机共享文件夹给VMWare中的Linux虚拟机 1、安装v" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="添加OpenStack Mitaka源 1 2 3 sudo apt-get install ubuntu-cloud-keyring sudo add-apt-repository cloud-archive:mitaka 相同方法，可以添加其它版本，如kilo 1 2 3 sudo add-apt-repository clound-archive:kilo sudo apt-get update" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/2016/09/16/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" />
+<link rel="canonical" href="https://chenxiaopang.github.io/2016/09/16/%E6%B7%BB%E5%8A%A0openstack%E6%BA%90/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="宿主机和不同类型Linux虚拟机共享文件夹" />
-<meta property="og:description" content="一、宿主机共享文件夹给VMWare中的Linux虚拟机 Windows/Linux宿主机共享文件夹给VMWare中的Linux虚拟机 1、安装v" />
+<meta property="og:title" content="添加openstack源" />
+<meta property="og:description" content="添加OpenStack Mitaka源 1 2 3 sudo apt-get install ubuntu-cloud-keyring sudo add-apt-repository cloud-archive:mitaka 相同方法，可以添加其它版本，如kilo 1 2 3 sudo add-apt-repository clound-archive:kilo sudo apt-get update" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxiaopang.github.io/2016/09/16/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2016/09/16/%E6%B7%BB%E5%8A%A0openstack%E6%BA%90/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2016-09-16T23:06:18&#43;08:00" />
 <meta property="article:modified_time" content="2016-09-16T23:06:18&#43;08:00" />
 
-<meta itemprop="name" content="宿主机和不同类型Linux虚拟机共享文件夹">
-<meta itemprop="description" content="一、宿主机共享文件夹给VMWare中的Linux虚拟机 Windows/Linux宿主机共享文件夹给VMWare中的Linux虚拟机 1、安装v"><meta itemprop="datePublished" content="2016-09-16T23:06:18&#43;08:00" />
+<meta itemprop="name" content="添加openstack源">
+<meta itemprop="description" content="添加OpenStack Mitaka源 1 2 3 sudo apt-get install ubuntu-cloud-keyring sudo add-apt-repository cloud-archive:mitaka 相同方法，可以添加其它版本，如kilo 1 2 3 sudo add-apt-repository clound-archive:kilo sudo apt-get update"><meta itemprop="datePublished" content="2016-09-16T23:06:18&#43;08:00" />
 <meta itemprop="dateModified" content="2016-09-16T23:06:18&#43;08:00" />
-<meta itemprop="wordCount" content="313">
-<meta itemprop="keywords" content="Linux,VM,share folder," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="宿主机和不同类型Linux虚拟机共享文件夹"/>
-<meta name="twitter:description" content="一、宿主机共享文件夹给VMWare中的Linux虚拟机 Windows/Linux宿主机共享文件夹给VMWare中的Linux虚拟机 1、安装v"/>
+<meta itemprop="wordCount" content="56">
+<meta itemprop="keywords" content="Linux,openstack," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="添加openstack源"/>
+<meta name="twitter:description" content="添加OpenStack Mitaka源 1 2 3 sudo apt-get install ubuntu-cloud-keyring sudo add-apt-repository cloud-archive:mitaka 相同方法，可以添加其它版本，如kilo 1 2 3 sudo add-apt-repository clound-archive:kilo sudo apt-get update"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,16 +129,16 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">宿主机和不同类型Linux虚拟机共享文件夹</h1>
+      <h1 class="post-title">添加openstack源</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2016-09-16 </span>
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/applications/"> Applications </a>
-            <a href="/categories/virtualization/"> Virtualization </a>
+            <a href="/categories/cloudcomputing/"> CloudComputing </a>
             </div>
-          <span class="more-meta"> 约 313 字 </span>
+          <span class="more-meta"> 约 56 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -147,46 +147,37 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#一宿主机共享文件夹给vmware中的linux虚拟机">一、宿主机共享文件夹给<code>VMWare</code>中的<code>Linux</code>虚拟机</a></li>
-            <li><a href="#二宿主机共享文件夹给virtualbox中的linux虚拟机">二、宿主机共享文件夹给<code>VirtualBox</code>中的<code>Linux</code>虚拟机</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
     <div class="post-content">
-      <h3 id="一宿主机共享文件夹给vmware中的linux虚拟机">一、宿主机共享文件夹给<code>VMWare</code>中的<code>Linux</code>虚拟机</h3>
-<p><code>Windows/Linux</code>宿主机共享文件夹给<code>VMWare</code>中的<code>Linux</code>虚拟机</p>
-<h4 id="1安装vmware-tools">1、安装<code>vmware tools</code></h4>
-<ol>
-<li>在<code>vmware</code>的<code>ubuntu</code>中安装<code>vmware tools</code></li>
-<li>在<code>vmware</code>中开启共享文件夹</li>
-<li>进入<code>ubuntu</code>，<code>/mnt/hgfs</code>即可访问宿主机的共享文件夹</li>
-</ol>
-<h4 id="2有的阉割版的vmware不带vmware-tools则采用下面的方法">2、有的阉割版的<code>vmware</code>不带<code>vmware tools</code>，则采用下面的方法</h4>
-<ol>
-<li>安装<code>open-vm-dkms</code></li>
-</ol>
-<p><code>$ sudo apt-get install open-vm-dkms</code></p>
-<ol start="2">
-<li>挂载</li>
-</ol>
-<p><code>$ sudo mount -t vmhgfs .host://mnt/hgfs</code></p>
-<h3 id="二宿主机共享文件夹给virtualbox中的linux虚拟机">二、宿主机共享文件夹给<code>VirtualBox</code>中的<code>Linux</code>虚拟机</h3>
-<p><code>Windows/Linux</code>宿主机共享文件夹给<code>VirtualBox</code>中的<code>Linux</code>虚拟机</p>
-<p>1、安装<code>virtualBox</code>增强功能</p>
-<p>2、挂载</p>
-<p><code>$ sudo mount -t vboxsf [-o OPTIONS] sharename mountpoint</code></p>
+      <p>添加<code>OpenStack Mitaka</code>源</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install ubuntu-cloud-keyring
 
+sudo add-apt-repository cloud-archive:mitaka
+</code></pre></td></tr></table>
+</div>
+</div><p>相同方法，可以添加其它版本，如<code>kilo</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo add-apt-repository clound-archive:kilo
+
+sudo apt-get update
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
@@ -207,17 +198,16 @@
 <footer class="post-footer">
       <div class="post-tags">
           <a href="/tags/linux/">Linux</a>
-          <a href="/tags/vm/">VM</a>
-          <a href="/tags/share-folder/">share folder</a>
+          <a href="/tags/openstack/">openstack</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2016/09/16/rhythmbox%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+        <a class="prev" href="/2016/09/16/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Rhythmbox音乐播放器常见问题</span>
+            <span class="prev-text nav-default">宿主机和不同类型Linux虚拟机共享文件夹</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2016/09/16/%E6%B7%BB%E5%8A%A0openstack%E6%BA%90/">
-            <span class="next-text nav-default">添加openstack源</span>
+        <a class="next" href="/2016/09/16/rsync%E7%9A%84%E7%94%A8%E6%B3%95/">
+            <span class="next-text nav-default">rsync的用法</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

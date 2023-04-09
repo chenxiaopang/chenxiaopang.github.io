@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>openstack on Panda的随笔</title>
+    <link>https://chenxiaopang.github.io/tags/openstack/</link>
+    <description>Recent content in openstack on Panda的随笔</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 16 Sep 2016 23:06:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/openstack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>添加openstack源</title>
+      <link>https://chenxiaopang.github.io/2016/09/16/%E6%B7%BB%E5%8A%A0openstack%E6%BA%90/</link>
+      <pubDate>Fri, 16 Sep 2016 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/09/16/%E6%B7%BB%E5%8A%A0openstack%E6%BA%90/</guid>
+      <description>添加OpenStack Mitaka源 1 2 3 sudo apt-get install ubuntu-cloud-keyring sudo add-apt-repository cloud-archive:mitaka 相同方法，可以添加其它版本，如kilo 1 2 3 sudo add-apt-repository clound-archive:kilo sudo apt-get update</description>
+    </item>
+    
+  </channel>
+</rss>

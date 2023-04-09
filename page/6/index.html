@@ -126,24 +126,25 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/09/16/linux%E4%B8%8B%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%B7%A5%E5%85%B7minicom%E7%9A%84%E7%94%A8%E6%B3%95/">Linux下串口通信工具minicom的用法</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2016/09/16/%E6%B7%BB%E5%8A%A0openstack%E6%BA%90/">添加openstack源</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2016-09-16 </span>
       <div class="post-category">
           <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/tools/"> Tools </a>
+          <a href="/categories/applications/"> Applications </a>
+          <a href="/categories/cloudcomputing/"> CloudComputing </a>
           </div>
-        <span class="more-meta"> 约 148 字 </span>
+        <span class="more-meta"> 约 56 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      一、查看串口设备 将USB转串口线插入交换机Console口后，执行命令 $ ll /dev/ttyUSB* 二、连接串口设备 $ sudo minicom -D /dev/ttyUSB0 三、设置串口参数 在minicom中按C
+      添加OpenStack Mitaka源 1 2 3 sudo apt-get install ubuntu-cloud-keyring sudo add-apt-repository cloud-archive:mitaka 相同方法，可以添加其它版本，如kilo 1 2 3 sudo add-apt-repository clound-archive:kilo sudo apt-get update
     </div>
     <div class="read-more">
-      <a href="/2016/09/16/linux%E4%B8%8B%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%B7%A5%E5%85%B7minicom%E7%9A%84%E7%94%A8%E6%B3%95/" class="read-more-link">阅读更多</a>
+      <a href="/2016/09/16/%E6%B7%BB%E5%8A%A0openstack%E6%BA%90/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -168,6 +169,30 @@
     </div>
     <div class="read-more">
       <a href="/2016/09/16/rsync%E7%9A%84%E7%94%A8%E6%B3%95/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/09/16/linux%E4%B8%8B%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%B7%A5%E5%85%B7minicom%E7%9A%84%E7%94%A8%E6%B3%95/">Linux下串口通信工具minicom的用法</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-09-16 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          <a href="/categories/tools/"> Tools </a>
+          </div>
+        <span class="more-meta"> 约 148 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      一、查看串口设备 将USB转串口线插入交换机Console口后，执行命令 $ ll /dev/ttyUSB* 二、连接串口设备 $ sudo minicom -D /dev/ttyUSB0 三、设置串口参数 在minicom中按C
+    </div>
+    <div class="read-more">
+      <a href="/2016/09/16/linux%E4%B8%8B%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%B7%A5%E5%85%B7minicom%E7%9A%84%E7%94%A8%E6%B3%95/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -216,30 +241,6 @@
     </div>
     <div class="read-more">
       <a href="/2016/04/04/linux%E4%B8%8A%E7%9A%84%E9%98%B2%E7%97%85%E6%AF%92%E8%BD%AF%E4%BB%B6clamav/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/04/01/dd%E7%9A%84%E7%94%A8%E6%B3%95/">dd的用法</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-04-01 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/bash/"> Bash </a>
-          </div>
-        <span class="more-meta"> 约 128 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      dd工具用来转换和复制文件。 1、 生成文件 生成一个空的，大小为1G的文件 1 # dd if=/dev/zero of=winxp.img bs=1k seek=1024k count=1 2、 读写硬盘 用0填充硬盘 1 2 3 # dd if=/dev/zero of=junk # sync # rm junk 3、 读
-    </div>
-    <div class="read-more">
-      <a href="/2016/04/01/dd%E7%9A%84%E7%94%A8%E6%B3%95/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
