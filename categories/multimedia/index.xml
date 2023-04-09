@@ -6,7 +6,16 @@
     <description>Recent content in Multimedia on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 30 Aug 2015 23:06:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/categories/multimedia/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Sep 2016 23:06:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/categories/multimedia/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rhythmbox音乐播放器常见问题</title>
+      <link>https://chenxiaopang.github.io/2016/09/16/rhythmbox%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 16 Sep 2016 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/09/16/rhythmbox%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <description>一、歌名中文乱码 对于所有用gstreamer做后端的播放器，如Rhythmbox， 设置如下的环境变量后即可正确读取mp3中GBK编码的id3</description>
+    </item>
+    
     <item>
       <title>Ubuntu下录制音频</title>
       <link>https://chenxiaopang.github.io/2015/08/30/ubuntu%E4%B8%8B%E5%BD%95%E5%88%B6%E9%9F%B3%E9%A2%91/</link>

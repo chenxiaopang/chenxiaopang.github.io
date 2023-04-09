@@ -215,6 +215,15 @@
     </item>
     
     <item>
+      <title>Rhythmbox音乐播放器常见问题</title>
+      <link>https://chenxiaopang.github.io/2016/09/16/rhythmbox%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 16 Sep 2016 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/09/16/rhythmbox%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <description>一、歌名中文乱码 对于所有用gstreamer做后端的播放器，如Rhythmbox， 设置如下的环境变量后即可正确读取mp3中GBK编码的id3</description>
+    </item>
+    
+    <item>
       <title>宿主机和不同类型Linux虚拟机共享文件夹</title>
       <link>https://chenxiaopang.github.io/2016/09/16/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
       <pubDate>Fri, 16 Sep 2016 23:06:18 +0800</pubDate>

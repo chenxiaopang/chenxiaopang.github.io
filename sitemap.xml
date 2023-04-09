@@ -485,6 +485,27 @@
   </url>
   
   <url>
+    <loc>https://chenxiaopang.github.io/categories/multimedia/</loc>
+    <lastmod>2016-09-16T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/rhythmbox/</loc>
+    <lastmod>2016-09-16T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2016/09/16/rhythmbox%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2016-09-16T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://chenxiaopang.github.io/tags/share-folder/</loc>
     <lastmod>2016-09-16T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -879,13 +900,6 @@
   <url>
     <loc>https://chenxiaopang.github.io/tags/zip/</loc>
     <lastmod>2015-09-13T23:06:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/categories/multimedia/</loc>
-    <lastmod>2015-08-30T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
