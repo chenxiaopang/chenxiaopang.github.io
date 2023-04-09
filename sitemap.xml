@@ -520,7 +520,28 @@
   </url>
   
   <url>
+    <loc>https://chenxiaopang.github.io/tags/rsync/</loc>
+    <lastmod>2016-09-16T16:01:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2016/09/16/rsync%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
+    <lastmod>2016-09-16T16:01:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://chenxiaopang.github.io/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</loc>
+    <lastmod>2016-09-16T16:01:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/%E5%A4%87%E4%BB%BD/</loc>
     <lastmod>2016-09-16T16:01:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -542,27 +563,6 @@
   
   <url>
     <loc>https://chenxiaopang.github.io/2016/04/10/lftp%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
-    <lastmod>2016-04-10T16:01:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/rsync/</loc>
-    <lastmod>2016-04-10T16:01:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/2016/04/10/rsync%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
-    <lastmod>2016-04-10T16:01:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/%E5%A4%87%E4%BB%BD/</loc>
     <lastmod>2016-04-10T16:01:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
