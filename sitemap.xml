@@ -485,6 +485,34 @@
   </url>
   
   <url>
+    <loc>https://chenxiaopang.github.io/categories/database/</loc>
+    <lastmod>2016-10-06T22:50:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/oracle/</loc>
+    <lastmod>2016-10-06T22:50:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2016/10/06/orale-exp-imp%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5%E5%B7%A5%E5%85%B7%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</loc>
+    <lastmod>2016-10-06T22:50:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2016-10-06T22:50:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://chenxiaopang.github.io/categories/cloudcomputing/</loc>
     <lastmod>2016-09-16T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -681,20 +709,6 @@
   </url>
   
   <url>
-    <loc>https://chenxiaopang.github.io/categories/database/</loc>
-    <lastmod>2016-03-12T15:50:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/oracle/</loc>
-    <lastmod>2016-03-12T15:50:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://chenxiaopang.github.io/categories/windows/</loc>
     <lastmod>2016-03-12T15:50:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -703,13 +717,6 @@
   
   <url>
     <loc>https://chenxiaopang.github.io/2016/03/12/windows7%E5%AE%89%E8%A3%85oracle10g%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2016-03-12T15:50:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2016-03-12T15:50:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

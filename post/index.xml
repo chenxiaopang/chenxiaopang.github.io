@@ -215,6 +215,15 @@
     </item>
     
     <item>
+      <title>Orale exp-imp数据导出导入工具基本用法</title>
+      <link>https://chenxiaopang.github.io/2016/10/06/orale-exp-imp%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5%E5%B7%A5%E5%85%B7%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Thu, 06 Oct 2016 22:50:08 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/10/06/orale-exp-imp%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5%E5%B7%A5%E5%85%B7%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</guid>
+      <description>一、获取帮助 $ exp/imp help=y 二、数据导出 1、数据库完全导出 将数据库完全导出，设置full选项 1 $ exp system/manager@orcl file=d:\db.dmp full=y 2、数据库结构导出 导出数据库结构，不导出数据，</description>
+    </item>
+    
+    <item>
       <title>Rhythmbox音乐播放器常见问题</title>
       <link>https://chenxiaopang.github.io/2016/09/16/rhythmbox%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
       <pubDate>Fri, 16 Sep 2016 23:06:18 +0800</pubDate>

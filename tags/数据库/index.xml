@@ -6,7 +6,16 @@
     <description>Recent content in 数据库 on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 12 Mar 2016 15:50:08 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Oct 2016 22:50:08 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Orale exp-imp数据导出导入工具基本用法</title>
+      <link>https://chenxiaopang.github.io/2016/10/06/orale-exp-imp%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5%E5%B7%A5%E5%85%B7%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Thu, 06 Oct 2016 22:50:08 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/10/06/orale-exp-imp%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5%E5%B7%A5%E5%85%B7%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</guid>
+      <description>一、获取帮助 $ exp/imp help=y 二、数据导出 1、数据库完全导出 将数据库完全导出，设置full选项 1 $ exp system/manager@orcl file=d:\db.dmp full=y 2、数据库结构导出 导出数据库结构，不导出数据，</description>
+    </item>
+    
     <item>
       <title>Windows 7安装Oracle 10g的方法</title>
       <link>https://chenxiaopang.github.io/2016/03/12/windows7%E5%AE%89%E8%A3%85oracle10g%E6%96%B9%E6%B3%95/</link>
