@@ -269,6 +269,15 @@
     </item>
     
     <item>
+      <title>Java类的装载过程和静态代码块</title>
+      <link>https://chenxiaopang.github.io/2016/09/16/java%E7%B1%BB%E7%9A%84%E8%A3%85%E8%BD%BD%E8%BF%87%E7%A8%8B%E5%92%8C%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97/</link>
+      <pubDate>Fri, 16 Sep 2016 15:33:54 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/09/16/java%E7%B1%BB%E7%9A%84%E8%A3%85%E8%BD%BD%E8%BF%87%E7%A8%8B%E5%92%8C%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97/</guid>
+      <description>在Java中，类装载器把一个类装入Java虚拟机中，要经过三个步骤来完成：装载、连接和初始化，其中连接又可以分成校验、准备和解析三步，除了解</description>
+    </item>
+    
+    <item>
       <title>lftp常用用法</title>
       <link>https://chenxiaopang.github.io/2016/04/10/lftp%E7%9A%84%E7%94%A8%E6%B3%95/</link>
       <pubDate>Sun, 10 Apr 2016 16:01:26 +0800</pubDate>
