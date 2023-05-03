@@ -215,6 +215,15 @@
     </item>
     
     <item>
+      <title>Oracle数据库和客户端字符集</title>
+      <link>https://chenxiaopang.github.io/2016/10/06/oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%97%E7%AC%A6%E9%9B%86/</link>
+      <pubDate>Thu, 06 Oct 2016 23:50:08 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/10/06/oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%97%E7%AC%A6%E9%9B%86/</guid>
+      <description>一、查看数据库字符集信息 SQL&amp;gt; select * from nls_database_parameters; 其中，NLS_CHARACTERSET是当前数据库的字符集。 二、客户端字符集 客户端字符集的参数为NLS_L</description>
+    </item>
+    
+    <item>
       <title>Orale exp-imp数据导出导入工具基本用法</title>
       <link>https://chenxiaopang.github.io/2016/10/06/orale-exp-imp%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5%E5%B7%A5%E5%85%B7%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</link>
       <pubDate>Thu, 06 Oct 2016 22:50:08 +0800</pubDate>

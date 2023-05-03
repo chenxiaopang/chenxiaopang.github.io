@@ -486,27 +486,34 @@
   
   <url>
     <loc>https://chenxiaopang.github.io/categories/database/</loc>
-    <lastmod>2016-10-06T22:50:08+08:00</lastmod>
+    <lastmod>2016-10-06T23:50:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chenxiaopang.github.io/tags/oracle/</loc>
-    <lastmod>2016-10-06T22:50:08+08:00</lastmod>
+    <lastmod>2016-10-06T23:50:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://chenxiaopang.github.io/2016/10/06/orale-exp-imp%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5%E5%B7%A5%E5%85%B7%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</loc>
-    <lastmod>2016-10-06T22:50:08+08:00</lastmod>
+    <loc>https://chenxiaopang.github.io/2016/10/06/oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%97%E7%AC%A6%E9%9B%86/</loc>
+    <lastmod>2016-10-06T23:50:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chenxiaopang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2016-10-06T23:50:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2016/10/06/orale-exp-imp%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5%E5%B7%A5%E5%85%B7%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</loc>
     <lastmod>2016-10-06T22:50:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
