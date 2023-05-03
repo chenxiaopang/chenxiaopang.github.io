@@ -486,7 +486,28 @@
   
   <url>
     <loc>https://chenxiaopang.github.io/categories/database/</loc>
-    <lastmod>2016-10-06T23:50:08+08:00</lastmod>
+    <lastmod>2016-11-13T05:50:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/mysql/</loc>
+    <lastmod>2016-11-13T05:50:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2016/11/13/mysql%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E8%AE%BE%E7%BD%AE/</loc>
+    <lastmod>2016-11-13T05:50:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2016-11-13T05:50:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -500,13 +521,6 @@
   
   <url>
     <loc>https://chenxiaopang.github.io/2016/10/06/oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%97%E7%AC%A6%E9%9B%86/</loc>
-    <lastmod>2016-10-06T23:50:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2016-10-06T23:50:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1110,13 +1124,6 @@
   <url>
     <loc>https://chenxiaopang.github.io/2015/06/21/bash%E5%8F%98%E9%87%8F%E6%89%A9%E5%B1%95%E4%BF%AE%E6%94%B9%E7%AC%A6/</loc>
     <lastmod>2015-06-21T16:18:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/mysql/</loc>
-    <lastmod>2015-06-20T15:50:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

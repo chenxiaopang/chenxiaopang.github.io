@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Rhythmbox音乐播放器常见问题">
 <meta itemprop="description" content="一、歌名中文乱码 对于所有用gstreamer做后端的播放器，如Rhythmbox， 设置如下的环境变量后即可正确读取mp3中GBK编码的id3"><meta itemprop="datePublished" content="2016-09-16T23:06:18&#43;08:00" />
 <meta itemprop="dateModified" content="2016-09-16T23:06:18&#43;08:00" />
-<meta itemprop="wordCount" content="158">
+<meta itemprop="wordCount" content="314">
 <meta itemprop="keywords" content="Linux,rhythmbox," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rhythmbox音乐播放器常见问题"/>
 <meta name="twitter:description" content="一、歌名中文乱码 对于所有用gstreamer做后端的播放器，如Rhythmbox， 设置如下的环境变量后即可正确读取mp3中GBK编码的id3"/>
@@ -138,7 +138,7 @@
             <a href="/categories/applications/"> Applications </a>
             <a href="/categories/multimedia/"> Multimedia </a>
             </div>
-          <span class="more-meta"> 约 158 字 </span>
+          <span class="more-meta"> 约 314 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -155,6 +155,7 @@
           <ul>
             <li><a href="#一歌名中文乱码">一、歌名中文乱码</a></li>
             <li><a href="#二设置循环播放">二、设置循环播放</a></li>
+            <li><a href="#三曲目和播放列表信息备份">三、曲目和播放列表信息备份</a></li>
           </ul>
         </li>
       </ul>
@@ -181,6 +182,12 @@
 <p>将喜欢的要循环播放的歌曲加入新建的播放列表</p>
 <p>2、选中播放列表，点击循环播放按钮或点击菜单<code>“控制-&gt;重复”</code></p>
 <p>3、点击播放按钮</p>
+<h3 id="三曲目和播放列表信息备份">三、曲目和播放列表信息备份</h3>
+<p>Rhythmbox音乐播放器只能保存单个播放列表，如果在rhythmbox下建了很多播放列表（比如按歌手名分类），每个播放列表下包含一些歌曲，为了避免重装系统后重新建这些播放列表，可以备份下面的文件。重装系统通后，将备份的文件还原到对应的位置即可。</p>
+<p>1、曲目信息</p>
+<p><code>~/.local/share/rhythmbox/rhythmdb.xml</code></p>
+<p>2、用户新建的播放列表</p>
+<p><code>~/.local/share/rhythmbox/playlists.xml</code></p>
 
     </div>
 

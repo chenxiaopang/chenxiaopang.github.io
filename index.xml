@@ -224,6 +224,15 @@
     </item>
     
     <item>
+      <title>mysql字符编码设置</title>
+      <link>https://chenxiaopang.github.io/2016/11/13/mysql%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Sun, 13 Nov 2016 05:50:08 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2016/11/13/mysql%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E8%AE%BE%E7%BD%AE/</guid>
+      <description>一、显示当前编码信息 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 mysql&amp;gt;showvariableslike&amp;#39;%character%&amp;#39;+--------------------------+----------------------------+|Variable_name|Value|+--------------------------+----------------------------+|character_set_client|utf8||character_set_connection|utf8||character_set_database|latin1||character_set_filesystem|binary||character_set_results|utf8||character_set_server|latin1||character_set_system|utf8||character_sets_dir|/usr/share/mysql/charsets/|+--------------------------+----------------------------+8rowsinset(0.01sec) 二、设置客户端编码 在/etc/mysql/my.cnf文件中的[mysql]或[clie</description>
+    </item>
+    
+    <item>
       <title>Oracle数据库和客户端字符集</title>
       <link>https://chenxiaopang.github.io/2016/10/06/oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%97%E7%AC%A6%E9%9B%86/</link>
       <pubDate>Thu, 06 Oct 2016 23:50:08 +0800</pubDate>
