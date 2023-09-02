@@ -30,13 +30,6 @@
   </url>
   
   <url>
-    <loc>https://chenxiaopang.github.io/2023/09/02/%E6%AE%87/</loc>
-    <lastmod>2023-09-02T12:10:10+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://chenxiaopang.github.io/tags/</loc>
     <lastmod>2023-09-02T12:10:10+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -52,6 +45,13 @@
   
   <url>
     <loc>https://chenxiaopang.github.io/tags/%E6%AE%87/</loc>
+    <lastmod>2023-09-02T12:10:10+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2023/09/02/%E6%AE%87/</loc>
     <lastmod>2023-09-02T12:10:10+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
