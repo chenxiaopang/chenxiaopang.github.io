@@ -961,5 +961,14 @@
       <description>hdparm是Linux下一款能够获取和设置SATA/IDE设备参数的工具。 1、获取硬盘参数 $ sudo hdparm -i /dev/sda $ sudo hdparam -i /dev/sda | grep SerialNo //获取硬盘序列号 2、</description>
     </item>
     
+    <item>
+      <title>殇</title>
+      <link>https://chenxiaopang.github.io/1/01/01/%E6%AE%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/1/01/01/%E6%AE%87/</guid>
+      <description>--</description>
+    </item>
+    
   </channel>
 </rss>
