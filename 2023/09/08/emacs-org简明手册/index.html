@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Emacs Org简明手册 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="一、简介 Org 是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 二、文档结构 2.1 脚注 软件服务室FTP[fn" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2023/09/08/emacs-org%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Emacs Org简明手册" />
+<meta property="og:description" content="一、简介 Org 是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 二、文档结构 2.1 脚注 软件服务室FTP[fn" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2023/09/08/emacs-org%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-09-08T23:06:18&#43;08:00" />
+<meta property="article:modified_time" content="2023-09-08T23:06:18&#43;08:00" />
+
+<meta itemprop="name" content="Emacs Org简明手册">
+<meta itemprop="description" content="一、简介 Org 是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 二、文档结构 2.1 脚注 软件服务室FTP[fn"><meta itemprop="datePublished" content="2023-09-08T23:06:18&#43;08:00" />
+<meta itemprop="dateModified" content="2023-09-08T23:06:18&#43;08:00" />
+<meta itemprop="wordCount" content="9614">
+<meta itemprop="keywords" content="Linux,emacs,org," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Emacs Org简明手册"/>
+<meta name="twitter:description" content="一、简介 Org 是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 二、文档结构 2.1 脚注 软件服务室FTP[fn"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Emacs Org简明手册</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-09-08 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/applications/"> Applications </a>
+            <a href="/categories/emacs/"> Emacs </a>
+            </div>
+          <span class="more-meta"> 约 9614 字 </span>
+          <span class="more-meta"> 预计阅读 20 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一简介">一、简介</a></li>
+        <li><a href="#二文档结构">二、文档结构</a>
+          <ul>
+            <li><a href="#21-脚注">2.1 脚注</a></li>
+          </ul>
+        </li>
+        <li><a href="#三表格">三、表格</a></li>
+        <li><a href="#四超链接">四、超链接</a>
+          <ul>
+            <li><a href="#41链接格式">4.1链接格式</a></li>
+            <li><a href="#42内部链接">4.2内部链接</a></li>
+            <li><a href="#43外部链接">4.3外部链接</a></li>
+            <li><a href="#44使用链接">4.4使用链接</a></li>
+            <li><a href="#45目标链接">4.5目标链接</a></li>
+          </ul>
+        </li>
+        <li><a href="#五代办事项">五、代办事项</a>
+          <ul>
+            <li><a href="#51使用todo状态">5.1使用TODO状态</a></li>
+            <li><a href="#52-自定义定义不同的todo状态">5.2 自定义定义不同的TODO状态</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#可在emacs配置文件中用todo关键字定义不同的状态全局有效">可在.emacs配置文件中用TODO关键字定义不同的状态，全局有效</a></li>
+    <li><a href="#竖直线将todo关键字还需要进一步的动作和done状态不需要进一步的动作分隔开">竖直线将TODO关键字（还需要进一步的动作）和DONE状态（不需要进一步的动作）分隔开</a></li>
+    <li><a href="#例子">例子：</a></li>
+    <li><a href="#setq-org-todo-keywords">(setq org-todo-keywords</a></li>
+    <li><a href="#sequence-todot--doned">&lsquo;((sequence &ldquo;TODO(t)&rdquo; &ldquo;|&rdquo; &ldquo;DONE(d)&quot;)</a></li>
+    <li><a href="#sequence-reportr-bugb-knowncausek---fixedf">(sequence &ldquo;REPORT(r)&rdquo; &ldquo;BUG(b)&rdquo; &ldquo;KNOWNCAUSE(k)&rdquo; &ldquo;|&rdquo; &quot; FIXED(f)&quot;)</a></li>
+    <li><a href="#sequence--canceledc">(sequence &ldquo;|&rdquo; &ldquo;CANCELED(c)&quot;)))</a></li>
+    <li><a href="#也可在一个org文件中定义只在文件中有效的todo状态">也可在一个org文件中定义只在文件中有效的TODO状态</a></li>
+    <li><a href="#例子-1">例子：</a></li>
+    <li><a href="#当改变这些行中的一行后光标停留在改变行上用c-c-c-c让改变生效">当改变这些行中的一行后，光标停留在改变行上，用C-c C-c让改变生效</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#53-进度日志">5.3 进度日志</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#对于完成的项目最基本的日志功能是跟踪一个特定项目的完成emacs的配置文件中可加入下面的配置">对于完成的项目，最基本的日志功能是跟踪一个特定项目的完成。Emacs的配置文件中可加入下面的配置：</a></li>
+    <li><a href="#setq-org-log-done-time">(setq org-log-done &lsquo;time)</a></li>
+    <li><a href="#当你将一个项目从一个todo未完成状态改变为一个完成状态时标题下面就会插入一行closedtimestamp">当你将一个项目从一个TODO（未完成）状态改变为一个完成状态时，标题下面就会插入一行“CLOSED:[timestamp]”</a></li>
+    <li><a href="#setq-org-log-done-note">(setq org-log-done &lsquo;note)</a></li>
+    <li><a href="#当你将一个项目从一个todo未完成状态改变为一个完成状态时会提示你输入一个记录note并将它保存在标题为closing-note项目之下">当你将一个项目从一个TODO（未完成）状态改变为一个完成状态时，会提示你输入一个记录（note），并将它保存在标题为“Closing Note”项目之下。</a></li>
+    <li><a href="#跟踪todo状态变换">跟踪TODO状态变换</a></li>
+    <li><a href="#对于状态记录org-可以实现基于每个状态关键字的设置实现方法是在每个状态关键字后的括号中指定记录时间戳或作一个记录-这个语法适用于org-todo-keywords">对于状态记录,Org 可以实现基于每个状态关键字的设置。实现方法是在每个状态关键字后的括号中指定“!”(记录时间戳)或“@”(作一个记录), 这个语法适用于org-todo-keywords。</a></li>
+    <li><a href="#例如下面的设置实现当一个项目设为-done-时会记录时间戳当状态变为-wait-或-canceled-时会作一个记录">例如：下面的设置实现，当一个项目设为 DONE 时,会记录时间戳,当状态变为 WAIT 或 CANCELED 时,会作一个记录。</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#54-优先级">5.4 优先级</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#当有大量的todo项时就有必要设置优先级">当有大量的TODO项时，就有必要设置优先级。</a></li>
+    <li><a href="#org模式支持三个优先级别ab和ca是最高级别如不指定b是默认的优先级只在议程中有用">Org模式支持三个优先级别:’A‘、’B‘和’C‘。’A‘是最高级别,如不指定,’B‘是默认的。优先级只在议程中有用。</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#55-任务细分">5.5 任务细分</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#大的任务todo项下细分小的任务todo项">大的任务（TODO项）下细分小的任务(TODO项)</a></li>
+    <li><a href="#可以在标题的任何地方插入或者当每个子任务的状态变化时或者当你在标记上按-c-c-c-c时这些标记状态也会随之更新">可以在标题的任何地方插入‘[/]’或者‘[%]’。当每个子任务的状态变化时,或者当你在标记上按 C-c C-c时,这些标记状态也会随之更新。</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#56-复选框">5.6 复选框</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#当纯文本中的项以-开头时就会变成一个复选框可手工输入添加也可通过快捷键的方式添加">当纯文本中的项以‘[ ]’开头时,就会变成一个复选框。可手工输入添加，也可通过快捷键的方式添加。</a></li>
+    <li><a href="#复选框不会包含在全局todo-列表中所以它们很适合地将一个任务划分成几个简单的步骤">复选框不会包含在全局TODO 列表中，所以它们很适合地将一个任务划分成几个简单的步骤。</a></li>
+    <li><a href="#见例1">见例1</a>
+      <ul>
+        <li><a href="#六标签">六、标签</a></li>
+      </ul>
+    </li>
+    <li><a href="#对以号开头的标题headline进行设置">对以*号开头的标题（headline）进行设置</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#61标签继承">6.1标签继承</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#具有继承属性">具有继承属性。</a></li>
+    <li><a href="#可以设置让所有标题都继承的属性采用下面的方法">可以设置让所有标题都继承的属性，采用下面的方法</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#62设置标签">6.2设置标签</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#在emacs中设置全局标签可在不同的文件中使用采用下面的设置方法">在.emacs中设置全局标签，可在不同的文件中使用，采用下面的设置方法</a></li>
+    <li><a href="#setq-org-tag-alist-大数据--b-云计算--c-软件开发--p">(setq org-tag-alist &lsquo;((&ldquo;大数据&rdquo; . ?b) (&ldquo;云计算&rdquo; . ?c) (&ldquo;软件开发&rdquo; . ?p)))</a></li>
+    <li><a href="#只在当前文件中使用的标签采用下面的方法设置注意将会覆盖emacs中的全局设置">只在当前文件中使用的标签，采用下面的方法设置。注意：将会覆盖.emacs中的全局设置</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#63标签查找">6.3标签查找</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#按了下面的快捷键后会提示输入字符串这些字符串支持基本的布尔逻辑">按了下面的快捷键后，会提示输入字符串，这些字符串支持基本的布尔逻辑。</a></li>
+    <li><a href="#例如像-bossurgent-project1是搜索所有的包含标签boss和urgent但不含project1的项">例如，像 “+boss+urgent-project1”，是搜索所有的包含标签“boss”和“urgent”但不含“project1”的项；</a></li>
+    <li><a href="#像-kathysally搜索标签包含kathy或者sally和项">像 “Kathy|Sally”，搜索标签包含“Kathy”或者“Sally”和项。</a></li>
+    <li><a href="#搜索字符串的语法很丰富支持查找todo关键字条目级别和属性更详细的介绍和例子见第1033节">搜索字符串的语法很丰富，支持查找TODO关键字、条目级别和属性。更详细的介绍和例子，见第10.3.3节。</a>
+      <ul>
+        <li><a href="#七属性">七、属性</a></li>
+      </ul>
+    </li>
+    <li><a href="#属性是一些与条目entry关联的键值对">属性是一些与条目（entry）关联的键值对。</a></li>
+    <li><a href="#它们位于一个名为-properties-的特殊抽屉中每个属性都单独一行键在前被冒号包围值在后设置完成后以end结束">它们位于一个名为 PROPERTIES 的特殊抽屉中。每个属性都单独一行,键在前(被冒号包围),值在后。设置完成后，以END结束。</a></li>
+    <li><a href="#具有继承属性上级条目设置的属性会应用于所有下级条目">具有继承属性，上级条目设置的属性会应用于所有下级条目。</a></li>
+    <li><a href="#可以在某一级设置某个属性设置取值范围那么在下一级设置该属性的取值只能在上级设置的范围内进行取值防止输入错误">可以在某一级设置某个属性设置取值范围，那么在下一级设置该属性的取值只能在上级设置的范围内进行取值，防止输入错误。</a></li>
+    <li><a href="#要基于选择的属性创建稀疏树或者特殊列表跟标签搜索的命令相同见第63节">要基于选择的属性创建稀疏树或者特殊列表，跟标签搜索的命令相同（见第6.3节）</a></li>
+    <li><a href="#-goldberg-variations">*** Goldberg Variations</a></li>
+    <li><a href="#properties">:PROPERTIES:</a></li>
+    <li><a href="#titlegoldberg-variations">:Title:	Goldberg Variations</a></li>
+    <li><a href="#composer-js-bach">:Composer: J.S. Bach</a></li>
+    <li><a href="#publisher-deutsche-grammophon">:Publisher: Deutsche Grammophon</a></li>
+    <li><a href="#ndisks1">:NDisks:	1</a></li>
+    <li><a href="#end">:END:</a></li>
+    <li><a href="#也可以在全局设置org-global-properties或者在文件级别设置">也可以在全局设置org-global-properties，或者在文件级别设置：</a>
+      <ul>
+        <li><a href="#八日期和时间">八、日期和时间</a>
+          <ul>
+            <li><a href="#81时间戳">8.1时间戳</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#时间戳是一个具有特定格式的日期可能带有时间和时间段说明可以出现在树条目的标题和正文的任何地方">时间戳是一个具有特定格式的日期（可能带有时间和时间段）说明，可以出现在树条目的标题和正文的任何地方。</a></li>
+    <li><a href="#它能使条目只在特定的日期才出现在议程列表中">它能使条目只在特定的日期才出现在议程列表中。</a></li>
+    <li><a href="#有5类">有5类：</a></li>
+    <li><a href="#普通时间戳事件约会">普通时间戳；事件；约会</a></li>
+    <li><a href="#具有重复时间间隔的时间戳">具有重复时间间隔的时间戳</a></li>
+    <li><a href="#日记样式的sexp条目">日记样式的sexp条目</a></li>
+    <li><a href="#时间日期段">时间/日期段</a></li>
+    <li><a href="#非激活的时间戳">非激活的时间戳</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#82创建时间戳">8.2创建时间戳</a></li>
+            <li><a href="#83-截止期限和计划安排">8.3 截止期限和计划安排</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#对标题headline而言">对标题(headline)而言</a></li>
+    <li><a href="#截止期限任务应该完成的期限大多是todo项也可不是">截止期限：任务应该完成的期限，大多是TODO项，也可不是</a></li>
+    <li><a href="#在截止时期任务会列在议程中">在截止时期，任务会列在议程中。</a></li>
+    <li><a href="#org-deadline-warning-days设置该变量今天的议程会在设置的天数前对即将即将到期以及已经过期的任务给出提醒直到任务被标记为done">org-deadline-warning-days：设置该变量，今天的议程会在设置的天数前对即将即将到期以及已经过期的任务给出提醒，直到任务被标记为DONE。</a></li>
+    <li><a href="#日常安排你计划在给定的那个日期开始进行某些任务">日常安排：你计划在给定的那个日期开始进行某些任务</a></li>
+    <li><a href="#在计划的时期标题会列在当天的议程中对于已经过期的计划将会列在当天的日程中直到被标记为done也就是说任务会自动推迟日期直到它被完成">在计划的时期，标题会列在当天的议程中。对于已经过期的计划将会列在当天的日程中，直到被标记为DONE。也就是说，任务会自动推迟日期直到它被完成。</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#84-记录工作时间">8.4 记录工作时间</a></li>
+          </ul>
+        </li>
+        <li><a href="#九捕获-转发-存档">九、捕获-转发-存档</a></li>
+      </ul>
+    </li>
+    <li><a href="#捕获新的灵感或者任务">捕获新的灵感或者任务</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#91捕获">9.1捕获</a></li>
+            <li><a href="#92-转送笔记">9.2 转送笔记</a></li>
+          </ul>
+        </li>
+        <li><a href="#十议程视图">十、议程视图</a>
+          <ul>
+            <li><a href="#101-议程文件">10.1 议程文件</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#在emacs中设置org-agenda-files变量">在.emacs中设置org-agenda-files变量</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#102-议程调度器dispatcher">10.2 议程调度器(dispatcher)</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#视图是通过议程调度器创建的它有一个全局快捷键-c-c-a然后再输入另外一个字母执行对应的命令">视图是通过议程调度器创建的，它有一个全局快捷键 C-c a，然后再输入另外一个字母执行对应的命令。</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#103-内建议程视图">10.3 内建议程视图</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#全局todo列表将所有未完成的todo项格式化并集中到一处">全局TODO列表将所有未完成的TODO项格式化并集中到一处。</a></li>
+    <li><a href="#todo项的远程编辑使得我们只用按一下键就可以改变todo项的状态">TODO项的远程编辑使得我们只用按一下键就可以改变TODO项的状态。</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#如果议程文件中的标题带有标签或者带有属性就可以基于这些元数据筛选标题到议程缓冲区中">如果议程文件中的标题带有标签或者带有属性，就可以基于这些元数据筛选标题到议程缓冲区中。</a></li>
+    <li><a href="#匹配语法">匹配语法</a></li>
+    <li><a href="#搜索字符串可以使用作与运算作或运算的约束力比的强">搜索字符串可以使用‘&amp;’作与运算，‘|’作或运算。‘&amp;’的约束力比‘|’的强。</a></li>
+    <li><a href="#用以搜索的元素可以是标签匹配标签的正则表达式或者像property-operator-value这样带有比较操作符的用来比较属性值的表达式">用以搜索的元素可以是标签、匹配标签的正则表达式、或者像PROPERTY OPERATOR VALUE这样带有比较操作符的用来比较属性值的表达式。</a></li>
+    <li><a href="#例子-2">例子：</a></li>
+    <li><a href="#work-boss--------------选择标有work但不标有boss的标题">+work-boss             : 选择标有:work:，但不标有:boss:的标题</a></li>
+    <li><a href="#work--laptop-----------选择标有work或则的标题">work | laptop          : 选择标有:work:或则💻的标题</a></li>
+    <li><a href="#work--laptopnight-----和前面相同但要求标有的行也要标有night">work | laptop+night    : 和前面相同，但要求标有💻的行也要标有:night:</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#时间轴用时间排序视图概述单个文件中的所有带有时间戳的条目">时间轴用时间排序视图概述单个文件中的所有带有时间戳的条目。</a></li>
+    <li><a href="#这个命令的目的是用来给出一个工程中事件的鸟瞰图">这个命令的目的是用来给出一个工程中事件的鸟瞰图。</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#这个议程视图用来对议程文件中的条目进行普通的文本查找对于查找笔记很有用">这个议程视图用来对议程文件中的条目进行普通的文本查找。对于查找笔记很有用。</a></li>
+    <li><a href="#注意除了议程文件这条命令也会搜索org-agenda-text-search-extra-files中列出的文件">注意：除了议程文件，这条命令也会搜索org-agenda-text-search-extra-files中列出的文件。</a></li>
+    <li><a href="#查找字符串computer-wifi--ethernet-811bg搜索包含关键字computer和wifi但不含ethernet并且不被正则表达式811bg排除811b和811g匹配的条目">查找字符串“+computer +wifi -ethernet-{8.11[bg]}”：搜索包含关键字computer和wifi但不含ethernet，并且不被正则表达式8.11[bg]（排除8.11b和8.11g）匹配的条目。</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#104-议程缓冲区命令">10.4 议程缓冲区命令</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#议程缓冲区中的条目链接到了它们的源org或者日记文件">议程缓冲区中的条目链接到了它们的源Org或者日记文件。</a></li>
+    <li><a href="#有一些命令可以用来显示和跳转到条目的源位置也可以从视图缓冲区中远程编辑源文件">有一些命令可以用来显示和跳转到条目的源位置，也可以从视图缓冲区中”远程“编辑源文件。</a></li>
+    <li><a href="#下面只是所有命令的一个选集浏览agenda菜单和手册获得完整的列表">下面只是所有命令的一个选集，浏览Agenda菜单和手册获得完整的列表。</a></li>
+    <li><a href="#移动命令">移动命令</a></li>
+    <li><a href="#查看跳转到org文件">查看/跳转到Org文件</a></li>
+    <li><a href="#改变显示">改变显示</a></li>
+    <li><a href="#二级筛选和查询编辑">二级筛选和查询编辑</a></li>
+    <li><a href="#远程编辑命令">远程编辑命令</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#105-定制议程视图">10.5 定制议程视图</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#自定义搜索的主要用途是对于频繁使用的搜索进行快捷键绑定从而快捷地创建议程缓冲区或者稀疏树当然后者只涵盖当前缓冲区的内容">自定义搜索的主要用途是对于频繁使用的搜索进行快捷键绑定，从而快捷地创建议程缓冲区或者稀疏树（当然后者只涵盖当前缓冲区的内容）。</a></li>
+    <li><a href="#自定义的命令是用变量org-agenda-custom-commands来配置的你可以用c-c-a-c来定制这个变量也可以直接在emacs中用emacs-lisp来设置">自定义的命令是用变量org-agenda-custom-commands来配置的。你可以用C-c a C来定制这个变量。也可以直接在”.emacs“中用Emacs lisp来设置。</a></li>
+    <li><a href="#下面的例子包含了所有合法的搜索类型">下面的例子包含了所有合法的搜索类型</a></li>
+    <li><a href="#setq-org-agenda-custom-commands">(setq org-agenda-custom-commands</a></li>
+    <li><a href="#w-todo-waiting">&lsquo;((&ldquo;w&rdquo; todo &ldquo;WAITING&rdquo;)</a></li>
+    <li><a href="#u-tags-boss-urgent">(&ldquo;u&rdquo; tags &ldquo;+boss-urgent&rdquo;)</a></li>
+    <li><a href="#v-tags-todo-boss-urgent">(&ldquo;v&rdquo; tags-todo &ldquo;+boss-urgent&rdquo;)))</a>
+      <ul>
+        <li><a href="#十一富格式导出">十一、富格式导出</a>
+          <ul>
+            <li><a href="#111-结构的组成元素">11.1 结构的组成元素</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#文档标题">文档标题</a></li>
+    <li><a href="#标题和章节">标题和章节</a></li>
+    <li><a href="#默认情况下只有前三个级别用作标题更深的级别会被看做项目列表">默认情况下，只有前三个级别用作标题，更深的级别会被看做项目列表。</a></li>
+    <li><a href="#可以通过变量org-export-headline-levels在全局设置这个开关或者只是在单个文件中设置">可以通过变量org-export-headline-levels在全局设置这个开关，或者只是在单个文件中设置：</a></li>
+    <li><a href="#目录表">目录表</a></li>
+    <li><a href="#目录表通常会直接插入在文档第一个标题之前">目录表通常会直接插入在文档第一个标题之前。</a></li>
+    <li><a href="#段落分行和引用">段落、分行和引用</a></li>
+    <li><a href="#段落之间至少要有一空行如果你想实现段内分行可以在行后加上">段落之间至少要有一空行。如果你想实现段内分行，可以在行后加上“\”。</a></li>
+    <li><a href="#要想在一个区域内实现分行而其他地方使用正常格式你可以使用下面的构造它也可以用来实现诗歌的格式">要想在一个区域内实现分行，而其他地方使用正常格式，你可以使用下面的构造，它也可以用来实现诗歌的格式：</a></li>
+    <li><a href="#当从另外一个文档中引用一段话时通常会让它左右都缩进在org文档中可以这样作引用">当从另外一个文档中引用一段话时，通常会让它左右都缩进。在Org文档中可以这样作引用：</a></li>
+    <li><a href="#让文本居中">让文本居中</a></li>
+    <li><a href="#强调和等宽">强调和等宽</a></li>
+    <li><a href="#粗体">粗体</a></li>
+    <li><a href="#斜体">斜体</a></li>
+    <li><a href="#下划线">下划线</a></li>
+    <li><a href="#文字两端各加一下划线_">文字两端各加一下划线_</a></li>
+    <li><a href="#逐字">逐字</a></li>
+    <li><a href="#代码">代码</a></li>
+    <li><a href="#注释行">注释行</a></li>
+    <li><a href="#以位于第0列的行会被看作注释不会被导出">以‘#‘位于第0列的行会被看作注释，不会被导出。</a></li>
+    <li><a href="#如果你想要一个缩进的行也被作为注释用开头">如果你想要一个缩进的行也被作为注释，用“#+”开头。</a></li>
+    <li><a href="#以关键字comment开头的子树整个树都不会被导出">以关键字“COMMENT”开头的子树整个树都不会被导出。</a></li>
+    <li><a href="#被begin_commentend_comment包围的整个区域也都不会被导出">被“#+BEGIN_COMMENT“…”#+END_COMMENT”包围的整个区域也都不会被导出。</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#112-图片和表格">11.2 图片和表格</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#可以在表格前面用下面几行为表格指定标题和标签以方便交叉引用">可以在表格前面用下面几行为表格指定标题和标签，以方便交叉引用。</a></li>
+    <li><a href="#在文本中可以用reftabbasic-data来引用它">在文本中可以用\ref{tab:basic-data}来引用它：</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#113-纯文本例子">11.3 纯文本例子</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#可以包含进来一些纯文本的例子这些例子会等宽排版所以适用于代码以及其他类似的情况">可以包含进来一些纯文本的例子，这些例子会等宽排版，所以适用于代码以及其他类似的情况。</a></li>
+    <li><a href="#为了简单化一些小型的例子可以冒号开头冒号前面可以有空格">为了简单化，一些小型的例子可以冒号开头。冒号前面可以有空格：</a></li>
+    <li><a href="#对于源代码以及一些其他的文本可以被emacs的字体锁font-lock特殊标记也可以让它们像在emacs的缓冲区中那样显示">对于源代码以及一些其他的文本，可以被Emacs的字体锁（font-lock）特殊标记，也可以让它们像在Emacs的缓冲区中那样显示。</a></li>
+    <li><a href="#如果要在支持这种语言的专门的缓冲区中编辑例子将光标置于例子代码中按快捷键c-c-启动和退出编辑缓冲区">如果要在支持这种语言的专门的缓冲区中编辑例子，将光标置于例子代码中，按快捷键C-c &lsquo;，启动和退出编辑缓冲区。</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#114包含文件">11.4包含文件</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#当导出文档时可以包含其他文件中的内容">当导出文档时，可以包含其他文件中的内容。</a></li>
+    <li><a href="#导入文件第二三个为可选参数是组织方式quoteexamplesrc如果是src语言用来格式化包含的内容">导入文件，第二、三个为可选参数，是组织方式：“quote”，“example”,&ldquo;src&rdquo;。如果是“src”，语言用来格式化包含的内容。</a></li>
+    <li><a href="#组织方式是可选的如果不给出文本会被当作org模式正常处理">组织方式是可选的，如果不给出，文本会被当作Org模式正常处理。</a></li>
+    <li><a href="#用快捷键c-c-可以访问包含的文件">用快捷键C-c &lsquo;,可以访问包含的文件。</a></li>
+    <li><a href="#嵌入latex">嵌入LaTex</a></li>
+    <li><a href="#略">(略)</a>
+      <ul>
+        <li><a href="#十二导出">十二、导出</a></li>
+      </ul>
+    </li>
+    <li><a href="#org模式文档可以导出成多种格式ascii用于包含在邮件中html用来发布到网页上latexpdf用来打印出漂亮的文档docbook通过docbook工具转换成其他各种各样的格式也可以导出成icalendar格式将计划信息并入到桌面日历中">Org模式文档可以导出成多种格式：ASCII用于包含在邮件中；HTML用来发布到网页上；LaTeX/PDF用来打印出漂亮的文档；DocBook通过DocBook工具转换成其他各种各样的格式。也可以导出成iCalendar格式，将计划信息并入到桌面日历中</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#121导出选项">12.1导出选项</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#导出器能识别缓冲区中提供附加信息的特殊行这样行可以放在文件中的任何地方">导出器能识别缓冲区中提供附加信息的特殊行，这样行可以放在文件中的任何地方。</a></li>
+    <li><a href="#整个集合可以用c-c-c-e-插入到缓冲区中">整个集合可以用C-c C-e #插入到缓冲区中。</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#122-导出调度器">12.2 导出调度器</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#所有的导出命令都可以通过导出调度器来使用调度器是一个前缀快捷键它会提示输入一个字母来指定命令">所有的导出命令都可以通过导出调度器来使用，调度器是一个前缀快捷键，它会提示输入一个字母来指定命令。</a></li>
+    <li><a href="#通常整个文件都会被导出但是如果选中区域包含大纲树就会导出大纲树并以第一个标题作为文件标题">通常整个文件都会被导出，但是如果选中区域包含大纲树，就会导出大纲树，并以第一个标题作为文件标题。</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#123-asciilatin-1utf-8的导出">12.3 ASCII/Latin-1/UTF-8的导出</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#ascii导出功能能给org文件提供的一个简单易读的版本它只包含纯ascii文本">ASCII导出功能能给Org文件提供的一个简单易读的版本，它只包含纯ASCII文本。</a></li>
+    <li><a href="#latin-1和utf-8导出用它们能编码的特殊字符扩展了文件的功能">Latin-1和UTF-8导出用它们能编码的特殊字符扩展了文件的功能。</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#124-html的导出">12.4 HTML的导出</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#想要将html以纯文本方式复制到导出文件可以用下面两种方式">想要将HTML以纯文本方式复制到导出文件，可以用下面两种方式：</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#125latex和pdf导出">12.5LaTex和PDF导出</a></li>
+            <li><a href="#126-icalendar的导出">12.6 iCalendar的导出</a></li>
+          </ul>
+        </li>
+        <li><a href="#十三发布">十三、发布</a></li>
+      </ul>
+    </li>
+    <li><a href="#org包含一个发布管理系统可以配置一个由相互链接的org文件组成的工程项目的自动向html转换">Org包含一个发布管理系统，可以配置一个由相互链接的Org文件组成的工程项目的自动向HTML转换。</a></li>
+    <li><a href="#你也可以设置org将导出的html页面和相应的附件如图片源代码文件等自动上传到服务器如何设置详见手册">你也可以设置Org，将导出的HTML页面和相应的附件如图片，源代码文件等自动上传到服务器。如何设置，详见手册。</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="一简介">一、简介</h2>
+<p>Org 是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。</p>
+<h2 id="二文档结构">二、文档结构</h2>
+<h3 id="21-脚注">2.1 脚注</h3>
+<p>软件服务室FTP[fn:1]服务器用于为我队提供软件下载服务
+软件服务室SAMBA服务器[fn:2]用于为软件服务室提供文件资料共享服务
+现在还不知道怎么改脚注的名称，等阅读完整的手册再说。</p>
+<p>|&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C-c C-x f</td>
+<td>新建脚注；当脚注存在时,在脚注引用和脚注定义之间跳转</td>
+</tr>
+<tr>
+<td>C-c C-c</td>
+<td>在脚注引用和脚注定义之间跳转</td>
+</tr>
+<tr>
+<td>&mdash;&mdash;&mdash;&ndash;</td>
+<td>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="三表格">三、表格</h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C-c C-c</td>
+<td>调整表格，不移动表格</td>
+<td></td>
+</tr>
+<tr>
+<td>TAB或TAB</td>
+<td>调整表格，光标移动到下一个区域，必要时新建一行</td>
+<td></td>
+</tr>
+<tr>
+<td>S-TAB</td>
+<td>调整表格，光标移动到上一个区域，必要时新建一行</td>
+<td></td>
+</tr>
+<tr>
+<td>C-c</td>
+<td></td>
+<td>将活动区域（选中区域）转换成一个表。</td>
+</tr>
+<tr>
+<td></td>
+<td>如果第一行至少有一个TAB字符，就用TAB划分内容；</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>如果第一行都有逗号，就分逗号划分内容；</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>否则就用空白符来划分区域。</td>
+<td></td>
+</tr>
+<tr>
+<td>&mdash;&mdash;&mdash;&mdash;&ndash;</td>
+<td>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</td>
+<td>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</td>
+</tr>
+<tr>
+<td>M-LEFT/RIGHT</td>
+<td>左/右移动当前列</td>
+<td></td>
+</tr>
+<tr>
+<td>M-S-LEFT</td>
+<td>删除当前列</td>
+<td></td>
+</tr>
+<tr>
+<td>M-S-RIGHT</td>
+<td>在当前列左边添加一列</td>
+<td></td>
+</tr>
+<tr>
+<td>M-UP/DOWN</td>
+<td>上/下移当前行</td>
+<td></td>
+</tr>
+<tr>
+<td>M-S-UP</td>
+<td>删除当前行</td>
+<td></td>
+</tr>
+<tr>
+<td>M-S-DOWN</td>
+<td>在当前行上面添加一行。如有前缀，则在下面添加一行</td>
+<td></td>
+</tr>
+<tr>
+<td>C-c -</td>
+<td>在当前行下面添加一个水平线。如果有前缀，则在上面添加一行水平线，光标不动</td>
+<td></td>
+</tr>
+<tr>
+<td>C-c RET</td>
+<td>在当前行下面添加一个水平线，并将光标移动到下一行。</td>
+<td></td>
+</tr>
+<tr>
+<td>C-c ^</td>
+<td>以当前列为依据，对表格进行排序，在最近的两个水平线之间或整个表格中进行</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-org" data-lang="org"><span class="cs">#+CAPTION</span><span class="c">: 表格1</span>
+<span class="cs">#+LABEL</span><span class="c">: tab1:my-table</span>
+<span class="s">| Name | sex | age |</span>
+<span class="s">|------+-----+-----|</span>
+<span class="s">| cb   | f   |  23 |</span>
+<span class="s">| ad   | f   |  24 |</span>
+<span class="s">| wr   | m   |  34 |</span>
+<span class="s">| asdf | asd |  34 |</span>
+<span class="s">|------+-----+-----|</span>
+<span class="s">| asd  | f   |  23 |</span>
+<span class="s">|------+-----+-----|</span>
+<span class="s">|      |     |     |</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="四超链接">四、超链接</h2>
+<h3 id="41链接格式">4.1链接格式</h3>
+<p>输入嵌套的中括号[[]],然后在中间输入链接的内容，org会自动将中括号中的内容变成链接[[http://23.65.55.11]]
+输入嵌套的中括号[[][]],然后在中间数据链接和链接描述，org会自动将中括号中的内容变成链接描述[[http://23.65.55.11][网关]]
+链接的括号应当是闭合的，当链接含有描述文字是显示描述文字而不是链接地址.
+编辑链接，光标置于链接上，按C-c C-l</p>
+<h3 id="42内部链接">4.2内部链接</h3>
+<p>1、
+[[#my-custom-id]] 这个没看明白，不知道my-custom-id怎么定义</p>
+<p>2、输入嵌套的中括号[[]]或[[][]],然后在中间输入链接的内容和链接描述，org会自动将中括号中的内容变成链接，鼠标点击链接，进行文本查找，例如：
+[[My%20Target1][target]]链接，点击后本文件中查找对应的目标&laquo;My Target1&raquo;</p>
+<p>&laquo;My Target2&raquo;</p>
+<h3 id="43外部链接">4.3外部链接</h3>
+<p>org支持文件、网页URL、新闻组、邮件等外部链接。链接内容：以识别符开头，后面跟着一个冒号，冒号后面不能有空格。例子：
+1、网页URL
+[[http://23.65.55.11][Web服务器]]</p>
+<p>2、文件
+相对路径(file:)： [[file:test/The compact Org-mode Guide.pdf][The compact Org-mode Guide]]
+绝对路径(file:)：[[file:test/The%20Org%20Manual.pdf][The Org Manual]]
+打开文档具体页(docview:)：[[docview:test/The%20Org%20Manual.pdf::30][The Org Manual的第30页]]</p>
+<p>3、邮件
+邮件(mailto:)：[[mailto:chenbin512@126.com][给我发邮件]]</p>
+<h3 id="44使用链接">4.4使用链接</h3>
+<p>|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| 快捷键  | 功能                                                     |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| C-c l   | org-store-link命令，不知道怎么用                         |
+| C-c C-l | 插入一个链接，或者光标处于链接上时修改链接               |
+| C-c C-o | 打开链接                                                 |
+| C-c %   | 记录一个文件中的一个地址                                 |
+| C-c &amp;   | 跳回到一个已记录的地址，可以多次使用该命令一直往前定位。 |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|</p>
+<h3 id="45目标链接">4.5目标链接</h3>
+<p>文件链接可以包含一些其他信息使得进入链接时可以到达特定的位置。比如：双冒号之后的一个行号或者搜索选项
+[[file:test/target.org::Target2][Target2 in file ./test/target.org]]</p>
+<h2 id="五代办事项">五、代办事项</h2>
+<h3 id="51使用todo状态">5.1使用TODO状态</h3>
+<p>|&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| 快捷键       | 功能                                                            |
+|&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| C-c C-t      | 在三个状态unmarked-&gt;TODO-&gt;DONE之间切换                          |
+| S-LEFT/RIGHT | 同上                                                            |
+| C-c / t      | 在稀疏树中显示TODO项                                            |
+| C-c a t      | ?????显示全局TODO列表。从所有议程文件中收集TODO项到一个缓冲区中 |
+| S-M-RET      | 在当前项下插入一个新的TODO项                                    |
+|&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<h3 id="52-自定义定义不同的todo状态">5.2 自定义定义不同的TODO状态</h3>
+<h1 id="可在emacs配置文件中用todo关键字定义不同的状态全局有效">可在.emacs配置文件中用TODO关键字定义不同的状态，全局有效</h1>
+<h1 id="竖直线将todo关键字还需要进一步的动作和done状态不需要进一步的动作分隔开">竖直线将TODO关键字（还需要进一步的动作）和DONE状态（不需要进一步的动作）分隔开</h1>
+<h1 id="例子">例子：</h1>
+<h1 id="setq-org-todo-keywords">(setq org-todo-keywords</h1>
+<h1 id="sequence-todot--doned">&lsquo;((sequence &ldquo;TODO(t)&rdquo; &ldquo;|&rdquo; &ldquo;DONE(d)&quot;)</h1>
+<h1 id="sequence-reportr-bugb-knowncausek---fixedf">(sequence &ldquo;REPORT(r)&rdquo; &ldquo;BUG(b)&rdquo; &ldquo;KNOWNCAUSE(k)&rdquo; &ldquo;|&rdquo; &quot; FIXED(f)&quot;)</h1>
+<h1 id="sequence--canceledc">(sequence &ldquo;|&rdquo; &ldquo;CANCELED(c)&quot;)))</h1>
+<h1 id="也可在一个org文件中定义只在文件中有效的todo状态">也可在一个org文件中定义只在文件中有效的TODO状态</h1>
+<h1 id="例子-1">例子：</h1>
+<p>#+TODO:TODO(t) | DONE(d)
+#+TODO:REPORT(r) BUG(b) KNOWCAUSE(k) | FIXED(f)
+#+TODO:| CANCELED(c)</p>
+<h1 id="当改变这些行中的一行后光标停留在改变行上用c-c-c-c让改变生效">当改变这些行中的一行后，光标停留在改变行上，用C-c C-c让改变生效</h1>
+<h3 id="53-进度日志">5.3 进度日志</h3>
+<h1 id="对于完成的项目最基本的日志功能是跟踪一个特定项目的完成emacs的配置文件中可加入下面的配置">对于完成的项目，最基本的日志功能是跟踪一个特定项目的完成。Emacs的配置文件中可加入下面的配置：</h1>
+<h1 id="setq-org-log-done-time">(setq org-log-done &lsquo;time)</h1>
+<h1 id="当你将一个项目从一个todo未完成状态改变为一个完成状态时标题下面就会插入一行closedtimestamp">当你将一个项目从一个TODO（未完成）状态改变为一个完成状态时，标题下面就会插入一行“CLOSED:[timestamp]”</h1>
+<h1 id="setq-org-log-done-note">(setq org-log-done &lsquo;note)</h1>
+<h1 id="当你将一个项目从一个todo未完成状态改变为一个完成状态时会提示你输入一个记录note并将它保存在标题为closing-note项目之下">当你将一个项目从一个TODO（未完成）状态改变为一个完成状态时，会提示你输入一个记录（note），并将它保存在标题为“Closing Note”项目之下。</h1>
+<h1 id="跟踪todo状态变换">跟踪TODO状态变换</h1>
+<h1 id="对于状态记录org-可以实现基于每个状态关键字的设置实现方法是在每个状态关键字后的括号中指定记录时间戳或作一个记录-这个语法适用于org-todo-keywords">对于状态记录,Org 可以实现基于每个状态关键字的设置。实现方法是在每个状态关键字后的括号中指定“!”(记录时间戳)或“@”(作一个记录), 这个语法适用于org-todo-keywords。</h1>
+<h1 id="例如下面的设置实现当一个项目设为-done-时会记录时间戳当状态变为-wait-或-canceled-时会作一个记录">例如：下面的设置实现，当一个项目设为 DONE 时,会记录时间戳,当状态变为 WAIT 或 CANCELED 时,会作一个记录。</h1>
+<p>#+TODO:TODO(t) WAIT(W@/!) | DONE(d!) CANCELED(c@)</p>
+<h3 id="54-优先级">5.4 优先级</h3>
+<h1 id="当有大量的todo项时就有必要设置优先级">当有大量的TODO项时，就有必要设置优先级。</h1>
+<h1 id="org模式支持三个优先级别ab和ca是最高级别如不指定b是默认的优先级只在议程中有用">Org模式支持三个优先级别:’A‘、’B‘和’C‘。’A‘是最高级别,如不指定,’B‘是默认的。优先级只在议程中有用。</h1>
+<p>|&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| 快捷键    | 功能                                                 |
+|&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| C-c ,     | 设置当前TODO项的优先级，按A-C选择一个级别，SPC删除标记  |
+| S-UP/DOWN | 增加/降低当前TODO项的优先级                         |
+|&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|</p>
+<h3 id="55-任务细分">5.5 任务细分</h3>
+<h1 id="大的任务todo项下细分小的任务todo项">大的任务（TODO项）下细分小的任务(TODO项)</h1>
+<h1 id="可以在标题的任何地方插入或者当每个子任务的状态变化时或者当你在标记上按-c-c-c-c时这些标记状态也会随之更新">可以在标题的任何地方插入‘[/]’或者‘[%]’。当每个子任务的状态变化时,或者当你在标记上按 C-c C-c时,这些标记状态也会随之更新。</h1>
+<h3 id="56-复选框">5.6 复选框</h3>
+<h1 id="当纯文本中的项以-开头时就会变成一个复选框可手工输入添加也可通过快捷键的方式添加">当纯文本中的项以‘[ ]’开头时,就会变成一个复选框。可手工输入添加，也可通过快捷键的方式添加。</h1>
+<h1 id="复选框不会包含在全局todo-列表中所以它们很适合地将一个任务划分成几个简单的步骤">复选框不会包含在全局TODO 列表中，所以它们很适合地将一个任务划分成几个简单的步骤。</h1>
+<h1 id="见例1">见例1</h1>
+<p>|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| 快捷键  | 功能                                                       |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| C-c C-c | 改变复选框的选中状态，或者（加上前缀）触发复选框的存在状态 |
+| M-S-RET | 增加一个带复选框的项（光标处于纯文本列表项有效）           |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|</p>
+<h2 id="六标签">六、标签</h2>
+<h1 id="对以号开头的标题headline进行设置">对以*号开头的标题（headline）进行设置</h1>
+<h3 id="61标签继承">6.1标签继承</h3>
+<h1 id="具有继承属性">具有继承属性。</h1>
+<h1 id="可以设置让所有标题都继承的属性采用下面的方法">可以设置让所有标题都继承的属性，采用下面的方法</h1>
+<p>#+FILETAGS: :test:org-mode:</p>
+<h3 id="62设置标签">6.2设置标签</h3>
+<h1 id="在emacs中设置全局标签可在不同的文件中使用采用下面的设置方法">在.emacs中设置全局标签，可在不同的文件中使用，采用下面的设置方法</h1>
+<h1 id="setq-org-tag-alist-大数据--b-云计算--c-软件开发--p">(setq org-tag-alist &lsquo;((&ldquo;大数据&rdquo; . ?b) (&ldquo;云计算&rdquo; . ?c) (&ldquo;软件开发&rdquo; . ?p)))</h1>
+<h1 id="只在当前文件中使用的标签采用下面的方法设置注意将会覆盖emacs中的全局设置">只在当前文件中使用的标签，采用下面的方法设置。注意：将会覆盖.emacs中的全局设置</h1>
+<p>#+TAGS: 军事(m) 指挥(d) 航空(a) 航天(s)
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| 快捷键  | 功能                                                                                                                         |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| C-c C-q | 为当前标签设置标签，输入后回车，标签会插入，并放到第 org-tags-column 列。用前缀C-u, 会把当前缓冲区中的所有标签都对齐到那一列 |
+| C-c C-c | 光标处于标题上时，功能同上。                                                                                                 |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|</p>
+<h3 id="63标签查找">6.3标签查找</h3>
+<h1 id="按了下面的快捷键后会提示输入字符串这些字符串支持基本的布尔逻辑">按了下面的快捷键后，会提示输入字符串，这些字符串支持基本的布尔逻辑。</h1>
+<h1 id="例如像-bossurgent-project1是搜索所有的包含标签boss和urgent但不含project1的项">例如，像 “+boss+urgent-project1”，是搜索所有的包含标签“boss”和“urgent”但不含“project1”的项；</h1>
+<h1 id="像-kathysally搜索标签包含kathy或者sally和项">像 “Kathy|Sally”，搜索标签包含“Kathy”或者“Sally”和项。</h1>
+<h1 id="搜索字符串的语法很丰富支持查找todo关键字条目级别和属性更详细的介绍和例子见第1033节">搜索字符串的语法很丰富，支持查找TODO关键字、条目级别和属性。更详细的介绍和例子，见第10.3.3节。</h1>
+<p>|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| 快捷键  | 功能                                                                                |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| C-c \   | 用匹配标签搜索所有的标题构造一个稀疏树。带前缀参数C-u时，忽略所有不是TODO行的标题。 |
+| C-c / m | 同上                                                                                |
+| C-c a m | ?????????                                                                           |
+| C-c a M | ?????????                                                                           |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|</p>
+<h2 id="七属性">七、属性</h2>
+<h1 id="属性是一些与条目entry关联的键值对">属性是一些与条目（entry）关联的键值对。</h1>
+<h1 id="它们位于一个名为-properties-的特殊抽屉中每个属性都单独一行键在前被冒号包围值在后设置完成后以end结束">它们位于一个名为 PROPERTIES 的特殊抽屉中。每个属性都单独一行,键在前(被冒号包围),值在后。设置完成后，以END结束。</h1>
+<h1 id="具有继承属性上级条目设置的属性会应用于所有下级条目">具有继承属性，上级条目设置的属性会应用于所有下级条目。</h1>
+<h1 id="可以在某一级设置某个属性设置取值范围那么在下一级设置该属性的取值只能在上级设置的范围内进行取值防止输入错误">可以在某一级设置某个属性设置取值范围，那么在下一级设置该属性的取值只能在上级设置的范围内进行取值，防止输入错误。</h1>
+<h1 id="要基于选择的属性创建稀疏树或者特殊列表跟标签搜索的命令相同见第63节">要基于选择的属性创建稀疏树或者特殊列表，跟标签搜索的命令相同（见第6.3节）</h1>
+<h1 id="-goldberg-variations">*** Goldberg Variations</h1>
+<h1 id="properties">:PROPERTIES:</h1>
+<h1 id="titlegoldberg-variations">:Title:	Goldberg Variations</h1>
+<h1 id="composer-js-bach">:Composer: J.S. Bach</h1>
+<h1 id="publisher-deutsche-grammophon">:Publisher: Deutsche Grammophon</h1>
+<h1 id="ndisks1">:NDisks:	1</h1>
+<h1 id="end">:END:</h1>
+<h1 id="也可以在全局设置org-global-properties或者在文件级别设置">也可以在全局设置org-global-properties，或者在文件级别设置：</h1>
+<p>#+PROPERTY: NDisks_ALL 1 2 3 4</p>
+<p>|&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| 快捷键    | 功能                         |
+|&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| C-c C-x p | 设置一个属性，会询问属性和值 |
+| C-c C-c d | 从当前项中删除一个属性。     |
+|&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|</p>
+<h2 id="八日期和时间">八、日期和时间</h2>
+<h3 id="81时间戳">8.1时间戳</h3>
+<h1 id="时间戳是一个具有特定格式的日期可能带有时间和时间段说明可以出现在树条目的标题和正文的任何地方">时间戳是一个具有特定格式的日期（可能带有时间和时间段）说明，可以出现在树条目的标题和正文的任何地方。</h1>
+<h1 id="它能使条目只在特定的日期才出现在议程列表中">它能使条目只在特定的日期才出现在议程列表中。</h1>
+<h1 id="有5类">有5类：</h1>
+<h1 id="普通时间戳事件约会">普通时间戳；事件；约会</h1>
+<h1 id="具有重复时间间隔的时间戳">具有重复时间间隔的时间戳</h1>
+<h1 id="日记样式的sexp条目">日记样式的sexp条目</h1>
+<h1 id="时间日期段">时间/日期段</h1>
+<h1 id="非激活的时间戳">非激活的时间戳</h1>
+<h3 id="82创建时间戳">8.2创建时间戳</h3>
+<p>|&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| 快捷键       | 功能                                         |
+|&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| C-c .        | 询问日期并输入正确的时间戳；                 |
+|              | 修改当前时间戳；                             |
+|              | 连用2次，就会插入一个时间段;                 |
+|              | 加上前缀(C-u)，就会附带当前时间              |
+|&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| C-c ！       | 功能同C-c .,但插入的是一个未激活的时间戳     |
+| S-LEFT/RIGHT | 将光标处理的时间戳改变1天                    |
+| S-UP/DOWN    | 改变时间戳中光标下的项（年、月、日、时、分） |
+|&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|</p>
+<h3 id="83-截止期限和计划安排">8.3 截止期限和计划安排</h3>
+<h1 id="对标题headline而言">对标题(headline)而言</h1>
+<h1 id="截止期限任务应该完成的期限大多是todo项也可不是">截止期限：任务应该完成的期限，大多是TODO项，也可不是</h1>
+<h1 id="在截止时期任务会列在议程中">在截止时期，任务会列在议程中。</h1>
+<h1 id="org-deadline-warning-days设置该变量今天的议程会在设置的天数前对即将即将到期以及已经过期的任务给出提醒直到任务被标记为done">org-deadline-warning-days：设置该变量，今天的议程会在设置的天数前对即将即将到期以及已经过期的任务给出提醒，直到任务被标记为DONE。</h1>
+<h1 id="日常安排你计划在给定的那个日期开始进行某些任务">日常安排：你计划在给定的那个日期开始进行某些任务</h1>
+<h1 id="在计划的时期标题会列在当天的议程中对于已经过期的计划将会列在当天的日程中直到被标记为done也就是说任务会自动推迟日期直到它被完成">在计划的时期，标题会列在当天的议程中。对于已经过期的计划将会列在当天的日程中，直到被标记为DONE。也就是说，任务会自动推迟日期直到它被完成。</h1>
+<p>|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| 快捷键  | 功能                                             |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| C-c C-d | 在标题下面一行插入一个带有DEADLINE关键字的时间戳 |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| C-c C-s | 在标题下面插入一个带有SCHEDULED关键字的时间戳    |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<h3 id="84-记录工作时间">8.4 记录工作时间</h3>
+<p>|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| 快捷键      | 功能                                                                                                          |
+|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| C-c C-x C-i | 开始当前条目的计时。加上C-u前缀，从当前已经计时的任务中选择任务。                                             |
+| C-c C-x C-o | 停止当前条目的计时。在开始计时的地方插入另一个时间戳，它会直接计算使用时间并插入到时间段的后面，如“=&gt;HH:MM” |
+| C-c C-x C-e | 为当前的计时任务更新进度。                                                                                    |
+| C-c C-x C-x | 取消当前的计时。                                                                                              |
+| C-c C-x C-j | 跳转到包含当前正在运行的计时的任务条目。C-u前缀，从当前计时的任务中选择。                                     |
+| C-c C-x C-r | 在当前文件插入一个包含像Org表格一样的计时报告的动态块。当光标正处于一个存在的块上时，更新它。                 |
+| C-c C-c     | 在一个已经存在的计时表格之上时，更新它。更新动态块。光标需要置于动态块#+BEGIN这行。                                                                                                              |
+|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|</p>
+<h2 id="九捕获-转发-存档">九、捕获-转发-存档</h2>
+<h1 id="捕获新的灵感或者任务">捕获新的灵感或者任务</h1>
+<h3 id="91捕获">9.1捕获</h3>
+<p>|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| 快捷键      | 功能                                                                                          |
+|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| C-c c       | 启动一个捕获过程。进入一个窄的间接缓冲区来编辑条目。                                          |
+| C-c C-c     | 一旦完成捕获信息的输入，按此键返回之前的窗口继续中断的工作                                       |
+| C-c C-w     | 将条目保存到一个接收地址并结束。                                                                 |
+| C-c C-k     | 取消捕获过程，返回之前的状态。                                                                       |
+|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<h3 id="92-转送笔记">9.2 转送笔记</h3>
+<h2 id="十议程视图">十、议程视图</h2>
+<p>根据Org的工作方式，TODO项、时间戳和带标签的标题分散在一个或者多个文件中。
+为了能够查看某一天的项目或者事件，信息必须收集在一起，以一种有条理方式排序、显示。
+有几种不同的视图，见下文。收集的信息在一个专门的议程缓冲区中显示。
+这个缓冲区是只读的，但是提供了一些命令可以访问原Org文件中对应的条目，并且可以远程地编辑这些文件。</p>
+<h3 id="101-议程文件">10.1 议程文件</h3>
+<h1 id="在emacs中设置org-agenda-files变量">在.emacs中设置org-agenda-files变量</h1>
+<p>|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| 快捷键  | 功能                                                                                                                                                                  |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| C-c [   | 将当前文件加入到议程文件列表中。当前文件会被加到列表的前面。如果文件已经在列表中，会被移到前面。带有前缀时，文件添加/移到到后面                               |
+| C-c ]   | 将当前文件从议程文件列表中删除                                                                                                                                        |
+| C-,     | 遍历议程文件列表，依次访问其中的每个文件                                                                                                                                  |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<h3 id="102-议程调度器dispatcher">10.2 议程调度器(dispatcher)</h3>
+<h1 id="视图是通过议程调度器创建的它有一个全局快捷键-c-c-a然后再输入另外一个字母执行对应的命令">视图是通过议程调度器创建的，它有一个全局快捷键 C-c a，然后再输入另外一个字母执行对应的命令。</h1>
+<p>|&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| 快捷键    | 功能                                         |
+|&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| C-c a a   | 日历式的议程（见10.3.1节）                   |
+| C-c a t/T | TODO项的列表 （见10.3.2节）                  |
+| C-c a m/M | 匹配某个标签(tag)表达式的标题的列表（见10.3.3节） |
+| C-c a L   | 当前文件的时间轴视图 （见10.3.4节）          |
+| C-c a s   | 通过关键字和/或正则表达式选中的条目的列表    |
+|&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|</p>
+<h3 id="103-内建议程视图">10.3 内建议程视图</h3>
+<h4 id="1031-周日议程">10.3.1 周/日议程</h4>
+<p>|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| 快捷键  | 功能                                                        |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| C-c a a | 从一列org文件中为本周收集出一个议程。议程显示出每天的条目。 |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|</p>
+<h4 id="1032-全局todo列表">10.3.2 全局TODO列表</h4>
+<h1 id="全局todo列表将所有未完成的todo项格式化并集中到一处">全局TODO列表将所有未完成的TODO项格式化并集中到一处。</h1>
+<h1 id="todo项的远程编辑使得我们只用按一下键就可以改变todo项的状态">TODO项的远程编辑使得我们只用按一下键就可以改变TODO项的状态。</h1>
+<p>|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| 快捷键  | 功能                                                             |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| C-c a t | 显示全局TODO列表。这会从所有议程文件中收集TODO项到一个缓冲区中。 |
+| C-c a T | 同上，但可以选择TODO关键字。                                                 |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|</p>
+<h4 id="1033-匹配标签和属性">10.3.3 匹配标签和属性</h4>
+<h1 id="如果议程文件中的标题带有标签或者带有属性就可以基于这些元数据筛选标题到议程缓冲区中">如果议程文件中的标题带有标签或者带有属性，就可以基于这些元数据筛选标题到议程缓冲区中。</h1>
+<p>|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;+&mdash;|
+| 快捷键  | 功能                                                              |      |   |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;+&mdash;|
+| C-c a m | 将包含指定标签的标题生成一个列表。                                |      |   |
+|         | 筛选规则可以是标签的逻辑表达式，如: +work+urgent-withboss 或 work | home |   |
+|         | 如果你经常使用某个搜索，可以将它定义成一个命令。                                          |      |   |
+| C-c a M | 同上，但只选择同时也是TODO项的标题。                                  |      |   |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;+&mdash;|</p>
+<h1 id="匹配语法">匹配语法</h1>
+<h1 id="搜索字符串可以使用作与运算作或运算的约束力比的强">搜索字符串可以使用‘&amp;’作与运算，‘|’作或运算。‘&amp;’的约束力比‘|’的强。</h1>
+<h1 id="用以搜索的元素可以是标签匹配标签的正则表达式或者像property-operator-value这样带有比较操作符的用来比较属性值的表达式">用以搜索的元素可以是标签、匹配标签的正则表达式、或者像PROPERTY OPERATOR VALUE这样带有比较操作符的用来比较属性值的表达式。</h1>
+<h1 id="例子-2">例子：</h1>
+<h1 id="work-boss--------------选择标有work但不标有boss的标题">+work-boss             : 选择标有:work:，但不标有:boss:的标题</h1>
+<h1 id="work--laptop-----------选择标有work或则的标题">work | laptop          : 选择标有:work:或则💻的标题</h1>
+<h1 id="work--laptopnight-----和前面相同但要求标有的行也要标有night">work | laptop+night    : 和前面相同，但要求标有💻的行也要标有:night:</h1>
+<h4 id="1034-单文件时间轴">10.3.4 单文件时间轴</h4>
+<h1 id="时间轴用时间排序视图概述单个文件中的所有带有时间戳的条目">时间轴用时间排序视图概述单个文件中的所有带有时间戳的条目。</h1>
+<h1 id="这个命令的目的是用来给出一个工程中事件的鸟瞰图">这个命令的目的是用来给出一个工程中事件的鸟瞰图。</h1>
+<p>|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| 快捷键  | 功能                                                                              |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| C-c a L | 给出 Org 文件中所有带时间戳条目的排序视图。                                       |
+|         | 带有 C-u 前缀时，没有完成的 TODO 项（作了安排的以及没作安排的）也列在当前日期下。 |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<h4 id="1035-查找视图">10.3.5 查找视图</h4>
+<h1 id="这个议程视图用来对议程文件中的条目进行普通的文本查找对于查找笔记很有用">这个议程视图用来对议程文件中的条目进行普通的文本查找。对于查找笔记很有用。</h1>
+<h1 id="注意除了议程文件这条命令也会搜索org-agenda-text-search-extra-files中列出的文件">注意：除了议程文件，这条命令也会搜索org-agenda-text-search-extra-files中列出的文件。</h1>
+<h1 id="查找字符串computer-wifi--ethernet-811bg搜索包含关键字computer和wifi但不含ethernet并且不被正则表达式811bg排除811b和811g匹配的条目">查找字符串“+computer +wifi -ethernet-{8.11[bg]}”：搜索包含关键字computer和wifi但不含ethernet，并且不被正则表达式8.11[bg]（排除8.11b和8.11g）匹配的条目。</h1>
+<p>|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| 快捷键  | 功能                                                                              |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| C-c a s | 给出 Org 文件中所有带时间戳条目的排序视图。                                       |
+|         | 带有 C-u 前缀时，没有完成的 TODO 项（作了安排的以及没作安排的）也列在当前日期下。 |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<h3 id="104-议程缓冲区命令">10.4 议程缓冲区命令</h3>
+<h1 id="议程缓冲区中的条目链接到了它们的源org或者日记文件">议程缓冲区中的条目链接到了它们的源Org或者日记文件。</h1>
+<h1 id="有一些命令可以用来显示和跳转到条目的源位置也可以从视图缓冲区中远程编辑源文件">有一些命令可以用来显示和跳转到条目的源位置，也可以从视图缓冲区中”远程“编辑源文件。</h1>
+<h1 id="下面只是所有命令的一个选集浏览agenda菜单和手册获得完整的列表">下面只是所有命令的一个选集，浏览Agenda菜单和手册获得完整的列表。</h1>
+<h1 id="移动命令">移动命令</h1>
+<p>|&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| 快捷键 | 功能                  |
+|&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| n      | 下一行（同up和C-p）   |
+| p      | 前一行（同down和C-n） |
+|&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<h1 id="查看跳转到org文件">查看/跳转到Org文件</h1>
+<p>|&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| 快捷键       | 功能                                                    |
+|&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| mouse-3(SPC) | 在另一个窗口中显示条目的源位置。                          |
+|              | 带前缀使得整个条目在大纲中可见，而不只是标题。          |
+| TAB          | 跳转到另一个窗口中条目的源位置。在 Emacs 22 之前的版本，mouse-1     |
+| RET          | 跳转到条目的源位置并删除其它的窗口                                                     |
+|&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|</p>
+<h1 id="改变显示">改变显示</h1>
+<p>|&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| 快捷键       | 功能                                                                                                                                       |
+|&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| o            | 删除其它窗口。                                                                                                                             |
+| d/w          | 切换到日/周视图                                                                                                                            |
+| f/b          | 时间前移或者后移来显示随后的org-agenda-current-span天。                                                                                    |
+| .            | 转到今天。                                                                                                                                 |
+| j            | 询问日期并转到那天。                                                                                                                       |
+| v-l或简化为l | 触发日志模式（Logbook mode）。在日志模式中，当记录功能打开（变量org-log-done）时标记为DONE的条目，以及在那天计时的条目，都会显示在议程中。 |
+| r或g         | 重新构造议程视图，以反应最新状态。                                                                                                         |
+| s            | 保存当前emacs会话的所有org缓冲区和ID的地址。                                                                                                                |
+|&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<h1 id="二级筛选和查询编辑">二级筛选和查询编辑</h1>
+<p>|&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| 快捷键 | 功能                                                                              |
+|&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| /      | 根据标签过滤当前的缓冲区。提示你输入一个字母选择一个标签。先按‘-’排除一个标签。 |
+| \      | 通过增加条件缩小当前议程的视图。                                                  |
+|&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<h1 id="远程编辑命令">远程编辑命令</h1>
+<p>|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| 快捷键             | 功能                                                                                     |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| 0&ndash;9               | 数字参数。                                                                             |
+| t                  | 修改议程和org文件中的条目的TODO状态。                                                  |
+| C-k                | 删除当前的议程条目以及源文件中它的整个子树。                                           |
+| C-c C-w            | 传送当前的条目。                                                                       |
+| C-c C-x C-a或简作a | 用在org-archive-default-command中设置的默认归档命令对当前的条目对应的整个树进行归档。  |
+| C-c C-x C-s或简作$ | 归档当前标题对应的树。                                                                 |
+| C-c C-s            | 规划（Schedule）一个条目，带有前缀参数时删除规划时间戳                                 |
+| C-c C-d            | 为条目设置截止期限，带前缀时删除截止期限。                                             |
+| S-RIGHT 和 S-LEFT  | 将与当前行相关的时间戳改变一天。                                                       |
+| I                  | 对当前条目开始计时。                                                                   |
+| O / X              | 暂停/取消最近开始的计时。                                                              |
+| J                  | 在另一个窗中跳转到正在进行的计时。                                                     |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|</p>
+<h3 id="105-定制议程视图">10.5 定制议程视图</h3>
+<h1 id="自定义搜索的主要用途是对于频繁使用的搜索进行快捷键绑定从而快捷地创建议程缓冲区或者稀疏树当然后者只涵盖当前缓冲区的内容">自定义搜索的主要用途是对于频繁使用的搜索进行快捷键绑定，从而快捷地创建议程缓冲区或者稀疏树（当然后者只涵盖当前缓冲区的内容）。</h1>
+<h1 id="自定义的命令是用变量org-agenda-custom-commands来配置的你可以用c-c-a-c来定制这个变量也可以直接在emacs中用emacs-lisp来设置">自定义的命令是用变量org-agenda-custom-commands来配置的。你可以用C-c a C来定制这个变量。也可以直接在”.emacs“中用Emacs lisp来设置。</h1>
+<h1 id="下面的例子包含了所有合法的搜索类型">下面的例子包含了所有合法的搜索类型</h1>
+<h1 id="setq-org-agenda-custom-commands">(setq org-agenda-custom-commands</h1>
+<h1 id="w-todo-waiting">&lsquo;((&ldquo;w&rdquo; todo &ldquo;WAITING&rdquo;)</h1>
+<h1 id="u-tags-boss-urgent">(&ldquo;u&rdquo; tags &ldquo;+boss-urgent&rdquo;)</h1>
+<h1 id="v-tags-todo-boss-urgent">(&ldquo;v&rdquo; tags-todo &ldquo;+boss-urgent&rdquo;)))</h1>
+<p>|&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| 快捷键          | 功能                                                               |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| C-c a w	 | 对于包含关键字”WAITING“的TODO项的全局搜索。                      |
+| C-c a u	 | 对于带有标签”:boss:“而不含标签”:urgent:“的标题的全局标签搜索。 |
+| C-c a v	 | 同搜索C-c a u，但搜索范围只限于同时也是TODO项的标题。              |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<h2 id="十一富格式导出">十一、富格式导出</h2>
+<h3 id="111-结构的组成元素">11.1 结构的组成元素</h3>
+<h1 id="文档标题">文档标题</h1>
+<p>#+TITLE: This is the title of this Org test file</p>
+<h1 id="标题和章节">标题和章节</h1>
+<h1 id="默认情况下只有前三个级别用作标题更深的级别会被看做项目列表">默认情况下，只有前三个级别用作标题，更深的级别会被看做项目列表。</h1>
+<h1 id="可以通过变量org-export-headline-levels在全局设置这个开关或者只是在单个文件中设置">可以通过变量org-export-headline-levels在全局设置这个开关，或者只是在单个文件中设置：</h1>
+<p>#+OPTIONS: H:4</p>
+<h1 id="目录表">目录表</h1>
+<h1 id="目录表通常会直接插入在文档第一个标题之前">目录表通常会直接插入在文档第一个标题之前。</h1>
+<p>#+OPTIONS: toc:2 (目录只显示二级标题)
+#+OPTIONS: toc:nil (无目录)</p>
+<h1 id="段落分行和引用">段落、分行和引用</h1>
+<h1 id="段落之间至少要有一空行如果你想实现段内分行可以在行后加上">段落之间至少要有一空行。如果你想实现段内分行，可以在行后加上“\”。</h1>
+<h1 id="要想在一个区域内实现分行而其他地方使用正常格式你可以使用下面的构造它也可以用来实现诗歌的格式">要想在一个区域内实现分行，而其他地方使用正常格式，你可以使用下面的构造，它也可以用来实现诗歌的格式：</h1>
+<p>#+BEGIN_VERSE
+Great clouds overhead
+Tiny black birds rise and fall
+Snow covers Emacs
+&ndash;AexSchroeder
+#+END_VERSE</p>
+<h1 id="当从另外一个文档中引用一段话时通常会让它左右都缩进在org文档中可以这样作引用">当从另外一个文档中引用一段话时，通常会让它左右都缩进。在Org文档中可以这样作引用：</h1>
+<p>#+BEGIN_QUOTE
+Everything should be made as simple as possible,
+but not any impleer &ndash;Albert Einstein</p>
+<p>#+END_QUOTE</p>
+<h1 id="让文本居中">让文本居中</h1>
+<p>#+BEGIN_CENTER
+Everything should be made as simple as possible,\<br>
+but not any simpleer &ndash;Albert Einstein
+#+END_CENTER</p>
+<h1 id="强调和等宽">强调和等宽</h1>
+<h1 id="粗体">粗体</h1>
+<p><em>粗体</em></p>
+<h1 id="斜体">斜体</h1>
+<p>/斜体/</p>
+<h1 id="下划线">下划线</h1>
+<h1 id="文字两端各加一下划线_">文字两端各加一下划线_</h1>
+<p><em>下划线</em></p>
+<h1 id="逐字">逐字</h1>
+<p>=逐字=</p>
+<h1 id="代码">代码</h1>
+<p>~code~</p>
+<h1 id="注释行">注释行</h1>
+<h1 id="以位于第0列的行会被看作注释不会被导出">以‘#‘位于第0列的行会被看作注释，不会被导出。</h1>
+<h1 id="如果你想要一个缩进的行也被作为注释用开头">如果你想要一个缩进的行也被作为注释，用“#+”开头。</h1>
+<h1 id="以关键字comment开头的子树整个树都不会被导出">以关键字“COMMENT”开头的子树整个树都不会被导出。</h1>
+<h1 id="被begin_commentend_comment包围的整个区域也都不会被导出">被“#+BEGIN_COMMENT“…”#+END_COMMENT”包围的整个区域也都不会被导出。</h1>
+<p>|&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| 快捷键        | 功能                                 |
+|&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| C-c ;	 | 在一个项的开头增加/删除COMMENT关键字 |
+|&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<h3 id="112-图片和表格">11.2 图片和表格</h3>
+<h1 id="可以在表格前面用下面几行为表格指定标题和标签以方便交叉引用">可以在表格前面用下面几行为表格指定标题和标签，以方便交叉引用。</h1>
+<h1 id="在文本中可以用reftabbasic-data来引用它">在文本中可以用\ref{tab:basic-data}来引用它：</h1>
+<p>#+CAPTION: 表格标题1
+#+LABEL: tab:basic-data
+|&mdash;&mdash;+&mdash;&mdash;|
+| COL1 | COL2 |
+|&mdash;&mdash;+&mdash;&mdash;|
+|    1 |    1 |
+|    2 |    3 |
+|&mdash;&mdash;+&mdash;&mdash;|</p>
+<p>#+CAPTION: 图片标题1
+#+LABEL: fig:leaf
+[[file:pic/leaf.jpg][leaf-pic]]</p>
+<p>this is a leaf picture\ref{fig:leaf}</p>
+<h3 id="113-纯文本例子">11.3 纯文本例子</h3>
+<h1 id="可以包含进来一些纯文本的例子这些例子会等宽排版所以适用于代码以及其他类似的情况">可以包含进来一些纯文本的例子，这些例子会等宽排版，所以适用于代码以及其他类似的情况。</h1>
+<p>#+BEGIN_EXAMPLE
+Some example from a text file.
+#+END_EXAMPLE</p>
+<h1 id="为了简单化一些小型的例子可以冒号开头冒号前面可以有空格">为了简单化，一些小型的例子可以冒号开头。冒号前面可以有空格：</h1>
+<p>Here is an example
+: Some example from a text file.</p>
+<h1 id="对于源代码以及一些其他的文本可以被emacs的字体锁font-lock特殊标记也可以让它们像在emacs的缓冲区中那样显示">对于源代码以及一些其他的文本，可以被Emacs的字体锁（font-lock）特殊标记，也可以让它们像在Emacs的缓冲区中那样显示。</h1>
+<h1 id="如果要在支持这种语言的专门的缓冲区中编辑例子将光标置于例子代码中按快捷键c-c-启动和退出编辑缓冲区">如果要在支持这种语言的专门的缓冲区中编辑例子，将光标置于例子代码中，按快捷键C-c &lsquo;，启动和退出编辑缓冲区。</h1>
+<p>#+SRCNAME: emacs_lisp_code
+#+BEGIN_SRC emacs-lisp
+(+ 1 2 3 4 6 7)
+#+END_SRC</p>
+<dl>
+<dt>#+RESULTS:</dt>
+<dd>23</dd>
+</dl>
+<p>|&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| 快捷键 | 功能                                     |
+|&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| C-c '  | 在支持某种语言的专门的缓冲区中编辑代码块 |
+|&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|</p>
+<h3 id="114包含文件">11.4包含文件</h3>
+<h1 id="当导出文档时可以包含其他文件中的内容">当导出文档时，可以包含其他文件中的内容。</h1>
+<h1 id="导入文件第二三个为可选参数是组织方式quoteexamplesrc如果是src语言用来格式化包含的内容">导入文件，第二、三个为可选参数，是组织方式：“quote”，“example”,&ldquo;src&rdquo;。如果是“src”，语言用来格式化包含的内容。</h1>
+<h1 id="组织方式是可选的如果不给出文本会被当作org模式正常处理">组织方式是可选的，如果不给出，文本会被当作Org模式正常处理。</h1>
+<h1 id="用快捷键c-c-可以访问包含的文件">用快捷键C-c &lsquo;,可以访问包含的文件。</h1>
+<p>#+INCLUDE: &ldquo;~/.emacs&rdquo; src emacs-lisp
+|&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| 快捷键 | 功能             |
+|&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| C-c '  | 访问包含的文件。 |
+|&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|</p>
+<h1 id="嵌入latex">嵌入LaTex</h1>
+<h1 id="略">(略)</h1>
+<h2 id="十二导出">十二、导出</h2>
+<h1 id="org模式文档可以导出成多种格式ascii用于包含在邮件中html用来发布到网页上latexpdf用来打印出漂亮的文档docbook通过docbook工具转换成其他各种各样的格式也可以导出成icalendar格式将计划信息并入到桌面日历中">Org模式文档可以导出成多种格式：ASCII用于包含在邮件中；HTML用来发布到网页上；LaTeX/PDF用来打印出漂亮的文档；DocBook通过DocBook工具转换成其他各种各样的格式。也可以导出成iCalendar格式，将计划信息并入到桌面日历中</h1>
+<h3 id="121导出选项">12.1导出选项</h3>
+<h1 id="导出器能识别缓冲区中提供附加信息的特殊行这样行可以放在文件中的任何地方">导出器能识别缓冲区中提供附加信息的特殊行，这样行可以放在文件中的任何地方。</h1>
+<h1 id="整个集合可以用c-c-c-e-插入到缓冲区中">整个集合可以用C-c C-e #插入到缓冲区中。</h1>
+<p>#+OPTIONS: &lsquo;:nil *:t -:t ::t &lt;:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:nil d:(not &ldquo;LOGBOOK&rdquo;) date:t e:t
+#+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+TITLE: test
+#+DATE: &lt;2018-12-15 六&gt;
+#+AUTHOR: chenbin
+#+EMAIL: cb@cb-K43SV
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 24.5.1 (Org mode 8.3.3)</p>
+<h3 id="122-导出调度器">12.2 导出调度器</h3>
+<h1 id="所有的导出命令都可以通过导出调度器来使用调度器是一个前缀快捷键它会提示输入一个字母来指定命令">所有的导出命令都可以通过导出调度器来使用，调度器是一个前缀快捷键，它会提示输入一个字母来指定命令。</h1>
+<h1 id="通常整个文件都会被导出但是如果选中区域包含大纲树就会导出大纲树并以第一个标题作为文件标题">通常整个文件都会被导出，但是如果选中区域包含大纲树，就会导出大纲树，并以第一个标题作为文件标题。</h1>
+<p>|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| 快捷键  | 功能                     |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| C-c C-e | 用来导出和发布的调度器。 |
+|&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<h3 id="123-asciilatin-1utf-8的导出">12.3 ASCII/Latin-1/UTF-8的导出</h3>
+<h1 id="ascii导出功能能给org文件提供的一个简单易读的版本它只包含纯ascii文本">ASCII导出功能能给Org文件提供的一个简单易读的版本，它只包含纯ASCII文本。</h1>
+<h1 id="latin-1和utf-8导出用它们能编码的特殊字符扩展了文件的功能">Latin-1和UTF-8导出用它们能编码的特殊字符扩展了文件的功能。</h1>
+<p>|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| 快捷键                   | 功能                                |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| C-c C-e t a或C-c C-e t A  | 导出ASCII文件                       |
+| C-c C-e t l或C-c C-e t L | 和上面的命令一样，但是用Latin-1编码 |
+| C-c C-e t u或C-c C-e t U | 和上面的命令一样，但是用UTF-8编码   |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|</p>
+<h3 id="124-html的导出">12.4 HTML的导出</h3>
+<p>|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| 快捷键      | 功能                       |
+|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| C-c C-e h h | 导出HTML文件               |
+| C-c C-e h o | 导出HTML文件并用浏览器打开 |
+|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|</p>
+<h1 id="想要将html以纯文本方式复制到导出文件可以用下面两种方式">想要将HTML以纯文本方式复制到导出文件，可以用下面两种方式：</h1>
+<p>#+HTML: <p>asdfasd</p>
+或
+#+BEGIN_HTML html</p>
+<p>asdfasd</p>
+#+END_HTML
+<h3 id="125latex和pdf导出">12.5LaTex和PDF导出</h3>
+<p>|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| 快捷键      | 功能                                 |
+|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| C-c C-e l l | 导出LaTeX文件                        |
+| C-c C-e l p | 导出LaTeX文件，并处理成PDF文件       |
+| C-c C-e l o | 导出LaTeX文件，处理成PDF文件，并打开 |
+|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<h3 id="126-icalendar的导出">12.6 iCalendar的导出</h3>
+<p>|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| 快捷键      | 功能                                                                                                                |
+|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| C-c C-e c f | 在一个“.ice”文件中为当前文件创建iCalendar项。                                                                     |
+| C-c C-e c c | 从org-agenda-files中的所有文件创建一个较大的iCalendar文件，并写入到org-combined-agenda-icalendar-file指定的文件中。 |
+|&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|</p>
+<h2 id="十三发布">十三、发布</h2>
+<h1 id="org包含一个发布管理系统可以配置一个由相互链接的org文件组成的工程项目的自动向html转换">Org包含一个发布管理系统，可以配置一个由相互链接的Org文件组成的工程项目的自动向HTML转换。</h1>
+<h1 id="你也可以设置org将导出的html页面和相应的附件如图片源代码文件等自动上传到服务器如何设置详见手册">你也可以设置Org，将导出的HTML页面和相应的附件如图片，源代码文件等自动上传到服务器。如何设置，详见手册。</h1>
+<ul>
+<li>Footnotes</li>
+</ul>
+<p>[fn:2] SAMBA服务器地址：smb://23.65.97.211</p>
+<p>[fn:1] FTP服务器地址：ftp://23.65.97.211</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-09-08
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/emacs/">emacs</a>
+          <a href="/tags/org/">org</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/2023/09/02/%E6%AE%87/">
+            <span class="next-text nav-default">殇</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
