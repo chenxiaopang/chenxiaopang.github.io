@@ -2,35 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://chenxiaopang.github.io/categories/</loc>
-    <lastmod>2023-09-02T12:10:10+08:00</lastmod>
+    <loc>https://chenxiaopang.github.io/categories/applications/</loc>
+    <lastmod>2023-09-09T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://chenxiaopang.github.io/categories/life/</loc>
-    <lastmod>2023-09-02T12:10:10+08:00</lastmod>
+    <loc>https://chenxiaopang.github.io/categories/</loc>
+    <lastmod>2023-09-09T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/categories/emacs/</loc>
+    <lastmod>2023-09-09T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/emacs/</loc>
+    <lastmod>2023-09-09T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2023/09/09/emacs-org%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C/</loc>
+    <lastmod>2023-09-09T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/linux/</loc>
+    <lastmod>2023-09-09T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/categories/linux/</loc>
+    <lastmod>2023-09-09T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/org/</loc>
+    <lastmod>2023-09-09T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chenxiaopang.github.io/</loc>
-    <lastmod>2023-09-02T12:10:10+08:00</lastmod>
+    <lastmod>2023-09-09T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chenxiaopang.github.io/post/</loc>
-    <lastmod>2023-09-02T12:10:10+08:00</lastmod>
+    <lastmod>2023-09-09T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chenxiaopang.github.io/tags/</loc>
+    <lastmod>2023-09-09T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/categories/life/</loc>
     <lastmod>2023-09-02T12:10:10+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -109,55 +158,6 @@
   <url>
     <loc>https://chenxiaopang.github.io/2022/09/10/%E4%BD%86%E6%84%BF%E4%BA%BA%E9%95%BF%E4%B9%85/</loc>
     <lastmod>2022-09-10T16:18:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/categories/applications/</loc>
-    <lastmod>2022-02-10T23:06:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/categories/emacs/</loc>
-    <lastmod>2022-02-10T23:06:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/emacs/</loc>
-    <lastmod>2022-02-10T23:06:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/2022/02/10/emacs-org%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C/</loc>
-    <lastmod>2022-02-10T23:06:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/linux/</loc>
-    <lastmod>2022-02-10T23:06:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/categories/linux/</loc>
-    <lastmod>2022-02-10T23:06:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/org/</loc>
-    <lastmod>2022-02-10T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

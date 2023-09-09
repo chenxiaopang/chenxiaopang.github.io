@@ -6,13 +6,13 @@
     <description>Recent content in emacs on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 10 Feb 2022 23:06:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Sep 2023 23:06:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emacs Org简明手册</title>
-      <link>https://chenxiaopang.github.io/2022/02/10/emacs-org%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C/</link>
-      <pubDate>Thu, 10 Feb 2022 23:06:18 +0800</pubDate>
+      <link>https://chenxiaopang.github.io/2023/09/09/emacs-org%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C/</link>
+      <pubDate>Sat, 09 Sep 2023 23:06:18 +0800</pubDate>
       
-      <guid>https://chenxiaopang.github.io/2022/02/10/emacs-org%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C/</guid>
+      <guid>https://chenxiaopang.github.io/2023/09/09/emacs-org%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C/</guid>
       <description>一、简介 Org 是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 二、文档结构 2.1 脚注 软件服务室FTP[fn</description>
     </item>
     
