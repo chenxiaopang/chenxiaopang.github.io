@@ -126,6 +126,30 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/11/13/mysql%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E8%AE%BE%E7%BD%AE/">mysql字符编码设置</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-11-13 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          <a href="/categories/database/"> Database </a>
+          </div>
+        <span class="more-meta"> 约 284 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      一、显示当前编码信息 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 mysql&gt;showvariableslike&#39;%character%&#39;|--------------------------|----------------------------||Variable_name|Value||--------------------------|----------------------------||character_set_client|utf8||character_set_connection|utf8||character_set_database|latin1||character_set_filesystem|binary||character_set_results|utf8||character_set_server|latin1||character_set_system|utf8||character_sets_dir|/usr/share/mysql/charsets/||--------------------------|----------------------------|8rowsinset(0.01sec) 二、设置客户端编码 在/etc/mysql/my.cnf文件中的[mysql]或[cli
+    </div>
+    <div class="read-more">
+      <a href="/2016/11/13/mysql%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E8%AE%BE%E7%BD%AE/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2016/10/06/oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%97%E7%AC%A6%E9%9B%86/">Oracle数据库和客户端字符集</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2016-10-06 </span>
@@ -218,31 +242,6 @@
     </div>
     <div class="read-more">
       <a href="/2016/09/16/%E5%AE%BF%E4%B8%BB%E6%9C%BA%E5%92%8C%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8Blinux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/09/16/%E6%B7%BB%E5%8A%A0openstack%E6%BA%90/">添加openstack源</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-09-16 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/applications/"> Applications </a>
-          <a href="/categories/cloudcomputing/"> CloudComputing </a>
-          </div>
-        <span class="more-meta"> 约 56 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      添加OpenStack Mitaka源 1 2 3 sudo apt-get install ubuntu-cloud-keyring sudo add-apt-repository cloud-archive:mitaka 相同方法，可以添加其它版本，如kilo 1 2 3 sudo add-apt-repository clound-archive:kilo sudo apt-get update
-    </div>
-    <div class="read-more">
-      <a href="/2016/09/16/%E6%B7%BB%E5%8A%A0openstack%E6%BA%90/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

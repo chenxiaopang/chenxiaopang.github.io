@@ -17,9 +17,18 @@
     </item>
     
     <item>
+      <title>Applications</title>
+      <link>https://chenxiaopang.github.io/categories/applications/</link>
+      <pubDate>Thu, 10 Feb 2022 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/categories/applications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Emacs</title>
       <link>https://chenxiaopang.github.io/categories/emacs/</link>
-      <pubDate>Wed, 21 Apr 2021 16:01:26 +0800</pubDate>
+      <pubDate>Thu, 10 Feb 2022 23:06:18 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/categories/emacs/</guid>
       <description></description>
@@ -28,7 +37,7 @@
     <item>
       <title>Linux</title>
       <link>https://chenxiaopang.github.io/categories/linux/</link>
-      <pubDate>Wed, 21 Apr 2021 16:01:26 +0800</pubDate>
+      <pubDate>Thu, 10 Feb 2022 23:06:18 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/categories/linux/</guid>
       <description></description>
@@ -40,15 +49,6 @@
       <pubDate>Wed, 21 Apr 2021 16:01:26 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/categories/tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Applications</title>
-      <link>https://chenxiaopang.github.io/categories/applications/</link>
-      <pubDate>Sun, 18 Apr 2021 16:18:26 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/categories/applications/</guid>
       <description></description>
     </item>
     
