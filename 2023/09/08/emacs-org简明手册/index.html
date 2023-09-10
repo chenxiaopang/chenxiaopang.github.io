@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="一、简介 Org 是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 二、文档结构 2.1 脚注 软件服务室FTP[fn" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一、简介 Org是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 这个文档是Org-mode手册的一个" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="Emacs Org简明手册" />
-<meta property="og:description" content="一、简介 Org 是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 二、文档结构 2.1 脚注 软件服务室FTP[fn" />
+<meta property="og:description" content="一、简介 Org是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 这个文档是Org-mode手册的一个" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chenxiaopang.github.io/2023/09/08/emacs-org%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-09-08T23:06:18&#43;08:00" />
 <meta property="article:modified_time" content="2023-09-08T23:06:18&#43;08:00" />
 
 <meta itemprop="name" content="Emacs Org简明手册">
-<meta itemprop="description" content="一、简介 Org 是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 二、文档结构 2.1 脚注 软件服务室FTP[fn"><meta itemprop="datePublished" content="2023-09-08T23:06:18&#43;08:00" />
+<meta itemprop="description" content="一、简介 Org是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 这个文档是Org-mode手册的一个"><meta itemprop="datePublished" content="2023-09-08T23:06:18&#43;08:00" />
 <meta itemprop="dateModified" content="2023-09-08T23:06:18&#43;08:00" />
-<meta itemprop="wordCount" content="9614">
+<meta itemprop="wordCount" content="10624">
 <meta itemprop="keywords" content="Linux,emacs,org," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Emacs Org简明手册"/>
-<meta name="twitter:description" content="一、简介 Org 是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 二、文档结构 2.1 脚注 软件服务室FTP[fn"/>
+<meta name="twitter:description" content="一、简介 Org是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 这个文档是Org-mode手册的一个"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -138,8 +138,8 @@
             <a href="/categories/applications/"> Applications </a>
             <a href="/categories/emacs/"> Emacs </a>
             </div>
-          <span class="more-meta"> 约 9614 字 </span>
-          <span class="more-meta"> 预计阅读 20 分钟 </span>
+          <span class="more-meta"> 约 10624 字 </span>
+          <span class="more-meta"> 预计阅读 22 分钟 </span>
         
       </div>
     </header>
@@ -151,9 +151,18 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#一简介">一、简介</a></li>
+        <li><a href="#一简介">一、简介</a>
+          <ul>
+            <li><a href="#11-安装">1.1 安装</a></li>
+            <li><a href="#12-激活">1.2 激活</a></li>
+            <li><a href="#13-反馈">1.3 反馈</a></li>
+          </ul>
+        </li>
         <li><a href="#二文档结构">二、文档结构</a>
           <ul>
+            <li><a href="#21大纲">2.1大纲</a></li>
+            <li><a href="#22标题">2.2标题</a></li>
+            <li><a href="#23视图循环">2.3视图循环</a></li>
             <li><a href="#21-脚注">2.1 脚注</a></li>
           </ul>
         </li>
@@ -559,13 +568,131 @@
 </div>
     <div class="post-content">
       <h2 id="一简介">一、简介</h2>
-<p>Org 是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。</p>
+<p><code>Org</code>是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。
+这个文档是<code>Org-mode</code>手册的一个压缩版本,包含了所有的基本功能和命令,以及一些重要的定制提示。
+本文档写给不想阅读200多页手册的新手。</p>
+<h3 id="11-安装">1.1 安装</h3>
+<p>如果你用的是 Emacs 或者 XEmacs 包里的 Org 版本,请跳过本节,直接阅读<code>1.3 节</code>。如果你是从网站上下载的 Org 版本,无论是 zip 包还是 tar 文件或者是<code>Git</code>文件,最好在分发包目录里直接来设置它。把 lisp 子目录加到 Emacs 的加载路径里,可以把下面两句加在 “.emacs” 文件里:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">setq</span> <span class="nv">load-path</span> <span class="p">(</span><span class="nf">cons</span> <span class="s">&#34;~/path/to/orgdir/lisp&#34;</span> <span class="nv">load-path</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">setq</span> <span class="nv">load-path</span> <span class="p">(</span><span class="nf">cons</span> <span class="s">&#34;~/path/to/orgdir/contrib/lisp&#34;</span> <span class="nv">load-path</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>为了提高速度可以用下面的 shell 命令将 Lisp 文件编译一下:</p>
+<p><code>make</code></p>
+<p>再把下面一行加到<code>.emacs</code>文件里。它可以使文件中的函数自动加载,而不是启动 Org 模式时立即加载。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;org-install</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="12-激活">1.2 激活</h3>
+<p>把下面几行加到<code>.emacs</code>文件里。后三行是为命令定义全局快捷键――请改成适合你自己的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="c1">;; The following lines are always needed. Choose your own keys.</span>
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;auto-mode-alist</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;\\.org\\&#39;&#34;</span> <span class="o">.</span> <span class="nv">org-mode</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;org-mode-hook</span> <span class="ss">&#39;turn-on-font-lock</span><span class="p">)</span> <span class="c1">; not needed when global-font-lock-mode is on</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="s">&#34;\C-cl&#34;</span> <span class="ss">&#39;org-store-link</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="s">&#34;\C-ca&#34;</span> <span class="ss">&#39;org-agenda</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="s">&#34;\C-cb&#34;</span> <span class="ss">&#39;org-iswitchb</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>设置之后,打开<code>.org</code>扩展的文件会自动进入<code>org</code>模式。</p>
+<h3 id="13-反馈">1.3 反馈</h3>
+<p>如果你发现了问题,或者有问题评论或新想法,可以给<code>Org</code>的邮件列表<code>[emacs-orgmode@gnu.org](emacs-orgmode@gnu.org)</code>发邮件。了解更多信息或者提交bug,参见手册。</p>
 <h2 id="二文档结构">二、文档结构</h2>
-<h3 id="21-脚注">2.1 脚注</h3>
-<p>软件服务室FTP[fn:1]服务器用于为我队提供软件下载服务
-软件服务室SAMBA服务器[fn:2]用于为软件服务室提供文件资料共享服务
-现在还不知道怎么改脚注的名称，等阅读完整的手册再说。</p>
-<p>|&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<p><code>Org</code>是基于<code>Outline</code>模式的，它提供了更灵活的编辑结构文件的命令。</p>
+<h3 id="21大纲">2.1大纲</h3>
+<p>Org是在大纲模式之上实现的。大纲模式可以让我们用层次结构来组织文档，这（至少对我来说）是笔记和想法的最好实现方式。这种结构可以折叠（隐藏）文档的一部分而只显示文档的大概结构,或者只显示我们正在处理的部分。
+Org大大简化了大纲模式的使用，它把大纲模式的整个显示/隐藏功能整合到了一个命令中：<code>org-cycle</code>，这个命令绑定到了<code>TAB</code>键上。</p>
+<h3 id="22标题">2.2标题</h3>
+<p>标题定义了大纲树的结构。它以处于一行左边缘的一个或多个星号开头。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-org" data-lang="org"><span class="gh">*</span><span class="gs"> Top level headline</span>
+<span class="gu">**</span> Second level
+<span class="gu">***</span> 3rd level
+some text
+<span class="gu">***</span> 3rd level
+more text
+
+<span class="gh">*</span><span class="gs"> Another top level headline</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果你不喜欢太多的星号，可以以空格后加一个星号作为标题的开头。查看15.2节[Clean view]，那里有设置方法。</p>
+<h3 id="23视图循环">2.3视图循环</h3>
+<p>大纲模式可以隐藏缓冲区里的部分正文。Org用绑定到TAB和S-TAB上的两个全命令来改变视图。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">TAB</td>
+<td style="text-align:left">子树循环：：当加上一个前缀参数时（C-u TAB），在下面的状 态中改变当前子树的视图</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:left">FOLDED -&gt; CHILDREN -&gt; SUBTREE</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:left">当加上shift键时会触发全局的视图循环</td>
+</tr>
+<tr>
+<td style="text-align:center">S-TAB、C-u TAB</td>
+<td style="text-align:left">全局循环：使整个缓冲区在下列状态中循环</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:left">OVERVIEW-&gt;CONTENTS-&gt;SHOWALL</td>
+</tr>
+<tr>
+<td style="text-align:center">C-u C-u C-u TAB</td>
+<td style="text-align:left">显示全部，包括drawers</td>
+</tr>
+</tbody>
+</table>
+<p>当Emacs刚打开文件时，全局的状态是OVERVIEW，也即只有顶层的标题可见。这可以通过变量org-startup-folded来设置。也可以通过startup关键字设置只对单个文件有效：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-org" data-lang="org"><span class="cs">#+STARTUP</span><span class="c">: content</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="21-脚注">2.1 脚注</h3>
 <table>
 <thead>
 <tr>
