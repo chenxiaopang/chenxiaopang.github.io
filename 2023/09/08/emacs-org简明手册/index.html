@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Emacs Org简明手册">
 <meta itemprop="description" content="一、简介 Org是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 这个文档是Org-mode手册的一个"><meta itemprop="datePublished" content="2023-09-08T23:06:18&#43;08:00" />
 <meta itemprop="dateModified" content="2023-09-08T23:06:18&#43;08:00" />
-<meta itemprop="wordCount" content="10624">
+<meta itemprop="wordCount" content="11839">
 <meta itemprop="keywords" content="Linux,emacs,org," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Emacs Org简明手册"/>
 <meta name="twitter:description" content="一、简介 Org是一个用文本方式来快速高效地做笔记、维持待办事项和做项目计划的模式。它是一个创作发布系统。 这个文档是Org-mode手册的一个"/>
@@ -138,8 +138,8 @@
             <a href="/categories/applications/"> Applications </a>
             <a href="/categories/emacs/"> Emacs </a>
             </div>
-          <span class="more-meta"> 约 10624 字 </span>
-          <span class="more-meta"> 预计阅读 22 分钟 </span>
+          <span class="more-meta"> 约 11839 字 </span>
+          <span class="more-meta"> 预计阅读 24 分钟 </span>
         
       </div>
     </header>
@@ -163,7 +163,11 @@
             <li><a href="#21大纲">2.1大纲</a></li>
             <li><a href="#22标题">2.2标题</a></li>
             <li><a href="#23视图循环">2.3视图循环</a></li>
-            <li><a href="#21-脚注">2.1 脚注</a></li>
+            <li><a href="#24-移动">2.4 移动</a></li>
+            <li><a href="#25-结构编辑">2.5 结构编辑</a></li>
+            <li><a href="#26-稀疏树">2.6 稀疏树</a></li>
+            <li><a href="#27-文本列表">2.7 文本列表</a></li>
+            <li><a href="#28-脚注">2.8 脚注</a></li>
           </ul>
         </li>
         <li><a href="#三表格">三、表格</a></li>
@@ -572,7 +576,7 @@
 这个文档是<code>Org-mode</code>手册的一个压缩版本,包含了所有的基本功能和命令,以及一些重要的定制提示。
 本文档写给不想阅读200多页手册的新手。</p>
 <h3 id="11-安装">1.1 安装</h3>
-<p>如果你用的是 Emacs 或者 XEmacs 包里的 Org 版本,请跳过本节,直接阅读<code>1.3 节</code>。如果你是从网站上下载的 Org 版本,无论是 zip 包还是 tar 文件或者是<code>Git</code>文件,最好在分发包目录里直接来设置它。把 lisp 子目录加到 Emacs 的加载路径里,可以把下面两句加在 “.emacs” 文件里:</p>
+<p>如果你用的是<code>Emacs</code>或者<code>XEmacs</code>包里的<code>Org</code>版本,请跳过本节,直接阅读<code>1.3 节</code>。如果你是从网站上下载的<code>Org</code>版本,无论是zip包还是tar文件或者是Git文件,最好在分发包目录里直接来设置它。把<code>lisp</code>子目录加到<code>Emacs</code>的加载路径里,可以把下面两句加在<code>.emacs</code>文件里:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -583,7 +587,7 @@
 <span class="p">(</span><span class="nb">setq</span> <span class="nv">load-path</span> <span class="p">(</span><span class="nf">cons</span> <span class="s">&#34;~/path/to/orgdir/contrib/lisp&#34;</span> <span class="nv">load-path</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>为了提高速度可以用下面的 shell 命令将 Lisp 文件编译一下:</p>
+</div><p>为了提高速度可以用下面的shell命令将Lisp文件编译一下:</p>
 <p><code>make</code></p>
 <p>再把下面一行加到<code>.emacs</code>文件里。它可以使文件中的函数自动加载,而不是启动 Org 模式时立即加载。</p>
 <div class="highlight"><div class="chroma">
@@ -595,7 +599,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="12-激活">1.2 激活</h3>
-<p>把下面几行加到<code>.emacs</code>文件里。后三行是为命令定义全局快捷键――请改成适合你自己的。</p>
+<p>把下面几行加到<code>.emacs</code>文件里。后三行是为命令定义全局快捷键，请改成适合你自己的。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -616,7 +620,7 @@
 </div>
 </div><p>设置之后,打开<code>.org</code>扩展的文件会自动进入<code>org</code>模式。</p>
 <h3 id="13-反馈">1.3 反馈</h3>
-<p>如果你发现了问题,或者有问题评论或新想法,可以给<code>Org</code>的邮件列表<code>[emacs-orgmode@gnu.org](emacs-orgmode@gnu.org)</code>发邮件。了解更多信息或者提交bug,参见手册。</p>
+<p>如果你发现了问题,或者有问题评论或新想法,可以给<code>Org</code>的邮件列表<code>&lt;emacs-orgmode@gnu.org&gt;</code>发邮件。了解更多信息或者提交bug,参见手册。</p>
 <h2 id="二文档结构">二、文档结构</h2>
 <p><code>Org</code>是基于<code>Outline</code>模式的，它提供了更灵活的编辑结构文件的命令。</p>
 <h3 id="21大纲">2.1大纲</h3>
@@ -646,9 +650,9 @@ more text
 <span class="gh">*</span><span class="gs"> Another top level headline</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>如果你不喜欢太多的星号，可以以空格后加一个星号作为标题的开头。查看15.2节[Clean view]，那里有设置方法。</p>
+</div><p>如果你不喜欢太多的星号，可以以空格后加一个星号作为标题的开头。查看<code>15.2节[Clean view]</code>，那里有设置方法。</p>
 <h3 id="23视图循环">2.3视图循环</h3>
-<p>大纲模式可以隐藏缓冲区里的部分正文。Org用绑定到TAB和S-TAB上的两个全命令来改变视图。</p>
+<p>大纲模式可以隐藏缓冲区里的部分正文。Org用绑定到<code>TAB</code>和<code>S-TAB</code>上的两个命令来改变视图。</p>
 <table>
 <thead>
 <tr>
@@ -659,7 +663,7 @@ more text
 <tbody>
 <tr>
 <td style="text-align:center">TAB</td>
-<td style="text-align:left">子树循环：：当加上一个前缀参数时（C-u TAB），在下面的状 态中改变当前子树的视图</td>
+<td style="text-align:left">子树循环：当加上一个前缀参数时（C-u TAB），在下面的状态中改变当前子树的视图</td>
 </tr>
 <tr>
 <td style="text-align:center"></td>
@@ -683,7 +687,7 @@ more text
 </tr>
 </tbody>
 </table>
-<p>当Emacs刚打开文件时，全局的状态是OVERVIEW，也即只有顶层的标题可见。这可以通过变量org-startup-folded来设置。也可以通过startup关键字设置只对单个文件有效：</p>
+<p>当<code>Emacs</code>刚打开文件时，全局的状态是<code>OVERVIEW</code>，也即只有顶层的标题可见。这可以通过变量<code>org-startup-folded</code>来设置。也可以通过startup关键字设置只对单个文件有效：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -692,29 +696,200 @@ more text
 <pre class="chroma"><code class="language-org" data-lang="org"><span class="cs">#+STARTUP</span><span class="c">: content</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="21-脚注">2.1 脚注</h3>
+</div><h3 id="24-移动">2.4 移动</h3>
 <table>
 <thead>
 <tr>
-<th>快捷键</th>
-<th>功能</th>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">功能</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>C-c C-x f</td>
-<td>新建脚注；当脚注存在时,在脚注引用和脚注定义之间跳转</td>
+<td style="text-align:left">C-c C-n</td>
+<td style="text-align:left">下个标题</td>
 </tr>
 <tr>
-<td>C-c C-c</td>
-<td>在脚注引用和脚注定义之间跳转</td>
+<td style="text-align:left">C-c C-p</td>
+<td style="text-align:left">上个标题</td>
 </tr>
 <tr>
-<td>&mdash;&mdash;&mdash;&ndash;</td>
-<td>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</td>
+<td style="text-align:left">C-c C-f</td>
+<td style="text-align:left">下个同级的标题</td>
+</tr>
+<tr>
+<td style="text-align:left">C-c C-b</td>
+<td style="text-align:left">上个同级的标题</td>
+</tr>
+<tr>
+<td style="text-align:left">C-c C-u</td>
+<td style="text-align:left">回到上层标题</td>
 </tr>
 </tbody>
 </table>
+<h3 id="25-结构编辑">2.5 结构编辑</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">M-RET</td>
+<td style="text-align:left">插入一个同级标题。如果光标在文本列表中，创建一个新的项（见2.7节[Plain lists]）。如果处于一行的中间，这一行会被分开，后面的一部分成为新的标题。</td>
+</tr>
+<tr>
+<td style="text-align:left">M-S-RET</td>
+<td style="text-align:left">插入一个和当前标题同级的TODO项</td>
+</tr>
+<tr>
+<td style="text-align:left">TAB</td>
+<td style="text-align:left">如果新的条目中还没有文字，TAB会调整到合适的级别。</td>
+</tr>
+<tr>
+<td style="text-align:left">M-LEFT/RIGHT</td>
+<td style="text-align:left">将当前的标题提升/降低一个等级。</td>
+</tr>
+<tr>
+<td style="text-align:left">M-S-LEFT/RIGHT</td>
+<td style="text-align:left">将当前子树提升/降低一个等级。</td>
+</tr>
+<tr>
+<td style="text-align:left">M-S-UP/DOWN</td>
+<td style="text-align:left">将子树上/下移（和前/后个子树交换）。</td>
+</tr>
+<tr>
+<td style="text-align:left">C-c C-w</td>
+<td style="text-align:left">将条目或区域传送到另一个文件中。见9.2节[Refiling notes]。</td>
+</tr>
+<tr>
+<td style="text-align:left">C-x n s/w</td>
+<td style="text-align:left">将缓冲区视图局限到当前子树中/再次放宽视图</td>
+</tr>
+</tbody>
+</table>
+<h3 id="26-稀疏树">2.6 稀疏树</h3>
+<p>Org模式的一个重要的功能是能根据大纲树中选择的信息构造出稀疏的树，这样文档就可以尽可能地折叠，但是选择的信息和它对应的标题会显示出来。试下就知道它是怎样工作的了。
+Org模式有几个命令可以创建这种树，这些命令都可以通过调度器来使用：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">C-c /</td>
+<td style="text-align:left">它会提示再输入一个字符来选择稀疏树的创建命令。r-匹配正则字符串；t-匹配TODO项，等等。</td>
+</tr>
+<tr>
+<td style="text-align:center">C-c / r</td>
+<td style="text-align:left">触发后，会提示输入匹配字符串，并且将所有匹配的项显示成稀疏树。所有的匹配项都会高亮显示；按C-c C-c取消高亮。</td>
+</tr>
+<tr>
+<td style="text-align:center">C-c / t</td>
+<td style="text-align:left">触发后，会将所有TODO项显示成稀疏树。所有的匹配项都会高亮显示；按C-c C-c取消高亮。</td>
+</tr>
+</tbody>
+</table>
+<p>其他的基于标签或属性来选择标题的稀疏树命令，我们会在本手册的后面讨论。</p>
+<h3 id="27-文本列表">2.7 文本列表</h3>
+<p>在大纲树的一项中，自定义格式的列表可以提供更多的组织结构，也使我们可以得到一个复选框列表（见5.6节［复选框］）。Org模式可以处理这种列表，并且HTML导出器（见12章）也支持这种格式。
+Org能够识别有序列表、无序列表和描述列表。</p>
+<ul>
+<li>无序列表项以<code>-</code>、<code>+</code>或者<code>*</code>开头。</li>
+<li>有序列表项以<code>1.</code>或者<code>1)</code>开头。</li>
+<li>描述列表用<code>::</code>将项和描述分开。
+同一列表中的项的第一行必须缩进相同程度。当下一行的缩进与列表项的的开头的符号或者数字相同或者更小时，这一项就结束了。当所有的项都关上时，或者后面有两个空行时，列表就结束了。例如：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-org" data-lang="org"><span class="gu">**</span> Lord of the Rings
+My favorite scenes are (in this order)
+1.The attack of the Rohirrim
+2.Eowyn&#39;s fight with the witch king
+<span class="gd">+ this was already my favorite scene in the book
+</span><span class="gd">+</span> I really like Miranda Otto. Important actors in this film are:
+-Elijah Wood :: He plays Frodo
+-Sean Austin :: He plays Sam, Frodo&#39;s friend.
+</code></pre></td></tr></table>
+</div>
+</div><p>当光标位于一项的第一行时（带有项标志符号的行），下面的命令将会作用于该项：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">TAB</td>
+<td style="text-align:left">折叠项</td>
+</tr>
+<tr>
+<td style="text-align:center">M-RET</td>
+<td style="text-align:left">在当前级别插入一个项，有前缀时是强制新建一个标题</td>
+</tr>
+<tr>
+<td style="text-align:center">M-S-RET</td>
+<td style="text-align:left">插入一个带有复先框的项（见2.5节［复先框］）</td>
+</tr>
+<tr>
+<td style="text-align:center">M-S-UP/DOWN</td>
+<td style="text-align:left">将当前项和它的子项向上/下移动（和相同的缩进的前/后一个项交换位置）。如果列表是有序的，数字会自动改变</td>
+</tr>
+<tr>
+<td style="text-align:center">M-LEFT/M-RIGHT</td>
+<td style="text-align:left">提升/降低项的缩进，不包含子项</td>
+</tr>
+<tr>
+<td style="text-align:center">M-S-LEFT/RIGHT</td>
+<td style="text-align:left">提升/降低项的缩进，包含子项</td>
+</tr>
+<tr>
+<td style="text-align:center">C-c C-c</td>
+<td style="text-align:left">如果项中有复先框，就触发改变其状态。并且自动保持本项的符号与缩进在列表中的一致性</td>
+</tr>
+<tr>
+<td style="text-align:center">C-c -</td>
+<td style="text-align:left">循环改变将当前列表的项标志符号</td>
+</tr>
+</tbody>
+</table>
+<h3 id="28-脚注">2.8 脚注</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">C-c C-x f</td>
+<td style="text-align:left">新建脚注；当脚注存在时,在脚注引用和脚注定义之间跳转</td>
+</tr>
+<tr>
+<td style="text-align:center">C-c C-c</td>
+<td style="text-align:left">在脚注引用和脚注定义之间跳转</td>
+</tr>
+</tbody>
+</table>
+<p>如果有活动区域（暂时标记状态），提升和降低功能将会对区域中的所有标题起作用。</p>
 <h2 id="三表格">三、表格</h2>
 <table>
 <thead>
