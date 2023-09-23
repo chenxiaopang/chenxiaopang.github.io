@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Emacs常用用法">
 <meta itemprop="description" content="一、Emacs常用热键和命令 序号 快捷键 命令 功能 备注 1 M-x 进入输入命令状态,万能状态 2 C-x C-c save-buffers-kill-emacs 退出Emacs 3 C-k kill-line 删除从光标到行尾 4 C-u 0 C-k 删除从光"><meta itemprop="datePublished" content="2012-02-10T23:06:18&#43;08:00" />
 <meta itemprop="dateModified" content="2012-02-10T23:06:18&#43;08:00" />
-<meta itemprop="wordCount" content="2531">
+<meta itemprop="wordCount" content="2786">
 <meta itemprop="keywords" content="Linux,emacs," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Emacs常用用法"/>
 <meta name="twitter:description" content="一、Emacs常用热键和命令 序号 快捷键 命令 功能 备注 1 M-x 进入输入命令状态,万能状态 2 C-x C-c save-buffers-kill-emacs 退出Emacs 3 C-k kill-line 删除从光标到行尾 4 C-u 0 C-k 删除从光"/>
@@ -138,7 +138,7 @@
             <a href="/categories/applications/"> Applications </a>
             <a href="/categories/emacs/"> Emacs </a>
             </div>
-          <span class="more-meta"> 约 2531 字 </span>
+          <span class="more-meta"> 约 2786 字 </span>
           <span class="more-meta"> 预计阅读 6 分钟 </span>
         
       </div>
@@ -177,6 +177,11 @@
           </ul>
         </li>
         <li><a href="#十三安装c语言源码阅读扩展xcscope">十三、安装C语言源码阅读扩展xcscope</a></li>
+        <li><a href="#十四相关问题">十四、相关问题</a>
+          <ul>
+            <li><a href="#1gnu-elpa-keyring-update">1、gnu-elpa-keyring-update</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1187,6 +1192,37 @@
 <pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo apt-get install cscope
 $ dpkg -L cscope<span class="p">|</span>grep xcscope.el
 /usr/share/emacs/site-lisp/xcscope.el
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="十四相关问题">十四、相关问题</h2>
+<h3 id="1gnu-elpa-keyring-update">1、gnu-elpa-keyring-update</h3>
+<p>输入命令<code>package-list-packages</code>后出现下面的错误提示：</p>
+<p><code>Failed to verify signature archive-contents.sig: No public key for 066DAFCB81E42C40 created at 2019-10-02T10:10:02+0100 using RSA Command output: gpg: Signature made Wed 02 Oct 2019 10:10:02 AM BST gpg: using RSA key C433554766D3DDC64221BFAA066DAFCB81E42C40 gpg: Can’t check signature: No public key</code></p>
+<p>出现上面的情况没有办法自动更新gnu elpa公钥了，这时候需要到官网手动下载新的文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">http://elpa.gnu.org/packages/gnu-elpa-keyring-update.html
+</code></pre></td></tr></table>
+</div>
+</div><p>下载好后是一个tar包<code>gnu-elpa-keyring-update-2019.3.tar.lz</code>，不用解压，而是直接使用emacs打开</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="nv">C-x</span> <span class="nv">C-f</span> <span class="nv">~/gnu-elpa-keyring-update-2019.3.tar.lz</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>看见tar包中的文件之后，就可以用下面的命令执行了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="nv">M-x</span> <span class="nv">package-install-from-buffer</span>
 </code></pre></td></tr></table>
 </div>
 </div>

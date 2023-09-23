@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>gpg和apt-key</title>
+      <link>https://chenxiaopang.github.io/2015/02/07/gpg%E5%92%8Capt-key/</link>
+      <pubDate>Sat, 07 Feb 2015 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/02/07/gpg%E5%92%8Capt-key/</guid>
+      <description>一、gpg 1、导出公钥 1 2 3 4 5 6 7 $ gpg --list-key $ gpg -a --export 457EF52C &amp;gt; chenbin.pub gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 5AFA7A83 gpg --delete-keys 5AFA7A83 2、生成随机数 1 2 3 $ sudo apt-get install rng-tools //避免gpg秘钥生成过程中长时间等待</description>
+    </item>
+    
+    <item>
       <title>ssh无密码登录远程主机</title>
       <link>https://chenxiaopang.github.io/2014/10/28/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/</link>
       <pubDate>Tue, 28 Oct 2014 23:16:18 +0800</pubDate>

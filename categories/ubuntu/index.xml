@@ -26,6 +26,15 @@
     </item>
     
     <item>
+      <title>gpg和apt-key</title>
+      <link>https://chenxiaopang.github.io/2015/02/07/gpg%E5%92%8Capt-key/</link>
+      <pubDate>Sat, 07 Feb 2015 16:01:26 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2015/02/07/gpg%E5%92%8Capt-key/</guid>
+      <description>一、gpg 1、导出公钥 1 2 3 4 5 6 7 $ gpg --list-key $ gpg -a --export 457EF52C &amp;gt; chenbin.pub gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 5AFA7A83 gpg --delete-keys 5AFA7A83 2、生成随机数 1 2 3 $ sudo apt-get install rng-tools //避免gpg秘钥生成过程中长时间等待</description>
+    </item>
+    
+    <item>
       <title>Ubuntu发行版升级</title>
       <link>https://chenxiaopang.github.io/2015/02/07/ubuntu%E5%8F%91%E8%A1%8C%E7%89%88%E5%8D%87%E7%BA%A7/</link>
       <pubDate>Sat, 07 Feb 2015 16:01:26 +0800</pubDate>
