@@ -126,6 +126,30 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2016/04/01/dd%E7%9A%84%E7%94%A8%E6%B3%95/">dd的用法</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-04-01 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> Linux </a>
+          <a href="/categories/bash/"> Bash </a>
+          </div>
+        <span class="more-meta"> 约 128 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      dd工具用来转换和复制文件。 1、 生成文件 生成一个空的，大小为1G的文件 1 # dd if=/dev/zero of=winxp.img bs=1k seek=1024k count=1 2、 读写硬盘 用0填充硬盘 1 2 3 # dd if=/dev/zero of=junk # sync # rm junk 3、 读
+    </div>
+    <div class="read-more">
+      <a href="/2016/04/01/dd%E7%9A%84%E7%94%A8%E6%B3%95/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2016/04/01/od%E7%9A%84%E7%94%A8%E6%B3%95/">od的用法</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2016-04-01 </span>
@@ -216,30 +240,6 @@
     </div>
     <div class="read-more">
       <a href="/2016/02/08/utcgtc%E6%97%B6%E9%97%B4%E5%92%8C%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2016/01/31/tr%E7%9A%84%E7%94%A8%E6%B3%95/">tr的用法</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2016-01-31 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/bash/"> Bash </a>
-          </div>
-        <span class="more-meta"> 约 192 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      一、tr的基本功能 转换、挤压或删除字符串，从标准输入接收输入，输出到标准输出。 二、基本用法 $ tr [options] string1 [string2] 三、例子 1、转换 1 2 $ echo &#34;CDImage.CUE&#34; | tr [A-Z] [a-z] cdimage.cue 1 2
-    </div>
-    <div class="read-more">
-      <a href="/2016/01/31/tr%E7%9A%84%E7%94%A8%E6%B3%95/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
