@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Panda的随笔</title>
+  <title>制作Ubuntu局域网源 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一、修改镜像配置文件/etc/apt/source.list 编辑/etc/apt/mirror.list，设置下载路径和源等参数，下面是一个" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,9 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://chenxiaopang.github.io/" />
-  <link href="https://chenxiaopang.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Panda的随笔" />
-  <link href="https://chenxiaopang.github.io/index.xml" rel="feed" type="application/rss+xml" title="Panda的随笔" />
+<link rel="canonical" href="https://chenxiaopang.github.io/1/01/01/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,15 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Panda的随笔" />
-<meta property="og:description" content="Hugo theme even example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://chenxiaopang.github.io/" />
+<meta property="og:title" content="制作Ubuntu局域网源" />
+<meta property="og:description" content="一、修改镜像配置文件/etc/apt/source.list 编辑/etc/apt/mirror.list，设置下载路径和源等参数，下面是一个" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/1/01/01/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/" /><meta property="article:section" content="post" />
 
-<meta itemprop="name" content="Panda的随笔">
-<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Panda的随笔"/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+
+
+<meta itemprop="name" content="制作Ubuntu局域网源">
+<meta itemprop="description" content="一、修改镜像配置文件/etc/apt/source.list 编辑/etc/apt/mirror.list，设置下载路径和源等参数，下面是一个">
+
+<meta itemprop="wordCount" content="81">
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="制作Ubuntu局域网源"/>
+<meta name="twitter:description" content="一、修改镜像配置文件/etc/apt/source.list 编辑/etc/apt/mirror.list，设置下载路径和源等参数，下面是一个"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -123,91 +126,92 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="posts" class="posts">
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/02/10/emacs%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/">Emacs常用用法</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2012-02-10 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/applications/"> Applications </a>
-          <a href="/categories/emacs/"> Emacs </a>
-          </div>
-        <span class="more-meta"> 约 2866 字 </span>
-        <span class="more-meta"> 预计阅读 6 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      一、Emacs常用热键和命令 序号 快捷键 命令 功能 备注 1 M-x 进入输入命令状态,万能状态 2 C-x C-c save-buffers-kill-emacs 退出Emacs 3 C-k kill-line 删除从光标到行尾 4 C-u 0 C-k 删除从光
-    </div>
-    <div class="read-more">
-      <a href="/2012/02/10/emacs%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/01/29/%E7%94%A8hdparm%E8%8E%B7%E5%8F%96%E7%A1%AC%E7%9B%98%E5%8F%82%E6%95%B0/">用hdparm获取硬盘参数</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2012-01-29 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/tools/"> Tools </a>
-          </div>
-        <span class="more-meta"> 约 80 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      hdparm是Linux下一款能够获取和设置SATA/IDE设备参数的工具。 1、获取硬盘参数 $ sudo hdparm -i /dev/sda $ sudo hdparam -i /dev/sda | grep SerialNo //获取硬盘序列号 2、
-    </div>
-    <div class="read-more">
-      <a href="/2012/01/29/%E7%94%A8hdparm%E8%8E%B7%E5%8F%96%E7%A1%AC%E7%9B%98%E5%8F%82%E6%95%B0/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/1/01/01/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/">制作Ubuntu局域网源</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 0001-01-01 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/applications/"> Applications </a>
-          </div>
-        <span class="more-meta"> 约 81 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      一、修改镜像配置文件/etc/apt/source.list 编辑/etc/apt/mirror.list，设置下载路径和源等参数，下面是一个
-    </div>
-    <div class="read-more">
-      <a href="/1/01/01/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    </section>
-  
-  <nav class="pagination">
-    <a class="prev" href="/page/22/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text">上一页</span>
-      </a>
+          <article class="post">
     
-  </nav>
+    <header class="post-header">
+      <h1 class="post-title">制作Ubuntu局域网源</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 0001-01-01 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/applications/"> Applications </a>
+            </div>
+          <span class="more-meta"> 约 81 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#一修改镜像配置文件etcaptsourcelist">一、修改镜像配置文件/etc/apt/source.list</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="一修改镜像配置文件etcaptsourcelist">一、修改镜像配置文件/etc/apt/source.list</h3>
+<p>编辑<code>/etc/apt/mirror.list</code>，设置下载路径和源等参数，下面是一个配置例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo vim /etc/apt/source.list
+
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        0001-01-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2012/01/29/%E7%94%A8hdparm%E8%8E%B7%E5%8F%96%E7%A1%AC%E7%9B%98%E5%8F%82%E6%95%B0/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">用hdparm获取硬盘参数</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
         </div>
         
+
+  
+
+  
 
       </div>
     </main>

@@ -790,5 +790,14 @@
       <description>hdparm是Linux下一款能够获取和设置SATA/IDE设备参数的工具。 1、获取硬盘参数 $ sudo hdparm -i /dev/sda $ sudo hdparam -i /dev/sda | grep SerialNo //获取硬盘序列号 2、</description>
     </item>
     
+    <item>
+      <title>制作Ubuntu局域网源</title>
+      <link>https://chenxiaopang.github.io/1/01/01/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/1/01/01/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/</guid>
+      <description>一、修改镜像配置文件/etc/apt/source.list 编辑/etc/apt/mirror.list，设置下载路径和源等参数，下面是一个</description>
+    </item>
+    
   </channel>
 </rss>
