@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="一、修改镜像配置文件/etc/apt/source.list 编辑/etc/apt/mirror.list，设置下载路径和源等参数，下面是一个" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一、镜像Ubuntu官方源 利用ubuntu的镜像工具apt-mirror，将官方源镜像到大容量移动硬盘上，例如，/media/cb/CHEN" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="制作Ubuntu本机源" />
-<meta property="og:description" content="一、修改镜像配置文件/etc/apt/source.list 编辑/etc/apt/mirror.list，设置下载路径和源等参数，下面是一个" />
+<meta property="og:description" content="一、镜像Ubuntu官方源 利用ubuntu的镜像工具apt-mirror，将官方源镜像到大容量移动硬盘上，例如，/media/cb/CHEN" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chenxiaopang.github.io/1/01/01/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/" /><meta property="article:section" content="post" />
 
 
 
 <meta itemprop="name" content="制作Ubuntu本机源">
-<meta itemprop="description" content="一、修改镜像配置文件/etc/apt/source.list 编辑/etc/apt/mirror.list，设置下载路径和源等参数，下面是一个">
+<meta itemprop="description" content="一、镜像Ubuntu官方源 利用ubuntu的镜像工具apt-mirror，将官方源镜像到大容量移动硬盘上，例如，/media/cb/CHEN">
 
-<meta itemprop="wordCount" content="81">
+<meta itemprop="wordCount" content="234">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="制作Ubuntu本机源"/>
-<meta name="twitter:description" content="一、修改镜像配置文件/etc/apt/source.list 编辑/etc/apt/mirror.list，设置下载路径和源等参数，下面是一个"/>
+<meta name="twitter:description" content="一、镜像Ubuntu官方源 利用ubuntu的镜像工具apt-mirror，将官方源镜像到大容量移动硬盘上，例如，/media/cb/CHEN"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -137,7 +137,7 @@
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/applications/"> Applications </a>
             </div>
-          <span class="more-meta"> 约 81 字 </span>
+          <span class="more-meta"> 约 234 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -152,7 +152,10 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#一修改镜像配置文件etcaptsourcelist">一、修改镜像配置文件/etc/apt/source.list</a></li>
+            <li><a href="#一镜像ubuntu官方源">一、镜像Ubuntu官方源</a></li>
+            <li><a href="#二配置本机源">二、配置本机源</a></li>
+            <li><a href="#三更新本地软件索引">三、更新本地软件索引</a></li>
+            <li><a href="#四更新本地所有软件">四、更新本地所有软件</a></li>
           </ul>
         </li>
       </ul>
@@ -162,19 +165,29 @@
   </div>
 </div>
     <div class="post-content">
-      <h3 id="一修改镜像配置文件etcaptsourcelist">一、修改镜像配置文件/etc/apt/source.list</h3>
-<p>编辑<code>/etc/apt/mirror.list</code>，设置下载路径和源等参数，下面是一个配置例子：</p>
+      <h3 id="一镜像ubuntu官方源">一、镜像Ubuntu官方源</h3>
+<p>利用<code>ubuntu</code>的镜像工具<code>apt-mirror</code>，将官方源镜像到大容量移动硬盘上，例如，/media/cb/CHENBIN/ubuntukylin/2204下。</p>
+<h3 id="二配置本机源">二、配置本机源</h3>
+<p>修改<code>/etc/apt/sources.lst</code>，将源指向本机源所所在位置（例如，/media/cb/CHENBIN/ubuntukylin/2204）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo vim /etc/apt/source.list
-
+<pre class="chroma"><code class="language-shell" data-lang="shell">deb file:///media/cb/CHENBIN/ubuntukylin/2204/mirror/mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb file:///media/cb/CHENBIN/ubuntukylin/2204/mirror/mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+deb file:///media/cb/CHENBIN/ubuntukylin/2204/mirror/mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+deb file:///media/cb/CHENBIN/ubuntukylin/2204/mirror/mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
 </code></pre></td></tr></table>
 </div>
-</div>
+</div><h3 id="三更新本地软件索引">三、更新本地软件索引</h3>
+<p><code>$ sudo apt-get update</code></p>
+<h3 id="四更新本地所有软件">四、更新本地所有软件</h3>
+<p><code>$ sudo apt-get dist-upgrade -y</code></p>
+
     </div>
 
     <div class="post-copyright">
