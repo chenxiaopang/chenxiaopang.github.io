@@ -1680,4 +1680,10 @@
     <priority>0.5</priority>
   </url>
   
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/%E6%BA%90/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
 </urlset>
