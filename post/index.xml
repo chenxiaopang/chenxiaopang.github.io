@@ -1021,7 +1021,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chenxiaopang.github.io/1/01/01/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/</guid>
-      <description>一、镜像Ubuntu官方源 利用ubuntu的镜像工具apt-mirror，将官方源镜像到大容量移动硬盘上，例如，/media/cb/CHEN</description>
+      <description>一、镜像Ubuntu官方源 利用ubuntu的镜像工具apt-mirror，将官方源镜像到本机或大容量移动硬盘上。例如，/media/cb/C</description>
     </item>
     
   </channel>
