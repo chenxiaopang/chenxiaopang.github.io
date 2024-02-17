@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>制作Ubuntu本机源 - Panda的随笔</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="panda" /><meta name="description" content="一、镜像Ubuntu官方源 利用ubuntu的镜像工具apt-mirror，将官方源镜像到本机或大容量移动硬盘上。例如，/media/cb/C" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://chenxiaopang.github.io/2024/02/13/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="制作Ubuntu本机源" />
+<meta property="og:description" content="一、镜像Ubuntu官方源 利用ubuntu的镜像工具apt-mirror，将官方源镜像到本机或大容量移动硬盘上。例如，/media/cb/C" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxiaopang.github.io/2024/02/13/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-02-13T23:06:18&#43;08:00" />
+<meta property="article:modified_time" content="2024-02-13T23:06:18&#43;08:00" />
+
+<meta itemprop="name" content="制作Ubuntu本机源">
+<meta itemprop="description" content="一、镜像Ubuntu官方源 利用ubuntu的镜像工具apt-mirror，将官方源镜像到本机或大容量移动硬盘上。例如，/media/cb/C"><meta itemprop="datePublished" content="2024-02-13T23:06:18&#43;08:00" />
+<meta itemprop="dateModified" content="2024-02-13T23:06:18&#43;08:00" />
+<meta itemprop="wordCount" content="1062">
+<meta itemprop="keywords" content="Linux,源," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="制作Ubuntu本机源"/>
+<meta name="twitter:description" content="一、镜像Ubuntu官方源 利用ubuntu的镜像工具apt-mirror，将官方源镜像到本机或大容量移动硬盘上。例如，/media/cb/C"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Panda的随笔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Panda的随笔</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">制作Ubuntu本机源</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2024-02-13 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/applications/"> Applications </a>
+            </div>
+          <span class="more-meta"> 约 1062 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#一镜像ubuntu官方源">一、镜像Ubuntu官方源</a></li>
+            <li><a href="#二配置本机源">二、配置本机源</a></li>
+            <li><a href="#三更新本地软件索引">三、更新本地软件索引</a></li>
+            <li><a href="#四更新本地所有软件">四、更新本地所有软件</a></li>
+            <li><a href="#五修复apt-mirror错误">五、修复apt-mirror错误</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="一镜像ubuntu官方源">一、镜像Ubuntu官方源</h3>
+<p>利用<code>ubuntu</code>的镜像工具<code>apt-mirror</code>，将官方源镜像到本机或大容量移动硬盘上。例如，<code>/media/cb/CHENBIN/ubuntukylin/2204</code>下。</p>
+<p>具体方法见<a href="https://chenxiaopang.github.io/2015/12/10/%E5%88%B6%E4%BD%9Cubuntu%E5%B1%80%E5%9F%9F%E7%BD%91%E6%BA%90/">制作Ubuntu局域网源</a></p>
+<h3 id="二配置本机源">二、配置本机源</h3>
+<p>修改<code>/etc/apt/sources.lst</code>，将源指向本机源所所在位置（例如，<code>/media/cb/CHENBIN/ubuntukylin/2204</code>）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">deb file:///media/cb/CHENBIN/ubuntukylin/2204/mirror/mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb file:///media/cb/CHENBIN/ubuntukylin/2204/mirror/mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+deb file:///media/cb/CHENBIN/ubuntukylin/2204/mirror/mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+deb file:///media/cb/CHENBIN/ubuntukylin/2204/mirror/mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="三更新本地软件索引">三、更新本地软件索引</h3>
+<p><code>$ sudo apt-get update</code></p>
+<h3 id="四更新本地所有软件">四、更新本地所有软件</h3>
+<p><code>$ sudo apt-get dist-upgrade -y</code></p>
+<h3 id="五修复apt-mirror错误">五、修复apt-mirror错误</h3>
+<p>由于<code>apt-mirror</code>在2017年就停止了维护更新，之后出现的<code>ubuntu</code>发行版软件仓库源更新了仓库的索引文件，<code>apt-mirror</code>没有办法兼容。要想完整地镜像软件仓库中的文件，有两种方法。</p>
+<h4 id="1修改apt-mirror脚本">1、修改<code>apt-mirror</code>脚本</h4>
+<p>在<code>apt-mirror</code>脚本中注释掉<code>$uri =~ s/^([^@]+)?@?// if $uri =~ /@/;</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sub sanitise_uri <span class="o">{</span>
+
+my <span class="nv">$uri</span> <span class="o">=</span> shift<span class="p">;</span> <span class="nv">$uri</span> <span class="o">=</span>~ s<span class="o">[</span>^<span class="o">(</span><span class="se">\w</span>+<span class="o">)</span>://<span class="o">][]</span><span class="p">;</span>
+
+<span class="c1">#$uri =~ s/^([^@]+)?@?// if $uri =~ /@/;</span>
+
+<span class="nv">$uri</span> <span class="o">=</span>~ s<span class="p">&amp;</span>:<span class="se">\d</span>+/<span class="p">&amp;</span>/<span class="p">&amp;;</span> <span class="c1"># and port information</span>
+
+<span class="nv">$uri</span> <span class="o">=</span>~ s/~/<span class="se">\%</span>7E/g <span class="k">if</span> get_variable<span class="o">(</span><span class="s2">&#34;_tilde&#34;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="k">return</span> <span class="nv">$uri</span><span class="p">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在脚本的下面代码中插入<code>add_url_to_download( $url . $_ . &quot;/cnf/Commands-&quot; . $arch . &quot;.xz&quot; );</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">add_url_to_download<span class="o">(</span> <span class="nv">$url</span> . <span class="nv">$_</span> . <span class="s2">&#34;/binary-&#34;</span> . <span class="nv">$arch</span> . <span class="s2">&#34;/Release&#34;</span> <span class="o">)</span><span class="p">;</span>
+
+add_url_to_download<span class="o">(</span> <span class="nv">$url</span> . <span class="nv">$_</span> . <span class="s2">&#34;/binary-&#34;</span> . <span class="nv">$arch</span> . <span class="s2">&#34;/Packages.gz&#34;</span> <span class="o">)</span><span class="p">;</span>
+
+add_url_to_download<span class="o">(</span> <span class="nv">$url</span> . <span class="nv">$_</span> . <span class="s2">&#34;/binary-&#34;</span> . <span class="nv">$arch</span> . <span class="s2">&#34;/Packages.bz2&#34;</span> <span class="o">)</span><span class="p">;</span>
+
+add_url_to_download<span class="o">(</span> <span class="nv">$url</span> . <span class="nv">$_</span> . <span class="s2">&#34;/binary-&#34;</span> . <span class="nv">$arch</span> . <span class="s2">&#34;/Packages.xz&#34;</span> <span class="o">)</span><span class="p">;</span>
+
+add_url_to_download<span class="o">(</span> <span class="nv">$url</span> . <span class="nv">$_</span> . <span class="s2">&#34;/cnf/Commands-&#34;</span> . <span class="nv">$arch</span> . <span class="s2">&#34;.xz&#34;</span> <span class="o">)</span><span class="p">;</span>
+
+add_url_to_download<span class="o">(</span> <span class="nv">$url</span> . <span class="nv">$_</span> . <span class="s2">&#34;/i18n/Index&#34;</span> <span class="o">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>保存脚本，重启<code>apt-mirror</code>。</p>
+<h4 id="2安装新版本的apt-mirror">2、安装新版本的apt-mirror</h4>
+<p>1）下载安装修复版<code>apt-mirror</code></p>
+<p>网上有帖子说<code>0.5.4-2</code>版本的<code>apt-mirror</code>包修复了这个bug，重新安装这个包再重新执行<code>apt-mirror</code>命令就可以了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ wget https://mirrors.aliyun.com/ubuntu/pool/universe/a/apt-mirror/apt-mirror_0.5.4-2_all.deb
+
+$ sudo dpkg -i apt-mirror_0.5.4-2_all.deb
+</code></pre></td></tr></table>
+</div>
+</div><p>2）<code>Commands.amd64</code>和<code>Translation-en</code>文件缺失</p>
+<p>但是我下载安装之后，还是有问题，<code>cnf</code>文件夹下下载的是<code>Commands.amd64.xz</code>压缩文件，<code>apt-get update</code>却报告需要非压缩文件，我只好挨个去解压一遍。
+<code>Commands.amd64</code>文件有了，又出现了<code>Translation-en</code>文件缺失的问题，而<code>i18n</code>文件下是压缩文件<code>Translation-en.gz</code>，同样的问题，只好挨个解压。</p>
+<p>问题解决！</p>
+<p>3）解压脚本</p>
+<p>下面是解压获取<code>Commands.amd64</code>和<code>Translation-en</code>文件的脚本，配合<code>0.5.4-2</code>版本的<code>apt-mirror</code>一起使用。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>
+<span class="c1">#Note: to fix apt-mirror problems,after run apt-mirror, run this script to decompress some .xz files</span>
+
+<span class="nv">START_PATH</span><span class="o">=</span>/media/cb/CHENBIN/ubuntukylin/2204/mirror/mirrors.tuna.tsinghua.edu.cn/ubuntu/dists
+
+<span class="sb">`</span>find <span class="nv">$START_PATH</span> -name <span class="s2">&#34;Commands-i386.xz&#34;</span> -exec xz -kdf <span class="s1">&#39;{}&#39;</span> <span class="s1">&#39;;&#39;</span><span class="sb">`</span>
+<span class="nv">ret1</span><span class="o">=</span><span class="nv">$?</span>
+   
+<span class="sb">`</span>find <span class="nv">$START_PATH</span> -name <span class="s2">&#34;Translation-en.xz&#34;</span> -exec xz -kdf <span class="s1">&#39;{}&#39;</span> <span class="s1">&#39;;&#39;</span><span class="sb">`</span>
+<span class="nv">ret2</span><span class="o">=</span><span class="nv">$?</span>
+   
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$ret1</span> -ne <span class="m">0</span> -o <span class="nv">$ret2</span> -ne <span class="m">0</span> <span class="o">]</span>
+<span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&#34;Something error!&#34;</span>
+    <span class="nb">exit</span>
+<span class="k">fi</span>
+
+<span class="nb">echo</span> <span class="s2">&#34;Success !&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">panda</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2024-02-13
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/%E6%BA%90/">源</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/2023/10/06/%E6%AD%A4%E7%94%9F%E5%BF%85%E9%A9%BE318-%E9%BB%84%E5%86%88%E7%AB%99/">
+            <span class="next-text nav-default">湖北之行</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:chenbin512@126.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://chenxiaopang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>panda</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

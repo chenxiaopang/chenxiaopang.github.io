@@ -6,7 +6,16 @@
     <description>Recent content in Linux on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 22 Sep 2023 23:19:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Feb 2024 23:06:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>制作Ubuntu本机源</title>
+      <link>https://chenxiaopang.github.io/2024/02/13/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/</link>
+      <pubDate>Tue, 13 Feb 2024 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2024/02/13/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/</guid>
+      <description>一、镜像Ubuntu官方源 利用ubuntu的镜像工具apt-mirror，将官方源镜像到本机或大容量移动硬盘上。例如，/media/cb/C</description>
+    </item>
+    
     <item>
       <title>MELPA配置</title>
       <link>https://chenxiaopang.github.io/2023/09/22/elph/</link>
@@ -293,15 +302,6 @@
       
       <guid>https://chenxiaopang.github.io/2012/02/10/emacs%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/</guid>
       <description>一、Emacs常用热键和命令 序号 快捷键 命令 功能 备注 1 M-x 进入输入命令状态,万能状态 2 C-x C-c save-buffers-kill-emacs 退出Emacs 3 C-k kill-line 删除从光标到行尾 4 C-u 0 C-k 删除从光</description>
-    </item>
-    
-    <item>
-      <title>制作Ubuntu本机源</title>
-      <link>https://chenxiaopang.github.io/1/01/01/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/1/01/01/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/</guid>
-      <description>一、镜像Ubuntu官方源 利用ubuntu的镜像工具apt-mirror，将官方源镜像到本机或大容量移动硬盘上。例如，/media/cb/C</description>
     </item>
     
   </channel>

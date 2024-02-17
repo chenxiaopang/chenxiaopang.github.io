@@ -2,35 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://chenxiaopang.github.io/categories/</loc>
-    <lastmod>2023-10-06T17:50:10+08:00</lastmod>
+    <loc>https://chenxiaopang.github.io/categories/applications/</loc>
+    <lastmod>2024-02-13T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://chenxiaopang.github.io/categories/life/</loc>
-    <lastmod>2023-10-06T17:50:10+08:00</lastmod>
+    <loc>https://chenxiaopang.github.io/categories/</loc>
+    <lastmod>2024-02-13T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/linux/</loc>
+    <lastmod>2024-02-13T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/categories/linux/</loc>
+    <lastmod>2024-02-13T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chenxiaopang.github.io/</loc>
-    <lastmod>2023-10-06T17:50:10+08:00</lastmod>
+    <lastmod>2024-02-13T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chenxiaopang.github.io/post/</loc>
-    <lastmod>2023-10-06T17:50:10+08:00</lastmod>
+    <lastmod>2024-02-13T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chenxiaopang.github.io/tags/</loc>
+    <lastmod>2024-02-13T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/2024/02/13/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/</loc>
+    <lastmod>2024-02-13T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/tags/%E6%BA%90/</loc>
+    <lastmod>2024-02-13T23:06:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxiaopang.github.io/categories/life/</loc>
     <lastmod>2023-10-06T17:50:10+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -114,20 +149,6 @@
   </url>
   
   <url>
-    <loc>https://chenxiaopang.github.io/tags/linux/</loc>
-    <lastmod>2023-09-22T23:19:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/categories/linux/</loc>
-    <lastmod>2023-09-22T23:19:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://chenxiaopang.github.io/tags/melpa/</loc>
     <lastmod>2023-09-22T23:19:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -137,13 +158,6 @@
   <url>
     <loc>https://chenxiaopang.github.io/2023/09/22/elph/</loc>
     <lastmod>2023-09-22T23:19:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/categories/applications/</loc>
-    <lastmod>2023-09-08T23:06:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1670,18 +1684,6 @@
   <url>
     <loc>https://chenxiaopang.github.io/tags/%E7%A1%AC%E7%9B%98/</loc>
     <lastmod>2012-01-29T11:21:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/1/01/01/%E9%85%8D%E7%BD%AEubuntu%E6%9C%AC%E6%9C%BA%E6%BA%90/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chenxiaopang.github.io/tags/%E6%BA%90/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

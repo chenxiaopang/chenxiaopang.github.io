@@ -6,7 +6,25 @@
     <description>Recent content in Categories on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 06 Oct 2023 17:50:10 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Feb 2024 23:06:18 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Applications</title>
+      <link>https://chenxiaopang.github.io/categories/applications/</link>
+      <pubDate>Tue, 13 Feb 2024 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/categories/applications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://chenxiaopang.github.io/categories/linux/</link>
+      <pubDate>Tue, 13 Feb 2024 23:06:18 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Life</title>
       <link>https://chenxiaopang.github.io/categories/life/</link>
@@ -22,24 +40,6 @@
       <pubDate>Fri, 22 Sep 2023 23:19:18 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/categories/emacs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://chenxiaopang.github.io/categories/linux/</link>
-      <pubDate>Fri, 22 Sep 2023 23:19:18 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Applications</title>
-      <link>https://chenxiaopang.github.io/categories/applications/</link>
-      <pubDate>Fri, 08 Sep 2023 23:06:18 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/categories/applications/</guid>
       <description></description>
     </item>
     
