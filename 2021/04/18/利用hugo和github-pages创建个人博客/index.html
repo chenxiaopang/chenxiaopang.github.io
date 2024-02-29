@@ -49,7 +49,7 @@
 <meta itemprop="name" content="利用Hugo和github pages创建博客">
 <meta itemprop="description" content="Hugo是由Go语言实现的静态网站生成器，简单、易用、高效、易扩展、快速部署，能够将Markdown等文本转换为网站静态页面。github p"><meta itemprop="datePublished" content="2021-04-18T16:18:26&#43;08:00" />
 <meta itemprop="dateModified" content="2021-04-18T16:18:26&#43;08:00" />
-<meta itemprop="wordCount" content="1508">
+<meta itemprop="wordCount" content="1595">
 <meta itemprop="keywords" content="blog,github,hugo," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="利用Hugo和github pages创建博客"/>
 <meta name="twitter:description" content="Hugo是由Go语言实现的静态网站生成器，简单、易用、高效、易扩展、快速部署，能够将Markdown等文本转换为网站静态页面。github p"/>
@@ -137,7 +137,7 @@
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/applications/"> Applications </a>
             </div>
-          <span class="more-meta"> 约 1508 字 </span>
+          <span class="more-meta"> 约 1595 字 </span>
           <span class="more-meta"> 预计阅读 4 分钟 </span>
         
       </div>
@@ -262,8 +262,31 @@ tags: [blog, github, hugo]
 </div><h2 id="六本地查看博客效果">六、本地查看博客效果</h2>
 <p>下面的命令会将用户的博文生成静态页面，并存放在public目录下</p>
 <p><code>$ hugo server</code></p>
-<p>然后在浏览器中输入地址 http://localhost:1313 即可查看博客效果。</p>
-<h2 id="七部署到github-pages">七、部署到github pages</h2>
+<p>可在指定的的端口启动hugo服务。</p>
+<p><code>$ hugo server --port=1313</code></p>
+<p>如果要将hugo服务运行在web服务默认的80端口，则需要root权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">$cd</span> /home/cb/doc/myblog
+<span class="nv">$sudo</span> hugo server --port<span class="o">=</span><span class="m">80</span> <span class="p">&amp;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以将启动命令加入<code>/etc/rc.local</code>脚本中，开机启动hugo服务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> /home/cb/doc/myblog
+hugo server --port<span class="o">=</span><span class="m">80</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="七部署到github-pages">七、部署到github pages</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
