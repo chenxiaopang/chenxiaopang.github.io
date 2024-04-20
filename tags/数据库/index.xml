@@ -6,7 +6,16 @@
     <description>Recent content in 数据库 on Panda的随笔</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 13 Nov 2016 05:50:08 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Apr 2024 15:50:08 +0800</lastBuildDate><atom:link href="https://chenxiaopang.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mariadb安装配置</title>
+      <link>https://chenxiaopang.github.io/2024/04/20/mariadb%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Sat, 20 Apr 2024 15:50:08 +0800</pubDate>
+      
+      <guid>https://chenxiaopang.github.io/2024/04/20/mariadb%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
+      <description>一、MariaDB和MySQL MariaDB数据库管理系统是MySQL的一个分支，主要由开源社区在维护，采用GPL授权许可。MariaDB的</description>
+    </item>
+    
     <item>
       <title>mysql字符编码设置</title>
       <link>https://chenxiaopang.github.io/2016/11/13/mysql%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E8%AE%BE%E7%BD%AE/</link>
@@ -76,15 +85,6 @@
       <pubDate>Fri, 07 Nov 2014 15:50:08 +0800</pubDate>
       
       <guid>https://chenxiaopang.github.io/2014/11/07/mysql%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
-      <description>一、安装mysql服务器和客户端 $ sudo apt-get install mysql-server mysql-client 二、启动mysql服务 $ sudo /etc/init.d/mysql start 三、连接mysql服务器 1、root超级用户登录 # mysql -u root -p 2、普通</description>
-    </item>
-    
-    <item>
-      <title>mysql基本操作</title>
-      <link>https://chenxiaopang.github.io/2014/11/07/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/</link>
-      <pubDate>Fri, 07 Nov 2014 15:50:08 +0800</pubDate>
-      
-      <guid>https://chenxiaopang.github.io/2014/11/07/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/</guid>
       <description>一、安装mysql服务器和客户端 $ sudo apt-get install mysql-server mysql-client 二、启动mysql服务 $ sudo /etc/init.d/mysql start 三、连接mysql服务器 1、root超级用户登录 # mysql -u root -p 2、普通</description>
     </item>
     

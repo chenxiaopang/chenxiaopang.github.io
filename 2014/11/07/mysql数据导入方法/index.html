@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>mysql基本操作 - Panda的随笔</title>
+  <title>mysql数据导入方法 - Panda的随笔</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="panda" /><meta name="description" content="一、安装mysql服务器和客户端 $ sudo apt-get install mysql-server mysql-client 二、启动mysql服务 $ sudo /etc/init.d/mysql start 三、连接mysql服务器 1、root超级用户登录 # mysql -u root -p 2、普通" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="panda" /><meta name="description" content="一、利用mysql-workbench 通过mysql-workbench的Data Import/Restore功能 有的命令不支持，比如LOA" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="mysql基本操作" />
-<meta property="og:description" content="一、安装mysql服务器和客户端 $ sudo apt-get install mysql-server mysql-client 二、启动mysql服务 $ sudo /etc/init.d/mysql start 三、连接mysql服务器 1、root超级用户登录 # mysql -u root -p 2、普通" />
+<meta property="og:title" content="mysql数据导入方法" />
+<meta property="og:description" content="一、利用mysql-workbench 通过mysql-workbench的Data Import/Restore功能 有的命令不支持，比如LOA" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chenxiaopang.github.io/2014/11/07/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2014-11-07T15:50:08&#43;08:00" />
 <meta property="article:modified_time" content="2014-11-07T15:50:08&#43;08:00" />
 
-<meta itemprop="name" content="mysql基本操作">
-<meta itemprop="description" content="一、安装mysql服务器和客户端 $ sudo apt-get install mysql-server mysql-client 二、启动mysql服务 $ sudo /etc/init.d/mysql start 三、连接mysql服务器 1、root超级用户登录 # mysql -u root -p 2、普通"><meta itemprop="datePublished" content="2014-11-07T15:50:08&#43;08:00" />
+<meta itemprop="name" content="mysql数据导入方法">
+<meta itemprop="description" content="一、利用mysql-workbench 通过mysql-workbench的Data Import/Restore功能 有的命令不支持，比如LOA"><meta itemprop="datePublished" content="2014-11-07T15:50:08&#43;08:00" />
 <meta itemprop="dateModified" content="2014-11-07T15:50:08&#43;08:00" />
-<meta itemprop="wordCount" content="761">
+<meta itemprop="wordCount" content="139">
 <meta itemprop="keywords" content="数据库,mysql," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="mysql基本操作"/>
-<meta name="twitter:description" content="一、安装mysql服务器和客户端 $ sudo apt-get install mysql-server mysql-client 二、启动mysql服务 $ sudo /etc/init.d/mysql start 三、连接mysql服务器 1、root超级用户登录 # mysql -u root -p 2、普通"/>
+<meta name="twitter:title" content="mysql数据导入方法"/>
+<meta name="twitter:description" content="一、利用mysql-workbench 通过mysql-workbench的Data Import/Restore功能 有的命令不支持，比如LOA"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,7 +129,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">mysql基本操作</h1>
+      <h1 class="post-title">mysql数据导入方法</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2014-11-07 </span>
@@ -137,8 +137,8 @@
             <a href="/categories/linux/"> Linux </a>
             <a href="/categories/database/"> Database </a>
             </div>
-          <span class="more-meta"> 约 761 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+          <span class="more-meta"> 约 139 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
     </header>
@@ -152,22 +152,9 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#一安装mysql服务器和客户端">一、安装mysql服务器和客户端</a></li>
-            <li><a href="#二启动mysql服务">二、启动mysql服务</a></li>
-            <li><a href="#三连接mysql服务器">三、连接mysql服务器</a></li>
-            <li><a href="#四停止mysql服务">四、停止mysql服务</a></li>
-            <li><a href="#五禁止匿名登陆">五、禁止匿名登陆</a></li>
-            <li><a href="#六更改root用户密码">六、更改root用户密码</a></li>
-            <li><a href="#七查看数据库存放位置">七、查看数据库存放位置</a></li>
-            <li><a href="#八删除数据库">八、删除数据库</a></li>
-            <li><a href="#九查看数据库信息">九、查看数据库信息</a></li>
-            <li><a href="#十变量">十、变量</a></li>
-            <li><a href="#十一函数">十一、函数</a></li>
-            <li><a href="#十二创建用户并授权">十二、创建用户并授权</a></li>
-            <li><a href="#十三给数据表授权">十三、给数据表授权</a></li>
-            <li><a href="#十四修改数据库列">十四、修改数据库列</a></li>
-            <li><a href="#十五修改数据表名">十五、修改数据表名</a></li>
-            <li><a href="#十六-执行外部脚本">十六. 执行外部脚本</a></li>
+            <li><a href="#一利用mysql-workbench">一、利用mysql-workbench</a></li>
+            <li><a href="#二shell命令行">二、Shell命令行</a></li>
+            <li><a href="#三-mysql命令行">三、 mysql命令行</a></li>
           </ul>
         </li>
       </ul>
@@ -177,147 +164,22 @@
   </div>
 </div>
     <div class="post-content">
-      <h3 id="一安装mysql服务器和客户端">一、安装mysql服务器和客户端</h3>
-<p><code>$ sudo apt-get install mysql-server mysql-client</code></p>
-<h3 id="二启动mysql服务">二、启动mysql服务</h3>
-<p><code>$ sudo /etc/init.d/mysql start</code></p>
-<h3 id="三连接mysql服务器">三、连接mysql服务器</h3>
-<h4 id="1root超级用户登录">1、root超级用户登录</h4>
-<p><code># mysql -u root -p</code></p>
-<h4 id="2普通用户登录">2、普通用户登录</h4>
-<p><code>$ mysql -u bookorama -p</code></p>
-<h4 id="3访问数据库表">3、访问数据库表</h4>
+      <h3 id="一利用mysql-workbench">一、利用mysql-workbench</h3>
+<p>通过<code>mysql-workbench</code>的<code>Data Import/Restore</code>功能</p>
+<ol>
+<li>有的命令不支持，比如<code>LOAD DATA LOCAL INFILE</code></li>
+<li>好处是可以和<code>DB</code>的模型修改、验证一起进行</li>
+</ol>
+<h3 id="二shell命令行">二、Shell命令行</h3>
+<p><code>$ mysql -u root -D cmddb_comm -pchenjy&lt;cmddb_comm_init.sql</code></p>
+<h3 id="三-mysql命令行">三、 mysql命令行</h3>
+<p>利用<code>mysql</code>的<code>source</code>命令</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">databases</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="n">use</span><span class="w"> </span><span class="n">books</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">books</span><span class="p">;</span><span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><h3 id="四停止mysql服务">四、停止mysql服务</h3>
-<p><code>$ sudo /etc/init.d/mysql stop</code></p>
-<h3 id="五禁止匿名登陆">五、禁止匿名登陆</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="o">#</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="n">use</span><span class="w"> </span><span class="n">mysql</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">User</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="n">quit</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="o">#</span><span class="w"> </span><span class="n">mysqladmin</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">reload</span><span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><h3 id="六更改root用户密码">六、更改root用户密码</h3>
-<p><code>$ mysqladmin -u root -p password 'newpassword'</code></p>
-<h3 id="七查看数据库存放位置">七、查看数据库存放位置</h3>
-<p><code># mysqladmin -u root -p variables|grep datadir</code></p>
-<h3 id="八删除数据库">八、删除数据库</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&gt;</span><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">cmd</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">drop</span><span class="w"> </span><span class="n">tables</span><span class="w"> </span><span class="n">cmd</span><span class="p">,</span><span class="n">cmd_all</span><span class="p">,</span><span class="n">proptags</span><span class="p">;</span><span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><p>注意：删除表时，如果没有外键约束，才能删除成功</p>
-<h3 id="九查看数据库信息">九、查看数据库信息</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">databases</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="w"> </span><span class="p">(</span><span class="k">from</span><span class="w"> </span><span class="n">databasename</span><span class="p">);</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">books</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">databasename</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">describe</span><span class="w"> </span><span class="n">books</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">books</span><span class="p">;</span><span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><h3 id="十变量">十、变量</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;%character%&#39;</span><span class="p">;</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">set</span><span class="w"> </span><span class="o">@</span><span class="n">var1</span><span class="o">=</span><span class="s1">&#39;chenbin&#39;</span><span class="p">,</span><span class="o">@</span><span class="n">var2</span><span class="o">=</span><span class="s1">&#39;panda&#39;</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">定义并设置用户变量</span><span class="n">var1和var2</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="o">@</span><span class="n">var1</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">查看用户变量</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">set</span><span class="w"> </span><span class="k">global</span><span class="w"> </span><span class="n">sort_buffer_size</span><span class="o">=</span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">设置全局系统变量</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="o">@@</span><span class="k">global</span><span class="p">.</span><span class="n">sort_buffer_size</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">察看全局系统变量</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">set</span><span class="w"> </span><span class="n">sort_buffer_size</span><span class="o">=</span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">设置</span><span class="n">session系统变量</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="o">@@</span><span class="n">sort_buffer_size</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">察看</span><span class="n">session系统变量</span><span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div><h3 id="十一函数">十一、函数</h3>
-<p><code>mysql&gt;select last_insert_id();</code></p>
-<h3 id="十二创建用户并授权">十二、创建用户并授权</h3>
-<p>创建admin用户，该用户拥有所有数据库，包括mysql数据库的所有权限，并且能对其它用户授权。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="o">#</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">grant</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">admin</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">grant</span><span class="w"> </span><span class="k">option</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">grants</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="k">show</span><span class="w"> </span><span class="n">grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">admin</span><span class="p">;</span><span class="w"> 
-</span></code></pre></td></tr></table>
-</div>
-</div><h3 id="十三给数据表授权">十三、给数据表授权</h3>
-<p><code>mysql&gt;grant update (password) on cmddb_comm.system_users to test;</code></p>
-<h3 id="十四修改数据库列">十四、修改数据库列</h3>
-<p>change需要加上旧列和新列的名称，即使不改变名称，也要写上</p>
-<p><code>mysql&gt;alter table cmds change cmd_syntax1 cmd_syntax varchar(150) not null;</code></p>
-<p>modify不能改变列的名称</p>
-<p><code>mysql&gt;alter table cmds modify param_description varchar(600) DEFAULT null; </code></p>
-<h3 id="十五修改数据表名">十五、修改数据表名</h3>
-<p><code>mysql&gt;alter table dev_sub_series rename to device_sub_series; </code></p>
-<h3 id="十六-执行外部脚本">十六. 执行外部脚本</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="err">$</span><span class="w"> </span><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;/</span><span class="n">home</span><span class="o">/</span><span class="n">cb</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">working</span><span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">program</span><span class="o">/</span><span class="n">webapps</span><span class="o">/</span><span class="n">jsp</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">guestbook</span><span class="p">.</span><span class="k">sql</span><span class="w">
-</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">source</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">cb</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">working</span><span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">program</span><span class="o">/</span><span class="n">webapps</span><span class="o">/</span><span class="n">jsp</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">guestbook</span><span class="p">.</span><span class="k">sql</span><span class="w">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="o">&lt;</span><span class="k">source</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">cb</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">working</span><span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">program</span><span class="o">/</span><span class="n">devconf</span><span class="o">/</span><span class="n">cmddb_backup</span><span class="o">/</span><span class="n">cmddb_comm</span><span class="o">-</span><span class="mi">2014</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">5</span><span class="w"> </span><span class="mi">23</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">05</span><span class="p">.</span><span class="k">sql</span><span class="w">
 </span></code></pre></td></tr></table>
 </div>
 </div>
@@ -349,8 +211,8 @@
             <span class="prev-text nav-default">mysql基本操作</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2014/11/07/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/">
-            <span class="next-text nav-default">mysql数据导入方法</span>
+        <a class="next" href="/2014/11/06/bash-shell%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">
+            <span class="next-text nav-default">Bash Shell执行命令的优先级</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
